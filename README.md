@@ -9,7 +9,7 @@ multiple public sources and clustered at 100% sequence identity.
 |---|---|---|
 | CARD | `sources/CARD/nucleotide_fasta_protein_homolog_model.fasta` | ~6 052 |
 | NCBI AMRFinderPlus | `sources/amr_finder_plus/ncbi_dataset/data/nucleotide.fna` | ~8 302 |
-| ResFinder | `sources/resfinder_db/sall.fsa` | TBD |
+| ResFinder | `sources/sources/resfinder_db/all.fsa` | TBD |
 
 ## Sequence identifier
 
@@ -59,7 +59,7 @@ python ingest.py \
 Optional overrides for non-default file paths:
 
 ```
---resfinder  PATH   (default: sources/resfinder_db/sall.fsa)
+--resfinder  PATH   (default: sources/sources/resfinder_db/all.fsa)
 --card       PATH   (default: sources/CARD/nucleotide_fasta_protein_homolog_model.fasta)
 --ncbi       PATH   (default: sources/amr_finder_plus/ncbi_dataset/data/nucleotide.fna)
 ```
