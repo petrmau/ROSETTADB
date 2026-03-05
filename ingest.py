@@ -138,6 +138,9 @@ def load_resfinder_phenotypes(path: Path) -> dict:
                     "drug_class":           row.get("Class", "").strip() or None,
                     "resistance_mechanism": row.get("Mechanism of resistance", "").strip() or None,
                     "phenotype":            row.get("Phenotype", "").strip() or None,
+                    "pmid":                 row.get("PMID", "").strip() or None,
+                    "notes":                row.get("Notes", "").strip() or None,
+                    "required_gene":        row.get("Required_gene", "").strip() or None,
                 }
     return meta
 
@@ -240,6 +243,19 @@ def build_gene_records(source: str, fasta_path: Path,
             "amr_class":      None,
             "amr_subclass":   None,
             "scope":          None,
+            # NCBI additional
+            "allele":         None,
+            "ncbi_type":      None,
+            "ncbi_subtype":   None,
+            # ResFinder additional
+            "pmid":           None,
+            "notes":          None,
+            "required_gene":  None,
+            # CARD additional
+            "card_short_name": None,
+            "card_cvterm_id":  None,
+            "card_model_id":   None,
+            "card_model_sequence_id": None,
         }
 
         if source == "CARD":
@@ -258,6 +274,10 @@ def build_gene_records(source: str, fasta_path: Path,
                     rec["aro_accession"]     = m.get("ARO Accession")
                 if not rec.get("gene_name"):
                     rec["gene_name"]         = m.get("ARO Name")
+                rec["card_short_name"]       = m.get("CARD Short Name")
+                rec["card_cvterm_id"]        = m.get("CVTERM ID")
+                rec["card_model_id"]         = m.get("Model ID")
+                rec["card_model_sequence_id"] = m.get("Model Sequence ID")
 
         elif source == "NCBI":
             parsed = parse_ncbi_header(header)
@@ -267,16 +287,19 @@ def build_gene_records(source: str, fasta_path: Path,
             if m:
                 rec["product_name"]          = m.get("productName")
                 rec["gene_family"]           = m.get("geneFamily")
+                rec["allele"]                = m.get("allele")
                 rec["amr_class"]             = m.get("class")
                 rec["amr_subclass"]          = m.get("subclass")
+                rec["ncbi_type"]             = m.get("type")
+                rec["ncbi_subtype"]          = m.get("subtype")
                 rec["scope"]                 = m.get("scope")
                 rec["refseq_nucleotide"]     = (m.get("refseqNucleotide") or {}).get("accessionVersion")
                 rec["refseq_protein"]        = (m.get("refseqProtein") or {}).get("accessionVersion")
                 rec["genbank_nucleotide"]    = (m.get("genbankNucleotide") or {}).get("accessionVersion")
                 rec["genbank_protein"]       = (m.get("genbankProtein") or {}).get("accessionVersion")
-                # gene_name: first token of productName or geneFamily
-                if not rec.get("gene_name") and rec.get("gene_family"):
-                    rec["gene_name"] = rec["gene_family"]
+                # gene_name: allele first, then geneFamily
+                if not rec.get("gene_name"):
+                    rec["gene_name"] = rec.get("allele") or rec.get("gene_family")
 
         elif source == "RESFINDER":
             parsed = parse_resfinder_header(header)
@@ -287,6 +310,9 @@ def build_gene_records(source: str, fasta_path: Path,
                     rec["drug_class"]           = m["drug_class"]
                     rec["resistance_mechanism"] = m["resistance_mechanism"]
                     rec["product_name"]         = m["phenotype"]
+                    rec["pmid"]                 = m["pmid"]
+                    rec["notes"]                = m["notes"]
+                    rec["required_gene"]        = m["required_gene"]
 
         records.append(rec)
     return records
@@ -352,6 +378,9 @@ def insert_genes(cur, records: list[dict], jrc_to_cluster: dict[str, str]):
         "resistance_mechanism", "gene_family", "aro_accession",
         "refseq_protein", "refseq_nucleotide", "genbank_protein",
         "genbank_nucleotide", "amr_class", "amr_subclass", "scope",
+        "allele", "ncbi_type", "ncbi_subtype",
+        "pmid", "notes", "required_gene",
+        "card_short_name", "card_cvterm_id", "card_model_id", "card_model_sequence_id",
     ]
     sql = f"""
         INSERT INTO amr.gene ({", ".join(cols)})
@@ -388,6 +417,9 @@ def upsert_sequence_metadata(cur, all_records: list[dict]):
         "resistance_mechanism", "gene_family", "aro_accession",
         "refseq_protein", "refseq_nucleotide", "genbank_protein",
         "genbank_nucleotide", "amr_class", "amr_subclass", "scope",
+        "allele", "ncbi_type", "ncbi_subtype",
+        "pmid", "notes", "required_gene",
+        "card_short_name", "card_cvterm_id", "card_model_id", "card_model_sequence_id",
     ]
     sql = f"""
         INSERT INTO amr.sequence_metadata ({", ".join(cols)})
