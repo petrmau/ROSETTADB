@@ -26,7 +26,7 @@ from psycopg2.extras import execute_values
 DEFAULT_DSN = "host=localhost dbname=rosettadb user=postgres password=postgres"
 
 BASE = Path(__file__).parent / "sources"
-DEFAULT_RESFINDER = BASE / "sources" / "resfinder_db" / "all.fsa"
+DEFAULT_RESFINDER = BASE / "resfinder_db" / "all.fsa"
 DEFAULT_CARD      = BASE / "CARD" / "nucleotide_fasta_protein_homolog_model.fasta"
 DEFAULT_NCBI      = BASE / "amr_finder_plus" / "ncbi_dataset" / "data" / "nucleotide.fna"
 
