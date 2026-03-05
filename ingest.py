@@ -30,8 +30,9 @@ DEFAULT_RESFINDER = BASE / "resfinder_db" / "all.fsa"
 DEFAULT_CARD      = BASE / "CARD" / "nucleotide_fasta_protein_homolog_model.fasta"
 DEFAULT_NCBI      = BASE / "amr_finder_plus" / "ncbi_dataset" / "data" / "nucleotide.fna"
 
-NCBI_REPORT = BASE / "amr_finder_plus" / "ncbi_dataset" / "data" / "data_report.jsonl"
-CARD_ARO    = BASE / "CARD" / "aro_index.tsv"
+NCBI_REPORT          = BASE / "amr_finder_plus" / "ncbi_dataset" / "data" / "data_report.jsonl"
+CARD_ARO             = BASE / "CARD" / "aro_index.tsv"
+RESFINDER_PHENOTYPES = BASE / "resfinder_db" / "phenotypes.txt"
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -111,6 +112,36 @@ def load_card_aro(path: Path) -> dict:
     return meta
 
 
+def load_resfinder_phenotypes(path: Path) -> dict:
+    """
+    Parse ResFinder phenotypes.txt.
+    Returns dict keyed by Gene_accession (e.g. 'aac(6'')-Ib_2_M23634')
+    with keys: drug_class, resistance_mechanism, phenotype.
+    """
+    meta = {}
+    if not path.exists():
+        return meta
+    with open(path) as fh:
+        header = None
+        for line in fh:
+            line = line.rstrip("\n")
+            if header is None:
+                header = line.split("\t")
+                continue
+            parts = line.split("\t")
+            if len(parts) < 2:
+                continue
+            row = dict(zip(header, parts))
+            acc = row.get("Gene_accession no.", "").strip()
+            if acc:
+                meta[acc] = {
+                    "drug_class":           row.get("Class", "").strip() or None,
+                    "resistance_mechanism": row.get("Mechanism of resistance", "").strip() or None,
+                    "phenotype":            row.get("Phenotype", "").strip() or None,
+                }
+    return meta
+
+
 # ── Header parsers ────────────────────────────────────────────────────────────
 
 _ACC_RE = re.compile(r"[A-Z]{1,2}_?\d{5,9}(\.\d+)?|[A-Z]{2}\d{6}(\.\d+)?")
@@ -177,7 +208,8 @@ def parse_resfinder_header(header: str) -> dict:
 # ── Gene record builder ───────────────────────────────────────────────────────
 
 def build_gene_records(source: str, fasta_path: Path,
-                       ncbi_meta: dict, card_meta: dict) -> list[dict]:
+                       ncbi_meta: dict, card_meta: dict,
+                       resfinder_meta: dict | None = None) -> list[dict]:
     """
     Parse a FASTA file and return a list of dicts ready for DB insertion.
     Also returns the raw sequence keyed by jrc_id.
@@ -249,6 +281,12 @@ def build_gene_records(source: str, fasta_path: Path,
         elif source == "RESFINDER":
             parsed = parse_resfinder_header(header)
             rec.update(parsed)
+            if resfinder_meta:
+                m = resfinder_meta.get(header)
+                if m:
+                    rec["drug_class"]           = m["drug_class"]
+                    rec["resistance_mechanism"] = m["resistance_mechanism"]
+                    rec["product_name"]         = m["phenotype"]
 
         records.append(rec)
     return records
@@ -285,17 +323,17 @@ def upsert_sequences(cur, sequences: list[dict]):
     execute_values(cur, sql, data)
 
 
-def upsert_clusters(cur, representatives: dict[str, dict]) -> dict[str, int]:
+def upsert_clusters(cur, representatives: dict[str, dict]) -> dict[str, str]:
     """
     Insert one cluster per unique sequence (jrc_id).
-    Returns mapping jrc_id -> cluster_id.
+    Returns mapping jrc_id -> cluster_id (e.g. 'JRCGRP_000001').
     """
     jrc_to_cluster = {}
     for jid in representatives:
         cur.execute("""
             INSERT INTO amr.cluster (representative_jrc)
             VALUES (%s)
-            ON CONFLICT DO NOTHING
+            ON CONFLICT (representative_jrc) DO NOTHING
             RETURNING cluster_id
         """, (jid,))
         row = cur.fetchone()
@@ -307,7 +345,7 @@ def upsert_clusters(cur, representatives: dict[str, dict]) -> dict[str, int]:
     return jrc_to_cluster
 
 
-def insert_genes(cur, records: list[dict], jrc_to_cluster: dict[str, int]):
+def insert_genes(cur, records: list[dict], jrc_to_cluster: dict[str, str]):
     cols = [
         "jrc_id", "cluster_id", "source", "original_header",
         "source_acc", "gene_name", "product_name", "drug_class",
@@ -331,6 +369,36 @@ def insert_genes(cur, records: list[dict], jrc_to_cluster: dict[str, int]):
     execute_values(cur, sql, data)
 
 
+def upsert_sequence_metadata(cur, all_records: list[dict]):
+    """
+    For each unique (jrc_id, source) pair pick the record with the most
+    metadata (longest header as tie-breaker) and upsert into
+    amr.sequence_metadata.
+    """
+    # Best record per (jrc_id, source)
+    best: dict[tuple, dict] = {}
+    for r in all_records:
+        key = (r["jrc_id"], r["source"])
+        prev = best.get(key)
+        if prev is None or len(r["original_header"]) > len(prev["original_header"]):
+            best[key] = r
+
+    cols = [
+        "jrc_id", "source", "gene_name", "product_name", "drug_class",
+        "resistance_mechanism", "gene_family", "aro_accession",
+        "refseq_protein", "refseq_nucleotide", "genbank_protein",
+        "genbank_nucleotide", "amr_class", "amr_subclass", "scope",
+    ]
+    sql = f"""
+        INSERT INTO amr.sequence_metadata ({", ".join(cols)})
+        VALUES %s
+        ON CONFLICT (jrc_id, source) DO UPDATE SET
+            {", ".join(f"{c} = EXCLUDED.{c}" for c in cols if c not in ("jrc_id", "source"))}
+    """
+    data = [tuple(r.get(c) for c in cols) for r in best.values()]
+    execute_values(cur, sql, data)
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -351,6 +419,10 @@ def main():
     card_meta = load_card_aro(CARD_ARO)
     print(f"  {len(card_meta)} accession entries", file=sys.stderr)
 
+    print("Loading ResFinder phenotypes …", file=sys.stderr)
+    resfinder_meta = load_resfinder_phenotypes(RESFINDER_PHENOTYPES)
+    print(f"  {len(resfinder_meta)} gene entries", file=sys.stderr)
+
     # ── Parse FASTA sources ──
     all_records: list[dict] = []
 
@@ -364,7 +436,8 @@ def main():
             print(f"  WARNING: {source} file not found: {path}", file=sys.stderr)
             continue
         print(f"Parsing {source}: {path} …", file=sys.stderr)
-        recs = build_gene_records(source, path, ncbi_meta, card_meta)
+        recs = build_gene_records(source, path, ncbi_meta, card_meta,
+                                  resfinder_meta if source == "RESFINDER" else None)
         print(f"  {len(recs)} sequences", file=sys.stderr)
         all_records.extend(recs)
         sources_found.append(source)
@@ -404,6 +477,10 @@ def main():
     # ── Insert all gene records ──
     print(f"Inserting {len(all_records)} gene records …", file=sys.stderr)
     insert_genes(cur, all_records, jrc_to_cluster)
+
+    # ── Upsert canonical metadata per (jrc_id, source) ──
+    print("Upserting sequence metadata …", file=sys.stderr)
+    upsert_sequence_metadata(cur, all_records)
 
     conn.commit()
     cur.close()
