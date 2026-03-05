@@ -323,17 +323,17 @@ def upsert_sequences(cur, sequences: list[dict]):
     execute_values(cur, sql, data)
 
 
-def upsert_clusters(cur, representatives: dict[str, dict]) -> dict[str, int]:
+def upsert_clusters(cur, representatives: dict[str, dict]) -> dict[str, str]:
     """
     Insert one cluster per unique sequence (jrc_id).
-    Returns mapping jrc_id -> cluster_id.
+    Returns mapping jrc_id -> cluster_id (e.g. 'JRCGRP_000001').
     """
     jrc_to_cluster = {}
     for jid in representatives:
         cur.execute("""
             INSERT INTO amr.cluster (representative_jrc)
             VALUES (%s)
-            ON CONFLICT DO NOTHING
+            ON CONFLICT (representative_jrc) DO NOTHING
             RETURNING cluster_id
         """, (jid,))
         row = cur.fetchone()
@@ -345,7 +345,7 @@ def upsert_clusters(cur, representatives: dict[str, dict]) -> dict[str, int]:
     return jrc_to_cluster
 
 
-def insert_genes(cur, records: list[dict], jrc_to_cluster: dict[str, int]):
+def insert_genes(cur, records: list[dict], jrc_to_cluster: dict[str, str]):
     cols = [
         "jrc_id", "cluster_id", "source", "original_header",
         "source_acc", "gene_name", "product_name", "drug_class",

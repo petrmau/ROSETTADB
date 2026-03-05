@@ -16,9 +16,12 @@ CREATE TABLE IF NOT EXISTS amr.sequence (
 -- ─────────────────────────────────────────────────────────
 -- Cluster table (group of 100%-identical sequences)
 -- ─────────────────────────────────────────────────────────
+CREATE SEQUENCE IF NOT EXISTS amr.cluster_id_seq START 1;
+
 CREATE TABLE IF NOT EXISTS amr.cluster (
-    cluster_id          SERIAL PRIMARY KEY,
-    representative_jrc  VARCHAR(13) NOT NULL REFERENCES amr.sequence(jrc_id)
+    cluster_id          VARCHAR(15) PRIMARY KEY
+                            DEFAULT 'JRCGRP_' || lpad(nextval('amr.cluster_id_seq')::text, 6, '0'),
+    representative_jrc  VARCHAR(13) NOT NULL UNIQUE REFERENCES amr.sequence(jrc_id)
 );
 
 -- ─────────────────────────────────────────────────────────
@@ -27,7 +30,7 @@ CREATE TABLE IF NOT EXISTS amr.cluster (
 CREATE TABLE IF NOT EXISTS amr.gene (
     gene_id         SERIAL PRIMARY KEY,
     jrc_id          VARCHAR(13) NOT NULL REFERENCES amr.sequence(jrc_id),
-    cluster_id      INTEGER     NOT NULL REFERENCES amr.cluster(cluster_id),
+    cluster_id      VARCHAR(15) NOT NULL REFERENCES amr.cluster(cluster_id),
     source          VARCHAR(20) NOT NULL CHECK (source IN ('RESFINDER', 'CARD', 'NCBI')),
     original_header TEXT        NOT NULL,
     source_acc      TEXT,               -- primary accession parsed from header
