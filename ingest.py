@@ -369,6 +369,36 @@ def insert_genes(cur, records: list[dict], jrc_to_cluster: dict[str, str]):
     execute_values(cur, sql, data)
 
 
+def upsert_sequence_metadata(cur, all_records: list[dict]):
+    """
+    For each unique (jrc_id, source) pair pick the record with the most
+    metadata (longest header as tie-breaker) and upsert into
+    amr.sequence_metadata.
+    """
+    # Best record per (jrc_id, source)
+    best: dict[tuple, dict] = {}
+    for r in all_records:
+        key = (r["jrc_id"], r["source"])
+        prev = best.get(key)
+        if prev is None or len(r["original_header"]) > len(prev["original_header"]):
+            best[key] = r
+
+    cols = [
+        "jrc_id", "source", "gene_name", "product_name", "drug_class",
+        "resistance_mechanism", "gene_family", "aro_accession",
+        "refseq_protein", "refseq_nucleotide", "genbank_protein",
+        "genbank_nucleotide", "amr_class", "amr_subclass", "scope",
+    ]
+    sql = f"""
+        INSERT INTO amr.sequence_metadata ({", ".join(cols)})
+        VALUES %s
+        ON CONFLICT (jrc_id, source) DO UPDATE SET
+            {", ".join(f"{c} = EXCLUDED.{c}" for c in cols if c not in ("jrc_id", "source"))}
+    """
+    data = [tuple(r.get(c) for c in cols) for r in best.values()]
+    execute_values(cur, sql, data)
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -447,6 +477,10 @@ def main():
     # ── Insert all gene records ──
     print(f"Inserting {len(all_records)} gene records …", file=sys.stderr)
     insert_genes(cur, all_records, jrc_to_cluster)
+
+    # ── Upsert canonical metadata per (jrc_id, source) ──
+    print("Upserting sequence metadata …", file=sys.stderr)
+    upsert_sequence_metadata(cur, all_records)
 
     conn.commit()
     cur.close()
