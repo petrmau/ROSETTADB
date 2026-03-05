@@ -47,6 +47,19 @@ CREATE TABLE IF NOT EXISTS amr.gene (
     amr_class       TEXT,
     amr_subclass    TEXT,
     scope           TEXT,
+    -- NCBI additional fields
+    allele          TEXT,               -- NCBI allele designation (e.g. aac(3)-VIIIa)
+    ncbi_type       TEXT,               -- NCBI type field (e.g. AMR)
+    ncbi_subtype    TEXT,               -- NCBI subtype field
+    -- ResFinder additional fields
+    pmid            TEXT,               -- PubMed ID(s) for resistance reference
+    notes           TEXT,               -- ResFinder notes / alternative names
+    required_gene   TEXT,               -- ResFinder required co-gene
+    -- CARD additional fields
+    card_short_name TEXT,               -- CARD short name (15-char abbreviation)
+    card_cvterm_id  TEXT,               -- CARD CVTERM ID
+    card_model_id   TEXT,               -- CARD Model ID
+    card_model_sequence_id TEXT,        -- CARD Model Sequence ID
     loaded_at       TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
@@ -70,6 +83,16 @@ CREATE TABLE IF NOT EXISTS amr.sequence_metadata (
     amr_class            TEXT,
     amr_subclass         TEXT,
     scope                TEXT,
+    allele               TEXT,
+    ncbi_type            TEXT,
+    ncbi_subtype         TEXT,
+    pmid                 TEXT,
+    notes                TEXT,
+    required_gene        TEXT,
+    card_short_name      TEXT,
+    card_cvterm_id       TEXT,
+    card_model_id        TEXT,
+    card_model_sequence_id TEXT,
     PRIMARY KEY (jrc_id, source)
 );
 
