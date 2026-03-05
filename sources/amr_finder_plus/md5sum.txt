@@ -1,0 +1,3 @@
+fc536478fb8c0855b555d1a7cb169497  ncbi_dataset/data/nucleotide.fna
+e83750c3385027cfb8582200e55ec0b7  ncbi_dataset/data/data_report.jsonl
+3911f6ce61caaab1f4afa57b118c3a75  ncbi_dataset/data/dataset_catalog.json
