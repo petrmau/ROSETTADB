@@ -191,20 +191,38 @@ def parse_ncbi_header(header: str) -> dict:
 
 def parse_resfinder_header(header: str) -> dict:
     """
-    ResFinder headers vary; common: gene_accession_something
-    e.g. aac(3)-Ia_1_AF174129
+    ResFinder headers: <gene>_<allele_number>_<genbank_accession>
+    e.g. ant(2'')-Ia_8_AY920928  -> allele=ant(2'')-Ia_8, source_acc=AY920928
+         aac(6')-Ib_2_M23634     -> allele=aac(6')-Ib_2,  source_acc=M23634
+    The accession is the last _-delimited token that looks like a GenBank accession.
+    allele = all tokens before the accession joined with '_'.
+    gene_name = first token (gene family, e.g. ant(2'')-Ia).
+    genbank_nucleotide = source_acc (they are the same for ResFinder).
     """
     info: dict = {}
     parts = header.split("_")
+
+    # Find the rightmost accession-like token
+    acc_idx = None
+    for i in range(len(parts) - 1, 0, -1):
+        p = parts[i]
+        # Match with or without version suffix (.1 etc.)
+        if _ACC_RE.fullmatch(p) or _ACC_RE.fullmatch(p.split(".")[0] + ".1"):
+            acc_idx = i
+            break
+
+    if acc_idx is not None:
+        info["source_acc"] = parts[acc_idx]
+        info["genbank_nucleotide"] = parts[acc_idx]
+        info["allele"] = "_".join(parts[:acc_idx])
+    else:
+        # fallback: treat last token as accession
+        info["source_acc"] = parts[-1]
+        info["genbank_nucleotide"] = parts[-1]
+        info["allele"] = "_".join(parts[:-1])
+
     if parts:
         info["gene_name"] = parts[0]
-    # look for an accession-like token
-    for p in parts[1:]:
-        if _ACC_RE.fullmatch(p.split(".")[0] + ".1"):
-            info["source_acc"] = p
-            break
-    if "source_acc" not in info and len(parts) >= 3:
-        info["source_acc"] = parts[-1]
     return info
 
 
