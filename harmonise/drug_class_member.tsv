@@ -48,6 +48,7 @@ cefoxitin	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
 ceftaroline	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
 ceftazidime	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
 ceftazidime+avibactam	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+ceftazidime-avibactam	beta-lactam antibiotic	ARO:3000007	antibiotic	curated
 ceftibuten-avibactam	beta-lactam antibiotic	ARO:3000007	antibiotic	ncbi
 ceftriaxone	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
 cefuroxime	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder

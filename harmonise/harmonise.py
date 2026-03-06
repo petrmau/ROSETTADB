@@ -148,15 +148,28 @@ def parse_resfinder(resfinder_lookup: dict[str, str]) -> tuple[list, list]:
                 # Handle combination products: store as-is + record components
                 if "+" in raw:
                     canonical = normalise_name(raw)
+                    components = [normalise_name(c) for c in raw.split("+")]
                     drugs.append({
                         "canonical_name": canonical,
                         "source_name": raw,
                         "resfinder_class": class_raw,
                         "is_combination": True,
-                        "components": [normalise_name(c) for c in raw.split("+")],
+                        "components": components,
                         "context": "clinical",
                     })
                     aliases.append((canonical, raw, "source_name", "resfinder"))
+                    # Also emit each component as a standalone drug entry so it
+                    # appears in drug_canonical (satisfies FK in drug_class_member)
+                    for comp in components:
+                        ctx = _context_flag(comp)
+                        drugs.append({
+                            "canonical_name": comp,
+                            "source_name": comp,
+                            "resfinder_class": class_raw,
+                            "is_combination": False,
+                            "components": [],
+                            "context": ctx,
+                        })
                 else:
                     canonical = normalise_name(raw)
                     ctx = _context_flag(canonical)
@@ -216,12 +229,18 @@ def parse_card_shortnames(card_class_abbrevs: set[str]) -> tuple[list, list]:
             if canonical in CLASS_MOLECULE_NAMES:
                 continue
 
-            ctx = _context_flag(canonical)
+            # Handle & -separated combinations (e.g. "Ethambutol & Capreomycin")
+            is_combo = " & " in molecule
+            components = [normalise_name(c) for c in molecule.split(" & ")] if is_combo else []
+
+            ctx = "clinical" if is_combo else _context_flag(canonical)
             drugs.append({
                 "canonical_name": canonical,
                 "card_abbrev": abbrev,
                 "source_name": molecule,
                 "context": ctx,
+                "is_combination": is_combo,
+                "components": components,
             })
             if molecule.lower() != canonical:
                 aliases.append((canonical, molecule, "source_name", "card"))
@@ -249,11 +268,14 @@ def parse_ncbi() -> tuple[list, list, list]:
     with open(path) as f:
         for line in f:
             record = json.loads(line)
-            gene_name = record.get("geneName", "")
-            accession = record.get("refseqProteinAccession", "") or record.get("refseqNucleotideAccession", "")
+            gene_name = record.get("geneFamily", "")
+            accession = (
+                (record.get("refseqProtein") or {}).get("accessionVersion", "")
+                or (record.get("refseqNucleotide") or {}).get("accessionVersion", "")
+            )
             class_raw = record.get("class", "")
             subclass_raw = record.get("subclass", "")
-            element_type = record.get("elementType", "")
+            element_type = record.get("type", "")
 
             # Split multi-class and multi-drug slash combos
             class_tokens = split_ncbi_combo(class_raw) if class_raw else []

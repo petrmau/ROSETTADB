@@ -8,7 +8,7 @@ ampicillin+clavulanic acid	True	ampicillin|clavulanic acid	clinical						resfind
 apramycin	False		clinical		QJ01GB90	XZNUGFQTQHRASN-XQXXSGGOSA-N	3032628	CHEBI:2731	ncbi|resfinder
 arbekacin	False		clinical		J01GB12	MKKYBZZTJQGVCD-XTCKQBCOSA-N	456012		resfinder
 astromicin	False		clinical		J01GB13	BSMOLWBDHLCNLU-PWPDDNHESA-N	72579		resfinder
-avibactam	False		inhibitor	AVI		JTEHXIYAZYVHKE-BGZDPUMOSA-N	10295702	CHEBI:85896	card|ncbi
+avibactam	False		inhibitor	AVI		JTEHXIYAZYVHKE-BGZDPUMOSA-N	10295702	CHEBI:85896	card|ncbi|resfinder
 avilamycin	False		veterinary		QJ01XQ01	RQFUZUMFPRMVDX-JXOAFFINSA-N	10096		ncbi
 azithromycin	False		clinical	AZM	J01FA10	MQTOSJVFKKJCRP-BICOPXKESA-N	447043	CHEBI:2955	card|ncbi|resfinder
 aztreonam	False		clinical	ATM	J01DF01	WZPBZJONMAIEGC-WCTZXXKLSA-N	5494	CHEBI:2949	card|resfinder
@@ -41,6 +41,7 @@ cephalothin	False		clinical		J01DB03	XIURVHNZVLADCM-UHFFFAOYSA-N	22323	CHEBI:353
 chloramphenicol	False		clinical	CHL	J01BA01	WIIZWVCIJKGZOK-RKDXNWHRSA-N	5959	CHEBI:17698	card|ncbi|resfinder
 ciprofloxacin	False		clinical	CIP	J01MA02	MYSWGUAQZAJSOK-UHFFFAOYSA-N	2764	CHEBI:100241	card|resfinder
 clarithromycin	False		clinical	CLR	J01FA09	AGOYDEPGAOXOCK-KCVZKFEFSA-N	84029	CHEBI:3732	card|ncbi
+clavulanic acid	False		inhibitor			HZZVJAQRINQKSD-PBFISZAISA-N	5280980	CHEBI:48947	resfinder
 clindamycin	False		clinical	CLI	J01FF01	KDLRVYVGXIQJDK-AWPVFWJPSA-N	29029	CHEBI:3745	card|ncbi|resfinder
 clofazimine	False		antituberculosis	CFZ	J04BA01	WDQPAMHFFCXSNU-BGALOTTGSA-N	2802	CHEBI:3772	card|resfinder
 colistin	False		clinical	CST	J01XB01	BXDBPUHKUJDCJB-DMJKGFBTSA-N	5311054	CHEBI:37943	card|ncbi|resfinder
@@ -59,7 +60,7 @@ enrofloxacin	False		clinical	ENR	QJ01MA90	VJGMBVMDGIFTEM-UHFFFAOYSA-N	71188	CHEB
 ertapenem	False		clinical		J01DH03	JUZNIMUFDBIJCM-WLTAIBSBSA-N	150610	CHEBI:332277	resfinder
 erythromycin	False		clinical	ERY	J01FA01	ULGZDMOVFRHVEP-RWJQBGPGSA-N	12560	CHEBI:42355	card|ncbi|resfinder
 ethambutol	False		antituberculosis	EMB	J04AK02	AEUTYOVWOVBAKS-UWVGGRQHSA-N	14219	CHEBI:4877	card|resfinder
-ethambutol & capreomycin	False		clinical	EMCM					card
+ethambutol & capreomycin	True	ethambutol|capreomycin	clinical	EMCM					card
 ethionamide	False		antituberculosis	ETO	J04AD01	AEOCXXJPGCBFJA-UHFFFAOYSA-N	14052	CHEBI:4879	card|resfinder
 florfenicol	False		clinical		QJ01BA93	AYIRNRDRBQBKNY-ZETCQYMHSA-N	122767	CHEBI:76072	ncbi|resfinder
 fluoroquinolone	False		clinical						resfinder
@@ -141,6 +142,7 @@ streptothricin	False		clinical			AXRCEOKUDYDWLF-VKHMYHEASA-N	5281091		ncbi
 sulfamethoxazole	False		clinical		J01EC01	JLKIGFTWXXRPMT-UHFFFAOYSA-N	5329	CHEBI:9332	resfinder
 sulfonamide	False		clinical						ncbi
 taniborbactam	False		inhibitor				129820028		ncbi
+tazobactam	False		inhibitor			LPQZKKCYTLCDGQ-UHFFFAOYSA-N	123630	CHEBI:9445	resfinder
 tedizolid	False		clinical		J01XX11	DEGUSSKDCKLXMD-LLVKDONJSA-N	16654980		ncbi
 teicoplanin	False		clinical		J01XA02	SOBHUZYZLFQYFK-VIFPVBQESA-N	16133858	CHEBI:9514	resfinder
 telithromycin	False		clinical		J01FA15	LJVAJPDWBABPEJ-PNUFFHFMSA-N	1493482	CHEBI:63552	ncbi|resfinder
