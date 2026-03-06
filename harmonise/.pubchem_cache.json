@@ -1126,5 +1126,53 @@
     "inchikey": "",
     "chebi_id": "",
     "atc_code": ""
+  },
+  "amoxicillin+clavulanic acid": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ampicillin+clavulanic acid": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefotaxime+clavulanic acid": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ceftazidime+avibactam": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "piperacillin+clavulanic acid": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "piperacillin+tazobactam": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "quinupristin+dalfopristin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ticarcillin+clavulanic acid": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
   }
 }
