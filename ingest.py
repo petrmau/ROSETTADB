@@ -34,6 +34,13 @@ NCBI_REPORT          = BASE / "amr_finder_plus" / "ncbi_dataset" / "data" / "dat
 CARD_ARO             = BASE / "CARD" / "aro_index.tsv"
 RESFINDER_PHENOTYPES = BASE / "resfinder_db" / "phenotypes.txt"
 
+HARMONISE = Path(__file__).parent / "harmonise"
+DRUG_CLASS_TSV      = HARMONISE / "class_mapping.tsv"
+DRUG_TSV            = HARMONISE / "drug_canonical.tsv"
+DRUG_ALIAS_TSV      = HARMONISE / "drug_alias.tsv"
+DRUG_CLASS_MEMBER_TSV = HARMONISE / "drug_class_member.tsv"
+GENE_DRUG_LINK_TSV  = HARMONISE / "gene_drug_link.tsv"
+
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -449,6 +456,161 @@ def upsert_sequence_metadata(cur, all_records: list[dict]):
     execute_values(cur, sql, data)
 
 
+# ── Harmonisation loaders ─────────────────────────────────────────────────────
+
+def load_harmonise(cur):
+    """Load all harmonise/ TSV files into the amr.drug_* tables."""
+    import csv
+
+    def _none(v):
+        """Empty string → None for nullable columns."""
+        return v if v else None
+
+    # ── drug_class ──
+    if DRUG_CLASS_TSV.exists():
+        with open(DRUG_CLASS_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        data = [
+            (
+                r["canonical_name"].strip(),
+                _none(r.get("aro_accession", "").strip()),
+                _none(r.get("category", "").strip()),
+                _none(r.get("resfinder_alias", "").strip()),
+                _none(r.get("ncbi_alias", "").strip()),
+                _none(r.get("card_abbrev", "").strip()),
+                _none(r.get("card_class_abbrev", "").strip()),
+                _none(r.get("notes", "").strip()),
+            )
+            for r in rows
+            if r.get("canonical_name", "").strip()
+        ]
+        execute_values(cur, """
+            INSERT INTO amr.drug_class
+                (canonical_name, aro_accession, category, resfinder_alias,
+                 ncbi_alias, card_abbrev, card_class_abbrev, notes)
+            VALUES %s
+            ON CONFLICT (canonical_name) DO UPDATE SET
+                aro_accession     = EXCLUDED.aro_accession,
+                category          = EXCLUDED.category,
+                resfinder_alias   = EXCLUDED.resfinder_alias,
+                ncbi_alias        = EXCLUDED.ncbi_alias,
+                card_abbrev       = EXCLUDED.card_abbrev,
+                card_class_abbrev = EXCLUDED.card_class_abbrev,
+                notes             = EXCLUDED.notes
+        """, data)
+        print(f"  drug_class: {len(data)} rows", file=sys.stderr)
+
+    # ── drug ──
+    if DRUG_TSV.exists():
+        with open(DRUG_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        data = [
+            (
+                r["canonical_name"].strip(),
+                r.get("is_combination", "False").strip() == "True",
+                _none(r.get("components", "").strip()),
+                r.get("context", "clinical").strip() or "clinical",
+                _none(r.get("card_abbrev", "").strip()),
+                _none(r.get("atc_code", "").strip()),
+                _none(r.get("inchikey", "").strip()),
+                _none(r.get("pubchem_cid", "").strip()),
+                _none(r.get("chebi_id", "").strip()),
+                _none(r.get("sources", "").strip()),
+            )
+            for r in rows
+            if r.get("canonical_name", "").strip()
+        ]
+        execute_values(cur, """
+            INSERT INTO amr.drug
+                (canonical_name, is_combination, components, context,
+                 card_abbrev, atc_code, inchikey, pubchem_cid, chebi_id, sources)
+            VALUES %s
+            ON CONFLICT (canonical_name) DO UPDATE SET
+                is_combination = EXCLUDED.is_combination,
+                components     = EXCLUDED.components,
+                context        = EXCLUDED.context,
+                card_abbrev    = EXCLUDED.card_abbrev,
+                atc_code       = EXCLUDED.atc_code,
+                inchikey       = EXCLUDED.inchikey,
+                pubchem_cid    = EXCLUDED.pubchem_cid,
+                chebi_id       = EXCLUDED.chebi_id,
+                sources        = EXCLUDED.sources
+        """, data)
+        print(f"  drug:       {len(data)} rows", file=sys.stderr)
+
+    # ── drug_alias ──
+    if DRUG_ALIAS_TSV.exists():
+        with open(DRUG_ALIAS_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        data = [
+            (
+                r["canonical_name"].strip(),
+                r["alias"].strip(),
+                r.get("alias_type", "source_name").strip(),
+                r.get("source", "").strip(),
+            )
+            for r in rows
+            if r.get("canonical_name", "").strip() and r.get("alias", "").strip()
+        ]
+        execute_values(cur, """
+            INSERT INTO amr.drug_alias (canonical_name, alias, alias_type, source)
+            VALUES %s
+            ON CONFLICT (canonical_name, alias, source) DO NOTHING
+        """, data)
+        print(f"  drug_alias: {len(data)} rows", file=sys.stderr)
+
+    # ── drug_class_member ──
+    if DRUG_CLASS_MEMBER_TSV.exists():
+        with open(DRUG_CLASS_MEMBER_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        data = [
+            (
+                r["canonical_drug"].strip(),
+                r["canonical_class"].strip(),
+                _none(r.get("aro_accession", "").strip()),
+                _none(r.get("category", "").strip()),
+                r.get("source", "curated").strip() or "curated",
+            )
+            for r in rows
+            if r.get("canonical_drug", "").strip() and r.get("canonical_class", "").strip()
+        ]
+        execute_values(cur, """
+            INSERT INTO amr.drug_class_member
+                (canonical_drug, canonical_class, aro_accession, category, evidence_source)
+            VALUES %s
+            ON CONFLICT (canonical_drug, canonical_class) DO UPDATE SET
+                aro_accession   = EXCLUDED.aro_accession,
+                category        = EXCLUDED.category,
+                evidence_source = EXCLUDED.evidence_source
+        """, data)
+        print(f"  drug_class_member: {len(data)} rows", file=sys.stderr)
+
+    # ── gene_drug_link ──
+    if GENE_DRUG_LINK_TSV.exists():
+        with open(GENE_DRUG_LINK_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        data = [
+            (
+                r.get("gene_name", "").strip(),
+                _none(r.get("accession", "").strip()),
+                _none(r.get("element_type", "").strip()),
+                _none(r.get("ncbi_class_raw", "").strip()),
+                _none(r.get("ncbi_subclass_raw", "").strip()),
+                _none(r.get("canonical_class_token", "").strip()),
+                _none(r.get("canonical_drug_token", "").strip()),
+            )
+            for r in rows
+        ]
+        execute_values(cur, """
+            INSERT INTO amr.gene_drug_link
+                (gene_name, accession, element_type,
+                 ncbi_class_raw, ncbi_subclass_raw,
+                 canonical_class_token, canonical_drug_token)
+            VALUES %s
+        """, data)
+        print(f"  gene_drug_link: {len(data)} rows", file=sys.stderr)
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -458,6 +620,8 @@ def main():
     ap.add_argument("--card",      type=Path, default=DEFAULT_CARD)
     ap.add_argument("--ncbi",      type=Path, default=DEFAULT_NCBI)
     ap.add_argument("--schema",    type=Path, default=Path(__file__).parent / "schema.sql")
+    ap.add_argument("--skip-harmonise", action="store_true",
+                    help="Skip loading harmonise/ drug vocabulary tables")
     args = ap.parse_args()
 
     # ── Load auxiliary metadata ──
@@ -531,6 +695,11 @@ def main():
     # ── Upsert canonical metadata per (jrc_id, source) ──
     print("Upserting sequence metadata …", file=sys.stderr)
     upsert_sequence_metadata(cur, all_records)
+
+    # ── Load harmonised drug vocabulary ──
+    if not args.skip_harmonise:
+        print("\nLoading harmonised drug vocabulary …", file=sys.stderr)
+        load_harmonise(cur)
 
     conn.commit()
     cur.close()
