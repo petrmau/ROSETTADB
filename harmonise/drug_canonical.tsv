@@ -1,0 +1,168 @@
+canonical_name	is_combination	components	context	card_abbrev	atc_code	inchikey	pubchem_cid	chebi_id	sources
+amikacin	False		clinical	AMK					card|ncbi|resfinder
+aminoglycoside	False		clinical						ncbi
+amoxicillin	False		clinical	AMX					card|resfinder
+amoxicillin+clavulanic acid	True	amoxicillin|clavulanic acid	clinical						resfinder
+ampicillin	False		clinical						resfinder
+ampicillin+clavulanic acid	True	ampicillin|clavulanic acid	clinical						resfinder
+apramycin	False		clinical						ncbi|resfinder
+arbekacin	False		clinical						resfinder
+astromicin	False		clinical						resfinder
+avibactam	False		inhibitor	AVI					card|ncbi
+avilamycin	False		veterinary						ncbi
+azithromycin	False		clinical	AZM					card|ncbi|resfinder
+aztreonam	False		clinical	ATM					card|resfinder
+bacitracin	False		clinical						ncbi
+bedaquiline	False		antituberculosis	BDQ					card|resfinder
+beta-lactam	False		clinical						ncbi
+bleomycin	False		non_therapeutic						ncbi|resfinder
+butiromycin	False		clinical						resfinder
+butirosin	False		clinical						resfinder
+capreomycin	False		antituberculosis	CAP					card|ncbi|resfinder
+carbapenem	False		clinical						ncbi
+carbomycin	False		veterinary						resfinder
+cefazolin	False		clinical						resfinder
+cefepime	False		clinical						resfinder
+cefepime-taniborbactam	False		clinical						ncbi
+cefiderocol	False		clinical						ncbi
+cefixime	False		clinical						resfinder
+cefotaxime	False		clinical						resfinder
+cefotaxime+clavulanic acid	True	cefotaxime|clavulanic acid	clinical						resfinder
+cefoxitin	False		clinical						resfinder
+ceftaroline	False		clinical						ncbi|resfinder
+ceftazidime	False		clinical	CEF					card|resfinder
+ceftazidime+avibactam	True	ceftazidime|avibactam	clinical						resfinder
+ceftazidime-avibactam	False		clinical	CZA					card
+ceftibuten-avibactam	False		clinical						ncbi
+ceftriaxone	False		clinical						resfinder
+cefuroxime	False		clinical						resfinder
+cephalosporin	False		clinical						ncbi
+cephalothin	False		clinical						ncbi|resfinder
+chloramphenicol	False		clinical	CHL					card|ncbi|resfinder
+ciprofloxacin	False		clinical	CIP					card|resfinder
+clarithromycin	False		clinical	CLR					card|ncbi
+clindamycin	False		clinical	CLI					card|ncbi|resfinder
+clofazimine	False		antituberculosis	CFZ					card|resfinder
+colistin	False		clinical	CST					card|ncbi|resfinder
+d-cycloserine	False		antituberculosis	DCS					card|resfinder
+dalfopristin	False		clinical						resfinder
+dapsone	False		clinical	DAO					card
+daptomycin	False		clinical	DAP					card|ncbi
+delamanid	False		antituberculosis	DLM					card
+dibekacin	False		clinical						resfinder
+doxycycline	False		clinical						ncbi|resfinder
+edeine	False		clinical	EDN					card
+efflux	False		clinical						ncbi
+elfamycin	False		clinical	ELF					card
+enacyloxin iia	False		clinical	ENC					card
+enrofloxacin	False		clinical	ENR					card
+ertapenem	False		clinical						resfinder
+erythromycin	False		clinical	ERY					card|ncbi|resfinder
+ethambutol	False		antituberculosis	EMB					card|resfinder
+ethambutol & capreomycin	False		clinical	EMCM					card
+ethionamide	False		antituberculosis	ETO					card|resfinder
+florfenicol	False		clinical						ncbi|resfinder
+fluoroquinolone	False		clinical						resfinder
+fortimicin	False		clinical						resfinder
+fosfomycin	False		clinical	FOF					card|ncbi|resfinder
+fusidic acid	False		clinical	FA					card|ncbi|resfinder
+g418	False		research_tool	G418					card|resfinder
+ge2270a	False		clinical	GE2A					card
+gentamicin	False		clinical	GEN					card|ncbi|resfinder
+gentamicin c	False		clinical	GENC					card|resfinder
+hygromycin	False		clinical						ncbi|resfinder
+hygromycin b	False		clinical	HGM					card
+imipenem	False		clinical	IPM					card|resfinder
+isepamicin	False		clinical						resfinder
+isoniazid	False		antituberculosis	INH					card|resfinder
+kanamycin	False		clinical	KAN					card|ncbi|resfinder
+kanamycin a	False		clinical						resfinder
+kasugamycin	False		clinical	KAS					card|ncbi|resfinder
+kirromycin	False		clinical	KIR					card
+levofloxacin	False		clinical	LEV					card
+lincomycin	False		clinical						ncbi|resfinder
+lincosamide	False		clinical						ncbi
+linezolid	False		clinical	LZD					card|ncbi|resfinder
+lividomycin	False		clinical						resfinder
+lysocin (e)	False		clinical	LYS					card
+macrolide	False		clinical						ncbi
+maduramicin	False		veterinary						ncbi|resfinder
+meropenem	False		clinical						resfinder
+meticillin	False		clinical						ncbi
+metronidazole	False		clinical	MTZ					card|resfinder
+minocycline	False		clinical						ncbi|resfinder
+moxifloxacin	False		clinical	MXF					card
+mupirocin	False		clinical	MUP					card|ncbi|resfinder
+nalidixic acid	False		clinical						resfinder
+narasin	False		veterinary						ncbi|resfinder
+neomycin	False		clinical	NEO					card|resfinder
+netilmicin	False		clinical						resfinder
+nitrofurantoin	False		clinical	NIT					card
+nitroimidazole	False		clinical						ncbi
+ofloxacin	False		clinical	OFX					card
+oleandomycin	False		clinical						ncbi|resfinder
+ostreogrycin	False		veterinary						ncbi
+oxazolidinone	False		clinical	OXZ					card|ncbi
+pactamycin	False		clinical	PAC					card
+para-aminosalicylic acid	False		antituberculosis	PAS					card|resfinder
+paromomycin	False		clinical	PAR					card|ncbi|resfinder
+penicillin	False		clinical						resfinder
+perchlozone	False		clinical	PCL					card
+phenicol	False		clinical						ncbi
+piperacillin	False		clinical						resfinder
+piperacillin+clavulanic acid	True	piperacillin|clavulanic acid	clinical						resfinder
+piperacillin+tazobactam	True	piperacillin|tazobactam	clinical						resfinder
+plazomicin	False		clinical						ncbi
+pleuromutilin	False		clinical	PLM					card|ncbi
+pristinamycin	False		clinical						ncbi
+pristinamycin ia	False		veterinary						resfinder
+pristinamycin iia	False		veterinary						resfinder
+prothionamide	False		antituberculosis	PTO					card
+pulvomycin	False		clinical	PLV					card
+pyrazinamide	False		antituberculosis	PZA					card|resfinder
+quaternary ammonium	False		biocide						ncbi
+quinolone	False		clinical						ncbi
+quinupristin	False		clinical						resfinder
+quinupristin+dalfopristin	True	quinupristin|dalfopristin	clinical						resfinder
+retapamulin	False		clinical						ncbi
+ribostamycin	False		clinical						ncbi|resfinder
+rifabutin	False		clinical	RFB					card
+rifampicin	False		antituberculosis	RIF					card|ncbi|resfinder
+rifamycin	False		clinical						ncbi
+salinomycin	False		veterinary						ncbi|resfinder
+sisomicin	False		clinical						ncbi|resfinder
+spectinomycin	False		clinical	SPT					card|ncbi|resfinder
+spiramycin	False		clinical						ncbi|resfinder
+streptogramin	False		clinical						ncbi
+streptogramin a	False		clinical						ncbi
+streptogramin b	False		clinical						ncbi
+streptomycin	False		clinical	STR					card|ncbi|resfinder
+streptothricin	False		clinical						ncbi
+sulfamethoxazole	False		clinical						resfinder
+sulfonamide	False		clinical						ncbi
+taniborbactam	False		inhibitor						ncbi
+tedizolid	False		clinical						ncbi
+teicoplanin	False		clinical						resfinder
+telithromycin	False		clinical						ncbi|resfinder
+temocillin	False		clinical						resfinder
+tetracenomycin	False		clinical						ncbi
+tetracycline	False		clinical	TET					card|ncbi|resfinder
+thiamphenicol	False		clinical						ncbi
+thiostrepton	False		veterinary						ncbi
+tiamulin	False		veterinary						ncbi|resfinder
+ticarcillin	False		clinical						resfinder
+ticarcillin+clavulanic acid	True	ticarcillin|clavulanic acid	clinical						resfinder
+tigecycline	False		clinical						ncbi|resfinder
+tobramycin	False		clinical	TOB					card|ncbi|resfinder
+triclosan	False		biocide	TRC					card
+trimethoprim	False		clinical	TMP					card|ncbi|resfinder
+tylosin	False		veterinary	TYL					card|ncbi|resfinder
+vancomycin	False		clinical	VAN					card|ncbi|resfinder
+vernamycin b	False		clinical						ncbi
+viomycin	False		antituberculosis	VIO					card|ncbi
+virginiamycin	False		veterinary						ncbi
+virginiamycin m	False		veterinary						ncbi|resfinder
+virginiamycin s	False		veterinary						resfinder
+xeruborbactam	False		inhibitor						ncbi
+zoliflodacin	False		clinical	ZOL					card
+zorbamycin	False		clinical						ncbi

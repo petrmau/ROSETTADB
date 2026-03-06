@@ -1,0 +1,172 @@
+canonical_drug	canonical_class	aro_accession	category	source
+amikacin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+aminoglycoside	aminoglycoside antibiotic	ARO:3000369	antibiotic	ncbi
+apramycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+arbekacin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+astromicin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+butiromycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+butirosin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+capreomycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+dibekacin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+fortimicin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+g418	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+gentamicin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+gentamicin c	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+hygromycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+hygromycin b	aminoglycoside antibiotic	ARO:3000369	antibiotic	curated
+isepamicin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+kanamycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+kanamycin a	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+kasugamycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+lividomycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+neomycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+netilmicin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+paromomycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+plazomicin	aminoglycoside antibiotic	ARO:3000369	antibiotic	ncbi
+ribostamycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+sisomicin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+spectinomycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	ncbi
+streptomycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+tobramycin	aminoglycoside antibiotic	ARO:3000369	antibiotic	resfinder
+bacitracin	bacitracin	ARO:3000369	antibiotic	ncbi
+amoxicillin	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+amoxicillin+clavulanic acid	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+ampicillin	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+ampicillin+clavulanic acid	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+avibactam	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder_combination_component
+aztreonam	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+beta-lactam	beta-lactam antibiotic	ARO:3000007	antibiotic	ncbi
+carbapenem	beta-lactam antibiotic	ARO:3000007	antibiotic	ncbi
+cefazolin	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+cefepime	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+cefepime-taniborbactam	beta-lactam antibiotic	ARO:3000007	antibiotic	ncbi
+cefiderocol	beta-lactam antibiotic	ARO:3000007	antibiotic	ncbi
+cefixime	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+cefotaxime	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+cefotaxime+clavulanic acid	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+cefoxitin	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+ceftaroline	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+ceftazidime	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+ceftazidime+avibactam	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+ceftibuten-avibactam	beta-lactam antibiotic	ARO:3000007	antibiotic	ncbi
+ceftriaxone	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+cefuroxime	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+cephalosporin	beta-lactam antibiotic	ARO:3000007	antibiotic	ncbi
+cephalothin	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+clavulanic acid	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder_combination_component
+ertapenem	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+imipenem	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+meropenem	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+meticillin	beta-lactam antibiotic	ARO:3000007	antibiotic	ncbi
+penicillin	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+piperacillin	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+piperacillin+clavulanic acid	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+piperacillin+tazobactam	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+taniborbactam	beta-lactam antibiotic	ARO:3000007	antibiotic	ncbi
+tazobactam	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder_combination_component
+temocillin	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+ticarcillin	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+ticarcillin+clavulanic acid	beta-lactam antibiotic	ARO:3000007	antibiotic	resfinder
+xeruborbactam	beta-lactam antibiotic	ARO:3000007	antibiotic	ncbi
+bleomycin	bleomycin	ARO:3000369	non_therapeutic	ncbi
+zorbamycin	bleomycin	ARO:3000369	non_therapeutic	ncbi
+d-cycloserine	cycloserine-like antibiotic	ARO:3000600	antibiotic	resfinder
+trimethoprim	diaminopyrimidine antibiotic	ARO:3000281	antibiotic	ncbi
+bedaquiline	diarylquinoline antibiotic	ARO:3000368	antibiotic	resfinder
+efflux	efflux	 	resistance_mechanism	ncbi
+elfamycin	elfamycin antibiotic	ARO:3000369	antibiotic	curated
+enacyloxin iia	elfamycin antibiotic	ARO:3000369	antibiotic	curated
+ge2270a	elfamycin antibiotic	ARO:3000369	antibiotic	curated
+kirromycin	elfamycin antibiotic	ARO:3000369	antibiotic	curated
+pulvomycin	elfamycin antibiotic	ARO:3000369	antibiotic	curated
+ethambutol	ethambutol	ARO:3000609	antibiotic	resfinder
+enrofloxacin	fluoroquinolone antibiotic	ARO:3000150	antibiotic	curated
+levofloxacin	fluoroquinolone antibiotic	ARO:3000150	antibiotic	curated
+moxifloxacin	fluoroquinolone antibiotic	ARO:3000150	antibiotic	curated
+ofloxacin	fluoroquinolone antibiotic	ARO:3000150	antibiotic	curated
+fusidic acid	fusidane antibiotic	ARO:3000282	antibiotic	resfinder
+bleomycin	glycopeptide antibiotic	ARO:3000166	antibiotic	resfinder
+teicoplanin	glycopeptide antibiotic	ARO:3000166	antibiotic	resfinder
+vancomycin	glycopeptide antibiotic	ARO:3000166	antibiotic	resfinder
+maduramicin	ionophore with antibiotic activity	ARO:3000603	veterinary_ionophore	resfinder
+narasin	ionophore with antibiotic activity	ARO:3000603	veterinary_ionophore	resfinder
+salinomycin	ionophore with antibiotic activity	ARO:3000603	veterinary_ionophore	resfinder
+isoniazid	isonicotinic acid hydrazide	ARO:3000604	antibiotic	resfinder
+clindamycin	lincosamide antibiotic	ARO:3000079	antibiotic	resfinder
+lincomycin	lincosamide antibiotic	ARO:3000079	antibiotic	resfinder
+lincosamide	lincosamide antibiotic	ARO:3000079	antibiotic	ncbi
+daptomycin	lipopeptide antibiotic	ARO:3000369	antibiotic	ncbi
+azithromycin	macrolide antibiotic	ARO:3000054	antibiotic	resfinder
+carbomycin	macrolide antibiotic	ARO:3000054	antibiotic	resfinder
+clarithromycin	macrolide antibiotic	ARO:3000054	antibiotic	ncbi
+erythromycin	macrolide antibiotic	ARO:3000054	antibiotic	resfinder
+macrolide	macrolide antibiotic	ARO:3000054	antibiotic	ncbi
+oleandomycin	macrolide antibiotic	ARO:3000054	antibiotic	resfinder
+spiramycin	macrolide antibiotic	ARO:3000054	antibiotic	resfinder
+telithromycin	macrolide antibiotic	ARO:3000054	antibiotic	resfinder
+tylosin	macrolide antibiotic	ARO:3000054	antibiotic	resfinder
+mupirocin	mupirocin-like antibiotic	ARO:3000369	antibiotic	resfinder
+nitrofurantoin	nitrofuran antibiotic	ARO:3000369	antibiotic	curated
+delamanid	nitroimidazole antibiotic	ARO:3000229	antibiotic	curated
+metronidazole	nitroimidazole antibiotic	ARO:3000229	antibiotic	resfinder
+nitroimidazole	nitroimidazole antibiotic	ARO:3000229	antibiotic	ncbi
+avilamycin	orthosomycin antibiotic	ARO:3000369	antibiotic	ncbi
+linezolid	oxazolidinone antibiotic	ARO:3000219	antibiotic	resfinder
+oxazolidinone	oxazolidinone antibiotic	ARO:3000219	antibiotic	curated
+tedizolid	oxazolidinone antibiotic	ARO:3000219	antibiotic	curated
+pactamycin	pactamycin-like antibiotic	ARO:3000369	antibiotic	curated
+colistin	peptide antibiotic	ARO:3000369	antibiotic	resfinder
+edeine	peptide antibiotic	ARO:3000369	antibiotic	curated
+lysocin (e)	peptide antibiotic	ARO:3000369	antibiotic	curated
+chloramphenicol	phenicol antibiotic	ARO:3000124	antibiotic	resfinder
+florfenicol	phenicol antibiotic	ARO:3000124	antibiotic	resfinder
+phenicol	phenicol antibiotic	ARO:3000124	antibiotic	ncbi
+thiamphenicol	phenicol antibiotic	ARO:3000124	antibiotic	curated
+fosfomycin	phosphonic acid antibiotic	ARO:3000263	antibiotic	resfinder
+pleuromutilin	pleuromutilin antibiotic	ARO:3000369	antibiotic	ncbi
+retapamulin	pleuromutilin antibiotic	ARO:3000369	antibiotic	curated
+tiamulin	pleuromutilin antibiotic	ARO:3000369	antibiotic	resfinder
+pyrazinamide	pyrazinamide	ARO:3000608	antibiotic	resfinder
+quaternary ammonium	quaternary ammonium compound	 	biocide	ncbi
+triclosan	quaternary ammonium compound	 	biocide	curated
+ciprofloxacin	quinolone antibiotic	ARO:3000282	antibiotic	resfinder
+fluoroquinolone	quinolone antibiotic	ARO:3000282	antibiotic	resfinder
+nalidixic acid	quinolone antibiotic	ARO:3000282	antibiotic	resfinder
+quinolone	quinolone antibiotic	ARO:3000282	antibiotic	ncbi
+rifabutin	rifamycin antibiotic	ARO:3000169	antibiotic	curated
+rifampicin	rifamycin antibiotic	ARO:3000169	antibiotic	resfinder
+rifamycin	rifamycin antibiotic	ARO:3000169	antibiotic	ncbi
+clofazimine	riminophenazine antibiotic	ARO:3000369	antibiotic	curated
+para-aminosalicylic acid	salicylic acid antibiotic	ARO:3000605	antibiotic	resfinder
+dalfopristin	streptogramin A antibiotic	ARO:3000060	antibiotic	resfinder
+pristinamycin iia	streptogramin A antibiotic	ARO:3000060	antibiotic	resfinder
+quinupristin	streptogramin A antibiotic	ARO:3000060	antibiotic	resfinder_combination_component
+quinupristin+dalfopristin	streptogramin A antibiotic	ARO:3000060	antibiotic	resfinder
+streptogramin a	streptogramin A antibiotic	ARO:3000060	antibiotic	curated
+virginiamycin m	streptogramin A antibiotic	ARO:3000060	antibiotic	resfinder
+pristinamycin ia	streptogramin B antibiotic	ARO:3000061	antibiotic	resfinder
+quinupristin	streptogramin B antibiotic	ARO:3000061	antibiotic	resfinder
+streptogramin b	streptogramin B antibiotic	ARO:3000061	antibiotic	curated
+vernamycin b	streptogramin B antibiotic	ARO:3000061	antibiotic	curated
+virginiamycin s	streptogramin B antibiotic	ARO:3000061	antibiotic	resfinder
+ostreogrycin	streptogramin antibiotic	ARO:3000059	antibiotic	curated
+pristinamycin	streptogramin antibiotic	ARO:3000059	antibiotic	curated
+streptogramin	streptogramin antibiotic	ARO:3000059	antibiotic	ncbi
+virginiamycin	streptogramin antibiotic	ARO:3000059	antibiotic	curated
+streptothricin	streptothricin antibiotic	ARO:3000369	antibiotic	ncbi
+sulfamethoxazole	sulfonamide antibiotic	ARO:3000282	antibiotic	resfinder
+sulfonamide	sulfonamide antibiotic	ARO:3000282	antibiotic	ncbi
+trimethoprim	sulfonamide antibiotic	ARO:3000282	antibiotic	resfinder
+dapsone	sulphone antibiotic	ARO:3000369	antibiotic	curated
+tetracenomycin	tetracenomycin antibiotic	ARO:3000369	antibiotic	ncbi
+doxycycline	tetracycline antibiotic	ARO:3000168	antibiotic	resfinder
+minocycline	tetracycline antibiotic	ARO:3000168	antibiotic	resfinder
+tetracycline	tetracycline antibiotic	ARO:3000168	antibiotic	resfinder
+tigecycline	tetracycline antibiotic	ARO:3000168	antibiotic	resfinder
+ethionamide	thioamide antibiotic	ARO:3000607	antibiotic	resfinder
+perchlozone	thioamide antibiotic	ARO:3000607	antibiotic	curated
+prothionamide	thioamide antibiotic	ARO:3000607	antibiotic	curated
+thiostrepton	thiostrepton	ARO:3000369	antibiotic	ncbi
+capreomycin	tuberactinomycin	ARO:3000369	antibiotic	ncbi
+viomycin	tuberactinomycin	ARO:3000369	antibiotic	ncbi
+zoliflodacin	zoliflodacin-like antibiotic	ARO:3000369	antibiotic	curated
