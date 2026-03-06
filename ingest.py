@@ -770,7 +770,32 @@ def main():
                     help="Skip loading harmonise/ drug vocabulary tables")
     ap.add_argument("--skip-links", action="store_true",
                     help="Skip populating sequence_drug_class / sequence_drug link tables")
+    ap.add_argument("--harmonise-only", action="store_true",
+                    help="Skip FASTA parsing; only reload harmonise/ tables and re-create "
+                         "sequence links (requires sequences already in DB)")
     args = ap.parse_args()
+
+    # ── Connect to DB (needed for all paths) ──
+    print(f"\nConnecting to: {args.dsn}", file=sys.stderr)
+    conn = psycopg2.connect(args.dsn)
+    conn.autocommit = False
+    cur = conn.cursor()
+
+    if args.harmonise_only:
+        print("Applying schema (new tables only) …", file=sys.stderr)
+        with open(args.schema) as fh:
+            cur.execute(fh.read())
+        print("\nReloading harmonised drug vocabulary …", file=sys.stderr)
+        load_harmonise(cur)
+        print("\nRepopulating sequence → drug class / drug links …", file=sys.stderr)
+        # Truncate and re-fill so stale rows from old vocabulary are removed
+        cur.execute("TRUNCATE amr.sequence_drug_class, amr.sequence_drug")
+        populate_sequence_links(cur)
+        conn.commit()
+        cur.close()
+        conn.close()
+        print("\nDone (harmonise-only)!", file=sys.stderr)
+        return
 
     # ── Load auxiliary metadata ──
     print("Loading NCBI metadata …", file=sys.stderr)
@@ -814,12 +839,7 @@ def main():
     representatives = cluster_records(all_records)
     print(f"Unique clusters (100% id): {len(representatives)}", file=sys.stderr)
 
-    # ── Connect to DB and load schema ──
-    print(f"\nConnecting to: {args.dsn}", file=sys.stderr)
-    conn = psycopg2.connect(args.dsn)
-    conn.autocommit = False
-    cur = conn.cursor()
-
+    # ── Connect to DB and load schema (normal full-ingest path) ──
     print("Applying schema …", file=sys.stderr)
     with open(args.schema) as fh:
         cur.execute(fh.read())

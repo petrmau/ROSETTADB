@@ -141,6 +141,7 @@ Optional flags:
 | `--schema` | `schema.sql` | DDL file path |
 | `--skip-harmonise` | — | Skip loading harmonised drug vocabulary tables |
 | `--skip-links` | — | Skip populating `sequence_drug_class` / `sequence_drug` tables |
+| `--harmonise-only` | — | Skip FASTA parsing; only reload `harmonise/` TSVs and re-create sequence links (sequences must already be in DB) |
 
 ## Useful queries
 
