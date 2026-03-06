@@ -91,7 +91,7 @@
   },
   "cefazolin": {
     "pubchem_cid": "33255",
-    "inchikey": "MLYYVTUWGNIJIB-CQSZACIVSA-N",
+    "inchikey": "MKUXAQIIEYXUQM-GBOIULQQSA-N",
     "chebi_id": "CHEBI:474053",
     "atc_code": "J01DB04"
   },
@@ -498,8 +498,8 @@
     "atc_code": "J01XB02"
   },
   "prothionamide": {
-    "pubchem_cid": "14052",
-    "inchikey": "AEOCXXJPGCBFJA-UHFFFAOYSA-N",
+    "pubchem_cid": "456986",
+    "inchikey": "LFULEKSKNZEWOE-UHFFFAOYSA-N",
     "chebi_id": "CHEBI:8406",
     "atc_code": "J04AD02"
   },
@@ -961,9 +961,9 @@
   },
   "fortimicin": {
     "pubchem_cid": "72579",
-    "inchikey": "",
+    "inchikey": "BSMOLWBDHLCNLU-PWPDDNHESA-N",
     "chebi_id": "",
-    "atc_code": ""
+    "atc_code": "J01GB13"
   },
   "gentamicin c": {
     "pubchem_cid": "3467",
@@ -1058,7 +1058,7 @@
   "rifamycin": {
     "pubchem_cid": "6324616",
     "inchikey": "HJYYPODYNSCCOU-ODRIEIDWSA-N",
-    "chebi_id": "CHEBI:28077",
+    "chebi_id": "",
     "atc_code": ""
   },
   "streptogramin": {
@@ -1092,7 +1092,7 @@
     "atc_code": ""
   },
   "ticarcillin": {
-    "pubchem_cid": "36294",
+    "pubchem_cid": "",
     "inchikey": "OHKOGUYZJAOKMF-UHFFFAOYSA-N",
     "chebi_id": "CHEBI:9607",
     "atc_code": "J01CA13"

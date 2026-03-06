@@ -21,7 +21,7 @@ butirosin	False		clinical			KWIUHFFTVRNATP-NJFSPNSNSA-N	33042		resfinder
 capreomycin	False		antituberculosis	CAP	J04AB30	BBBMCUHZNLZBSF-NJMRJVPJSA-N	9548704	CHEBI:3286	card|ncbi|resfinder
 carbapenem	False		clinical						ncbi
 carbomycin	False		veterinary			MLYYVTUWGNIJIB-MHZLTWQESA-N	5280912		resfinder
-cefazolin	False		clinical		J01DB04	MLYYVTUWGNIJIB-CQSZACIVSA-N	33255	CHEBI:474053	resfinder
+cefazolin	False		clinical		J01DB04	MKUXAQIIEYXUQM-GBOIULQQSA-N	33255	CHEBI:474053	resfinder
 cefepime	False		clinical		J01DE01	HVFLCNVBZFFHBT-ZKDACBOMSA-N	5479519	CHEBI:88226	resfinder
 cefepime-taniborbactam	False		clinical						ncbi
 cefiderocol	False		clinical		J01DI02	ODKZBOTJWJMWSP-HKUYNNGSSA-N	2727067		ncbi
@@ -64,7 +64,7 @@ ethambutol & capreomycin	True	ethambutol|capreomycin	clinical	EMCM					card
 ethionamide	False		antituberculosis	ETO	J04AD01	AEOCXXJPGCBFJA-UHFFFAOYSA-N	14052	CHEBI:4879	card|resfinder
 florfenicol	False		clinical		QJ01BA93	AYIRNRDRBQBKNY-ZETCQYMHSA-N	122767	CHEBI:76072	ncbi|resfinder
 fluoroquinolone	False		clinical						resfinder
-fortimicin	False		clinical				72579		resfinder
+fortimicin	False		clinical		J01GB13	BSMOLWBDHLCNLU-PWPDDNHESA-N	72579		resfinder
 fosfomycin	False		clinical	FOF	J01XX01	YIYMPDZRHKOZEC-UFYCRDLUSA-N	446987	CHEBI:422767	card|ncbi|resfinder
 fusidic acid	False		clinical	FA	J01XC01	IECPWNUMDGFDKC-MZJAQBGESA-N	3000226	CHEBI:10119	card|ncbi|resfinder
 g418	False		research_tool	G418		BRZYSWJRMPGDNX-EHCMMZGTSA-N	3930	CHEBI:48923	card|resfinder
@@ -118,7 +118,7 @@ pleuromutilin	False		clinical	PLM		RLYWBDLHSYMHPA-JKFXFKPESA-N	9908089		card|ncb
 pristinamycin	False		clinical		J01FG01		5280951		ncbi
 pristinamycin ia	False		veterinary				14969363		resfinder
 pristinamycin iia	False		veterinary				5280562		resfinder
-prothionamide	False		antituberculosis	PTO	J04AD02	AEOCXXJPGCBFJA-UHFFFAOYSA-N	14052	CHEBI:8406	card
+prothionamide	False		antituberculosis	PTO	J04AD02	LFULEKSKNZEWOE-UHFFFAOYSA-N	456986	CHEBI:8406	card
 pulvomycin	False		clinical	PLV		YVXJMHZAUQMFIN-UHFFFAOYSA-N	5282481		card
 pyrazinamide	False		antituberculosis	PZA	J04AK01	IPEHBUMCGVEMRF-UHFFFAOYSA-N	1046	CHEBI:45285	card|resfinder
 quaternary ammonium	False		biocide						ncbi
@@ -129,7 +129,7 @@ retapamulin	False		clinical		D06AX13	JUVIOZPCNVDEDE-PZKOVRKGSA-N	6918506	CHEBI:6
 ribostamycin	False		clinical			NSKGQURZWSPSBC-AVBVIJFHSA-N	34090	CHEBI:8921	ncbi|resfinder
 rifabutin	False		clinical	RFB	J04AB04	ATEBXHFBFRCZMA-VIFPVBQESA-N	5282452	CHEBI:45185	card
 rifampicin	False		antituberculosis	RIF	J04AB02	JQXXHWHPUNPDRT-WHAZDDICSA-N	5381226	CHEBI:28077	card|ncbi|resfinder
-rifamycin	False		clinical			HJYYPODYNSCCOU-ODRIEIDWSA-N	6324616	CHEBI:28077	ncbi
+rifamycin	False		clinical			HJYYPODYNSCCOU-ODRIEIDWSA-N	6324616		ncbi
 salinomycin	False		veterinary		QP51AH06	GBDZRXLBXAFVQN-GBROCHHJSA-N	5282507		ncbi|resfinder
 sisomicin	False		clinical		J01GB08	URWAJWIAIPFPJE-NUMRIWBASA-N	32154	CHEBI:9139	ncbi|resfinder
 spectinomycin	False		clinical	SPT	J01XX04	UNFWWIHTNXNPBV-WXKVUWSESA-N	60051	CHEBI:9230	card|ncbi|resfinder
@@ -152,7 +152,7 @@ tetracycline	False		clinical	TET	J01AA07	OFVLGDICTFRJMM-WESIUVDSSA-N	54675776	CH
 thiamphenicol	False		clinical		J01BA02	OTVAEFIXJLOWRX-NXEZZACHSA-N	9586	CHEBI:9588	ncbi
 thiostrepton	False		veterinary			ZUHMCGCMKJZUTR-QNDIIFBFSA-N	16218413	CHEBI:9617	ncbi
 tiamulin	False		veterinary		QJ01XQ02	VXMJXGBPBKJIMQ-UQYMMIHISA-N	5386092	CHEBI:9615	ncbi|resfinder
-ticarcillin	False		clinical		J01CA13	OHKOGUYZJAOKMF-UHFFFAOYSA-N	36294	CHEBI:9607	resfinder
+ticarcillin	False		clinical		J01CA13	OHKOGUYZJAOKMF-UHFFFAOYSA-N		CHEBI:9607	resfinder
 ticarcillin+clavulanic acid	True	ticarcillin|clavulanic acid	clinical						resfinder
 tigecycline	False		clinical		J01AA12	LKPOLBGBRDGVEO-FYBDWKIDSA-N	5282044	CHEBI:149681	ncbi|resfinder
 tobramycin	False		clinical	TOB	J01GB01	NLVFBUXFDBBNBW-PBSUHMDJSA-N	36294	CHEBI:28864	card|ncbi|resfinder
