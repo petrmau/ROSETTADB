@@ -40,6 +40,7 @@ DRUG_TSV            = HARMONISE / "drug_canonical.tsv"
 DRUG_ALIAS_TSV      = HARMONISE / "drug_alias.tsv"
 DRUG_CLASS_MEMBER_TSV = HARMONISE / "drug_class_member.tsv"
 GENE_DRUG_LINK_TSV  = HARMONISE / "gene_drug_link.tsv"
+CARD_GENE_CLASS_TSV = HARMONISE / "card_gene_class.tsv"
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -609,6 +610,38 @@ def load_harmonise(cur):
             VALUES %s
         """, data)
         print(f"  gene_drug_link: {len(data)} rows", file=sys.stderr)
+
+    # ── card_gene_class ──
+    if CARD_GENE_CLASS_TSV.exists():
+        with open(CARD_GENE_CLASS_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        data = [
+            (
+                r["aro_accession"].strip(),
+                r["gene_name"].strip(),
+                _none(r.get("card_short_name", "").strip()),
+                _none(r.get("gene_family", "").strip()),
+                _none(r.get("resistance_mechanism", "").strip()),
+                r["drug_class_raw"].strip(),
+                r["canonical_class"].strip(),
+            )
+            for r in rows
+            if r.get("aro_accession", "").strip() and r.get("canonical_class", "").strip()
+        ]
+        execute_values(cur, """
+            INSERT INTO amr.card_gene_class
+                (aro_accession, gene_name, card_short_name,
+                 gene_family, resistance_mechanism,
+                 drug_class_raw, canonical_class)
+            VALUES %s
+            ON CONFLICT (aro_accession, canonical_class) DO UPDATE SET
+                gene_name            = EXCLUDED.gene_name,
+                card_short_name      = EXCLUDED.card_short_name,
+                gene_family          = EXCLUDED.gene_family,
+                resistance_mechanism = EXCLUDED.resistance_mechanism,
+                drug_class_raw       = EXCLUDED.drug_class_raw
+        """, data)
+        print(f"  card_gene_class: {len(data)} rows", file=sys.stderr)
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────

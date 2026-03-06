@@ -53,3 +53,13 @@ pactamycin-like antibiotic	ARO:3000369			PAC		antibiotic	e.g. pactamycin; transl
 macrocyclic antibiotic	ARO:3000369			 		antibiotic	e.g. fidaxomicin; CARD has this class
 zoliflodacin-like antibiotic	ARO:3000369			ZOL		antibiotic	e.g. zoliflodacin; DNA gyrase inhibitor, novel class
 triazaacenaphthylene antibiotic	ARO:3000369			 		antibiotic	triclosan target class
+nucleoside antibiotic	ARO:3000034					antibiotic	e.g. capreomycin, tuberactinomycins; some overlap with tuberactinomycin class
+glycylcycline	ARO:0000042					antibiotic	e.g. tigecycline; subclass of tetracyclines in CARD
+polyamine antibiotic	ARO:3000527					antibiotic	CARD class; polyamine-based antibiotics
+thiosemicarbazone antibiotic	ARO:3007161					antibiotic	e.g. thiacetazone, perchlozone; antituberculosis
+pyrazine antibiotic	ARO:3007155					antibiotic	e.g. pyrazinamide; antituberculosis
+moenomycin antibiotic	ARO:3000687					antibiotic	e.g. moenomycin A; phosphoglycolipid; PBP glycosyltransferase inhibitor
+bicyclomycin-like antibiotic	ARO:3007150					antibiotic	e.g. bicyclomycin (bicozamycin); Rho factor inhibitor
+nybomycin-like antibiotic						antibiotic	e.g. nybomycin; quinolone-related natural product
+disinfecting agents and antiseptics	ARO:3005386					biocide	CARD broad biocide category; covers triclosan, QACs, etc.
+antibacterial free fatty acids	ARO:3003956					antibiotic	e.g. MCFA-based antibacterials; CARD-specific class

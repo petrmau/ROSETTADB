@@ -191,3 +191,25 @@ CREATE INDEX IF NOT EXISTS idx_gdl_drug     ON amr.gene_drug_link(canonical_drug
     WHERE canonical_drug_token IS NOT NULL AND canonical_drug_token <> '';
 CREATE INDEX IF NOT EXISTS idx_gdl_class    ON amr.gene_drug_link(canonical_class_token)
     WHERE canonical_class_token IS NOT NULL AND canonical_class_token <> '';
+
+-- ─────────────────────────────────────────────────────────
+-- CARD gene → canonical drug class links (from ARO graph)
+-- One row per ARO gene model × canonical drug class.
+-- Source: CARD aro_index.tsv, mapped through class_mapping.tsv.
+-- ─────────────────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS amr.card_gene_class (
+    aro_accession        TEXT NOT NULL,  -- ARO accession of the AMR gene model
+    gene_name            TEXT NOT NULL,  -- full ARO Name (e.g. CblA-1)
+    card_short_name      TEXT,           -- CARD Short Name / abbreviation
+    gene_family          TEXT,           -- AMR Gene Family label
+    resistance_mechanism TEXT,           -- e.g. antibiotic inactivation
+    drug_class_raw       TEXT NOT NULL,  -- raw CARD Drug Class string
+    canonical_class      TEXT NOT NULL
+        REFERENCES amr.drug_class(canonical_name),
+    PRIMARY KEY (aro_accession, canonical_class)
+);
+
+CREATE INDEX IF NOT EXISTS idx_cgc_aro     ON amr.card_gene_class(aro_accession);
+CREATE INDEX IF NOT EXISTS idx_cgc_class   ON amr.card_gene_class(canonical_class);
+CREATE INDEX IF NOT EXISTS idx_cgc_family  ON amr.card_gene_class(gene_family)
+    WHERE gene_family IS NOT NULL AND gene_family <> '';
