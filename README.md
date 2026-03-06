@@ -39,14 +39,31 @@ amr.drug_class_member  – 172 drug → class memberships (many-to-many);
                          provenance tracked (resfinder | ncbi | curated)
 ```
 
-### Gene → drug class links
+### Gene → drug class links (intermediate)
 
 ```
 amr.gene_drug_link     – 10 388 NCBI AMRFinderPlus gene × drug/class pairings
                          (raw class and subclass tokens + normalised canonical tokens)
-amr.card_gene_class    – 13 377 CARD ARO gene × canonical drug class links
-                         (6 440 unique gene models × 47 drug classes)
+amr.card_gene_class    – 13 361 CARD ARO gene × canonical drug class links
+                         (unique ARO models × drug classes)
 ```
+
+### Sequence → drug class / drug (final bridge tables)
+
+```
+amr.sequence_drug_class – 20 713 rows; one row per unique sequence × canonical drug class
+                          Evidence paths:
+                            CARD:      gene.aro_accession → card_gene_class → drug_class
+                            NCBI:      gene.amr_class (slash-split) → drug_class.ncbi_alias
+                                       + gene.gene_name → gene_drug_link → drug_class
+                            ResFinder: gene.drug_class text → drug_class.resfinder_alias
+                          Coverage: 99.1 % of 9 222 unique sequences
+amr.sequence_drug       –  3 376 rows; one row per unique sequence × canonical drug name
+                          (NCBI gene_name → gene_drug_link → drug)
+```
+
+These are the primary output tables answering: *"for this non-redundant sequence,
+what drug classes and antibiotics does it confer resistance to?"*
 
 ## Sequence identifier
 
@@ -123,6 +140,7 @@ Optional flags:
 | `--ncbi` | `sources/amr_finder_plus/ncbi_dataset/data/nucleotide.fna` | NCBI FASTA path |
 | `--schema` | `schema.sql` | DDL file path |
 | `--skip-harmonise` | — | Skip loading harmonised drug vocabulary tables |
+| `--skip-links` | — | Skip populating `sequence_drug_class` / `sequence_drug` tables |
 
 ## Useful queries
 
@@ -173,4 +191,40 @@ ORDER BY source, n_sequences DESC;
 
 -- Canonical metadata for a sequence across all sources
 SELECT * FROM amr.sequence_metadata WHERE jrc_id = 'JRC8214f7c788';
+
+-- All drug classes linked to a specific sequence (the main bridge table)
+SELECT sdc.canonical_class, sdc.evidence_sources
+FROM amr.sequence_drug_class sdc
+WHERE sdc.jrc_id = 'JRC8214f7c788'
+ORDER BY sdc.canonical_class;
+
+-- All drug names linked to a specific sequence
+SELECT sd.canonical_drug, sd.evidence_sources
+FROM amr.sequence_drug sd
+WHERE sd.jrc_id = 'JRC8214f7c788';
+
+-- Full join: sequence → gene name → drug class → drug, for a given class
+SELECT DISTINCT
+    sdc.jrc_id,
+    g.gene_name,
+    sdc.canonical_class,
+    d.canonical_name AS drug,
+    d.atc_code,
+    sdc.evidence_sources
+FROM amr.sequence_drug_class sdc
+JOIN amr.gene g         ON g.jrc_id = sdc.jrc_id
+LEFT JOIN amr.drug_class_member dcm ON dcm.canonical_class = sdc.canonical_class
+LEFT JOIN amr.drug d    ON d.canonical_name = dcm.canonical_drug
+WHERE sdc.canonical_class = 'aminoglycoside antibiotic'
+ORDER BY g.gene_name, d.canonical_name
+LIMIT 20;
+
+-- Coverage summary
+SELECT
+    count(DISTINCT jrc_id) FILTER (WHERE TRUE)                AS total_sequences,
+    count(DISTINCT jrc_id) FILTER (WHERE jrc_id IN
+        (SELECT jrc_id FROM amr.sequence_drug_class))         AS seqs_with_class,
+    count(DISTINCT jrc_id) FILTER (WHERE jrc_id IN
+        (SELECT jrc_id FROM amr.sequence_drug))               AS seqs_with_drug
+FROM amr.sequence;
 ```
