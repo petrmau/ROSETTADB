@@ -1,0 +1,1130 @@
+{
+  "amikacin": {
+    "pubchem_cid": "37768",
+    "inchikey": "LKCWBDHBTVXHDL-SMDDNHRTSA-N",
+    "chebi_id": "CHEBI:2637",
+    "atc_code": "J01GB06"
+  },
+  "amoxicillin": {
+    "pubchem_cid": "33613",
+    "inchikey": "LSQZJLSUYDQPKJ-NJBDSQKTSA-N",
+    "chebi_id": "CHEBI:2676",
+    "atc_code": "J01CA04"
+  },
+  "ampicillin": {
+    "pubchem_cid": "6249",
+    "inchikey": "AVKUERGKIZMTKX-NJBDSQKTSA-N",
+    "chebi_id": "CHEBI:28971",
+    "atc_code": "J01CA01"
+  },
+  "apramycin": {
+    "pubchem_cid": "3032628",
+    "inchikey": "XZNUGFQTQHRASN-XQXXSGGOSA-N",
+    "chebi_id": "CHEBI:2731",
+    "atc_code": "QJ01GB90"
+  },
+  "arbekacin": {
+    "pubchem_cid": "456012",
+    "inchikey": "MKKYBZZTJQGVCD-XTCKQBCOSA-N",
+    "chebi_id": "",
+    "atc_code": "J01GB12"
+  },
+  "astromicin": {
+    "pubchem_cid": "72579",
+    "inchikey": "BSMOLWBDHLCNLU-PWPDDNHESA-N",
+    "chebi_id": "",
+    "atc_code": "J01GB13"
+  },
+  "avilamycin": {
+    "pubchem_cid": "10096",
+    "inchikey": "RQFUZUMFPRMVDX-JXOAFFINSA-N",
+    "chebi_id": "",
+    "atc_code": "QJ01XQ01"
+  },
+  "azithromycin": {
+    "pubchem_cid": "447043",
+    "inchikey": "MQTOSJVFKKJCRP-BICOPXKESA-N",
+    "chebi_id": "CHEBI:2955",
+    "atc_code": "J01FA10"
+  },
+  "aztreonam": {
+    "pubchem_cid": "5494",
+    "inchikey": "WZPBZJONMAIEGC-WCTZXXKLSA-N",
+    "chebi_id": "CHEBI:2949",
+    "atc_code": "J01DF01"
+  },
+  "bacitracin": {
+    "pubchem_cid": "10909",
+    "inchikey": "CLKOFPMOUPERMY-SFHVURJKSA-N",
+    "chebi_id": "CHEBI:2906",
+    "atc_code": "A07AA05"
+  },
+  "bedaquiline": {
+    "pubchem_cid": "5388906",
+    "inchikey": "QUIJNHUBAXPXFS-XLJNKUFUSA-N",
+    "chebi_id": "CHEBI:71954",
+    "atc_code": "J04AK05"
+  },
+  "bleomycin": {
+    "pubchem_cid": "5460769",
+    "inchikey": "OYVAGSVQBOHSSS-UAPAGMARSA-N",
+    "chebi_id": "CHEBI:22907",
+    "atc_code": "L01DC01"
+  },
+  "butirosin": {
+    "pubchem_cid": "33042",
+    "inchikey": "KWIUHFFTVRNATP-NJFSPNSNSA-N",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "capreomycin": {
+    "pubchem_cid": "9548704",
+    "inchikey": "BBBMCUHZNLZBSF-NJMRJVPJSA-N",
+    "chebi_id": "CHEBI:3286",
+    "atc_code": "J04AB30"
+  },
+  "cefaclor": {
+    "pubchem_cid": "53025",
+    "inchikey": "QYIYFLOTGKZWKK-JKICFEMDSA-N",
+    "chebi_id": "CHEBI:3479",
+    "atc_code": "J01DC04"
+  },
+  "cefazolin": {
+    "pubchem_cid": "33255",
+    "inchikey": "MLYYVTUWGNIJIB-CQSZACIVSA-N",
+    "chebi_id": "CHEBI:474053",
+    "atc_code": "J01DB04"
+  },
+  "cefepime": {
+    "pubchem_cid": "5479519",
+    "inchikey": "HVFLCNVBZFFHBT-ZKDACBOMSA-N",
+    "chebi_id": "CHEBI:88226",
+    "atc_code": "J01DE01"
+  },
+  "cefoperazone": {
+    "pubchem_cid": "44185",
+    "inchikey": "GCFBRXLSHGKWDP-XCGNWRKASA-N",
+    "chebi_id": "CHEBI:474027",
+    "atc_code": "J01DD12"
+  },
+  "cefotaxime": {
+    "pubchem_cid": "5479543",
+    "inchikey": "AZZMGZXNTDTSME-GUJEHNGTSA-N",
+    "chebi_id": "CHEBI:3496",
+    "atc_code": "J01DD01"
+  },
+  "cefoxitin": {
+    "pubchem_cid": "441199",
+    "inchikey": "WZOZEZRFJCJXNZ-ZBFHGGJFSA-N",
+    "chebi_id": "CHEBI:3508",
+    "atc_code": "J01DC01"
+  },
+  "cefpodoxime": {
+    "pubchem_cid": "5480636",
+    "inchikey": "WYUSVOMTXWRGEK-HKGGAGESSA-N",
+    "chebi_id": "",
+    "atc_code": "J01DD13"
+  },
+  "ceftazidime": {
+    "pubchem_cid": "5481173",
+    "inchikey": "ORFOPKXBNMVMKC-DWVKKRMSSA-N",
+    "chebi_id": "CHEBI:3553",
+    "atc_code": "J01DD02"
+  },
+  "ceftriaxone": {
+    "pubchem_cid": "5479530",
+    "inchikey": "VAAUVRVFOQPIGI-SPQHTLEESA-N",
+    "chebi_id": "CHEBI:29007",
+    "atc_code": "J01DD04"
+  },
+  "cefuroxime": {
+    "pubchem_cid": "5479529",
+    "inchikey": "JFPVXVDWJQMJEE-IZRZKJBUSA-N",
+    "chebi_id": "CHEBI:3597",
+    "atc_code": "J01DC02"
+  },
+  "cephalexin": {
+    "pubchem_cid": "27447",
+    "inchikey": "ZAIPMKNFIOOWBQ-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:3535",
+    "atc_code": "J01DB01"
+  },
+  "cephalothin": {
+    "pubchem_cid": "22323",
+    "inchikey": "XIURVHNZVLADCM-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:3538",
+    "atc_code": "J01DB03"
+  },
+  "chloramphenicol": {
+    "pubchem_cid": "5959",
+    "inchikey": "WIIZWVCIJKGZOK-RKDXNWHRSA-N",
+    "chebi_id": "CHEBI:17698",
+    "atc_code": "J01BA01"
+  },
+  "ciprofloxacin": {
+    "pubchem_cid": "2764",
+    "inchikey": "MYSWGUAQZAJSOK-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:100241",
+    "atc_code": "J01MA02"
+  },
+  "clarithromycin": {
+    "pubchem_cid": "84029",
+    "inchikey": "AGOYDEPGAOXOCK-KCVZKFEFSA-N",
+    "chebi_id": "CHEBI:3732",
+    "atc_code": "J01FA09"
+  },
+  "clavulanic acid": {
+    "pubchem_cid": "5280980",
+    "inchikey": "HZZVJAQRINQKSD-PBFISZAISA-N",
+    "chebi_id": "CHEBI:48947",
+    "atc_code": ""
+  },
+  "clindamycin": {
+    "pubchem_cid": "29029",
+    "inchikey": "KDLRVYVGXIQJDK-AWPVFWJPSA-N",
+    "chebi_id": "CHEBI:3745",
+    "atc_code": "J01FF01"
+  },
+  "clofazimine": {
+    "pubchem_cid": "2802",
+    "inchikey": "WDQPAMHFFCXSNU-BGALOTTGSA-N",
+    "chebi_id": "CHEBI:3772",
+    "atc_code": "J04BA01"
+  },
+  "cloxacillin": {
+    "pubchem_cid": "6098",
+    "inchikey": "LQOLIRLGBULYKD-JKIFEVAISA-N",
+    "chebi_id": "CHEBI:3790",
+    "atc_code": "J01CF02"
+  },
+  "colistin": {
+    "pubchem_cid": "5311054",
+    "inchikey": "BXDBPUHKUJDCJB-DMJKGFBTSA-N",
+    "chebi_id": "CHEBI:37943",
+    "atc_code": "J01XB01"
+  },
+  "cycloserine": {
+    "pubchem_cid": "6234",
+    "inchikey": "DYDCUQKUCUHJBH-UWTATZPHSA-N",
+    "chebi_id": "CHEBI:16919",
+    "atc_code": "J04AB01"
+  },
+  "dapsone": {
+    "pubchem_cid": "2955",
+    "inchikey": "MQJKPEGWNLWLTK-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:4325",
+    "atc_code": "J04BA02"
+  },
+  "dalfopristin": {
+    "pubchem_cid": "5281102",
+    "inchikey": "LUGCSXFMFAFEJQ-RDKYNCKFSA-N",
+    "chebi_id": "",
+    "atc_code": "J01FG01"
+  },
+  "daptomycin": {
+    "pubchem_cid": "16134395",
+    "inchikey": "DOAKLVKFURWEDJ-RWJQBGPGSA-N",
+    "chebi_id": "CHEBI:600103",
+    "atc_code": "J01XX09"
+  },
+  "delamanid": {
+    "pubchem_cid": "6480456",
+    "inchikey": "XCFUMJSCSSIJBV-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:75250",
+    "atc_code": "J04AK06"
+  },
+  "dibekacin": {
+    "pubchem_cid": "34071",
+    "inchikey": "JJCQSGDBDPIQJO-KQYNXXCUSA-N",
+    "chebi_id": "",
+    "atc_code": "J01GB09"
+  },
+  "doripenem": {
+    "pubchem_cid": "9887089",
+    "inchikey": "AVJBPWGFOQAPRH-FWMKGIEWSA-N",
+    "chebi_id": "CHEBI:604049",
+    "atc_code": "J01DH04"
+  },
+  "doxycycline": {
+    "pubchem_cid": "54671203",
+    "inchikey": "SGKRLCUYIXIAHR-KQYNXXCUSA-N",
+    "chebi_id": "CHEBI:50845",
+    "atc_code": "J01AA02"
+  },
+  "erythromycin": {
+    "pubchem_cid": "12560",
+    "inchikey": "ULGZDMOVFRHVEP-RWJQBGPGSA-N",
+    "chebi_id": "CHEBI:42355",
+    "atc_code": "J01FA01"
+  },
+  "ertapenem": {
+    "pubchem_cid": "150610",
+    "inchikey": "JUZNIMUFDBIJCM-WLTAIBSBSA-N",
+    "chebi_id": "CHEBI:332277",
+    "atc_code": "J01DH03"
+  },
+  "ethambutol": {
+    "pubchem_cid": "14219",
+    "inchikey": "AEUTYOVWOVBAKS-UWVGGRQHSA-N",
+    "chebi_id": "CHEBI:4877",
+    "atc_code": "J04AK02"
+  },
+  "ethionamide": {
+    "pubchem_cid": "14052",
+    "inchikey": "AEOCXXJPGCBFJA-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:4879",
+    "atc_code": "J04AD01"
+  },
+  "flucloxacillin": {
+    "pubchem_cid": "21319",
+    "inchikey": "ZODDGFAZWTZOSI-PJUUJURBSA-N",
+    "chebi_id": "CHEBI:5069",
+    "atc_code": "J01CF05"
+  },
+  "florfenicol": {
+    "pubchem_cid": "122767",
+    "inchikey": "AYIRNRDRBQBKNY-ZETCQYMHSA-N",
+    "chebi_id": "CHEBI:76072",
+    "atc_code": "QJ01BA93"
+  },
+  "fosfomycin": {
+    "pubchem_cid": "446987",
+    "inchikey": "YIYMPDZRHKOZEC-UFYCRDLUSA-N",
+    "chebi_id": "CHEBI:422767",
+    "atc_code": "J01XX01"
+  },
+  "fusidic acid": {
+    "pubchem_cid": "3000226",
+    "inchikey": "IECPWNUMDGFDKC-MZJAQBGESA-N",
+    "chebi_id": "CHEBI:10119",
+    "atc_code": "J01XC01"
+  },
+  "gentamicin": {
+    "pubchem_cid": "3467",
+    "inchikey": "CEAZRRDELHUEMR-URQXQFDESA-N",
+    "chebi_id": "CHEBI:27412",
+    "atc_code": "J01GB03"
+  },
+  "hygromycin b": {
+    "pubchem_cid": "516879",
+    "inchikey": "GRRNUXAQVGOGFE-NRFANRHFSA-N",
+    "chebi_id": "CHEBI:16328",
+    "atc_code": ""
+  },
+  "imipenem": {
+    "pubchem_cid": "104838",
+    "inchikey": "ZSKVGTPCRGIANV-ZXFLCMHBSA-N",
+    "chebi_id": "CHEBI:471227",
+    "atc_code": "J01DH51"
+  },
+  "isoniazid": {
+    "pubchem_cid": "3767",
+    "inchikey": "QRXWMOHMRWLFEY-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:6030",
+    "atc_code": "J04AC01"
+  },
+  "kanamycin": {
+    "pubchem_cid": "6032",
+    "inchikey": "SBUJHOSQTJFQJX-NOAMYHISSA-N",
+    "chebi_id": "CHEBI:17730",
+    "atc_code": "J01GB04"
+  },
+  "kasugamycin": {
+    "pubchem_cid": "72459",
+    "inchikey": "IQFYYKKMVGJFEH-XLPZGREQSA-N",
+    "chebi_id": "CHEBI:6207",
+    "atc_code": ""
+  },
+  "kirromycin": {
+    "pubchem_cid": "5280439",
+    "inchikey": "PSGAPZOWAGXXEA-KQUEHRGISA-N",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "levofloxacin": {
+    "pubchem_cid": "149096",
+    "inchikey": "GSDSWSVVBLHKDQ-JTQLQIEISA-N",
+    "chebi_id": "CHEBI:63598",
+    "atc_code": "J01MA12"
+  },
+  "lincomycin": {
+    "pubchem_cid": "24083",
+    "inchikey": "OJMMVQQUTAEWLP-KIDUDLJLSA-N",
+    "chebi_id": "CHEBI:25308",
+    "atc_code": "J01FF02"
+  },
+  "linezolid": {
+    "pubchem_cid": "441401",
+    "inchikey": "TYMRLRRVMHJFTF-LLVKDONJSA-N",
+    "chebi_id": "CHEBI:63607",
+    "atc_code": "J01XX08"
+  },
+  "meropenem": {
+    "pubchem_cid": "64725",
+    "inchikey": "DMJNNHOOLUXYBV-PJLAFDUMSA-N",
+    "chebi_id": "CHEBI:43032",
+    "atc_code": "J01DH02"
+  },
+  "metronidazole": {
+    "pubchem_cid": "4173",
+    "inchikey": "ZGJADVGJIVEEGP-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:6909",
+    "atc_code": "J01XD01"
+  },
+  "minocycline": {
+    "pubchem_cid": "54675783",
+    "inchikey": "DYKFCLLONBREIL-KVUCHLLUSA-N",
+    "chebi_id": "CHEBI:50694",
+    "atc_code": "J01AA08"
+  },
+  "moxifloxacin": {
+    "pubchem_cid": "152946",
+    "inchikey": "FABPRXSRWADJSP-MEDUHNTESA-N",
+    "chebi_id": "CHEBI:63611",
+    "atc_code": "J01MA14"
+  },
+  "mupirocin": {
+    "pubchem_cid": "446596",
+    "inchikey": "MINDHVHHQZYEEK-HBBNESRFSA-N",
+    "chebi_id": "CHEBI:7025",
+    "atc_code": "D06AX09"
+  },
+  "nalidixic acid": {
+    "pubchem_cid": "4421",
+    "inchikey": "MHWLWQUZZRMNGJ-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:27419",
+    "atc_code": "J01MB02"
+  },
+  "narasin": {
+    "pubchem_cid": "5320420",
+    "inchikey": "HEBKCHPVOIAQTA-SSDOTTSWSA-N",
+    "chebi_id": "",
+    "atc_code": "QP51AH03"
+  },
+  "neomycin": {
+    "pubchem_cid": "8378",
+    "inchikey": "PGBHMTALBVVCIT-YCSHUIMJSA-N",
+    "chebi_id": "CHEBI:7508",
+    "atc_code": "J01GB05"
+  },
+  "netilmicin": {
+    "pubchem_cid": "441306",
+    "inchikey": "ZBGPYVZLYBDXKO-BZJKULRJSA-N",
+    "chebi_id": "CHEBI:7529",
+    "atc_code": "J01GB07"
+  },
+  "nitrofurantoin": {
+    "pubchem_cid": "6604200",
+    "inchikey": "NXFQHRVNIOXGAQ-YCRREMRBSA-N",
+    "chebi_id": "CHEBI:71415",
+    "atc_code": "J01XE01"
+  },
+  "norfloxacin": {
+    "pubchem_cid": "4539",
+    "inchikey": "OGJPXUAPXNRGGI-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:100246",
+    "atc_code": "J01MA06"
+  },
+  "novobiocin": {
+    "pubchem_cid": "54675769",
+    "inchikey": "YJQPYGGHAOOWIA-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:7676",
+    "atc_code": "J01XX06"
+  },
+  "ofloxacin": {
+    "pubchem_cid": "4583",
+    "inchikey": "GSDSWSVVBLHKDQ-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:7719",
+    "atc_code": "J01MA01"
+  },
+  "oleandomycin": {
+    "pubchem_cid": "5281104",
+    "inchikey": "CXFMKIBDKXMHIM-UHFFFAOYSA-N",
+    "chebi_id": "",
+    "atc_code": "J01FA05"
+  },
+  "oxacillin": {
+    "pubchem_cid": "6196",
+    "inchikey": "UWYHMGVUTGAWSP-JKIFEVAISA-N",
+    "chebi_id": "CHEBI:7809",
+    "atc_code": "J01CF04"
+  },
+  "para-aminosalicylic acid": {
+    "pubchem_cid": "4649",
+    "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:44575",
+    "atc_code": "J04AA01"
+  },
+  "paromomycin": {
+    "pubchem_cid": "165580",
+    "inchikey": "UOZODPSAJZTQNH-LSWIJEOBSA-N",
+    "chebi_id": "CHEBI:7877",
+    "atc_code": "J01GB11"
+  },
+  "penicillin g": {
+    "pubchem_cid": "5904",
+    "inchikey": "JGSARLDLIJGVTE-MBNYWOFBSA-N",
+    "chebi_id": "CHEBI:18208",
+    "atc_code": "J01CE01"
+  },
+  "penicillin v": {
+    "pubchem_cid": "6869",
+    "inchikey": "BPLBGHOLXOTWMN-MBNYWOFBSA-N",
+    "chebi_id": "CHEBI:77947",
+    "atc_code": "J01CE02"
+  },
+  "perchlozone": {
+    "pubchem_cid": "2723635",
+    "inchikey": "CWEZPGAAFADRFN-UHFFFAOYSA-N",
+    "chebi_id": "",
+    "atc_code": "J04AK08"
+  },
+  "piperacillin": {
+    "pubchem_cid": "43672",
+    "inchikey": "IVBHGBMCLDTZJU-OSIMWXROSA-N",
+    "chebi_id": "CHEBI:8232",
+    "atc_code": "J01CA12"
+  },
+  "plazomicin": {
+    "pubchem_cid": "24832829",
+    "inchikey": "XUBOMFCQGDBHNK-JTQLQIEISA-N",
+    "chebi_id": "",
+    "atc_code": "J01GB14"
+  },
+  "polymyxin b": {
+    "pubchem_cid": "49800072",
+    "inchikey": "CWPKADUBHYESAJ-CTJUUVHDSA-N",
+    "chebi_id": "",
+    "atc_code": "J01XB02"
+  },
+  "prothionamide": {
+    "pubchem_cid": "14052",
+    "inchikey": "AEOCXXJPGCBFJA-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:8406",
+    "atc_code": "J04AD02"
+  },
+  "pyrazinamide": {
+    "pubchem_cid": "1046",
+    "inchikey": "IPEHBUMCGVEMRF-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:45285",
+    "atc_code": "J04AK01"
+  },
+  "quinupristin": {
+    "pubchem_cid": "441233",
+    "inchikey": "SGEUNORQGXVARB-LBPRGKRZSA-N",
+    "chebi_id": "",
+    "atc_code": "J01FG02"
+  },
+  "retapamulin": {
+    "pubchem_cid": "6918506",
+    "inchikey": "JUVIOZPCNVDEDE-PZKOVRKGSA-N",
+    "chebi_id": "CHEBI:64045",
+    "atc_code": "D06AX13"
+  },
+  "rifabutin": {
+    "pubchem_cid": "5282452",
+    "inchikey": "ATEBXHFBFRCZMA-VIFPVBQESA-N",
+    "chebi_id": "CHEBI:45185",
+    "atc_code": "J04AB04"
+  },
+  "rifampicin": {
+    "pubchem_cid": "5381226",
+    "inchikey": "JQXXHWHPUNPDRT-WHAZDDICSA-N",
+    "chebi_id": "CHEBI:28077",
+    "atc_code": "J04AB02"
+  },
+  "rifaximin": {
+    "pubchem_cid": "6436173",
+    "inchikey": "NZCRJKRKKOLAOJ-RRKCRQDMSA-N",
+    "chebi_id": "CHEBI:87174",
+    "atc_code": "A07AA11"
+  },
+  "salinomycin": {
+    "pubchem_cid": "5282507",
+    "inchikey": "GBDZRXLBXAFVQN-GBROCHHJSA-N",
+    "chebi_id": "",
+    "atc_code": "QP51AH06"
+  },
+  "sisomicin": {
+    "pubchem_cid": "32154",
+    "inchikey": "URWAJWIAIPFPJE-NUMRIWBASA-N",
+    "chebi_id": "CHEBI:9139",
+    "atc_code": "J01GB08"
+  },
+  "spectinomycin": {
+    "pubchem_cid": "60051",
+    "inchikey": "UNFWWIHTNXNPBV-WXKVUWSESA-N",
+    "chebi_id": "CHEBI:9230",
+    "atc_code": "J01XX04"
+  },
+  "spiramycin": {
+    "pubchem_cid": "5281164",
+    "inchikey": "ACTOXUHEUCPTEW-BWHGAVFKSA-N",
+    "chebi_id": "CHEBI:9234",
+    "atc_code": "J01FA02"
+  },
+  "streptomycin": {
+    "pubchem_cid": "19649",
+    "inchikey": "UCSJYZPVAKXKNQ-HZYVHMACSA-N",
+    "chebi_id": "CHEBI:17076",
+    "atc_code": "J01GA01"
+  },
+  "sulfamethoxazole": {
+    "pubchem_cid": "5329",
+    "inchikey": "JLKIGFTWXXRPMT-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:9332",
+    "atc_code": "J01EC01"
+  },
+  "sulfadiazine": {
+    "pubchem_cid": "5215",
+    "inchikey": "SEEPANYCNGTZFG-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:9328",
+    "atc_code": "J01EC02"
+  },
+  "sulbactam": {
+    "pubchem_cid": "130313",
+    "inchikey": "BJPRPBWQDBUKBY-KGWOHFKPSA-N",
+    "chebi_id": "CHEBI:9279",
+    "atc_code": ""
+  },
+  "tazobactam": {
+    "pubchem_cid": "123630",
+    "inchikey": "LPQZKKCYTLCDGQ-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:9445",
+    "atc_code": ""
+  },
+  "teicoplanin": {
+    "pubchem_cid": "16133858",
+    "inchikey": "SOBHUZYZLFQYFK-VIFPVBQESA-N",
+    "chebi_id": "CHEBI:9514",
+    "atc_code": "J01XA02"
+  },
+  "telithromycin": {
+    "pubchem_cid": "1493482",
+    "inchikey": "LJVAJPDWBABPEJ-PNUFFHFMSA-N",
+    "chebi_id": "CHEBI:63552",
+    "atc_code": "J01FA15"
+  },
+  "tetracycline": {
+    "pubchem_cid": "54675776",
+    "inchikey": "OFVLGDICTFRJMM-WESIUVDSSA-N",
+    "chebi_id": "CHEBI:27902",
+    "atc_code": "J01AA07"
+  },
+  "thiamphenicol": {
+    "pubchem_cid": "9586",
+    "inchikey": "OTVAEFIXJLOWRX-NXEZZACHSA-N",
+    "chebi_id": "CHEBI:9588",
+    "atc_code": "J01BA02"
+  },
+  "tiamulin": {
+    "pubchem_cid": "5386092",
+    "inchikey": "VXMJXGBPBKJIMQ-UQYMMIHISA-N",
+    "chebi_id": "CHEBI:9615",
+    "atc_code": "QJ01XQ02"
+  },
+  "tigecycline": {
+    "pubchem_cid": "5282044",
+    "inchikey": "LKPOLBGBRDGVEO-FYBDWKIDSA-N",
+    "chebi_id": "CHEBI:149681",
+    "atc_code": "J01AA12"
+  },
+  "tinidazole": {
+    "pubchem_cid": "5479",
+    "inchikey": "HJORMJIFDVBMOB-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:63573",
+    "atc_code": "J01XD02"
+  },
+  "tobramycin": {
+    "pubchem_cid": "36294",
+    "inchikey": "NLVFBUXFDBBNBW-PBSUHMDJSA-N",
+    "chebi_id": "CHEBI:28864",
+    "atc_code": "J01GB01"
+  },
+  "trimethoprim": {
+    "pubchem_cid": "5578",
+    "inchikey": "QTTMOCOWUGMOPD-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:45924",
+    "atc_code": "J01EA01"
+  },
+  "tylosin": {
+    "pubchem_cid": "54680209",
+    "inchikey": "WBPYTXDJUQJLPQ-VMXHOPILSA-N",
+    "chebi_id": "CHEBI:10024",
+    "atc_code": "QJ01FA90"
+  },
+  "vancomycin": {
+    "pubchem_cid": "14969",
+    "inchikey": "MYPYJXKWCTUITO-LYRMYLQWSA-N",
+    "chebi_id": "CHEBI:28001",
+    "atc_code": "J01XA01"
+  },
+  "viomycin": {
+    "pubchem_cid": "70772",
+    "inchikey": "DKJMUIVBDZXNHD-PFYYHJMLSA-N",
+    "chebi_id": "",
+    "atc_code": "J04AB"
+  },
+  "zoliflodacin": {
+    "pubchem_cid": "135398513",
+    "inchikey": "RXOYMRGRGFZDNL-WBPXWQEISA-N",
+    "chebi_id": "",
+    "atc_code": "J01XX13"
+  },
+  "enrofloxacin": {
+    "pubchem_cid": "71188",
+    "inchikey": "VJGMBVMDGIFTEM-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:4880",
+    "atc_code": "QJ01MA90"
+  },
+  "avibactam": {
+    "pubchem_cid": "10295702",
+    "inchikey": "JTEHXIYAZYVHKE-BGZDPUMOSA-N",
+    "chebi_id": "CHEBI:85896",
+    "atc_code": ""
+  },
+  "cefiderocol": {
+    "pubchem_cid": "2727067",
+    "inchikey": "ODKZBOTJWJMWSP-HKUYNNGSSA-N",
+    "chebi_id": "",
+    "atc_code": "J01DI02"
+  },
+  "ceftaroline": {
+    "pubchem_cid": "9578130",
+    "inchikey": "ZCCIWZSDUSKDMV-WYTFXKESSA-N",
+    "chebi_id": "",
+    "atc_code": "J01DI01"
+  },
+  "dalbavancin": {
+    "pubchem_cid": "16134395",
+    "inchikey": "DOAKLVKFURWEDJ-RWJQBGPGSA-N",
+    "chebi_id": "",
+    "atc_code": "J01XA04"
+  },
+  "oritavancin": {
+    "pubchem_cid": "16130498",
+    "inchikey": "HBPDPZCFFNUUQG-FQEVSTJZSA-N",
+    "chebi_id": "",
+    "atc_code": "J01XA05"
+  },
+  "pactamycin": {
+    "pubchem_cid": "3015451",
+    "inchikey": "SXALCUOAIJPAKS-IBGZPJMESA-N",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "chlortetracycline": {
+    "pubchem_cid": "54680926",
+    "inchikey": "CYDMQBQPVICBEU-XRNKAMNCSA-N",
+    "chebi_id": "CHEBI:27983",
+    "atc_code": "J01AA03"
+  },
+  "maduramicin": {
+    "pubchem_cid": "6420009",
+    "inchikey": "BDLHFAZFQBQPOU-AXXHKUQMSA-N",
+    "chebi_id": "",
+    "atc_code": "QP51AH07"
+  },
+  "nifuratel": {
+    "pubchem_cid": "12676",
+    "inchikey": "HPNRHPKXQZSDFX-ZETCQYMHSA-N",
+    "chebi_id": "",
+    "atc_code": "G01AX05"
+  },
+  "nitrofurazone": {
+    "pubchem_cid": "5267",
+    "inchikey": "IAIWVQXQOWNYOU-UHFFFAOYSA-N",
+    "chebi_id": "",
+    "atc_code": "D09AA01"
+  },
+  "tedizolid": {
+    "pubchem_cid": "16654980",
+    "inchikey": "DEGUSSKDCKLXMD-LLVKDONJSA-N",
+    "chebi_id": "",
+    "atc_code": "J01XX11"
+  },
+  "pristinamycin": {
+    "pubchem_cid": "5280951",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": "J01FG01"
+  },
+  "carbomycin": {
+    "pubchem_cid": "5280912",
+    "inchikey": "MLYYVTUWGNIJIB-MHZLTWQESA-N",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ostreogrycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "vernamycin b": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "virginiamycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": "QJ01FG90"
+  },
+  "thiostrepton": {
+    "pubchem_cid": "16218413",
+    "inchikey": "ZUHMCGCMKJZUTR-QNDIIFBFSA-N",
+    "chebi_id": "CHEBI:9617",
+    "atc_code": ""
+  },
+  "streptothricin": {
+    "pubchem_cid": "5281091",
+    "inchikey": "AXRCEOKUDYDWLF-VKHMYHEASA-N",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "butiromycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "edeine": {
+    "pubchem_cid": "135694063",
+    "inchikey": "MBBBVHDBWHYMQD-OAYPNKCNSA-N",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "lysocin (e)": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ge2270a": {
+    "pubchem_cid": "101899050",
+    "inchikey": "BJDUVZQQTFDMKE-UHFFFAOYSA-N",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "pulvomycin": {
+    "pubchem_cid": "5282481",
+    "inchikey": "YVXJMHZAUQMFIN-UHFFFAOYSA-N",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "enacyloxin iia": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "elfamycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "triclosan": {
+    "pubchem_cid": "5564",
+    "inchikey": "XEFQLINVKFYRCS-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:164200",
+    "atc_code": "D08AE04"
+  },
+  "zorbamycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ribostamycin": {
+    "pubchem_cid": "34090",
+    "inchikey": "NSKGQURZWSPSBC-AVBVIJFHSA-N",
+    "chebi_id": "CHEBI:8921",
+    "atc_code": ""
+  },
+  "g418": {
+    "pubchem_cid": "3930",
+    "inchikey": "BRZYSWJRMPGDNX-EHCMMZGTSA-N",
+    "chebi_id": "CHEBI:48923",
+    "atc_code": ""
+  },
+  "meticillin": {
+    "pubchem_cid": "6087",
+    "inchikey": "SKKLOUVUWAHYCT-BODLOMDPSA-N",
+    "chebi_id": "CHEBI:6827",
+    "atc_code": "J01CF03"
+  },
+  "methicillin": {
+    "pubchem_cid": "6087",
+    "inchikey": "SKKLOUVUWAHYCT-BODLOMDPSA-N",
+    "chebi_id": "CHEBI:6827",
+    "atc_code": "J01CF03"
+  },
+  "cefamandole": {
+    "pubchem_cid": "441476",
+    "inchikey": "OLVCFLKTBJRLHI-KTKRTIGZSA-N",
+    "chebi_id": "",
+    "atc_code": "J01DC03"
+  },
+  "cefixime": {
+    "pubchem_cid": "2723627",
+    "inchikey": "OKBVVJOGVLARMR-QSWIMTSFSA-N",
+    "chebi_id": "CHEBI:474061",
+    "atc_code": "J01DD08"
+  },
+  "cefprozil": {
+    "pubchem_cid": "5484185",
+    "inchikey": "XDZKNNZQDZPFNZ-WBPXWQEISA-N",
+    "chebi_id": "",
+    "atc_code": "J01DC10"
+  },
+  "loracarbef": {
+    "pubchem_cid": "5282403",
+    "inchikey": "JAPHQRWPEGVNBT-UUOKFMHZSA-N",
+    "chebi_id": "",
+    "atc_code": "J01DC08"
+  },
+  "oxazolidinone": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "streptogramin a": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "streptogramin b": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "aminoglycoside": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "beta-lactam": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "carbapenem": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefepime-taniborbactam": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ceftibuten-avibactam": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cephalosporin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "d-cycloserine": {
+    "pubchem_cid": "6234",
+    "inchikey": "DYDCUQKUCUHJBH-UWTATZPHSA-N",
+    "chebi_id": "CHEBI:16919",
+    "atc_code": "J04AB01"
+  },
+  "efflux": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "fluoroquinolone": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "fortimicin": {
+    "pubchem_cid": "72579",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "gentamicin c": {
+    "pubchem_cid": "3467",
+    "inchikey": "CEAZRRDELHUEMR-URQXQFDESA-N",
+    "chebi_id": "",
+    "atc_code": "J01GB03"
+  },
+  "hygromycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "isepamicin": {
+    "pubchem_cid": "6918552",
+    "inchikey": "QRZMXDQUOQXBMO-JWEYSHLRSA-N",
+    "chebi_id": "",
+    "atc_code": "J01GB11"
+  },
+  "kanamycin a": {
+    "pubchem_cid": "6032",
+    "inchikey": "SBUJHOSQTJFQJX-NOAMYHISSA-N",
+    "chebi_id": "CHEBI:17730",
+    "atc_code": "J01GB04"
+  },
+  "lincosamide": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "lividomycin": {
+    "pubchem_cid": "72554",
+    "inchikey": "VBXULMDXHMLURX-OGWLJSQFSA-N",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "macrolide": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "nitroimidazole": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "penicillin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "phenicol": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "pleuromutilin": {
+    "pubchem_cid": "9908089",
+    "inchikey": "RLYWBDLHSYMHPA-JKFXFKPESA-N",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "pristinamycin ia": {
+    "pubchem_cid": "14969363",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "pristinamycin iia": {
+    "pubchem_cid": "5280562",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "quaternary ammonium": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "quinolone": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "rifamycin": {
+    "pubchem_cid": "6324616",
+    "inchikey": "HJYYPODYNSCCOU-ODRIEIDWSA-N",
+    "chebi_id": "CHEBI:28077",
+    "atc_code": ""
+  },
+  "streptogramin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "sulfonamide": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "taniborbactam": {
+    "pubchem_cid": "129820028",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "temocillin": {
+    "pubchem_cid": "636413",
+    "inchikey": "FIJKDXLPQCYLLL-UHFFFAOYSA-N",
+    "chebi_id": "",
+    "atc_code": "J01CA17"
+  },
+  "tetracenomycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ticarcillin": {
+    "pubchem_cid": "36294",
+    "inchikey": "OHKOGUYZJAOKMF-UHFFFAOYSA-N",
+    "chebi_id": "CHEBI:9607",
+    "atc_code": "J01CA13"
+  },
+  "virginiamycin m": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "virginiamycin s": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "xeruborbactam": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ceftazidime-avibactam": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ethambutol & capreomycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  }
+}
