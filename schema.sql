@@ -213,3 +213,37 @@ CREATE INDEX IF NOT EXISTS idx_cgc_aro     ON amr.card_gene_class(aro_accession)
 CREATE INDEX IF NOT EXISTS idx_cgc_class   ON amr.card_gene_class(canonical_class);
 CREATE INDEX IF NOT EXISTS idx_cgc_family  ON amr.card_gene_class(gene_family)
     WHERE gene_family IS NOT NULL AND gene_family <> '';
+
+-- ─────────────────────────────────────────────────────────
+-- Sequence → harmonised drug class (non-redundant link table)
+-- One row per unique sequence × canonical drug class.
+-- Aggregates evidence from all three source paths:
+--   CARD      : gene.aro_accession → card_gene_class → drug_class
+--   NCBI      : gene.gene_name     → gene_drug_link  → drug_class
+--   RESFINDER : gene.drug_class text → drug_class.resfinder_alias
+-- ─────────────────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS amr.sequence_drug_class (
+    jrc_id           VARCHAR(13) NOT NULL REFERENCES amr.sequence(jrc_id),
+    canonical_class  TEXT        NOT NULL REFERENCES amr.drug_class(canonical_name),
+    evidence_sources TEXT        NOT NULL,  -- pipe-delimited: CARD|NCBI|RESFINDER
+    PRIMARY KEY (jrc_id, canonical_class)
+);
+
+CREATE INDEX IF NOT EXISTS idx_sdc_class ON amr.sequence_drug_class(canonical_class);
+CREATE INDEX IF NOT EXISTS idx_sdc_jrcid ON amr.sequence_drug_class(jrc_id);
+
+-- ─────────────────────────────────────────────────────────
+-- Sequence → harmonised drug name (non-redundant link table)
+-- One row per unique sequence × canonical drug.
+-- Evidence path:
+--   NCBI  : gene.gene_name → gene_drug_link.canonical_drug_token → drug
+-- ─────────────────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS amr.sequence_drug (
+    jrc_id           VARCHAR(13) NOT NULL REFERENCES amr.sequence(jrc_id),
+    canonical_drug   TEXT        NOT NULL REFERENCES amr.drug(canonical_name),
+    evidence_sources TEXT        NOT NULL,  -- pipe-delimited: NCBI|CARD|RESFINDER
+    PRIMARY KEY (jrc_id, canonical_drug)
+);
+
+CREATE INDEX IF NOT EXISTS idx_sd_drug  ON amr.sequence_drug(canonical_drug);
+CREATE INDEX IF NOT EXISTS idx_sd_jrcid ON amr.sequence_drug(jrc_id);
