@@ -121,21 +121,27 @@ loaded into the database:
 | `drug_class_member.tsv` | 172 | Drug → class links with evidence provenance |
 | `gene_drug_link.tsv` | 10 388 | NCBI gene → drug/class pairings (raw + normalised) |
 | `card_gene_class.tsv` | 13 361 | CARD ARO gene → canonical drug class links |
+| `atc_codes_all.tsv` | 5 680 | Full WHO ATC/DDD index (all 14 categories); used by `enrich.py` for ATC lookup |
+| `fetch_atc_codes.py` | — | Script to rebuild `atc_codes_all.tsv` by scraping atcddd.fhi.no |
 
 ### Regenerate harmonised TSVs
 
-Run these scripts whenever source data is updated. They write new TSVs to
+Run these scripts in order whenever source data is updated. They write new TSVs to
 `harmonise/` but do **not** touch the database — run `ingest.py --harmonise-only`
 afterwards to reload.
 
 ```bash
-# Rebuild drug/class tables from source data
+# Step 1 — (Re)build the local WHO ATC code table (only needed when the ATC index is outdated)
+python harmonise/fetch_atc_codes.py all
+# → writes harmonise/atc_codes_all.tsv  (~5 680 rows, takes ~10 min; skip if file is current)
+
+# Step 2 — Rebuild drug/class tables from source data
 python harmonise/harmonise.py
 
-# Enrich drug_canonical.tsv with cross-database identifiers (ChEBI → PubChem)
+# Step 3 — Enrich drug_canonical.tsv with cross-database identifiers
 python harmonise/enrich.py
 
-# Rebuild CARD gene → class links from sources/CARD/aro_index.tsv
+# Step 4 — Rebuild CARD gene → class links from sources/CARD/aro_index.tsv
 python harmonise/parse_card_aro.py
 ```
 
@@ -143,19 +149,29 @@ python harmonise/parse_card_aro.py
 
 Identifiers are resolved in this order per drug:
 
-| Step | API | Fields retrieved |
-|------|-----|-----------------|
+| Step | Source | Fields retrieved |
+|------|--------|-----------------|
 | 1 | ChEBI by INN name | `chebi_id`, `inchikey` — picks highest-star exact-name match |
-| 2a | PubChem by **InChIKey** (if ChEBI hit) | `pubchem_cid`, `atc_code` — unambiguous |
-| 2b | PubChem by **name** (fallback) | `pubchem_cid`, `inchikey`, `atc_code` |
-| 3 | PubChem xrefs (last resort) | `chebi_id` if step 1 failed but CID was found |
+| 2a | PubChem by **InChIKey** (if ChEBI hit) | `pubchem_cid` — unambiguous |
+| 2b | PubChem by **name** (fallback) | `pubchem_cid`, `inchikey` |
+| 3 | **Local ATC table** (`atc_codes_all.tsv`) | `atc_code` — no network call; J category wins when a name appears in multiple categories |
+| 4 | PubChem classification (fallback) | `atc_code` — only if local table misses |
+| 5 | PubChem xrefs (last resort) | `chebi_id` if step 1 failed but CID was found |
 
 ChEBI is used first because it is fully curated (3-star entries are manually reviewed),
 and an InChIKey-based PubChem lookup avoids the salt/stereoisomer ambiguity of
-name-based searches. ATC codes come exclusively from PubChem (ChEBI does not index them).
+name-based searches. ATC codes are resolved from the local WHO ATC table (step 3)
+rather than PubChem, which gives better coverage and is instantaneous.
+
+**ATC disambiguation:** when a drug name appears in more than one ATC category, the
+category is chosen by this priority order:
+`J > P > D > A > L > B > C > G > H > M > N > R > S > V`
+(J = antiinfectives for systemic use always wins for AMR drugs).
 
 Cache: `harmonise/.enrich_cache.json` — all 169 current drugs are pre-cached; re-runs
 make zero live API calls unless new drugs are added or cache entries are cleared.
+On each run, cached entries with an empty `atc_code` are automatically back-filled from
+the local ATC table at no network cost.
 
 To upgrade the 45 existing entries that have a PubChem CID but no ChEBI ID:
 
@@ -234,8 +250,11 @@ re-ingested.
 **Step 1 — regenerate TSVs** (only if the source scripts were modified):
 
 ```bash
+# Rebuild ATC table only if atcddd.fhi.no has been updated (slow — ~10 min)
+python harmonise/fetch_atc_codes.py all
+
 python harmonise/harmonise.py      # drug classes + drugs + aliases + class membership
-python harmonise/enrich_pubchem.py # PubChem/ATC/ChEBI identifiers
+python harmonise/enrich.py         # ChEBI/PubChem/ATC identifiers
 python harmonise/parse_card_aro.py # CARD gene → class links
 ```
 
