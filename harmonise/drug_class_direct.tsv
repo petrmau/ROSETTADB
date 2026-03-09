@@ -1,0 +1,34 @@
+canonical_drug	canonical_class	notes
+hygromycin b	aminoglycoside antibiotic	aminoglycoside; research/veterinary use; INN: hygromycin B
+levofloxacin	fluoroquinolone antibiotic	3rd-gen fluoroquinolone; INN: levofloxacin
+moxifloxacin	fluoroquinolone antibiotic	4th-gen fluoroquinolone; INN: moxifloxacin
+ofloxacin	fluoroquinolone antibiotic	2nd-gen fluoroquinolone; INN: ofloxacin
+enrofloxacin	fluoroquinolone antibiotic	veterinary fluoroquinolone; INN: enrofloxacin
+rifabutin	rifamycin antibiotic	rifamycin class; antituberculosis; INN: rifabutin
+nitrofurantoin	nitrofuran antibiotic	INN: nitrofurantoin
+prothionamide	thioamide antibiotic	antituberculosis thioamide; INN: prothionamide
+delamanid	nitroimidazole antibiotic	nitroimidazole-oxazole; antituberculosis; INN: delamanid
+clofazimine	riminophenazine antibiotic	anti-leprosy; antituberculosis; INN: clofazimine
+dapsone	sulphone antibiotic	anti-leprosy; INN: dapsone; UK spelling: dapsone (same)
+kirromycin	elfamycin antibiotic	EF-Tu inhibitor; INN: kirromycin
+ge2270a	elfamycin antibiotic	EF-Tu inhibitor; research compound; also known as MDL 62879
+pulvomycin	elfamycin antibiotic	EF-Tu inhibitor; also known as GE2270A-related
+enacyloxin iia	elfamycin antibiotic	EF-Tu inhibitor; polyketide; INN: enacyloxin
+elfamycin	elfamycin antibiotic	class name used as drug entry in CARD; maps to own class
+edeine	peptide antibiotic	translation inhibitor; research compound
+lysocin (e)	peptide antibiotic	menaquinone-targeting cyclic peptide; research compound
+pactamycin	pactamycin-like antibiotic	translation inhibitor; INN: pactamycin
+zoliflodacin	zoliflodacin-like antibiotic	novel GyrB inhibitor; INN: zoliflodacin
+triclosan	quaternary ammonium compound	biocide/antiseptic; enoyl-ACP reductase inhibitor; context=biocide
+perchlozone	thioamide antibiotic	thiosemicarbazone class; antituberculosis; also known as terizidone precursor
+ostreogrycin	streptogramin antibiotic	streptogramin mixture (ostreogrycin A = streptogramin A component; ostreogrycin B = streptogramin B component); INN: ostreogrycin
+oxazolidinone	oxazolidinone antibiotic	appears as drug-level token in NCBI when gene confers class-wide resistance
+pristinamycin	streptogramin antibiotic	mixture of pristinamycin IA (streptogramin B) + IIA (streptogramin A); INN: pristinamycin
+retapamulin	pleuromutilin antibiotic	topical pleuromutilin; INN: retapamulin
+streptogramin a	streptogramin A antibiotic	appears as drug-level token in NCBI; INN: streptogramin A component class
+streptogramin b	streptogramin B antibiotic	appears as drug-level token in NCBI; INN: streptogramin B component class
+tedizolid	oxazolidinone antibiotic	second-generation oxazolidinone; INN: tedizolid
+thiamphenicol	phenicol antibiotic	phenicol class; INN: thiamphenicol; not in ResFinder but related to chloramphenicol
+vernamycin b	streptogramin B antibiotic	also known as virginiamycin S; streptogramin B component
+virginiamycin	streptogramin antibiotic	mixture of virginiamycin M (streptogramin A) + virginiamycin S (streptogramin B); veterinary use
+ceftazidime-avibactam	beta-lactam antibiotic	CARD CZA; cephalosporin + BLI combination; class reflects the beta-lactam component

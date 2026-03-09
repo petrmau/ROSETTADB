@@ -1,0 +1,81 @@
+canonical_name	alias	alias_type	source
+amikacin	AMK	card_abbreviation	card
+amoxicillin	AMX	card_abbreviation	card
+amoxicillin+clavulanic acid	Amoxicillin+Clavulanic acid	source_name	resfinder
+ampicillin+clavulanic acid	Ampicillin+Clavulanic acid	source_name	resfinder
+avibactam	AVI	card_abbreviation	card
+azithromycin	AZM	card_abbreviation	card
+aztreonam	ATM	card_abbreviation	card
+bedaquiline	BDQ	card_abbreviation	card
+capreomycin	CAP	card_abbreviation	card
+cefotaxime+clavulanic acid	Cefotaxime+Clavulanic acid	source_name	resfinder
+ceftazidime	CEF	card_abbreviation	card
+ceftazidime+avibactam	Ceftazidime+Avibactam	source_name	resfinder
+ceftazidime-avibactam	CZA	card_abbreviation	card
+chloramphenicol	CHL	card_abbreviation	card
+ciprofloxacin	CIP	card_abbreviation	card
+clarithromycin	CLR	card_abbreviation	card
+clindamycin	CLI	card_abbreviation	card
+clofazimine	CFZ	card_abbreviation	card
+colistin	CST	card_abbreviation	card
+d-cycloserine	DCS	card_abbreviation	card
+dapsone	DAO	card_abbreviation	card
+daptomycin	DAP	card_abbreviation	card
+delamanid	DLM	card_abbreviation	card
+edeine	EDN	card_abbreviation	card
+elfamycin	ELF	card_abbreviation	card
+enacyloxin iia	ENC	card_abbreviation	card
+enrofloxacin	ENR	card_abbreviation	card
+erythromycin	ERY	card_abbreviation	card
+ethambutol	EMB	card_abbreviation	card
+ethambutol & capreomycin	EMCM	card_abbreviation	card
+ethionamide	ETO	card_abbreviation	card
+fosfomycin	FOF	card_abbreviation	card
+fusidic acid	FA	card_abbreviation	card
+g418	G418	card_abbreviation	card
+ge2270a	GE2A	card_abbreviation	card
+gentamicin	GEN	card_abbreviation	card
+gentamicin c	GENC	card_abbreviation	card
+hygromycin b	HGM	card_abbreviation	card
+hygromycin b	Hyrgomycin B	source_name	card
+imipenem	IPM	card_abbreviation	card
+isoniazid	INH	card_abbreviation	card
+kanamycin	KAN	card_abbreviation	card
+kasugamycin	KAS	card_abbreviation	card
+kasugamycin	Kasugamicin	source_name	card
+kirromycin	KIR	card_abbreviation	card
+levofloxacin	LEV	card_abbreviation	card
+linezolid	LZD	card_abbreviation	card
+lysocin (e)	LYS	card_abbreviation	card
+metronidazole	MTZ	card_abbreviation	card
+moxifloxacin	MXF	card_abbreviation	card
+mupirocin	MUP	card_abbreviation	card
+neomycin	NEO	card_abbreviation	card
+nitrofurantoin	NIT	card_abbreviation	card
+ofloxacin	OFX	card_abbreviation	card
+oxazolidinone	OXZ	card_abbreviation	card
+pactamycin	PAC	card_abbreviation	card
+para-aminosalicylic acid	PAS	card_abbreviation	card
+para-aminosalicylic acid	Para-aminosalicyclic acid	source_name	resfinder
+paromomycin	PAR	card_abbreviation	card
+perchlozone	PCL	card_abbreviation	card
+piperacillin+clavulanic acid	Piperacillin+Clavulanic acid	source_name	resfinder
+piperacillin+tazobactam	Piperacillin+Tazobactam	source_name	resfinder
+pleuromutilin	PLM	card_abbreviation	card
+prothionamide	PTO	card_abbreviation	card
+pulvomycin	PLV	card_abbreviation	card
+pyrazinamide	PZA	card_abbreviation	card
+quinupristin+dalfopristin	Quinupristin+Dalfopristin	source_name	resfinder
+rifabutin	RFB	card_abbreviation	card
+rifampicin	RIF	card_abbreviation	card
+spectinomycin	SPT	card_abbreviation	card
+streptomycin	STR	card_abbreviation	card
+tetracycline	TET	card_abbreviation	card
+ticarcillin+clavulanic acid	Ticarcillin+Clavulanic acid	source_name	resfinder
+tobramycin	TOB	card_abbreviation	card
+triclosan	TRC	card_abbreviation	card
+trimethoprim	TMP	card_abbreviation	card
+tylosin	TYL	card_abbreviation	card
+vancomycin	VAN	card_abbreviation	card
+viomycin	VIO	card_abbreviation	card
+zoliflodacin	ZOL	card_abbreviation	card

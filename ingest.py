@@ -34,6 +34,14 @@ NCBI_REPORT          = BASE / "amr_finder_plus" / "ncbi_dataset" / "data" / "dat
 CARD_ARO             = BASE / "CARD" / "aro_index.tsv"
 RESFINDER_PHENOTYPES = BASE / "resfinder_db" / "phenotypes.txt"
 
+HARMONISE = Path(__file__).parent / "harmonise"
+DRUG_CLASS_TSV      = HARMONISE / "class_mapping.tsv"
+DRUG_TSV            = HARMONISE / "drug_canonical.tsv"
+DRUG_ALIAS_TSV      = HARMONISE / "drug_alias.tsv"
+DRUG_CLASS_MEMBER_TSV = HARMONISE / "drug_class_member.tsv"
+GENE_DRUG_LINK_TSV  = HARMONISE / "gene_drug_link.tsv"
+CARD_GENE_CLASS_TSV = HARMONISE / "card_gene_class.tsv"
+
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -449,6 +457,306 @@ def upsert_sequence_metadata(cur, all_records: list[dict]):
     execute_values(cur, sql, data)
 
 
+# ── Harmonisation loaders ─────────────────────────────────────────────────────
+
+def load_harmonise(cur):
+    """Load all harmonise/ TSV files into the amr.drug_* tables."""
+    import csv
+
+    def _none(v):
+        """Empty string / None → None for nullable columns."""
+        v = (v or "").strip()
+        return v or None
+
+    # ── drug_class ──
+    if DRUG_CLASS_TSV.exists():
+        with open(DRUG_CLASS_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        data = [
+            (
+                r["canonical_name"].strip(),
+                _none(( r.get("aro_accession") or "" ).strip()),
+                _none(( r.get("category") or "" ).strip()),
+                _none(( r.get("resfinder_alias") or "" ).strip()),
+                _none(( r.get("ncbi_alias") or "" ).strip()),
+                _none(( r.get("card_abbrev") or "" ).strip()),
+                _none(( r.get("card_class_abbrev") or "" ).strip()),
+                _none(( r.get("notes") or "" ).strip()),
+            )
+            for r in rows
+            if ( r.get("canonical_name") or "" ).strip()
+        ]
+        execute_values(cur, """
+            INSERT INTO amr.drug_class
+                (canonical_name, aro_accession, category, resfinder_alias,
+                 ncbi_alias, card_abbrev, card_class_abbrev, notes)
+            VALUES %s
+            ON CONFLICT (canonical_name) DO UPDATE SET
+                aro_accession     = EXCLUDED.aro_accession,
+                category          = EXCLUDED.category,
+                resfinder_alias   = EXCLUDED.resfinder_alias,
+                ncbi_alias        = EXCLUDED.ncbi_alias,
+                card_abbrev       = EXCLUDED.card_abbrev,
+                card_class_abbrev = EXCLUDED.card_class_abbrev,
+                notes             = EXCLUDED.notes
+        """, data)
+        print(f"  drug_class: {len(data)} rows", file=sys.stderr)
+
+    # ── drug ──
+    if DRUG_TSV.exists():
+        with open(DRUG_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        data = [
+            (
+                r["canonical_name"].strip(),
+                r.get("is_combination", "False").strip() == "True",
+                _none(( r.get("components") or "" ).strip()),
+                r.get("context", "clinical").strip() or "clinical",
+                _none(( r.get("card_abbrev") or "" ).strip()),
+                _none(( r.get("atc_code") or "" ).strip()),
+                _none(( r.get("inchikey") or "" ).strip()),
+                _none(( r.get("pubchem_cid") or "" ).strip()),
+                _none(( r.get("chebi_id") or "" ).strip()),
+                _none(( r.get("sources") or "" ).strip()),
+            )
+            for r in rows
+            if ( r.get("canonical_name") or "" ).strip()
+        ]
+        execute_values(cur, """
+            INSERT INTO amr.drug
+                (canonical_name, is_combination, components, context,
+                 card_abbrev, atc_code, inchikey, pubchem_cid, chebi_id, sources)
+            VALUES %s
+            ON CONFLICT (canonical_name) DO UPDATE SET
+                is_combination = EXCLUDED.is_combination,
+                components     = EXCLUDED.components,
+                context        = EXCLUDED.context,
+                card_abbrev    = EXCLUDED.card_abbrev,
+                atc_code       = EXCLUDED.atc_code,
+                inchikey       = EXCLUDED.inchikey,
+                pubchem_cid    = EXCLUDED.pubchem_cid,
+                chebi_id       = EXCLUDED.chebi_id,
+                sources        = EXCLUDED.sources
+        """, data)
+        print(f"  drug:       {len(data)} rows", file=sys.stderr)
+
+    # ── drug_alias ──
+    if DRUG_ALIAS_TSV.exists():
+        with open(DRUG_ALIAS_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        data = [
+            (
+                r["canonical_name"].strip(),
+                r["alias"].strip(),
+                r.get("alias_type", "source_name").strip(),
+                ( r.get("source") or "" ).strip(),
+            )
+            for r in rows
+            if ( r.get("canonical_name") or "" ).strip() and ( r.get("alias") or "" ).strip()
+        ]
+        execute_values(cur, """
+            INSERT INTO amr.drug_alias (canonical_name, alias, alias_type, source)
+            VALUES %s
+            ON CONFLICT (canonical_name, alias, source) DO NOTHING
+        """, data)
+        print(f"  drug_alias: {len(data)} rows", file=sys.stderr)
+
+    # ── drug_class_member ──
+    if DRUG_CLASS_MEMBER_TSV.exists():
+        with open(DRUG_CLASS_MEMBER_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        data = [
+            (
+                r["canonical_drug"].strip(),
+                r["canonical_class"].strip(),
+                _none(( r.get("aro_accession") or "" ).strip()),
+                _none(( r.get("category") or "" ).strip()),
+                r.get("source", "curated").strip() or "curated",
+            )
+            for r in rows
+            if ( r.get("canonical_drug") or "" ).strip() and ( r.get("canonical_class") or "" ).strip()
+        ]
+        execute_values(cur, """
+            INSERT INTO amr.drug_class_member
+                (canonical_drug, canonical_class, aro_accession, category, evidence_source)
+            VALUES %s
+            ON CONFLICT (canonical_drug, canonical_class) DO UPDATE SET
+                aro_accession   = EXCLUDED.aro_accession,
+                category        = EXCLUDED.category,
+                evidence_source = EXCLUDED.evidence_source
+        """, data)
+        print(f"  drug_class_member: {len(data)} rows", file=sys.stderr)
+
+    # ── gene_drug_link ──
+    if GENE_DRUG_LINK_TSV.exists():
+        with open(GENE_DRUG_LINK_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        data = [
+            (
+                ( r.get("gene_name") or "" ).strip(),
+                _none(( r.get("accession") or "" ).strip()),
+                _none(( r.get("element_type") or "" ).strip()),
+                _none(( r.get("ncbi_class_raw") or "" ).strip()),
+                _none(( r.get("ncbi_subclass_raw") or "" ).strip()),
+                _none(( r.get("canonical_class_token") or "" ).strip()),
+                _none(( r.get("canonical_drug_token") or "" ).strip()),
+            )
+            for r in rows
+        ]
+        execute_values(cur, """
+            INSERT INTO amr.gene_drug_link
+                (gene_name, accession, element_type,
+                 ncbi_class_raw, ncbi_subclass_raw,
+                 canonical_class_token, canonical_drug_token)
+            VALUES %s
+        """, data)
+        print(f"  gene_drug_link: {len(data)} rows", file=sys.stderr)
+
+    # ── card_gene_class ──
+    if CARD_GENE_CLASS_TSV.exists():
+        with open(CARD_GENE_CLASS_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        # Deduplicate on primary key (aro_accession, canonical_class)
+        seen_cgc: set = set()
+        data = []
+        for r in rows:
+            aro = r["aro_accession"].strip()
+            cls = r["canonical_class"].strip()
+            if not aro or not cls:
+                continue
+            pk = (aro, cls)
+            if pk in seen_cgc:
+                continue
+            seen_cgc.add(pk)
+            data.append((
+                aro,
+                r["gene_name"].strip(),
+                _none(( r.get("card_short_name") or "" ).strip()),
+                _none(( r.get("gene_family") or "" ).strip()),
+                _none(( r.get("resistance_mechanism") or "" ).strip()),
+                r["drug_class_raw"].strip(),
+                cls,
+            ))
+        execute_values(cur, """
+            INSERT INTO amr.card_gene_class
+                (aro_accession, gene_name, card_short_name,
+                 gene_family, resistance_mechanism,
+                 drug_class_raw, canonical_class)
+            VALUES %s
+            ON CONFLICT (aro_accession, canonical_class) DO UPDATE SET
+                gene_name            = EXCLUDED.gene_name,
+                card_short_name      = EXCLUDED.card_short_name,
+                gene_family          = EXCLUDED.gene_family,
+                resistance_mechanism = EXCLUDED.resistance_mechanism,
+                drug_class_raw       = EXCLUDED.drug_class_raw
+        """, data)
+        print(f"  card_gene_class: {len(data)} rows", file=sys.stderr)
+
+
+# ── Sequence → drug class / drug population ───────────────────────────────────
+
+def populate_sequence_links(cur):
+    """
+    Populate amr.sequence_drug_class and amr.sequence_drug from the three
+    source-specific evidence paths.
+
+    CARD path  : gene.aro_accession → card_gene_class → drug_class
+    NCBI path  : gene.gene_name     → gene_drug_link  → drug_class / drug
+    ResFinder  : gene.drug_class text → drug_class.resfinder_alias (case-insensitive)
+    """
+
+    # ── Step 1: collect raw (jrc_id, canonical_class, source) triples ──
+    cur.execute("""
+        CREATE TEMP TABLE IF NOT EXISTS _sdc_raw (
+            jrc_id          VARCHAR(13),
+            canonical_class TEXT,
+            evidence_source VARCHAR(20)
+        ) ON COMMIT DROP
+    """)
+
+    # CARD path
+    cur.execute("""
+        INSERT INTO _sdc_raw (jrc_id, canonical_class, evidence_source)
+        SELECT DISTINCT g.jrc_id, cgc.canonical_class, 'CARD'
+        FROM amr.gene g
+        JOIN amr.card_gene_class cgc ON g.aro_accession = cgc.aro_accession
+        WHERE g.source = 'CARD'
+          AND g.aro_accession IS NOT NULL
+    """)
+    cur.execute("SELECT count(*) FROM _sdc_raw WHERE evidence_source = 'CARD'")
+    print(f"  CARD  → sequence_drug_class: {cur.fetchone()[0]} raw rows", file=sys.stderr)
+
+    # NCBI path A – via gene_drug_link (gene_name match)
+    cur.execute("""
+        INSERT INTO _sdc_raw (jrc_id, canonical_class, evidence_source)
+        SELECT DISTINCT g.jrc_id, dc.canonical_name, 'NCBI'
+        FROM amr.gene g
+        JOIN amr.gene_drug_link gdl ON g.gene_name = gdl.gene_name
+        JOIN amr.drug_class dc      ON gdl.canonical_class_token = dc.canonical_name
+        WHERE g.source = 'NCBI'
+          AND gdl.canonical_class_token IS NOT NULL
+          AND gdl.canonical_class_token <> ''
+    """)
+
+    # NCBI path B – via amr_class field directly (slash-delimited tokens → ncbi_alias)
+    cur.execute("""
+        INSERT INTO _sdc_raw (jrc_id, canonical_class, evidence_source)
+        SELECT DISTINCT g.jrc_id, dc.canonical_name, 'NCBI'
+        FROM amr.gene g
+        CROSS JOIN LATERAL unnest(string_to_array(g.amr_class, '/')) AS t(token)
+        JOIN amr.drug_class dc ON upper(trim(t.token)) = upper(dc.ncbi_alias)
+        WHERE g.source = 'NCBI'
+          AND g.amr_class IS NOT NULL
+    """)
+    cur.execute("SELECT count(*) FROM _sdc_raw WHERE evidence_source = 'NCBI'")
+    print(f"  NCBI  → sequence_drug_class: {cur.fetchone()[0]} raw rows", file=sys.stderr)
+
+    # ResFinder path – match on resfinder_alias (case-insensitive) or canonical_name
+    cur.execute("""
+        INSERT INTO _sdc_raw (jrc_id, canonical_class, evidence_source)
+        SELECT DISTINCT g.jrc_id, dc.canonical_name, 'RESFINDER'
+        FROM amr.gene g
+        JOIN amr.drug_class dc
+          ON lower(g.drug_class) = lower(dc.resfinder_alias)
+          OR lower(g.drug_class) = lower(dc.canonical_name)
+        WHERE g.source = 'RESFINDER'
+          AND g.drug_class IS NOT NULL
+    """)
+    cur.execute("SELECT count(*) FROM _sdc_raw WHERE evidence_source = 'RESFINDER'")
+    print(f"  RSFND → sequence_drug_class: {cur.fetchone()[0]} raw rows", file=sys.stderr)
+
+    # ── Step 2: aggregate evidence sources and upsert ──
+    cur.execute("""
+        INSERT INTO amr.sequence_drug_class (jrc_id, canonical_class, evidence_sources)
+        SELECT
+            jrc_id,
+            canonical_class,
+            string_agg(DISTINCT evidence_source, '|' ORDER BY evidence_source) AS evidence_sources
+        FROM _sdc_raw
+        GROUP BY jrc_id, canonical_class
+        ON CONFLICT (jrc_id, canonical_class) DO UPDATE
+            SET evidence_sources = EXCLUDED.evidence_sources
+    """)
+    cur.execute("SELECT count(*) FROM amr.sequence_drug_class")
+    print(f"  sequence_drug_class total: {cur.fetchone()[0]} rows", file=sys.stderr)
+
+    # ── Step 3: sequence → drug (NCBI path only) ──
+    cur.execute("""
+        INSERT INTO amr.sequence_drug (jrc_id, canonical_drug, evidence_sources)
+        SELECT DISTINCT g.jrc_id, d.canonical_name, 'NCBI'
+        FROM amr.gene g
+        JOIN amr.gene_drug_link gdl ON g.gene_name = gdl.gene_name
+        JOIN amr.drug d             ON gdl.canonical_drug_token = d.canonical_name
+        WHERE g.source = 'NCBI'
+          AND gdl.canonical_drug_token IS NOT NULL
+          AND gdl.canonical_drug_token <> ''
+        ON CONFLICT (jrc_id, canonical_drug) DO UPDATE
+            SET evidence_sources = EXCLUDED.evidence_sources
+    """)
+    cur.execute("SELECT count(*) FROM amr.sequence_drug")
+    print(f"  sequence_drug total:        {cur.fetchone()[0]} rows", file=sys.stderr)
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -458,7 +766,36 @@ def main():
     ap.add_argument("--card",      type=Path, default=DEFAULT_CARD)
     ap.add_argument("--ncbi",      type=Path, default=DEFAULT_NCBI)
     ap.add_argument("--schema",    type=Path, default=Path(__file__).parent / "schema.sql")
+    ap.add_argument("--skip-harmonise", action="store_true",
+                    help="Skip loading harmonise/ drug vocabulary tables")
+    ap.add_argument("--skip-links", action="store_true",
+                    help="Skip populating sequence_drug_class / sequence_drug link tables")
+    ap.add_argument("--harmonise-only", action="store_true",
+                    help="Skip FASTA parsing; only reload harmonise/ tables and re-create "
+                         "sequence links (requires sequences already in DB)")
     args = ap.parse_args()
+
+    # ── Connect to DB (needed for all paths) ──
+    print(f"\nConnecting to: {args.dsn}", file=sys.stderr)
+    conn = psycopg2.connect(args.dsn)
+    conn.autocommit = False
+    cur = conn.cursor()
+
+    if args.harmonise_only:
+        print("Applying schema (new tables only) …", file=sys.stderr)
+        with open(args.schema) as fh:
+            cur.execute(fh.read())
+        print("\nReloading harmonised drug vocabulary …", file=sys.stderr)
+        load_harmonise(cur)
+        print("\nRepopulating sequence → drug class / drug links …", file=sys.stderr)
+        # Truncate and re-fill so stale rows from old vocabulary are removed
+        cur.execute("TRUNCATE amr.sequence_drug_class, amr.sequence_drug")
+        populate_sequence_links(cur)
+        conn.commit()
+        cur.close()
+        conn.close()
+        print("\nDone (harmonise-only)!", file=sys.stderr)
+        return
 
     # ── Load auxiliary metadata ──
     print("Loading NCBI metadata …", file=sys.stderr)
@@ -502,12 +839,7 @@ def main():
     representatives = cluster_records(all_records)
     print(f"Unique clusters (100% id): {len(representatives)}", file=sys.stderr)
 
-    # ── Connect to DB and load schema ──
-    print(f"\nConnecting to: {args.dsn}", file=sys.stderr)
-    conn = psycopg2.connect(args.dsn)
-    conn.autocommit = False
-    cur = conn.cursor()
-
+    # ── Connect to DB and load schema (normal full-ingest path) ──
     print("Applying schema …", file=sys.stderr)
     with open(args.schema) as fh:
         cur.execute(fh.read())
@@ -532,15 +864,27 @@ def main():
     print("Upserting sequence metadata …", file=sys.stderr)
     upsert_sequence_metadata(cur, all_records)
 
+    # ── Load harmonised drug vocabulary ──
+    if not args.skip_harmonise:
+        print("\nLoading harmonised drug vocabulary …", file=sys.stderr)
+        load_harmonise(cur)
+
+    # ── Populate sequence → drug class / drug link tables ──
+    if not args.skip_links:
+        print("\nPopulating sequence → drug class / drug links …", file=sys.stderr)
+        populate_sequence_links(cur)
+
     conn.commit()
     cur.close()
     conn.close()
 
     print("\nDone!", file=sys.stderr)
-    print(f"  Sources loaded : {', '.join(sources_found)}", file=sys.stderr)
-    print(f"  Total sequences: {len(seq_list)}", file=sys.stderr)
-    print(f"  Total clusters : {len(jrc_to_cluster)}", file=sys.stderr)
-    print(f"  Total gene rows: {len(all_records)}", file=sys.stderr)
+    print(f"  Sources loaded  : {', '.join(sources_found)}", file=sys.stderr)
+    print(f"  Total sequences : {len(seq_list)}", file=sys.stderr)
+    print(f"  Total clusters  : {len(jrc_to_cluster)}", file=sys.stderr)
+    print(f"  Total gene rows : {len(all_records)}", file=sys.stderr)
+    if not args.skip_links:
+        print("  sequence_drug_class and sequence_drug tables populated", file=sys.stderr)
 
 
 if __name__ == "__main__":
