@@ -132,12 +132,35 @@ afterwards to reload.
 # Rebuild drug/class tables from source data
 python harmonise/harmonise.py
 
-# Re-enrich PubChem identifiers
-# (reads .pubchem_cache.json; makes no live API calls if cache is warm)
-python harmonise/enrich_pubchem.py
+# Enrich drug_canonical.tsv with cross-database identifiers (ChEBI → PubChem)
+python harmonise/enrich.py
 
 # Rebuild CARD gene → class links from sources/CARD/aro_index.tsv
 python harmonise/parse_card_aro.py
+```
+
+#### Enrichment strategy (`enrich.py`)
+
+Identifiers are resolved in this order per drug:
+
+| Step | API | Fields retrieved |
+|------|-----|-----------------|
+| 1 | ChEBI by INN name | `chebi_id`, `inchikey` — picks highest-star exact-name match |
+| 2a | PubChem by **InChIKey** (if ChEBI hit) | `pubchem_cid`, `atc_code` — unambiguous |
+| 2b | PubChem by **name** (fallback) | `pubchem_cid`, `inchikey`, `atc_code` |
+| 3 | PubChem xrefs (last resort) | `chebi_id` if step 1 failed but CID was found |
+
+ChEBI is used first because it is fully curated (3-star entries are manually reviewed),
+and an InChIKey-based PubChem lookup avoids the salt/stereoisomer ambiguity of
+name-based searches. ATC codes come exclusively from PubChem (ChEBI does not index them).
+
+Cache: `harmonise/.enrich_cache.json` — all 169 current drugs are pre-cached; re-runs
+make zero live API calls unless new drugs are added or cache entries are cleared.
+
+To upgrade the 45 existing entries that have a PubChem CID but no ChEBI ID:
+
+```bash
+python harmonise/enrich.py --refresh-missing-chebi
 ```
 
 ---
