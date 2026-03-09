@@ -24,6 +24,37 @@ Cache: harmonise/.enrich_cache.json
 Rate limits (no API key required):
   ChEBI  : ~3 req/s  → CHEBI_SLEEP = 0.35 s
   PubChem: ~5 req/s  → PC_SLEEP    = 0.22 s
+enrich.py
+=========
+Enrich harmonise/drug_canonical.tsv with cross-database identifiers.
+
+Strategy per drug (ChEBI-first):
+  1. Search ChEBI by INN name → chebi_id, inchikey
+     Pick the highest-star exact-name match (3★ = fully curated).
+  2a. If ChEBI hit: search PubChem by InChIKey → pubchem_cid
+      (InChIKey lookup is unambiguous; avoids name/salt ambiguity)
+  2b. If no ChEBI hit: search PubChem by name → pubchem_cid, inchikey
+  3.  ATC code: local WHO ATC table (harmonise/atc_codes_all.tsv) first;
+      PubChem classification endpoint used only as fallback for misses.
+  4.  If PubChem hit but still no chebi_id: try PubChem xrefs as last resort
+
+Skipped automatically:
+  - Combination drugs (is_combination = True) — no single molecule CID
+  - Class-level placeholders (context = resistance_mechanism)
+
+ATC disambiguation (when a name appears in multiple categories):
+  J (antiinfectives) wins; otherwise earliest in ATC_PRIORITY is chosen.
+
+Cache: harmonise/.enrich_cache.json
+  Keys are drug canonical names; values store all four identifiers.
+  Entries already in the cache are never re-fetched (run again to refresh
+  a specific drug by deleting its key from the cache file).
+  On each run, cached entries with an empty atc_code are back-filled from
+  the local ATC table at zero network cost.
+
+Rate limits (no API key required):
+  ChEBI  : ~3 req/s  → CHEBI_SLEEP = 0.35 s
+  PubChem: ~5 req/s  → PC_SLEEP    = 0.22 s
 """
 
 import csv
@@ -35,13 +66,19 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-ROOT       = Path(__file__).parent.parent
-CACHE_PATH = ROOT / "harmonise/.enrich_cache.json"
-DRUG_TSV   = ROOT / "harmonise/drug_canonical.tsv"
+ROOT           = Path(__file__).parent.parent
+CACHE_PATH     = ROOT / "harmonise/.enrich_cache.json"
+DRUG_TSV       = ROOT / "harmonise/drug_canonical.tsv"
+ATC_TABLE_PATH = ROOT / "harmonise/atc_codes_all.tsv"
 
 CHEBI_SLEEP = 0.35
 PC_SLEEP    = 0.22
 MAX_RETRIES = 4
+
+# ATC category priority for disambiguation (most AMR-relevant first).
+# J = antiinfectives, P = antiparasitics, D = dermatologicals (topical antifungals),
+# A = alimentary (some antifungals/antiprotozoals), then remaining categories.
+ATC_PRIORITY = ["J", "P", "D", "A", "L", "B", "C", "G", "H", "M", "N", "R", "S", "V"]
 
 CHEBI_BASE = "https://www.ebi.ac.uk/webservices/chebi/2.0/api"
 PC_BASE    = "https://pubchem.ncbi.nlm.nih.gov/rest/pug"
@@ -258,13 +295,58 @@ def pc_atc(cid: int) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Local WHO ATC table
+# ---------------------------------------------------------------------------
+
+def load_atc_table() -> dict[str, list[str]]:
+    """
+    Load harmonise/atc_codes_all.tsv into a lowercase-name → [atc_code, …] dict.
+    Returns empty dict if the file is missing (enrich.py still works without it).
+    """
+    if not ATC_TABLE_PATH.exists():
+        return {}
+    table: dict[str, list[str]] = {}
+    with open(ATC_TABLE_PATH, newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f, delimiter="\t"):
+            code = row.get("atc_code", "").strip()
+            name = row.get("name", "").strip().lower()
+            if code and name:
+                table.setdefault(name, []).append(code)
+    return table
+
+
+def atc_from_table(name: str, table: dict[str, list[str]]) -> str:
+    """
+    Look up ATC code from the local WHO ATC table.
+    If the same name maps to multiple codes (different categories), J wins;
+    otherwise the earliest category in ATC_PRIORITY is chosen.
+    Returns empty string on miss.
+    """
+    hits = table.get(name.lower(), [])
+    if not hits:
+        return ""
+    if len(hits) == 1:
+        return hits[0]
+
+    def _rank(code: str) -> int:
+        letter = code[0].upper() if code else "Z"
+        try:
+            return ATC_PRIORITY.index(letter)
+        except ValueError:
+            return len(ATC_PRIORITY)
+
+    return sorted(hits, key=_rank)[0]
+
+
+# ---------------------------------------------------------------------------
 # Per-drug enrichment (ChEBI-first)
 # ---------------------------------------------------------------------------
 
-def enrich_drug(name: str, cache: dict) -> dict:
+def enrich_drug(name: str, cache: dict, atc_table: dict | None = None) -> dict:
     """
     Return enrichment dict {chebi_id, inchikey, pubchem_cid, atc_code}.
     Consults cache first; if missing, runs ChEBI → PubChem pipeline.
+    ATC code: local table lookup first, pc_atc() only as fallback.
     """
     if name in cache:
         return cache[name]
@@ -299,8 +381,12 @@ def enrich_drug(name: str, cache: dict) -> dict:
 
     if cid:
         result["pubchem_cid"] = str(cid)
-        result["atc_code"] = pc_atc(cid)
-        time.sleep(PC_SLEEP)
+        # ATC: local WHO table first (no network); PubChem as fallback
+        if atc_table is not None:
+            result["atc_code"] = atc_from_table(name, atc_table)
+        if not result["atc_code"]:
+            result["atc_code"] = pc_atc(cid)
+            time.sleep(PC_SLEEP)
 
     # ── Step 3: ChEBI xref from PubChem (last resort) ─────────────────────
     if cid and not result["chebi_id"]:
@@ -350,6 +436,23 @@ def main():
     cache = load_cache()
     print(f"Cache: {len(cache)} entries loaded from {CACHE_PATH.name}")
 
+    # Load local WHO ATC table and back-fill any cached entries missing ATC
+    atc_table = load_atc_table()
+    if atc_table:
+        print(f"ATC table: {sum(len(v) for v in atc_table.values())} entries "
+              f"from {ATC_TABLE_PATH.name}")
+        upgraded = 0
+        for n, v in cache.items():
+            if not v.get("atc_code"):
+                code = atc_from_table(n, atc_table)
+                if code:
+                    v["atc_code"] = code
+                    upgraded += 1
+        if upgraded:
+            print(f"  Back-filled ATC for {upgraded} cached entries (no network calls)")
+    else:
+        print(f"  Warning: {ATC_TABLE_PATH.name} not found — ATC will use PubChem only")
+
     if args.refresh_missing_chebi:
         to_drop = [n for n, v in cache.items()
                    if v.get("pubchem_cid") and not v.get("chebi_id")]
@@ -381,7 +484,7 @@ def main():
         name = row["canonical_name"]
         print(f"  [{i+1}/{len(to_enrich)}] {name} …", end=" ", flush=True)
 
-        data = enrich_drug(name, cache)
+        data = enrich_drug(name, cache, atc_table)
 
         row["chebi_id"]    = data.get("chebi_id", "")
         row["inchikey"]    = data.get("inchikey", "")
