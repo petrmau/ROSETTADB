@@ -1,58 +1,59 @@
 canonical_name	aro_accession	resfinder_alias	ncbi_alias	card_abbrev	card_class_abbrev	category	notes
-aminoglycoside antibiotic	ARO:3000369	Aminoglycoside	AMINOGLYCOSIDE	AMK	AMG	antibiotic	AMG is CARD class abbrev; individual drugs: AMK=amikacin etc.
-aminocoumarin antibiotic	ARO:3000282		 		AMU	antibiotic	e.g. novobiocin
-beta-lactam antibiotic	ARO:3000007	Beta-lactam	BETA-LACTAM		BLA	antibiotic	parent class; includes penicillins, cephalosporins, carbapenems, monobactams
-carbapenem	ARO:3000082		CARBAPENEM			antibiotic	subclass of beta-lactam
-cephalosporin	ARO:3000080		CEPHALOSPORIN			antibiotic	subclass of beta-lactam
-penicillin antibiotic	ARO:3000081				antibiotic	subclass of beta-lactam
-monobactam	ARO:3000369				antibiotic	subclass of beta-lactam; e.g. aztreonam
-cycloserine-like antibiotic	ARO:3000600	Analog of d-alanine		DCS		antibiotic	INN: cycloserine
-diarylquinoline antibiotic	ARO:3000368	Diarylquinoline		BDQ		antibiotic	e.g. bedaquiline (antituberculosis)
-fluoroquinolone antibiotic	ARO:3000150	Quinolone	QUINOLONE		FLO	antibiotic	ResFinder "Quinolone" covers both quinolones and fluoroquinolones; FLO is CARD class abbrev
-quinolone antibiotic	ARO:3000282	Quinolone	QUINOLONE			antibiotic	true (non-fluorinated) quinolones e.g. nalidixic acid; ResFinder lumps with fluoroquinolones
-diaminopyrimidine antibiotic	ARO:3000281	Folate pathway antagonist	TRIMETHOPRIM	TMP		antibiotic	trimethoprim class
+aminoglycoside antibiotic	ARO:0000016	Aminoglycoside	AMINOGLYCOSIDE	AMK	AMG	antibiotic	AMG is CARD class abbrev; individual drugs: AMK=amikacin etc.
+aminocoumarin antibiotic	ARO:3000103				AMU	antibiotic	e.g. novobiocin
+beta-lactam antibiotic		Beta-lactam	BETA-LACTAM		BLA	antibiotic	parent class; includes penicillins, cephalosporins, carbapenems, monobactams
+carbapenem	ARO:0000020		CARBAPENEM			antibiotic	subclass of beta-lactam
+cephalosporin	ARO:0000032		CEPHALOSPORIN			antibiotic	subclass of beta-lactam
+penicillin antibiotic	ARO:3000008					antibiotic	subclass of beta-lactam; CARD name: penicillin beta-lactam
+monobactam	ARO:0000004					antibiotic	subclass of beta-lactam; e.g. aztreonam
+cycloserine-like antibiotic	ARO:3007154	Analog of d-alanine		DCS		antibiotic	INN: cycloserine
+diarylquinoline antibiotic	ARO:3004491	Diarylquinoline		BDQ		antibiotic	e.g. bedaquiline (antituberculosis)
+fluoroquinolone antibiotic	ARO:0000001	Quinolone	QUINOLONE		FLO	antibiotic	"ResFinder ""Quinolone"" covers both quinolones and fluoroquinolones; FLO is CARD class abbrev"
+quinolone antibiotic		Quinolone	QUINOLONE			antibiotic	true (non-fluorinated) quinolones e.g. nalidixic acid; ResFinder lumps with fluoroquinolones
+diaminopyrimidine antibiotic	ARO:3000171	Folate pathway antagonist	TRIMETHOPRIM	TMP		antibiotic	trimethoprim class
 sulfonamide antibiotic	ARO:3000282	Folate pathway antagonist	SULFONAMIDE		SLF	antibiotic	SLF is CARD class abbrev
-phosphonic acid antibiotic	ARO:3000263	Fosfomycin	FOSFOMYCIN	FOF		antibiotic	INN: fosfomycin
-glycopeptide antibiotic	ARO:3000166	Glycopeptide	GLYCOPEPTIDE	VAN		antibiotic	e.g. vancomycin, teicoplanin
-ionophore with antibiotic activity	ARO:3000603	Ionophores	IONOPHORE			veterinary_ionophore	e.g. narasin, salinomycin, maduramicin; veterinary use
-isonicotinic acid hydrazide	ARO:3000604	Isonicotinic acid hydrazide		INH		antibiotic	INN: isoniazid; antituberculosis
-lincosamide antibiotic	ARO:3000079	Lincosamide	LINCOSAMIDE	CLI		antibiotic	e.g. clindamycin, lincomycin
-macrolide antibiotic	ARO:3000054	Macrolide	MACROLIDE		MAC	antibiotic	MAC is CARD class abbrev
-nitroimidazole antibiotic	ARO:3000229	Nitroimidazole	NITROIMIDAZOLE	MTZ		antibiotic	e.g. metronidazole, delamanid (antituberculosis)
-oxazolidinone antibiotic	ARO:3000219	Oxazolidinone	OXAZOLIDINONE	OXZ		antibiotic	e.g. linezolid
-phenicol antibiotic	ARO:3000124	Amphenicol	PHENICOL	CHL		antibiotic	ResFinder uses "Amphenicol"; INN class = phenicol
-pleuromutilin antibiotic	ARO:3000369	Pleuromutilin	PLEUROMUTILIN	PLM		antibiotic	e.g. tiamulin, retapamulin
-peptide antibiotic	ARO:3000369	Polymyxin	COLISTIN			antibiotic	ResFinder uses class "Polymyxin"; NCBI names the drug "COLISTIN" as class
-mupirocin-like antibiotic	ARO:3000369	Pseudomonic acid	MUPIROCIN	MUP		antibiotic	ResFinder "Pseudomonic acid" = mupirocin class
-rifamycin antibiotic	ARO:3000169	Rifamycin	RIFAMYCIN	RIF		antibiotic	ResFinder lists class as "Rifamycin" (same as drug name); INN drug = rifampicin (UK) / rifampin (US)
-salicylic acid antibiotic	ARO:3000605	Salicylic acid - anti-folate		PAS		antibiotic	INN: para-aminosalicylic acid; antituberculosis
-fusidane antibiotic	ARO:3000282	Steroid antibacterial	FUSIDIC ACID	FA		antibiotic	ResFinder "Steroid antibacterial"; INN: fusidic acid
-streptogramin A antibiotic	ARO:3000060	Streptogramin A	STREPTOGRAMIN			antibiotic
-streptogramin B antibiotic	ARO:3000061	Streptogramin B	STREPTOGRAMIN			antibiotic
-streptogramin antibiotic	ARO:3000059		STREPTOGRAMIN			antibiotic	parent class when A/B not specified
-tetracycline antibiotic	ARO:3000168	Tetracycline	TETRACYCLINE	TET		antibiotic
-thioamide antibiotic	ARO:3000607	Thioamide		ETO		antibiotic	INN: ethionamide; also prothionamide; antituberculosis
-pyrazinamide	ARO:3000608	Synthetic derivative of nicotinamide		PZA		antibiotic	INN: pyrazinamide; antituberculosis; structurally unique
-ethambutol	ARO:3000609	Unspecified		EMB		antibiotic	INN: ethambutol; antituberculosis; listed as "Unspecified" in ResFinder
-bacitracin	ARO:3000369		BACITRACIN			antibiotic	peptide antibiotic; no ResFinder class entry
-lipopeptide antibiotic	ARO:3000369		LIPOPEPTIDE			antibiotic	e.g. daptomycin
-streptothricin antibiotic	ARO:3000369		STREPTOTHRICIN			antibiotic
-tuberactinomycin	ARO:3000369		TUBERACTINOMYCIN			antibiotic	e.g. viomycin, capreomycin; antituberculosis
-nitrofuran antibiotic	ARO:3000369		 	NIT		antibiotic	e.g. nitrofurantoin
-tetracenomycin antibiotic	ARO:3000369		TETRACENOMYCIN			antibiotic
-orthosomycin antibiotic	ARO:3000369		AVILAMYCIN			antibiotic	e.g. avilamycin; orthosomycin class
-thiostrepton	ARO:3000369		THIOSTREPTON			antibiotic
-bleomycin	ARO:3000369		BLEOMYCIN			non_therapeutic	cytotoxic glycopeptide; not a clinical antibiotic; AMR genes real
-quaternary ammonium compound	 		QUATERNARY AMMONIUM			biocide	disinfectant/antiseptic class; not an antibiotic
-efflux	 		EFFLUX			resistance_mechanism	NCBI uses as pseudo-class; actually a resistance mechanism — exclude from drug class joins
-beta-lactamase inhibitor	ARO:3000369			AVI		inhibitor	e.g. avibactam, clavulanic acid, tazobactam; not antibiotics themselves
-riminophenazine antibiotic	ARO:3000369			CFZ		antibiotic	e.g. clofazimine (anti-leprosy, antituberculosis)
-sulphone antibiotic	ARO:3000369			DAO		antibiotic	e.g. dapsone (anti-leprosy); note: sulfone (INN) = sulphone (UK)
-elfamycin antibiotic	ARO:3000369			ELF		antibiotic	e.g. kirromycin, GE2270A, pulvomycin, enacyloxin IIa; EF-Tu inhibitors
-pactamycin-like antibiotic	ARO:3000369			PAC		antibiotic	e.g. pactamycin; translation inhibitor
-macrocyclic antibiotic	ARO:3000369			 		antibiotic	e.g. fidaxomicin; CARD has this class
-zoliflodacin-like antibiotic	ARO:3000369			ZOL		antibiotic	e.g. zoliflodacin; DNA gyrase inhibitor, novel class
-triazaacenaphthylene antibiotic	ARO:3000369			 		antibiotic	triclosan target class
+phosphonic acid antibiotic	ARO:3007149	Fosfomycin	FOSFOMYCIN	FOF		antibiotic	INN: fosfomycin
+glycopeptide antibiotic	ARO:3000081	Glycopeptide	GLYCOPEPTIDE	VAN		antibiotic	e.g. vancomycin, teicoplanin
+ionophore with antibiotic activity		Ionophores	IONOPHORE			veterinary_ionophore	e.g. narasin, salinomycin, maduramicin; veterinary use
+isonicotinic acid hydrazide	ARO:3007152	Isonicotinic acid hydrazide		INH		antibiotic	INN: isoniazid; antituberculosis; CARD name: isoniazid-like antibiotic
+lincosamide antibiotic	ARO:0000017	Lincosamide	LINCOSAMIDE	CLI		antibiotic	e.g. clindamycin, lincomycin
+macrolide antibiotic	ARO:0000000	Macrolide	MACROLIDE		MAC	antibiotic	MAC is CARD class abbrev
+nitroimidazole antibiotic	ARO:3004115	Nitroimidazole	NITROIMIDAZOLE	MTZ		antibiotic	e.g. metronidazole, delamanid (antituberculosis)
+oxazolidinone antibiotic	ARO:3000079	Oxazolidinone	OXAZOLIDINONE	OXZ		antibiotic	e.g. linezolid
+phenicol antibiotic	ARO:3000387	Amphenicol	PHENICOL	CHL		antibiotic	"ResFinder uses ""Amphenicol""; INN class = phenicol"
+pleuromutilin antibiotic	ARO:3000670	Pleuromutilin	PLEUROMUTILIN	PLM		antibiotic	e.g. tiamulin, retapamulin
+peptide antibiotic	ARO:3000053	Polymyxin	COLISTIN			antibiotic	"ResFinder uses class ""Polymyxin""; NCBI names the drug ""COLISTIN"" as class"
+mupirocin-like antibiotic	ARO:3007151	Pseudomonic acid	MUPIROCIN	MUP		antibiotic	"ResFinder ""Pseudomonic acid"" = mupirocin class"
+rifamycin antibiotic	ARO:3000157	Rifamycin	RIFAMYCIN	RIF		antibiotic	"ResFinder lists class as ""Rifamycin"" (same as drug name); INN drug = rifampicin (UK) / rifampin (US)"
+salicylic acid antibiotic	ARO:3007159	Salicylic acid - anti-folate		PAS		antibiotic	INN: para-aminosalicylic acid; antituberculosis
+fusidane antibiotic	ARO:3007153	Steroid antibacterial	FUSIDIC ACID	FA		antibiotic	"ResFinder ""Steroid antibacterial""; INN: fusidic acid"
+streptogramin A antibiotic	ARO:0000034	Streptogramin A	STREPTOGRAMIN			antibiotic	
+streptogramin B antibiotic	ARO:0000050	Streptogramin B	STREPTOGRAMIN			antibiotic	
+streptogramin antibiotic	ARO:0000026		STREPTOGRAMIN			antibiotic	parent class when A/B not specified
+tetracycline antibiotic	ARO:3000050	Tetracycline	TETRACYCLINE	TET		antibiotic	
+thioamide antibiotic	ARO:3007156	Thioamide		ETO		antibiotic	INN: ethionamide; also prothionamide; antituberculosis
+pyrazinamide		Synthetic derivative of nicotinamide		PZA		antibiotic	INN: pyrazinamide; antituberculosis; structurally unique
+ethambutol		Unspecified		EMB		antibiotic	"INN: ethambutol; antituberculosis; listed as ""Unspecified"" in ResFinder"
+bacitracin			BACITRACIN			antibiotic	peptide antibiotic; no ResFinder class entry
+lipopeptide antibiotic			LIPOPEPTIDE			antibiotic	e.g. daptomycin
+streptothricin antibiotic			STREPTOTHRICIN			antibiotic	
+tuberactinomycin			TUBERACTINOMYCIN			antibiotic	e.g. viomycin, capreomycin; antituberculosis
+nitrofuran antibiotic	ARO:3004116			NIT		antibiotic	e.g. nitrofurantoin
+tetracenomycin antibiotic			TETRACENOMYCIN			antibiotic	
+orthosomycin antibiotic	ARO:3007166		AVILAMYCIN			antibiotic	e.g. avilamycin; orthosomycin class
+thiostrepton			THIOSTREPTON			antibiotic	
+bleomycin			BLEOMYCIN			non_therapeutic	cytotoxic glycopeptide; not a clinical antibiotic; AMR genes real
+quaternary ammonium compound			QUATERNARY AMMONIUM			biocide	disinfectant/antiseptic class; not an antibiotic
+disinfecting agents and antiseptics	ARO:3005386					biocide	CARD broad biocide category; covers triclosan, QACs, etc.
+efflux			EFFLUX			resistance_mechanism	NCBI uses as pseudo-class; actually a resistance mechanism — exclude from drug class joins
+beta-lactamase inhibitor				AVI		inhibitor	e.g. avibactam, clavulanic acid, tazobactam; not antibiotics themselves
+riminophenazine antibiotic		Iminophenazine		CFZ		antibiotic	e.g. clofazimine (anti-leprosy, antituberculosis)
+sulphone antibiotic	ARO:3003401			DAO		antibiotic	e.g. dapsone (anti-leprosy); note: sulfone (INN) = sulphone (UK); CARD name: sulfone antibiotic
+elfamycin antibiotic	ARO:3001219			ELF		antibiotic	e.g. kirromycin, GE2270A, pulvomycin, enacyloxin IIa; EF-Tu inhibitors
+pactamycin-like antibiotic	ARO:3007158			PAC		antibiotic	e.g. pactamycin; translation inhibitor
+macrocyclic antibiotic						antibiotic	e.g. fidaxomicin; CARD has this class
+zoliflodacin-like antibiotic	ARO:3007160			ZOL		antibiotic	e.g. zoliflodacin; DNA gyrase inhibitor, novel class
+triazaacenaphthylene antibiotic						antibiotic	triclosan target class
 nucleoside antibiotic	ARO:3000034					antibiotic	e.g. capreomycin, tuberactinomycins; some overlap with tuberactinomycin class
 glycylcycline	ARO:0000042					antibiotic	e.g. tigecycline; subclass of tetracyclines in CARD
 polyamine antibiotic	ARO:3000527					antibiotic	CARD class; polyamine-based antibiotics
@@ -61,5 +62,4 @@ pyrazine antibiotic	ARO:3007155					antibiotic	e.g. pyrazinamide; antituberculos
 moenomycin antibiotic	ARO:3000687					antibiotic	e.g. moenomycin A; phosphoglycolipid; PBP glycosyltransferase inhibitor
 bicyclomycin-like antibiotic	ARO:3007150					antibiotic	e.g. bicyclomycin (bicozamycin); Rho factor inhibitor
 nybomycin-like antibiotic						antibiotic	e.g. nybomycin; quinolone-related natural product
-disinfecting agents and antiseptics	ARO:3005386					biocide	CARD broad biocide category; covers triclosan, QACs, etc.
 antibacterial free fatty acids	ARO:3003956					antibiotic	e.g. MCFA-based antibacterials; CARD-specific class
