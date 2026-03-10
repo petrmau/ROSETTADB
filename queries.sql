@@ -42,13 +42,20 @@ SELECT sd.canonical_drug, sd.evidence_sources
 FROM amr.sequence_drug sd
 WHERE sd.jrc_id = 'JRC8214f7c788';
 
--- All genes linked to a specific canonical drug
-SELECT g.jrc_id, g.gene_name, g.source, g.card_short_name,
+-- All genes linked to a specific canonical drug (direct NCBI path + via drug class membership)
+SELECT DISTINCT g.jrc_id, g.gene_name, g.source, g.card_short_name,
        g.gene_family, g.resistance_mechanism, sd.evidence_sources
 FROM amr.sequence_drug sd
 JOIN amr.gene g ON g.jrc_id = sd.jrc_id
 WHERE sd.canonical_drug = 'ciprofloxacin'
-ORDER BY g.gene_name, g.source;
+UNION
+SELECT DISTINCT g.jrc_id, g.gene_name, g.source, g.card_short_name,
+       g.gene_family, g.resistance_mechanism, sdc.evidence_sources
+FROM amr.sequence_drug_class sdc
+JOIN amr.drug_class_member dcm ON dcm.canonical_class = sdc.canonical_class
+JOIN amr.gene g ON g.jrc_id = sdc.jrc_id
+WHERE dcm.canonical_drug = 'ciprofloxacin'
+ORDER BY gene_name, source;
 
 -- Canonical metadata for a sequence across all sources
 SELECT * FROM amr.sequence_metadata WHERE jrc_id = 'JRC8214f7c788';
