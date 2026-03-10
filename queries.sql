@@ -59,7 +59,7 @@ LIMIT 10;
 -- Cluster queries
 -- -----------------------------------------------------------------------------
 
--- All clusters: representative sequence + gene names + linked canonical drugs + ATC groups
+-- All clusters: representative sequence + gene names + linked canonical drugs + drug classes + ATC groups
 SELECT
     c.cluster_id,
     c.representative_jrc                                                AS jrc_id,
@@ -67,14 +67,16 @@ SELECT
     string_agg(DISTINCT g.gene_name,   ' / ' ORDER BY g.gene_name)     AS gene_names,
     string_agg(DISTINCT g.source,      ' | ' ORDER BY g.source)        AS sources,
     string_agg(DISTINCT sd.canonical_drug, ', ' ORDER BY sd.canonical_drug) AS linked_drugs,
+    string_agg(DISTINCT sdc.canonical_class, ' | ' ORDER BY sdc.canonical_class) AS drug_classes,
     string_agg(DISTINCT d.atc_group1,  ' | ' ORDER BY d.atc_group1)    AS atc_groups1,
     string_agg(DISTINCT d.atc_group2,  ' | ' ORDER BY d.atc_group2)    AS atc_groups2,
     s.sequence
 FROM amr.cluster c
-JOIN amr.sequence          s  ON s.jrc_id        = c.representative_jrc
-LEFT JOIN amr.gene         g  ON g.jrc_id        = c.representative_jrc
-LEFT JOIN amr.sequence_drug sd ON sd.jrc_id      = c.representative_jrc
-LEFT JOIN amr.drug          d  ON d.canonical_name = sd.canonical_drug
+JOIN amr.sequence               s   ON s.jrc_id          = c.representative_jrc
+LEFT JOIN amr.gene              g   ON g.jrc_id           = c.representative_jrc
+LEFT JOIN amr.sequence_drug     sd  ON sd.jrc_id          = c.representative_jrc
+LEFT JOIN amr.sequence_drug_class sdc ON sdc.jrc_id       = c.representative_jrc
+LEFT JOIN amr.drug              d   ON d.canonical_name   = sd.canonical_drug
 GROUP BY c.cluster_id, c.representative_jrc, s.sequence_length, s.sequence
 ORDER BY c.cluster_id;
 
