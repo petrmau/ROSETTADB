@@ -15,6 +15,10 @@ For each canonical drug in drug_canonical.tsv the script:
                           Always written when the reference has data, so a
                           prior single-code value becomes the full list.
   - Updates loinc_codes   from the `loinc` column (always written when present)
+  - Updates atc_group1    from the `atc_group1` column (ATC level-2 group,
+                          e.g. "Aminoglycoside antibacterials")
+  - Updates atc_group2    from the `atc_group2` column (ATC level-3 group,
+                          e.g. "Other aminoglycosides")
   - Adds synonyms and abbreviations to drug_alias.tsv
 
 Combination drugs (e.g. "amoxicillin+clavulanic acid") are matched against
@@ -199,13 +203,19 @@ def build_combo_index(amr_rows: list[dict]) -> dict[frozenset, dict]:
 # Apply enrichment from a matched reference row
 # ---------------------------------------------------------------------------
 
+def _clean_group(raw: str) -> str:
+    """Return stripped group string, or empty string if absent/NA."""
+    s = raw.strip() if raw else ""
+    return "" if s.upper() == "NA" else s
+
+
 def apply_hit(row: dict, hit: dict, cn: str,
-              new_aliases: list[tuple]) -> tuple[bool, bool, bool]:
+              new_aliases: list[tuple]) -> tuple[bool, bool, bool, bool, bool]:
     """
     Apply data from a matched AMR reference row to a drug_canonical row.
-    Returns (cid_filled, atc_updated, loinc_updated) booleans.
+    Returns (cid_filled, atc_updated, loinc_updated, g1_updated, g2_updated).
     """
-    cid_filled = atc_updated = loinc_updated = False
+    cid_filled = atc_updated = loinc_updated = g1_updated = g2_updated = False
 
     # PubChem CID — only if currently blank (existing value is preserved)
     if not row.get("pubchem_cid"):
@@ -226,6 +236,17 @@ def apply_hit(row: dict, hit: dict, cn: str,
         row["loinc_codes"] = loinc
         loinc_updated = True
 
+    # ATC groups — always update when present
+    g1 = _clean_group(hit.get("atc_group1", ""))
+    if g1 and g1 != row.get("atc_group1", ""):
+        row["atc_group1"] = g1
+        g1_updated = True
+
+    g2 = _clean_group(hit.get("atc_group2", ""))
+    if g2 and g2 != row.get("atc_group2", ""):
+        row["atc_group2"] = g2
+        g2_updated = True
+
     # Aliases — only from single-drug entries (combo aliases are not useful)
     for field, alias_type in (
         ("name",          "source_name"),
@@ -241,7 +262,7 @@ def apply_hit(row: dict, hit: dict, cn: str,
             if v and normalise(v) != normalise(cn):
                 new_aliases.append((cn, v, alias_type, "amr_r"))
 
-    return cid_filled, atc_updated, loinc_updated
+    return cid_filled, atc_updated, loinc_updated, g1_updated, g2_updated
 
 
 # ---------------------------------------------------------------------------
@@ -280,17 +301,18 @@ def main() -> None:
         print("drug_canonical.tsv is empty — nothing to do.")
         return
 
-    # Ensure loinc_codes column exists
+    # Ensure new columns exist (safe to re-run against an older TSV)
     fieldnames = list(drugs[0].keys())
-    if "loinc_codes" not in fieldnames:
-        fieldnames.append("loinc_codes")
-        for row in drugs:
-            row.setdefault("loinc_codes", "")
+    for col in ("loinc_codes", "atc_group1", "atc_group2"):
+        if col not in fieldnames:
+            fieldnames.append(col)
+            for row in drugs:
+                row.setdefault(col, "")
 
     new_aliases: list[tuple] = []
     matched_single = matched_combo = 0
     filled_cid = 0
-    updated_atc = updated_loinc = 0
+    updated_atc = updated_loinc = updated_g1 = updated_g2 = 0
 
     for row in drugs:
         cn  = row["canonical_name"]
@@ -309,13 +331,12 @@ def main() -> None:
         if hit is None:
             continue
 
-        cid_f, atc_u, loinc_u = apply_hit(row, hit, cn, new_aliases)
-        if cid_f:
-            filled_cid += 1
-        if atc_u:
-            updated_atc += 1
-        if loinc_u:
-            updated_loinc += 1
+        cid_f, atc_u, loinc_u, g1_u, g2_u = apply_hit(row, hit, cn, new_aliases)
+        if cid_f:   filled_cid   += 1
+        if atc_u:   updated_atc  += 1
+        if loinc_u: updated_loinc += 1
+        if g1_u:    updated_g1   += 1
+        if g2_u:    updated_g2   += 1
 
     total_matched = matched_single + matched_combo
     print(f"\ndrug_canonical.tsv: {total_matched}/{len(drugs)} drugs matched "
@@ -323,6 +344,8 @@ def main() -> None:
     print(f"  Filled  pubchem_cid : {filled_cid}")
     print(f"  Updated atc_code    : {updated_atc}")
     print(f"  Updated loinc_codes : {updated_loinc}")
+    print(f"  Updated atc_group1  : {updated_g1}")
+    print(f"  Updated atc_group2  : {updated_g2}")
 
     with open(DRUG_TSV, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t",

@@ -518,6 +518,8 @@ def load_harmonise(cur):
                 _none(( r.get("pubchem_cid") or "" ).strip()),
                 _none(( r.get("chebi_id") or "" ).strip()),
                 _none(( r.get("loinc_codes") or "" ).strip()),
+                _none(( r.get("atc_group1") or "" ).strip()),
+                _none(( r.get("atc_group2") or "" ).strip()),
                 _none(( r.get("sources") or "" ).strip()),
             )
             for r in rows
@@ -527,7 +529,7 @@ def load_harmonise(cur):
             INSERT INTO amr.drug
                 (canonical_name, is_combination, components, context,
                  card_abbrev, atc_code, inchikey, pubchem_cid, chebi_id,
-                 loinc_codes, sources)
+                 loinc_codes, atc_group1, atc_group2, sources)
             VALUES %s
             ON CONFLICT (canonical_name) DO UPDATE SET
                 is_combination = EXCLUDED.is_combination,
@@ -539,6 +541,8 @@ def load_harmonise(cur):
                 pubchem_cid    = EXCLUDED.pubchem_cid,
                 chebi_id       = EXCLUDED.chebi_id,
                 loinc_codes    = EXCLUDED.loinc_codes,
+                atc_group1     = EXCLUDED.atc_group1,
+                atc_group2     = EXCLUDED.atc_group2,
                 sources        = EXCLUDED.sources
         """, data)
         print(f"  drug:       {len(data)} rows", file=sys.stderr)

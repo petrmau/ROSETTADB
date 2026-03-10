@@ -54,8 +54,8 @@ amr.sequence_metadata  – canonical metadata per (jrc_id × source) after dedup
 amr.drug_class         – 64 canonical antibiotic/antimicrobial classes
                          (names follow CARD ARO; ARO accessions are stable keys)
 amr.drug               – 169 canonical drugs (INN names); enriched with
-                         PubChem CID, InChIKey, ATC code, ChEBI ID,
-                         LOINC susceptibility test codes
+                         PubChem CID, InChIKey, ATC code(s), ChEBI ID,
+                         LOINC susceptibility test codes, ATC group labels
 amr.drug_alias         – 2 662 spelling variants, brand names, synonyms,
                          abbreviations, and source-specific aliases
 amr.drug_class_member  – 172 drug → class memberships (many-to-many);
@@ -178,6 +178,8 @@ reference (`antimicrobials.txt`) — no network calls:
 | `pubchem_cid` | `cid` | Filled only if currently blank; not overwritten |
 | `atc_code` | `atc` | All codes stored, sorted: J first, Q immediately after J, then other categories. Always updated when the reference has data (single-code values from a prior `enrich.py` run become full lists) |
 | `loinc_codes` | `loinc` | Comma-separated susceptibility test identifiers; always updated when present |
+| `atc_group1` | `atc_group1` | ATC level-2 group (e.g. `"Aminoglycoside antibacterials"`); always updated when present |
+| `atc_group2` | `atc_group2` | ATC level-3 group (e.g. `"Other aminoglycosides"`); always updated when present |
 | `drug_alias.tsv` | `name`, `synonyms`, `abbreviations` | Adds `synonym` and `abbreviation` rows with `source=amr_r` |
 
 **Combination drug matching:** canonical names using `+` or ` & ` separators
