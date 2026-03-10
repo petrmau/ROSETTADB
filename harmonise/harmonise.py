@@ -21,6 +21,8 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+import parse_aro_obo
+
 ROOT = Path(__file__).parent.parent
 
 # ---------------------------------------------------------------------------
@@ -520,14 +522,44 @@ def main():
     print("Parsing NCBI AMRFinderPlus …")
     ncbi_drugs, ncbi_aliases, ncbi_gene_links = parse_ncbi()
 
+    aro_drug_members, aro_gene_links = parse_aro_obo.parse()
+
+    # Convert ARO drug→class entries into drug dicts for merge_drugs()
+    aro_drugs = [
+        {
+            "canonical_name": r["canonical_drug"],
+            "source_name":    r["canonical_drug"],
+            "context":        _context_flag(r["canonical_drug"]),
+            "is_combination": False,
+            "components":     [],
+        }
+        for r in aro_drug_members
+    ]
+
     print("Merging drug canonical table …")
-    all_drugs = merge_drugs(rf_drugs, card_drugs, ncbi_drugs)
+    all_drugs = merge_drugs(rf_drugs, card_drugs, ncbi_drugs, aro_drugs)
 
     print("Building class membership …")
     membership = build_class_membership(
         rf_drugs, class_mapping, resfinder_lookup,
         ncbi_gene_links, ncbi_lookup, direct_mappings
     )
+
+    # Append ARO-derived drug→class memberships (converted to standard format)
+    seen_membership = {(r["canonical_drug"], r["canonical_class"]) for r in membership}
+    for r in aro_drug_members:
+        key = (r["canonical_drug"], r["canonical_class"])
+        if key not in seen_membership:
+            seen_membership.add(key)
+            cm = class_mapping.get(r["canonical_class"], {})
+            membership.append({
+                "canonical_drug": r["canonical_drug"],
+                "canonical_class": r["canonical_class"],
+                "aro_accession":  r["class_aro_accession"],
+                "category":       cm.get("category", ""),
+                "source":         "aro_obo",
+            })
+    membership.sort(key=lambda x: (x["canonical_class"], x["canonical_drug"]))
 
     print("Building alias table …")
     all_aliases = rf_aliases + card_aliases + ncbi_aliases
@@ -558,13 +590,25 @@ def main():
          "canonical_class_token", "canonical_drug_token"],
     )
 
+    write_tsv(
+        out / "aro_gene_class.tsv",
+        aro_gene_links,
+        ["aro_accession", "gene_name", "canonical_class",
+         "class_aro_accession", "source"],
+    )
+
     # Summary stats
+    aro_new_drugs = len({r["canonical_drug"] for r in aro_drug_members})
+    aro_new_links = sum(1 for r in membership if r.get("source") == "aro_obo")
     print(f"\nSummary:")
     print(f"  Canonical drug classes : {len(class_mapping)}")
     print(f"  Canonical drugs        : {len(all_drugs)}")
+    print(f"    found in ARO OBO     : {aro_new_drugs}")
     print(f"  Drug aliases           : {len(set(all_aliases))}")
     print(f"  Drug→class links       : {len(membership)}")
+    print(f"    of which ARO-sourced : {aro_new_links}")
     print(f"  Gene→drug links (NCBI) : {len(ncbi_gene_links)}")
+    print(f"  Gene→class (ARO OBO)   : {len(aro_gene_links)}")
 
     # Warn about drugs with no class assignment
     classed = {r["canonical_drug"] for r in membership}

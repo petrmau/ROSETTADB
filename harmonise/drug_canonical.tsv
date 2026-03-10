@@ -1,170 +1,586 @@
-canonical_name	is_combination	components	context	card_abbrev	atc_code	inchikey	pubchem_cid	chebi_id	sources	loinc_codes	atc_group1	atc_group2
-amikacin	False		clinical	AMK	J01GB06,QD06AX12,QJ01GB06,QS01AA21,D06AX12,S01AA21	LKCWBDHBTVXHDL-SMDDNHRTSA-N	37768	CHEBI:2637	card|ncbi|resfinder	101493-5,11-7,12-5,13-3,13546-7,14-1,15098-7,17798-0,18860-7,20373-7,23624-0,25174-4,25175-1,25176-9,25177-7,25178-5,25179-3,31097-9,31098-7,31099-5,3319-1,3320-9,3321-7,35669-1,42642-9,48169-7,50802-8,50803-6,56628-1,59378-0,60564-2,60565-9,6975-7,80972-3,89484-0	Aminoglycoside antibacterials	Other aminoglycosides
-aminoglycoside	False		clinical						ncbi			
-amoxicillin	False		clinical	AMX	J01CA04,QG51AA03,QJ01CA04	LSQZJLSUYDQPKJ-NJBDSQKTSA-N	33613	CHEBI:2676	card|resfinder	101498-4,15-8,16-6,16365-9,17-4,18-2,18861-5,18862-3,19-0,20-8,21-6,22-4,25274-2,25310-4,3344-9,55614-2,55615-9,55616-7,6976-5,6977-3,80133-2	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
-amoxicillin+clavulanic acid	True	amoxicillin|clavulanic acid	clinical		J01CR02,QJ01CR02		23665637		resfinder		Beta-lactam antibacterials, penicillins	Combinations of penicillins, incl. beta-lactamase inhibitors
-ampicillin	False		clinical		J01CA01,QJ01CA01,QJ51CA01,QS01AA19,S01AA19	AVKUERGKIZMTKX-NJBDSQKTSA-N	6249	CHEBI:28971	resfinder	101477-8,101478-6,18864-9,18865-6,20374-5,21066-6,23618-2,27-3,28-1,29-9,30-7,31-5,32-3,33-1,3355-5,33562-0,33919-2,34-9,43883-8,43884-6,6979-9,6980-7,87604-5	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
-ampicillin+clavulanic acid	True	ampicillin|clavulanic acid	clinical						resfinder			
-apramycin	False		clinical		QA07AA92,QJ01GB90,QJ51GB90	XZNUGFQTQHRASN-XQXXSGGOSA-N	3032628	CHEBI:2731	ncbi|resfinder	23659-6,73652-0,73653-8		
-arbekacin	False		clinical		J01GB12,QJ01GB12	MKKYBZZTJQGVCD-XTCKQBCOSA-N	456012		resfinder	32373-3,53818-1,54173-0		
-astromicin	False		clinical		J01GB13	BSMOLWBDHLCNLU-PWPDDNHESA-N	72579		resfinder			
-avibactam	False		inhibitor	AVI		JTEHXIYAZYVHKE-BGZDPUMOSA-N	10295702	CHEBI:85896	card|ncbi|resfinder			
-avilamycin	False		veterinary		QA07AA95	RQFUZUMFPRMVDX-JXOAFFINSA-N	10096		ncbi	35754-1,35755-8,35756-6,55619-1		
-azithromycin	False		clinical	AZM	J01FA10,QJ01FA10,QS01AA26,S01AA26	MQTOSJVFKKJCRP-BICOPXKESA-N	447043	CHEBI:2955	card|ncbi|resfinder	100043-9,16420-2,16421-0,18866-4,23612-5,25233-8,35-6,36-4,37-2,38-0,6981-5,89480-8	Macrolides, lincosamides and streptogramins	Macrolides
-aztreonam	False		clinical	ATM	J01DF01,QJ01DF01	WZPBZJONMAIEGC-WCTZXXKLSA-N	5494	CHEBI:2949	card|resfinder	101497-6,16423-6,18868-0,25234-6,3369-6,41662-8,41663-6,41664-4,41727-9,43-0,44-8,45-5,46-3,6982-3	Other beta-lactam antibacterials	Monobactams
-bacitracin	False		clinical		J01XX10,QA07AA93,QD06AX05,QJ01XX10,QR02AB04,QS01AA32,D06AX05,R02AB04,S01AA32	CLKOFPMOUPERMY-SFHVURJKSA-N	10909	CHEBI:2906	ncbi	10868-8,16428-5,18870-6,6827-0,6983-1,87603-7		
-bedaquiline	False		antituberculosis	BDQ	J04AK05,QJ04AK05	QUIJNHUBAXPXFS-XLJNKUFUSA-N	5388906	CHEBI:71954	card|resfinder	80637-2,88703-4,88704-2,94274-8,96107-8		
-beta-lactam	False		clinical						ncbi			
-bleomycin	False		non_therapeutic		QL01DC01,L01DC01	OYVAGSVQBOHSSS-UAPAGMARSA-N	5460769	CHEBI:22907	ncbi|resfinder			
-butiromycin	False		clinical						resfinder			
-butirosin	False		clinical			KWIUHFFTVRNATP-NJFSPNSNSA-N	33042		resfinder			
-capreomycin	False		antituberculosis	CAP	J04AB30,QJ04AB30	BBBMCUHZNLZBSF-NJMRJVPJSA-N	9548704	CHEBI:3286	card|ncbi|resfinder	16545-6,18872-2,23607-5,25210-6,25211-4,25212-2,42643-7,48170-5,55-4,55623-3,56-2,57-0,58-8,61355-4,89483-2	Drugs for treatment of tuberculosis	Antibiotics
-carbapenem	False		clinical						ncbi			
-carbomycin	False		veterinary			MLYYVTUWGNIJIB-MHZLTWQESA-N	5280912		resfinder			
-cefazolin	False		clinical		J01DB04,QJ01DB04,QJ51DB04	MKUXAQIIEYXUQM-GBOIULQQSA-N	33255	CHEBI:474053	resfinder	16566-2,18878-9,25235-3,3442-1,3443-9,41670-1,75-2,76-0,77-8,78-6,80962-4,85422-4	Other beta-lactam antibacterials	First-generation cephalosporins
-cefepime	False		clinical		J01DE01,QJ01DE01	HVFLCNVBZFFHBT-ZKDACBOMSA-N	5479519	CHEBI:88226	resfinder	101502-3,18879-7,31142-3,31143-1,35763-2,38363-8,42350-9,42351-7,42353-3,50631-1,58412-8,6643-1,6644-9,6645-7,6646-5,6987-2,8272-7,8273-5	Other beta-lactam antibacterials	Fourth-generation cephalosporins
-cefepime-taniborbactam	False		clinical						ncbi			
-cefiderocol	False		clinical		J01DI04,QJ01DI04	ODKZBOTJWJMWSP-HKUYNNGSSA-N	2727067		ncbi	95767-0,99280-0,99503-5		
-cefixime	False		clinical		J01DD08,QJ01DD08	OKBVVJOGVLARMR-QSWIMTSFSA-N	2723627	CHEBI:474061	resfinder	16567-0,18880-5,25236-1,35766-5,79-4,80-2,81-0,82-8	Other beta-lactam antibacterials	Third-generation cephalosporins
-cefotaxime	False		clinical		J01DD01,QJ01DD01	AZZMGZXNTDTSME-GUJEHNGTSA-N	5479543	CHEBI:3496	resfinder	101479-4,101480-2,107-3,108-1,109-9,110-7,18886-2,25238-7,31138-1,31139-9,3446-2,35769-9,35770-7,35771-5,41671-9,50632-9,52128-6,54191-2,54192-0,54193-8,55189-5,55644-9,6989-8,80961-6	Other beta-lactam antibacterials	Third-generation cephalosporins
-cefotaxime+clavulanic acid	True	cefotaxime|clavulanic acid	clinical		J01DD51,QJ01DD51		9575353		resfinder			
-cefoxitin	False		clinical		J01DC01,QJ01DC01	WZOZEZRFJCJXNZ-ZBFHGGJFSA-N	441199	CHEBI:3508	resfinder	101492-7,115-6,116-4,117-2,118-0,18888-8,25220-5,25240-3,25366-6,3448-8,41675-0,41676-8,41677-6,41730-3,6991-4	Other beta-lactam antibacterials	Second-generation cephalosporins
-ceftaroline	False		clinical		J01DI02,QJ01DI02	ZCCIWZSDUSKDMV-WYTFXKESSA-N	9578130		ncbi|resfinder	73604-1,73605-8,73626-4,73627-2,73649-6,73650-4,74170-2		
-ceftazidime	False		clinical	CEF	J01DD02,QJ01DD02	ORFOPKXBNMVMKC-DWVKKRMSSA-N	5481173	CHEBI:3553	card|resfinder	101481-0,101482-8,101483-6,132-1,133-9,134-7,135-4,18893-8,21151-6,3449-6,35774-9,35775-6,35776-4,42352-5,55648-0,55649-8,55650-6,55651-4,58705-5,6995-5,73603-3,73625-6,73648-8,80960-8,87734-0,90850-9	Other beta-lactam antibacterials	Third-generation cephalosporins
-ceftazidime+avibactam	True	ceftazidime|avibactam	clinical		J01DD52,QJ01DD52		90643431		resfinder	101483-6,73603-3,73625-6,73648-8,87734-0		
-ceftazidime-avibactam	False		clinical	CZA					card			
-ceftibuten-avibactam	False		clinical						ncbi			
-ceftriaxone	False		clinical		J01DD04,QJ01DD04	VAAUVRVFOQPIGI-SPQHTLEESA-N	5479530	CHEBI:29007	resfinder	101485-1,140-4,141-2,142-0,143-8,18895-3,25244-5,25367-4,31140-7,31141-5,3451-2,41681-8,41682-6,41683-4,41732-9,50633-7,55190-3,6998-9,80957-4	Other beta-lactam antibacterials	Third-generation cephalosporins
-cefuroxime	False		clinical		J01DC02,QJ01DC02,QJ51DC02,QS01AA27,S01AA27	JFPVXVDWJQMJEE-IZRZKJBUSA-N	5479529	CHEBI:3597	resfinder	101503-1,144-6,145-3,146-1,147-9,18896-1,20460-2,25245-2,3452-0,35782-2,35783-0,51724-3,51774-8,55653-0,55654-8,6999-7,74699-0,80608-3,80617-4	Other beta-lactam antibacterials	Second-generation cephalosporins
-cephalosporin	False		clinical						ncbi			
-cephalothin	False		clinical		J01DB03,QJ01DB03	XIURVHNZVLADCM-UHFFFAOYSA-N	22323	CHEBI:3538	ncbi|resfinder		Other beta-lactam antibacterials	First-generation cephalosporins
-chloramphenicol	False		clinical	CHL	J01BA01,QD06AX02,QD10AF03,QG01AA05,QJ01BA01,QJ51BA01,QS01AA01,QS02AA01,QS03AA08,D06AX02,D10AF03,G01AA05,S01AA01,S02AA01,S03AA08	WIIZWVCIJKGZOK-RKDXNWHRSA-N	5959	CHEBI:17698	card|ncbi|resfinder	15101-9,16603-3,16604-1,172-7,173-5,174-3,175-0,18903-5,25247-8,29214-4,29346-4,29347-2,3455-3,7001-1	Amphenicols	Amphenicols
-ciprofloxacin	False		clinical	CIP	J01MA02,QJ01MA02,QS01AE03,QS02AA15,QS03AA07,S01AE03,S02AA15,S03AA07	MYSWGUAQZAJSOK-UHFFFAOYSA-N	2764	CHEBI:100241	card|resfinder	101500-7,14031-9,14032-7,14058-2,14059-0,184-2,185-9,186-7,187-5,18906-8,20377-8,23621-6,25180-1,25181-9,25188-4,25189-2,25248-6,34636-1,3484-3,42644-5,55194-5,7002-9	Quinolone antibacterials	Fluoroquinolones
-clarithromycin	False		clinical	CLR	J01FA09,QJ01FA09	AGOYDEPGAOXOCK-KCVZKFEFSA-N	84029	CHEBI:3732	card|ncbi	100048-8,16619-9,16620-7,188-3,189-1,18907-6,190-9,191-7,20375-2,23619-0,25190-0,25191-8,25192-6,25253-6,34638-7,43987-7,43990-1,43991-9,7003-7,80559-8,89485-7	Macrolides, lincosamides and streptogramins	Macrolides
-clavulanic acid	False		inhibitor			HZZVJAQRINQKSD-PBFISZAISA-N	5280980	CHEBI:48947	resfinder			
-clindamycin	False		clinical	CLI	J01FF01,QD10AF01,QG01AA10,QJ01FF01,D10AF01,G01AA10	KDLRVYVGXIQJDK-AWPVFWJPSA-N	29029	CHEBI:3745	card|ncbi|resfinder	16621-5,16622-3,18908-4,192-5,193-3,194-1,195-8,25249-4,3486-8,42720-3,55657-1,55658-9,55659-7,55660-5,61188-9,7005-2	Macrolides, lincosamides and streptogramins	Lincosamides
-clofazimine	False		antituberculosis	CFZ	J04BA01,QJ04BA01	WDQPAMHFFCXSNU-BGALOTTGSA-N	2802	CHEBI:3772	card|resfinder	16623-1,20376-0,23620-8,23627-3,43986-9,43988-5,43989-3,55661-3,55662-1,96108-6	Drugs for treatment of lepra	Drugs for treatment of lepra
-colistin	False		clinical	CST	J01XB01,QA07AA10,QJ01XB01,QJ51XB01,A07AA10	BXDBPUHKUJDCJB-DMJKGFBTSA-N	5311054	CHEBI:37943	card|ncbi|resfinder	16645-4,18912-6,204-8,205-5,206-3,207-1,29493-4,33333-6	Other antibacterials	Polymyxins
-d-cycloserine	False		antituberculosis	DCS	J04AB01	DYDCUQKUCUHJBH-UWTATZPHSA-N	6234	CHEBI:16919	card|resfinder			
-dalfopristin	False		clinical		J01FG01	LUGCSXFMFAFEJQ-RDKYNCKFSA-N	5281102		resfinder			
-dapsone	False		clinical	DAO	J04BA02,QD10AX05,QJ04BA02,D10AX05	MQJKPEGWNLWLTK-UHFFFAOYSA-N	2955	CHEBI:4325	card	51698-9,9747-7	Drugs for treatment of lepra	Drugs for treatment of lepra
-daptomycin	False		clinical	DAP	J01XX09,QJ01XX09	DOAKLVKFURWEDJ-RWJQBGPGSA-N	16134395	CHEBI:600103	card|ncbi	35787-1,35788-9,35789-7,41691-7	Other antibacterials	Other antibacterials
-delamanid	False		antituberculosis	DLM	J04AK06,QJ04AK06	XCFUMJSCSSIJBV-UHFFFAOYSA-N	6480456	CHEBI:75250	card	93851-4,96109-4	Drugs for treatment of tuberculosis	Other drugs for treatment of tuberculosis
-dibekacin	False		clinical		J01GB09,QJ01GB09,QS01AA29,S01AA29	JJCQSGDBDPIQJO-KQYNXXCUSA-N	34071		resfinder	55669-6,55670-4,55671-2,55672-0	Aminoglycoside antibacterials	Other aminoglycosides
-doxycycline	False		clinical		J01AA02,QA01AB22,QJ01AA02,A01AB22	SGKRLCUYIXIAHR-KQYNXXCUSA-N	54671203	CHEBI:50845	ncbi|resfinder	10986-8,18917-5,20379-4,21250-6,224-6,225-3,226-1,227-9,23623-2,25223-9,26902-7,7008-6	Tetracyclines	Tetracyclines
-edeine	False		clinical	EDN		MBBBVHDBWHYMQD-OAYPNKCNSA-N	135694063		card			
-efflux	False		clinical						ncbi			
-elfamycin	False		clinical	ELF					card			
-enacyloxin iia	False		clinical	ENC					card			
-enrofloxacin	False		clinical	ENR	QJ01MA90	VJGMBVMDGIFTEM-UHFFFAOYSA-N	71188	CHEBI:4880	card	23712-3,35796-2,35797-0,35798-8		
-ertapenem	False		clinical		J01DH03,QJ01DH03	JUZNIMUFDBIJCM-WLTAIBSBSA-N	150610	CHEBI:332277	resfinder	101486-9,35799-6,35800-2,35801-0,35802-8	Other beta-lactam antibacterials	Carbapenems
-erythromycin	False		clinical	ERY	J01FA01,QD10AF02,QJ01FA01,QJ51FA01,QS01AA17,D10AF02,S01AA17	ULGZDMOVFRHVEP-RWJQBGPGSA-N	12560	CHEBI:42355	card|ncbi|resfinder	100050-4,11576-6,12298-6,16829-4,16830-2,18919-1,18920-9,20380-2,232-9,233-7,234-5,235-2,236-0,23633-1,237-8,238-6,239-4,25224-7,25275-9,3597-2,7009-4	Macrolides, lincosamides and streptogramins	Macrolides
-ethambutol	False		antituberculosis	EMB	J04AK02,QJ04AK02	AEUTYOVWOVBAKS-UWVGGRQHSA-N	14219	CHEBI:4877	card|resfinder	100051-2,16841-9,18921-7,20381-0,23625-7,240-2,241-0,242-8,243-6,25187-6,25194-2,25195-9,25230-4,25404-5,3607-9,42645-2,42646-0,55154-9,55674-6,56025-0,7010-2,89491-5	Drugs for treatment of tuberculosis	Other drugs for treatment of tuberculosis
-ethambutol & capreomycin	True	ethambutol|capreomycin	clinical	EMCM					card			
-ethionamide	False		antituberculosis	ETO	J04AD03,QJ04AD03	AEOCXXJPGCBFJA-UHFFFAOYSA-N	14052	CHEBI:4879	card|resfinder	16099-4,16845-0,18922-5,20382-8,23617-4,25183-5,25196-7,25198-3,25231-2,41693-3,42647-8,42648-6,7011-0,96110-2	Drugs for treatment of tuberculosis	Thiocarbamide derivatives
-florfenicol	False		clinical		QJ01BA90,QJ51BA90	AYIRNRDRBQBKNY-ZETCQYMHSA-N	122767	CHEBI:76072	ncbi|resfinder	23740-4,35807-7,35808-5,87599-7		
-fluoroquinolone	False		clinical						resfinder			
-fortimicin	False		clinical		J01GB13	BSMOLWBDHLCNLU-PWPDDNHESA-N	72579		resfinder			
-fosfomycin	False		clinical	FOF	J01XX01,QJ01XX01,QS02AA17,S02AA17	YIYMPDZRHKOZEC-UFYCRDLUSA-N	446987	CHEBI:422767	card|ncbi|resfinder	25596-8,25653-7,35809-3,35810-1	Other antibacterials	Other antibacterials
-fusidic acid	False		clinical	FA	J01XC01,QD06AX01,QD09AA02,QJ01XC01,QS01AA13,D06AX01,D09AA02,S01AA13	IECPWNUMDGFDKC-MZJAQBGESA-N	3000226	CHEBI:10119	card|ncbi|resfinder		Other antibacterials	Steroid antibacterials
-g418	False		research_tool	G418		BRZYSWJRMPGDNX-EHCMMZGTSA-N	3930	CHEBI:48923	card|resfinder			
-ge2270a	False		clinical	GE2A		BJDUVZQQTFDMKE-UHFFFAOYSA-N	101899050		card			
-gentamicin	False		clinical	GEN	J01GB03,QA07AA91,QD06AX07,QG01AA91,QG51AA04,QJ01GB03,QJ51GB03,QS01AA11,QS02AA14,QS03AA06,D06AX07,S01AA11,S02AA14,S03AA06	CEAZRRDELHUEMR-URQXQFDESA-N	3467	CHEBI:27412	card|ncbi|resfinder	101494-3,13561-6,13562-4,15106-8,18928-2,18929-0,22746-2,22747-0,266-7,267-5,268-3,269-1,31091-2,31092-0,31093-8,35668-3,35817-6,3663-2,3664-0,3665-7,39082-3,47109-4,50630-3,59379-8,7016-9,7017-7,7018-5,80971-5,88111-0,89481-6	Aminoglycoside antibacterials	Other aminoglycosides
-gentamicin c	False		clinical	GENC	J01GB03	CEAZRRDELHUEMR-URQXQFDESA-N	3467		card|resfinder			
-hygromycin	False		clinical				56928061		ncbi|resfinder			
-hygromycin b	False		clinical	HGM		GRRNUXAQVGOGFE-NRFANRHFSA-N	516879	CHEBI:16328	card			
-imipenem	False		clinical	IPM	J01DH51,QJ01DH51	ZSKVGTPCRGIANV-ZXFLCMHBSA-N	104838	CHEBI:471227	card|resfinder	101487-7,17010-0,18932-4,18933-2,23613-3,25221-3,25257-7,27331-8,278-2,279-0,280-8,281-6,282-4,283-2,284-0,285-7,35819-2,3688-9,54170-6,54171-4,54172-2,7019-3,85424-0,93232-7,96372-8	Other beta-lactam antibacterials	Carbapenems
-isepamicin	False		clinical		J01GB11,QJ01GB11	QRZMXDQUOQXBMO-JWEYSHLRSA-N	6918552		resfinder	32381-6,35820-0,35821-8,55680-3	Aminoglycoside antibacterials	Other aminoglycosides
-isoniazid	False		antituberculosis	INH	J04AC01,QJ04AC01	QRXWMOHMRWLFEY-UHFFFAOYSA-N	3767	CHEBI:6030	card|resfinder	18934-0,20383-6,23947-5,25217-1,25218-9,25219-7,25451-6,26756-7,286-5,287-3,288-1,289-9,29315-9,3697-0,40371-7,42649-4,42650-2,42651-0,45215-1,48171-3,48172-1,55685-2,7020-1,89488-1	Drugs for treatment of tuberculosis	Hydrazides
-kanamycin	False		clinical	KAN	J01GB04,QA07AA08,QJ01GB04,QS01AA24,A07AA08,S01AA24	SBUJHOSQTJFQJX-NOAMYHISSA-N	6032	CHEBI:17730	card|ncbi|resfinder	18935-7,18936-5,23609-1,23889-9,25182-7,25213-0,25214-8,290-7,291-5,292-3,293-1,3698-8,3699-6,3700-2,42652-8,47395-9,49080-5,7022-7,7023-5,7024-3,88002-1,88705-9,89482-4	Aminoglycoside antibacterials	Other aminoglycosides
-kanamycin a	False		clinical		J01GB04	SBUJHOSQTJFQJX-NOAMYHISSA-N	6032	CHEBI:17730	resfinder			
-kasugamycin	False		clinical	KAS		IQFYYKKMVGJFEH-XLPZGREQSA-N	72459	CHEBI:6207	card|ncbi|resfinder			
-kirromycin	False		clinical	KIR		PSGAPZOWAGXXEA-KQUEHRGISA-N	5280439		card			
-levofloxacin	False		clinical	LEV	J01MA12,QJ01MA12,QS01AE05,S01AE05	GSDSWSVVBLHKDQ-JTQLQIEISA-N	149096	CHEBI:63598	card	101501-5,20396-8,20629-2,21367-8,21368-6,30532-6,30533-4,48173-9,53716-7,7026-8,76040-5,76041-3,76042-1	Quinolone antibacterials	Fluoroquinolones
-lincomycin	False		clinical		J01FF02,QJ01FF02,QJ51FF02	OJMMVQQUTAEWLP-KIDUDLJLSA-N	24083	CHEBI:25308	ncbi|resfinder	18938-1,298-0,299-8,300-4,301-2,41700-6,87597-1	Macrolides, lincosamides and streptogramins	Lincosamides
-lincosamide	False		clinical						ncbi			
-linezolid	False		clinical	LZD	J01XX08,QJ01XX08	TYMRLRRVMHJFTF-LLVKDONJSA-N	441401	CHEBI:63607	card|ncbi|resfinder	29254-0,29255-7,29258-1,33332-8,34202-2,41500-0,80609-1,88706-7,96111-0	Other antibacterials	Other antibacterials
-lividomycin	False		clinical			VBXULMDXHMLURX-OGWLJSQFSA-N	72554		resfinder			
-lysocin (e)	False		clinical	LYS					card			
-macrolide	False		clinical						ncbi			
-maduramicin	False		veterinary		QP51AH07	BDLHFAZFQBQPOU-AXXHKUQMSA-N	6420009		ncbi|resfinder			
-meropenem	False		clinical		J01DH02,QJ01DH02	DMJNNHOOLUXYBV-PJLAFDUMSA-N	64725	CHEBI:43032	resfinder	101222-8,101488-5,101489-3,18943-1,41406-0,6651-4,6652-2,6653-0,6654-8,7029-2,85426-5,85427-3,88892-5,90980-4	Other beta-lactam antibacterials	Carbapenems
-meticillin	False		clinical		J01CF03,QJ01CF03,QJ51CF03	SKKLOUVUWAHYCT-BODLOMDPSA-N	6087	CHEBI:6827	ncbi		Beta-lactam antibacterials, penicillins	Beta-lactamase resistant penicillins
-metronidazole	False		clinical	MTZ	J01XD01,QA01AB17,QD06BX01,QG01AF01,QJ01XD01,QP51CA01,P01AB01,D06BX01,A01AB17,G01AF01	ZGJADVGJIVEEGP-UHFFFAOYSA-N	4173	CHEBI:6909	card|resfinder	10991-8,18946-4,326-9,327-7,328-5,329-3,7031-8	Other antibacterials	Imidazole derivatives
-minocycline	False		clinical		J01AA08,QA01AB23,QD10AF07,QJ01AA08,D10AF07,A01AB23	DYKFCLLONBREIL-KVUCHLLUSA-N	54675783	CHEBI:50694	ncbi|resfinder	18948-0,25225-4,334-3,335-0,336-8,337-6,34606-4,3822-4,49757-8,55156-4,7032-6	Tetracyclines	Tetracyclines
-moxifloxacin	False		clinical	MXF	J01MA14,QJ01MA14,QS01AE07,S01AE07	FABPRXSRWADJSP-MEDUHNTESA-N	152946	CHEBI:63611	card	31037-5,31039-1,31041-7,31043-3,41502-6,43751-7,45223-5,76043-9,76044-7,76045-4,80540-8,88707-5,93497-6,96112-8	Quinolone antibacterials	Fluoroquinolones
-mupirocin	False		clinical	MUP	QD06AX09,QR01AX06,D06AX09,R01AX06	MINDHVHHQZYEEK-HBBNESRFSA-N	446596	CHEBI:7025	card|ncbi|resfinder	20389-3,35822-6,35823-4,60542-8,60543-6,7033-4		
-nalidixic acid	False		clinical		J01MB02,QJ01MB02	MHWLWQUZZRMNGJ-UHFFFAOYSA-N	4421	CHEBI:27419	resfinder		Quinolone antibacterials	Other quinolones
-narasin	False		veterinary		QP51BB04	HEBKCHPVOIAQTA-SSDOTTSWSA-N	5320420		ncbi|resfinder	87570-8		
-neomycin	False		clinical	NEO	J01GB05,QA01AB08,QA07AA01,QB05CA09,QD06AX04,QJ01GB05,QR02AB01,QS01AA03,QS02AA07,QS03AA01,D06AX04,A01AB08,A07AA01,B05CA09,R02AB01,S01AA03,S02AA07,S03AA01	PGBHMTALBVVCIT-YCSHUIMJSA-N	8378	CHEBI:7508	card|resfinder	10995-9,18953-0,25262-7,354-1,355-8,356-6,357-4,41705-5	Aminoglycoside antibacterials	Other aminoglycosides
-netilmicin	False		clinical		J01GB07,QJ01GB07,QS01AA23,S01AA23	ZBGPYVZLYBDXKO-BZJKULRJSA-N	441306	CHEBI:7529	resfinder	18954-8,25263-5,358-2,359-0,360-8,361-6,3848-9,3849-7,3850-5,47385-0,59565-2,59566-0,59567-8,7035-9	Aminoglycoside antibacterials	Other aminoglycosides
-nitrofurantoin	False		clinical	NIT	J01XE01,QJ01XE01	NXFQHRVNIOXGAQ-YCRREMRBSA-N	6604200	CHEBI:71415	card	18955-5,362-4,363-2,364-0,365-7,3860-4,7036-7	Other antibacterials	Nitrofuran derivatives
-nitroimidazole	False		clinical						ncbi			
-ofloxacin	False		clinical	OFX	J01MA01,QJ01MA01,QS01AE01,QS02AA16,S01AE01,S02AA16	GSDSWSVVBLHKDQ-UHFFFAOYSA-N	4583	CHEBI:7719	card	18959-7,20384-4,23948-3,25264-3,374-9,375-6,376-4,377-2,3877-8,41408-6,41409-4,41410-2,42653-6,7038-3,72168-8	Quinolone antibacterials	Fluoroquinolones
-oleandomycin	False		clinical		J01FA05,QJ01FA05	CXFMKIBDKXMHIM-UHFFFAOYSA-N	5281104		ncbi|resfinder	18960-5,378-0,379-8,380-6,381-4,55690-2	Macrolides, lincosamides and streptogramins	Macrolides
-ostreogrycin	False		veterinary				11136668		ncbi			
-oxazolidinone	False		clinical	OXZ					card|ncbi			
-pactamycin	False		clinical	PAC		SXALCUOAIJPAKS-IBGZPJMESA-N	3015451		card			
-para-aminosalicylic acid	False		antituberculosis	PAS	J04AA01	WPYMKLBDIGXBTP-UHFFFAOYSA-N	4649	CHEBI:44575	card|resfinder			
-paromomycin	False		clinical	PAR	QA07AA06,QJ01GB92,A07AA06	UOZODPSAJZTQNH-LSWIJEOBSA-N	165580	CHEBI:7877	card|ncbi|resfinder	51719-3,53824-9,55700-9,55701-7,55702-5		
-penicillin	False		clinical		J01CE01,QJ01CE01,QJ51CE01,QS01AA14,S01AA14		5904		resfinder		Combinations of antibacterials	Combinations of antibacterials
-perchlozone	False		clinical	PCL	J04AK08	CWEZPGAAFADRFN-UHFFFAOYSA-N	2723635		card			
-phenicol	False		clinical						ncbi			
-piperacillin	False		clinical		J01CA12,QJ01CA12	IVBHGBMCLDTZJU-OSIMWXROSA-N	43672	CHEBI:8232	resfinder	101490-1,101491-9,18969-6,18970-4,25268-4,3972-7,407-7,408-5,409-3,410-1,411-9,412-7,413-5,414-3,54197-9,54198-7,54199-5,55704-1,7043-3,7044-1	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
-piperacillin+clavulanic acid	True	piperacillin|clavulanic acid	clinical						resfinder			
-piperacillin+tazobactam	True	piperacillin|tazobactam	clinical		J01CR05,QJ01CR05		461573		resfinder	101491-9,18970-4,411-9,412-7,413-5,414-3,7044-1	Beta-lactam antibacterials, penicillins	Combinations of penicillins, incl. beta-lactamase inhibitors
-plazomicin	False		clinical		J01GB14,QJ01GB14	XUBOMFCQGDBHNK-JTQLQIEISA-N	24832829		ncbi	73592-8,73614-0,73637-1,92024-9,94719-2		
-pleuromutilin	False		clinical	PLM		RLYWBDLHSYMHPA-JKFXFKPESA-N	9908089		card|ncbi			
-pristinamycin	False		clinical		J01FG01,QJ01FG01		5280951		ncbi	32383-2,35833-3,35834-1,55709-0	Macrolides, lincosamides and streptogramins	Streptogramins
-pristinamycin ia	False		veterinary				14969363		resfinder			
-pristinamycin iia	False		veterinary				5280562		resfinder			
-prothionamide	False		antituberculosis	PTO	J04AD01,QJ04AD01	LFULEKSKNZEWOE-UHFFFAOYSA-N	456986	CHEBI:8406	card		Drugs for treatment of tuberculosis	Thiocarbamide derivatives
-pulvomycin	False		clinical	PLV		YVXJMHZAUQMFIN-UHFFFAOYSA-N	5282481		card			
-pyrazinamide	False		antituberculosis	PZA	J04AK01,QJ04AK01	IPEHBUMCGVEMRF-UHFFFAOYSA-N	1046	CHEBI:45285	card|resfinder	11001-5,18973-8,20461-0,23632-3,25186-8,25229-6,25270-0,423-4,424-2,425-9,426-7,42935-7,55710-8,55711-6,56026-8,92242-7	Drugs for treatment of tuberculosis	Other drugs for treatment of tuberculosis
-quaternary ammonium	False		biocide						ncbi			
-quinolone	False		clinical						ncbi			
-quinupristin	False		clinical		J01FG02	SGEUNORQGXVARB-LBPRGKRZSA-N	441233		resfinder			
-quinupristin+dalfopristin	True	quinupristin|dalfopristin	clinical		QJ01FG02		11979418		resfinder	23640-6,23641-4,33334-4,35835-8,58712-1	Macrolides, lincosamides and streptogramins	Streptogramins
-retapamulin	False		clinical		QD06AX13,D06AX13	JUVIOZPCNVDEDE-PZKOVRKGSA-N	6918506	CHEBI:64045	ncbi		Antibiotics for topical use	Other antibiotics for topical use
-ribostamycin	False		clinical		J01GB10,QJ01GB10	NSKGQURZWSPSBC-AVBVIJFHSA-N	34090	CHEBI:8921	ncbi|resfinder		Aminoglycoside antibacterials	Other aminoglycosides
-rifabutin	False		clinical	RFB	J04AB04,QJ04AB04	ATEBXHFBFRCZMA-VIFPVBQESA-N	5282452	CHEBI:45185	card	100699-8,16100-0,16386-5,16387-3,19149-4,20386-9,23630-7,24032-5,25199-1,25200-7,25201-5,42655-1,42656-9,54183-9,96113-6	Drugs for treatment of tuberculosis	Antibiotics
-rifampicin	False		antituberculosis	RIF	J04AB02,QJ04AB02,QJ54AB02	JQXXHWHPUNPDRT-WHAZDDICSA-N	5381226	CHEBI:28077	card|ncbi|resfinder		Drugs for treatment of tuberculosis	Antibiotics
-rifamycin	False		clinical		J04AB03,QA07AA13,QD06AX15,QJ04AB03,QJ54AB03,QS01AA16,QS02AA12,D06AX15,A07AA13,S01AA16,S02AA12	HJYYPODYNSCCOU-ODRIEIDWSA-N	6324616		ncbi		Drugs for treatment of tuberculosis	Antibiotics
-salinomycin	False		veterinary		QP51BB01	GBDZRXLBXAFVQN-GBROCHHJSA-N	5282507		ncbi|resfinder	35836-6,35837-4,35838-2,87593-0		
-sisomicin	False		clinical		J01GB08,QJ01GB08	URWAJWIAIPFPJE-NUMRIWBASA-N	32154	CHEBI:9139	ncbi|resfinder	18979-5,447-3,448-1,449-9,450-7,55714-0	Aminoglycoside antibacterials	Other aminoglycosides
-spectinomycin	False		clinical	SPT	J01XX04,QJ01XX04	UNFWWIHTNXNPBV-WXKVUWSESA-N	60051	CHEBI:9230	card|ncbi|resfinder	18980-3,35840-8,451-5,452-3,453-1,454-9	Other antibacterials	Other antibacterials
-spiramycin	False		clinical		J01FA02,QJ01FA02,QJ51FA02	ACTOXUHEUCPTEW-BWHGAVFKSA-N	5281164	CHEBI:9234	ncbi|resfinder	18981-1,455-6,456-4,457-2,458-0,55715-7	Macrolides, lincosamides and streptogramins	Macrolides
-streptogramin	False		clinical						ncbi			
-streptogramin a	False		clinical						ncbi			
-streptogramin b	False		clinical						ncbi			
-streptomycin	False		clinical	STR	J01GA01,QA07AA04,QJ01GA01,A07AA04	UCSJYZPVAKXKNQ-HZYVHMACSA-N	19649	CHEBI:17076	card|ncbi|resfinder	18982-9,18983-7,20462-8,23626-5,25185-0,25205-6,25206-4,35841-6,4039-4,42658-5,42659-3,459-8,460-6,461-4,462-2,46719-1,48177-0,6933-6,7048-2,7049-0,96114-4	Aminoglycoside antibacterials	Streptomycins
-streptothricin	False		clinical			AXRCEOKUDYDWLF-VKHMYHEASA-N	5281091		ncbi			
-sulfamethoxazole	False		clinical		J01EC01,QJ01EQ11	JLKIGFTWXXRPMT-UHFFFAOYSA-N	5329	CHEBI:9332	resfinder	10342-4,11577-4,18985-2,25271-8,39772-9,467-1,468-9,469-7,470-5,59971-2,59972-0,60333-2,72674-5,80549-9,80974-9	Sulfonamides and trimethoprim	Intermediate-acting sulfonamides
-sulfonamide	False		clinical				86225		ncbi	17674-3,17675-0,18987-8,35842-4,4040-2,4041-0,4042-8,475-4,476-2,477-0,478-8,75650-2		
-taniborbactam	False		inhibitor				129820028		ncbi			
-tazobactam	False		inhibitor		J01CG02,QJ01CG02	LPQZKKCYTLCDGQ-UHFFFAOYSA-N	123630	CHEBI:9445	resfinder	41719-6,41720-4,41721-2,41740-2	Beta-lactam antibacterials, penicillins	Beta-lactamase inhibitors
-tedizolid	False		clinical		J01XX11,QJ01XX11	DEGUSSKDCKLXMD-LLVKDONJSA-N	16654980		ncbi	73586-0,73608-2,73631-4	Other antibacterials	Other antibacterials
-teicoplanin	False		clinical		J01XA02,QJ01XA02	SOBHUZYZLFQYFK-VIFPVBQESA-N	16133858	CHEBI:9514	resfinder	18989-4,25534-9,25535-6,34378-0,34379-8,4043-6,483-8,484-6,485-3,486-1,7051-6,80968-1	Other antibacterials	Glycopeptide antibacterials
-telithromycin	False		clinical		J01FA15,QJ01FA15	LJVAJPDWBABPEJ-PNUFFHFMSA-N	1493482	CHEBI:63552	ncbi|resfinder	35843-2,35844-0,35845-7,41722-0	Macrolides, lincosamides and streptogramins	Macrolides
-temocillin	False		clinical		J01CA17,QJ01CA17	FIJKDXLPQCYLLL-UHFFFAOYSA-N	636413		resfinder	18991-0,491-1,492-9,493-7,494-5,54190-4	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
-tetracenomycin	False		clinical						ncbi			
-tetracycline	False		clinical	TET	J01AA07,QA01AB13,QD06AA04,QG01AA90,QG51AA02,QJ01AA07,QJ51AA07,QS01AA09,QS02AA08,QS03AA02,D06AA04,A01AB13,S01AA09,S02AA08,S03AA02	OFVLGDICTFRJMM-WESIUVDSSA-N	54675776	CHEBI:27902	card|ncbi|resfinder	101504-9,18993-6,25272-6,4045-1,495-2,496-0,497-8,498-6,7052-4,87590-6	Tetracyclines	Tetracyclines
-thiamphenicol	False		clinical		J01BA02,QJ01BA02,QJ51BA02	OTVAEFIXJLOWRX-NXEZZACHSA-N	9586	CHEBI:9588	ncbi	41723-8,41724-6,41725-3,54169-8	Amphenicols	Amphenicols
-thiostrepton	False		veterinary			ZUHMCGCMKJZUTR-QNDIIFBFSA-N	16218413	CHEBI:9617	ncbi			
-tiamulin	False		veterinary		QJ01XQ01	VXMJXGBPBKJIMQ-UQYMMIHISA-N	5386092	CHEBI:9615	ncbi|resfinder	35846-5,35847-3,35848-1,87589-8		
-ticarcillin	False		clinical		J01CA13,QJ01CA13	OHKOGUYZJAOKMF-UHFFFAOYSA-N	36921	CHEBI:9607	resfinder	18994-4,18995-1,25254-4,4054-3,4055-0,499-4,500-9,501-7,502-5,503-3,504-1,505-8,506-6,55716-5,55717-3,55718-1,55719-9,7053-2,7054-0	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
-ticarcillin+clavulanic acid	True	ticarcillin|clavulanic acid	clinical		J01CR03,QJ01CR03		6437075		resfinder		Beta-lactam antibacterials, penicillins	Combinations of penicillins, incl. beta-lactamase inhibitors
-tigecycline	False		clinical		J01AA12,QJ01AA12	LKPOLBGBRDGVEO-FYBDWKIDSA-N	5282044	CHEBI:149681	ncbi|resfinder	101499-2,42354-1,42355-8,42356-6,42357-4,55158-0	Tetracyclines	Tetracyclines
-tobramycin	False		clinical	TOB	J01GB01,QJ01GB01,QS01AA12,S01AA12	NLVFBUXFDBBNBW-PBSUHMDJSA-N	36294	CHEBI:28864	card|ncbi|resfinder	101496-8,13584-8,17808-7,18996-9,22750-4,22751-2,22752-0,25227-0,25800-4,31094-6,31095-3,31096-1,35239-3,35670-9,4057-6,4058-4,4059-2,507-4,508-2,509-0,50927-3,510-8,52962-8,59380-6,7055-7,80966-5	Aminoglycoside antibacterials	Other aminoglycosides
-triclosan	False		biocide	TRC	D08AE04	XEFQLINVKFYRCS-UHFFFAOYSA-N	5564	CHEBI:164200	card			
-trimethoprim	False		clinical	TMP	J01EA01,QJ01EA01,QJ51EA01	QTTMOCOWUGMOPD-UHFFFAOYSA-N	5578	CHEBI:45924	card|ncbi|resfinder	101495-0,11005-6,17747-7,18997-7,18998-5,20387-7,23614-1,23631-5,25273-4,32342-8,4079-0,4080-8,4081-6,511-6,512-4,513-2,514-0,515-7,516-5,517-3,518-1,55584-7,7056-5,7057-3,80552-3,80973-1	Sulfonamides and trimethoprim	Trimethoprim and derivatives
-tylosin	False		veterinary	TYL	QJ01FA90,QJ51FA90	WBPYTXDJUQJLPQ-VMXHOPILSA-N	54680209	CHEBI:10024	card|ncbi|resfinder	35856-4,35857-2,35858-0,87587-2		
-vancomycin	False		clinical	VAN	J01XA01,QA07AA09,QJ01XA01,QS01AA28,A07AA09,S01AA28	MYPYJXKWCTUITO-LYRMYLQWSA-N	14969	CHEBI:28001	card|ncbi|resfinder	13586-3,13587-1,19000-9,20578-1,23615-8,25228-8,31012-8,39092-2,39796-8,39797-6,4089-9,4090-7,4091-5,4092-3,50938-0,523-1,524-9,525-6,526-4,59381-4,7059-9,92241-9,97657-1	Other antibacterials	Glycopeptide antibacterials
-vernamycin b	False		clinical						ncbi			
-viomycin	False		antituberculosis	VIO	J04AB	DKJMUIVBDZXNHD-PFYYHJMLSA-N	70772		card|ncbi	19001-7,23616-6,527-2,528-0,529-8,530-6		
-virginiamycin	False		veterinary		J01FG01,QJ01FG01		11979535		ncbi	32383-2,35833-3,35834-1,55709-0	Macrolides, lincosamides and streptogramins	Streptogramins
-virginiamycin m	False		veterinary						ncbi|resfinder			
-virginiamycin s	False		veterinary						resfinder			
-xeruborbactam	False		inhibitor				140830474		ncbi			
-zoliflodacin	False		clinical	ZOL	J01XX13	RXOYMRGRGFZDNL-WBPXWQEISA-N	135398513		card			
-zorbamycin	False		clinical				70697970		ncbi			
+canonical_name	is_combination	components	context	card_abbrev	atc_code	inchikey	pubchem_cid	chebi_id	sources
+2'-n-ethylnetilmicin	False		clinical						unknown
+5-episisomicin	False		clinical						unknown
+5-fluorocytosine	False		clinical						unknown
+6'-n-ethylnetilmicin	False		clinical						unknown
+a201a	False		clinical						unknown
+acriflavine	False		clinical						unknown
+actinomycin	False		clinical						unknown
+albicidin	False		clinical						unknown
+amikacin	False		clinical	AMK					card|ncbi|resfinder|unknown
+aminoglycoside	False		clinical						ncbi
+aminonucleoside antibiotic	False		clinical						unknown
+amoxicillin	False		clinical	AMX					card|resfinder|unknown
+amoxicillin+clavulanic acid	True	amoxicillin|clavulanic acid	clinical						resfinder
+ampicillin	False		clinical						resfinder|unknown
+ampicillin+clavulanic acid	True	ampicillin|clavulanic acid	clinical						resfinder
+amythiamicin a	False		clinical						unknown
+ant-431	False		clinical						unknown
+ant3310	False		clinical						unknown
+antibiotic a40926	False		clinical						unknown
+antibiotic a47934	False		clinical						unknown
+aplasmomycin	False		clinical						unknown
+apramycin	False		clinical						ncbi|resfinder|unknown
+arbekacin	False		clinical						resfinder|unknown
+arx1796	False		clinical						unknown
+arylomycin	False		clinical						unknown
+aspergillomarasmine a	False		clinical						unknown
+aspoxicillin	False		clinical						unknown
+astromicin	False		clinical						resfinder|unknown
+aurodox	False		clinical						unknown
+avalimycin	False		clinical						unknown
+avibactam	False		inhibitor	AVI					card|ncbi|resfinder|unknown
+avilamycin	False		veterinary						ncbi
+avoparcin	False		clinical						unknown
+azalomycin f	False		clinical						unknown
+azamulin	False		clinical						unknown
+azidamfenicol	False		clinical						unknown
+azidocillin	False		clinical						unknown
+azimycin	False		clinical						unknown
+azithromycin	False		clinical	AZM					card|ncbi|resfinder|unknown
+azlocillin	False		clinical						unknown
+aztreonam	False		clinical	ATM					card|resfinder|unknown
+bacitracin	False		clinical						ncbi
+bacitracin a	False		clinical						unknown
+bacitracin b	False		clinical						unknown
+bacitracin f	False		clinical						unknown
+bal30072	False		clinical						unknown
+balhimycin	False		clinical						unknown
+balofloxacin	False		clinical						unknown
+battacin	False		clinical						unknown
+bedaquiline	False		antituberculosis	BDQ					card|resfinder|unknown
+benzalkonium chloride	False		clinical						unknown
+benzylpenicillin	False		clinical						unknown
+beta-lactam	False		clinical						ncbi
+beta-lactam derived beta-lactamase inhibitor	False		clinical						unknown
+beta-lactamase resistant penicillin	False		clinical						unknown
+beta-lactamase sensitive penicillin	False		clinical						unknown
+betaxolol	False		clinical						unknown
+biapenem	False		clinical						unknown
+bicyclomycin	False		clinical						unknown
+bispicen	False		clinical						unknown
+bisthiazolidine metallo-beta-lactamase inhibitor	False		clinical						unknown
+bleomycin	False		non_therapeutic						ncbi|resfinder
+bleomycin a2	False		clinical						unknown
+bleomycin b2	False		clinical						unknown
+bleomycinic acid	False		clinical						unknown
+bli-489	False		clinical						unknown
+boromycin	False		clinical						unknown
+boronic acid beta-lactamase inhibitor	False		clinical						unknown
+bp2	False		clinical						unknown
+bpi	False		clinical						unknown
+brefeldin a	False		clinical						unknown
+brodimoprim	False		clinical						unknown
+butiromycin	False		clinical						resfinder
+butirosin	False		clinical						resfinder|unknown
+cadaside a	False		clinical						unknown
+cadaside antibiotic	False		clinical						unknown
+cadaside b	False		clinical						unknown
+calcimycin	False		clinical						unknown
+caprazamycin	False		clinical						unknown
+capreomycin	False		antituberculosis	CAP					card|ncbi|resfinder|unknown
+carbapenem	False		clinical						ncbi
+carbenicillin	False		clinical						unknown
+carbomycin	False		veterinary						resfinder|unknown
+carrimycin	False		clinical						unknown
+carumonam	False		clinical						unknown
+cbp c1-aminomethylene vancomycin	False		clinical						unknown
+cefacetrile	False		clinical						unknown
+cefaclor	False		clinical						unknown
+cefadroxil	False		clinical						unknown
+cefalexin	False		clinical						unknown
+cefalotin	False		clinical						unknown
+cefamandole	False		clinical						unknown
+cefatrizine	False		clinical						unknown
+cefazedone	False		clinical						unknown
+cefazolin	False		clinical						resfinder|unknown
+cefbuperazone	False		clinical						unknown
+cefcapene	False		clinical						unknown
+cefdinir	False		clinical						unknown
+cefditoren	False		clinical						unknown
+cefepime	False		clinical						resfinder|unknown
+cefepime-taniborbactam	False		clinical						ncbi
+cefetamet	False		clinical						unknown
+cefiderocol	False		clinical						ncbi|unknown
+cefixime	False		clinical						resfinder|unknown
+cefmenoxime	False		clinical						unknown
+cefmetazole	False		clinical						unknown
+cefminox	False		clinical						unknown
+cefodizime	False		clinical						unknown
+cefonicid	False		clinical						unknown
+cefoperazone	False		clinical						unknown
+ceforanide	False		clinical						unknown
+cefotaxime	False		clinical						resfinder|unknown
+cefotaxime+clavulanic acid	True	cefotaxime|clavulanic acid	clinical						resfinder
+cefotetan	False		clinical						unknown
+cefotiam	False		clinical						unknown
+cefovecin	False		clinical						unknown
+cefoxitin	False		clinical						resfinder|unknown
+cefozopran	False		clinical						unknown
+cefpiramide	False		clinical						unknown
+cefpirome	False		clinical						unknown
+cefpodoxime	False		clinical						unknown
+cefprozil	False		clinical						unknown
+cefquinome	False		clinical						unknown
+cefradine	False		clinical						unknown
+cefroxadine	False		clinical						unknown
+cefsulodin	False		clinical						unknown
+ceftaroline	False		clinical						ncbi|resfinder|unknown
+ceftazidime	False		clinical	CEF					card|resfinder|unknown
+ceftazidime+avibactam	True	ceftazidime|avibactam	clinical						resfinder
+ceftazidime-avibactam	False		clinical	CZA					card
+cefteram	False		clinical						unknown
+ceftezole	False		clinical						unknown
+ceftibuten	False		clinical						unknown
+ceftibuten-avibactam	False		clinical						ncbi
+ceftiofur	False		clinical						unknown
+ceftizoxime	False		clinical						unknown
+ceftobiprole	False		clinical						unknown
+ceftolozane	False		clinical						unknown
+ceftriaxone	False		clinical						resfinder|unknown
+cefuroxime	False		clinical						resfinder|unknown
+celesticetin	False		clinical						unknown
+cephaloridine	False		clinical						unknown
+cephalosporin	False		clinical						ncbi
+cephalothin	False		clinical						ncbi|resfinder
+cephapirin	False		clinical						unknown
+cethromycin	False		clinical						unknown
+cezomycin	False		clinical						unknown
+chalcomycin	False		clinical						unknown
+chloramphenicol	False		clinical	CHL					card|ncbi|resfinder|unknown
+chlorhexidine	False		clinical						unknown
+chloroeremomycin	False		clinical						unknown
+chlortetracycline	False		clinical						unknown
+chrysomycin a	False		clinical						unknown
+cinoxacin	False		clinical						unknown
+ciprofloxacin	False		clinical	CIP					card|resfinder|unknown
+clarithromycin	False		clinical	CLR					card|ncbi|unknown
+clavulanic acid	False		inhibitor						resfinder|unknown
+clinafloxacin	False		clinical						unknown
+clindamycin	False		clinical	CLI					card|ncbi|resfinder|unknown
+clofazimine	False		antituberculosis	CFZ					card|resfinder|unknown
+clometocillin	False		clinical						unknown
+clorobiocin	False		clinical						unknown
+cloxacillin	False		clinical						unknown
+colistin	False		clinical	CST					card|ncbi|resfinder|unknown
+colistin a	False		clinical						unknown
+colistin b	False		clinical						unknown
+complestatin	False		clinical						unknown
+contezolid	False		clinical						unknown
+corbomycin	False		clinical						unknown
+cordycepin	False		clinical						unknown
+coumermycin a1	False		clinical						unknown
+cyclic thiazolyl peptide elfamycin	False		clinical						unknown
+cycloserine	False		antituberculosis						unknown
+d-captopril	False		clinical						unknown
+d-cycloserine	False		antituberculosis	DCS					card|resfinder
+dactinomycin	False		clinical						unknown
+dalbavancin	False		clinical						unknown
+dalfopristin	False		clinical						resfinder|unknown
+dapsone	False		clinical	DAO					card|unknown
+daptomycin	False		clinical	DAP					card|ncbi|unknown
+darobactin a	False		clinical						unknown
+declovanillobiocin	False		clinical						unknown
+defensin	False		clinical						unknown
+delafloxacin	False		clinical						unknown
+delamanid	False		antituberculosis	DLM					card|unknown
+demeclocycline	False		clinical						unknown
+diazabicyclooctane	False		clinical						unknown
+dibekacin	False		clinical						resfinder|unknown
+dicloxacillin	False		clinical						unknown
+diflunisal	False		clinical						unknown
+dihydromocimycin	False		clinical						unknown
+dimercaprol	False		clinical						unknown
+dirithromycin	False		clinical						unknown
+doripenem	False		clinical						unknown
+doxycycline	False		clinical						ncbi|resfinder|unknown
+durlobactam	False		clinical						unknown
+edeine	False		clinical	EDN					card|unknown
+edeine a	False		clinical						unknown
+edeine b	False		clinical						unknown
+edeine d	False		clinical						unknown
+edeine f	False		clinical						unknown
+efflux	False		clinical						ncbi
+efrotomycin	False		clinical						unknown
+elfamycin	False		clinical	ELF					card
+emerione a	False		clinical						unknown
+enacyloxin iia	False		clinical	ENC					card|unknown
+enmetazobactam	False		clinical						unknown
+enoxacin	False		clinical						unknown
+enramycin	False		clinical						unknown
+enrofloxacin	False		clinical	ENR					card|unknown
+epicillin	False		clinical						unknown
+epinecidin-1	False		clinical						unknown
+eravacycline	False		clinical						unknown
+eremomycin pyrrolidide	False		clinical						unknown
+ertapenem	False		clinical						resfinder|unknown
+erythromycin	False		clinical	ERY					card|ncbi|resfinder|unknown
+ethambutol	False		antituberculosis	EMB					card|resfinder
+ethambutol & capreomycin	True	ethambutol|capreomycin	clinical	EMCM					card
+ethionamide	False		antituberculosis	ETO					card|resfinder|unknown
+evernimicin	False		clinical						unknown
+factumycin	False		clinical						unknown
+faropenem	False		clinical						unknown
+fengycin	False		clinical						unknown
+fidaxomicin	False		clinical						unknown
+finafloxacin	False		clinical						unknown
+first-generation cephalosporin	False		clinical						unknown
+fisetin	False		clinical						unknown
+fleroxacin	False		clinical						unknown
+flomoxef	False		clinical						unknown
+florfenicol	False		clinical						ncbi|resfinder|unknown
+flucloxacillin	False		clinical						unknown
+flumequine	False		clinical						unknown
+fluoroquinolone	False		clinical						resfinder
+formicin	False		clinical						unknown
+fortimicin	False		clinical						resfinder
+fosfomycin	False		clinical	FOF					card|ncbi|resfinder|unknown
+fosmidomycin	False		clinical						unknown
+fourth-generation cephalosporin	False		clinical						unknown
+furazidin	False		clinical						unknown
+furazolidone	False		clinical						unknown
+fusidic acid	False		clinical	FA					card|ncbi|resfinder|unknown
+g418	False		research_tool	G418					card|resfinder|unknown
+gamithromycin	False		clinical						unknown
+ganefromycin	False		clinical						unknown
+gatifloxacin	False		clinical						unknown
+ge2270a	False		clinical	GE2A					card|unknown
+ge37468	False		clinical						unknown
+gemifloxacin	False		clinical						unknown
+gentamicin	False		clinical	GEN					card|ncbi|resfinder|unknown
+gentamicin a	False		clinical						unknown
+gentamicin b	False		clinical						unknown
+gentamicin c	False		clinical	GENC					card|resfinder|unknown
+gentamicin x	False		clinical						unknown
+gepotidacin	False		clinical						unknown
+gramicidin	False		clinical						unknown
+gramicidin a	False		clinical						unknown
+gramicidin b	False		clinical						unknown
+gramicidin c	False		clinical						unknown
+gramicidin d	False		clinical						unknown
+gramicidin s	False		clinical						unknown
+grepafloxacin	False		clinical						unknown
+griseoviridin	False		clinical						unknown
+halolitoralin	False		clinical						unknown
+halolitoralin a	False		clinical						unknown
+halolitoralin b	False		clinical						unknown
+halolitoralin c	False		clinical						unknown
+heneicomycin	False		clinical						unknown
+hetacillin	False		clinical						unknown
+hygromycin	False		clinical						ncbi|resfinder
+hygromycin b	False		clinical	HGM					card|unknown
+iboxamycin	False		clinical						unknown
+iclaprim	False		clinical						unknown
+imipenem	False		clinical	IPM					card|resfinder|unknown
+isepamicin	False		clinical						resfinder|unknown
+isoniazid	False		antituberculosis	INH					card|resfinder|unknown
+isovanillobiocin	False		clinical						unknown
+josamycin	False		clinical						unknown
+kanamycin	False		clinical	KAN					card|ncbi|resfinder
+kanamycin a	False		clinical						resfinder|unknown
+kasugamycin	False		clinical	KAS					card|ncbi|resfinder|unknown
+kirromycin	False		clinical	KIR					card|unknown
+kirromycin-like antibiotics	False		clinical						unknown
+kirrothricin	False		clinical						unknown
+kitasamycin	False		clinical						unknown
+klebsidin	False		clinical						unknown
+l-681,217	False		clinical						unknown
+l-captopril	False		clinical						unknown
+l-cs319	False		clinical						unknown
+lascufloxacin	False		clinical						unknown
+lassomycin	False		clinical						unknown
+ledaborbactam	False		clinical						unknown
+ledaborbactam etzadroxil	False		clinical						unknown
+lefamulin	False		clinical						unknown
+levofloxacin	False		clinical	LEV					card|unknown
+levonadifloxacin	False		clinical						unknown
+lff571	False		clinical						unknown
+lincomycin	False		clinical						ncbi|resfinder|unknown
+lincosamide	False		clinical						ncbi
+linezolid	False		clinical	LZD					card|ncbi|resfinder|unknown
+linoleic acid	False		clinical						unknown
+lipoic acid	False		clinical						unknown
+lividomycin	False		clinical						resfinder|unknown
+lividomycin a	False		clinical						unknown
+lividomycin b	False		clinical						unknown
+lomefloxacin	False		clinical						unknown
+loracarbef	False		clinical						unknown
+lugdunin	False		clinical						unknown
+lys228	False		clinical						unknown
+lysocin	False		clinical						unknown
+lysocin (e)	False		clinical	LYS					card
+lysocin e	False		clinical						unknown
+macrocyclic peptide antibiotics	False		clinical						unknown
+macrolide	False		clinical						ncbi
+madumycin ii	False		clinical						unknown
+maduramicin	False		veterinary						ncbi|resfinder
+mafenide	False		clinical						unknown
+magainin	False		clinical						unknown
+magainin 1	False		clinical						unknown
+magainin 2	False		clinical						unknown
+magainin a	False		clinical						unknown
+magainin b	False		clinical						unknown
+magainin g	False		clinical						unknown
+magainin h	False		clinical						unknown
+malacidin a	False		clinical						unknown
+marbofloxacin	False		clinical						unknown
+marinomycin	False		clinical						unknown
+marinomycin a	False		clinical						unknown
+marinomycin b	False		clinical						unknown
+marinomycin c	False		clinical						unknown
+marinomycin d	False		clinical						unknown
+me1071	False		clinical						unknown
+mecillinam	False		clinical						unknown
+megalomycin	False		clinical						unknown
+meropenem	False		clinical						resfinder|unknown
+metallo-beta-lactamase inhibitor	False		clinical						unknown
+methicillin	False		clinical						unknown
+methimazole	False		clinical						unknown
+methotrexate	False		clinical						unknown
+methymycin	False		clinical						unknown
+meticillin	False		clinical						ncbi
+metronidazole	False		clinical	MTZ					card|resfinder|unknown
+mezlocillin	False		clinical						unknown
+microcin j25	False		clinical						unknown
+midecamycin	False		clinical						unknown
+minocycline	False		clinical						ncbi|resfinder|unknown
+moenomycin a1	False		clinical						unknown
+monensin	False		clinical						unknown
+moxalactam	False		clinical						unknown
+moxifloxacin	False		clinical	MXF					card|unknown
+mupirocin	False		clinical	MUP					card|ncbi|resfinder|unknown
+mutanobactin	False		clinical						unknown
+mycaminosyltylonolide	False		clinical						unknown
+mycinamicin	False		clinical						unknown
+nacubactam	False		clinical						unknown
+nafcillin	False		clinical						unknown
+nalidixic acid	False		clinical						resfinder|unknown
+narasin	False		veterinary						ncbi|resfinder|unknown
+narbomycin	False		clinical						unknown
+nemonoxacin	False		clinical						unknown
+neomycin	False		clinical	NEO					card|resfinder|unknown
+netilmicin	False		clinical						resfinder|unknown
+neutramycin	False		clinical						unknown
+niddamycin	False		clinical						unknown
+nifuratel	False		clinical						unknown
+nifuroxazide	False		clinical						unknown
+nigericin	False		clinical						unknown
+nitrofurantoin	False		clinical	NIT					card|unknown
+nitroimidazole	False		clinical						ncbi
+nocardamine	False		clinical						unknown
+nordihydroguaiaretic acid	False		clinical						unknown
+norfloxacin	False		clinical						unknown
+norvancomycin	False		clinical						unknown
+novobiocin	False		clinical						unknown
+nybomycin	False		clinical						unknown
+ofloxacin	False		clinical	OFX					card|unknown
+oleandomycin	False		clinical						ncbi|resfinder|unknown
+oleic acid	False		clinical						unknown
+omadacycline	False		clinical						unknown
+oncocin	False		clinical						unknown
+oritavancin	False		clinical						unknown
+ornidazole	False		clinical						unknown
+ostreogrycin	False		veterinary						ncbi
+ostreogrycin b3	False		clinical						unknown
+other cephalosporins and penems	False		clinical						unknown
+oxacillin	False		clinical						unknown
+oxazolidinone	False		clinical	OXZ					card|ncbi
+oxytetracycline	False		clinical						unknown
+pactamycin	False		clinical	PAC					card|unknown
+palmitic acid	False		clinical						unknown
+panipenem	False		clinical						unknown
+para-aminosalicylic acid	False		antituberculosis	PAS					card|resfinder|unknown
+paromomycin	False		clinical	PAR					card|ncbi|resfinder|unknown
+patricin a	False		clinical						unknown
+patricin b	False		clinical						unknown
+pefloxacin	False		clinical						unknown
+penamecillin	False		clinical						unknown
+penicillin	False		clinical						resfinder
+penicillin with extended spectrum	False		clinical						unknown
+perchlozone	False		clinical	PCL					card|unknown
+phenelfamycin a	False		clinical						unknown
+phenelfamycin b	False		clinical						unknown
+phenelfamycin c	False		clinical						unknown
+phenelfamycin d	False		clinical						unknown
+phenelfamycin e	False		clinical						unknown
+phenelfamycin f	False		clinical						unknown
+phenelfamycin g	False		clinical						unknown
+phenelfamycin h	False		clinical						unknown
+phenethicillin	False		clinical						unknown
+phenicol	False		clinical						ncbi
+phenoxymethylpenicillin	False		clinical						unknown
+phosphonate metallo-beta-lactamase inhibitor	False		clinical						unknown
+pikromycin	False		clinical						unknown
+piperacillin	False		clinical						resfinder|unknown
+piperacillin+clavulanic acid	True	piperacillin|clavulanic acid	clinical						resfinder
+piperacillin+tazobactam	True	piperacillin|tazobactam	clinical						resfinder
+pirlimycin	False		clinical						unknown
+pivampicillin	False		clinical						unknown
+pivmecillinam	False		clinical						unknown
+plazomicin	False		clinical						ncbi|unknown
+pleuromutilin	False		clinical	PLM					card|ncbi|unknown
+polymyxin antibiotic	False		clinical						unknown
+polymyxin b	False		clinical						unknown
+polymyxin b1	False		clinical						unknown
+polymyxin b2	False		clinical						unknown
+polymyxin b3	False		clinical						unknown
+polymyxin b4	False		clinical						unknown
+polypyridine metallo-beta-lactamase inhibitor	False		clinical						unknown
+pretomanid	False		clinical						unknown
+pristinamycin	False		clinical						ncbi
+pristinamycin ia	False		veterinary						resfinder|unknown
+pristinamycin ib	False		clinical						unknown
+pristinamycin ic	False		clinical						unknown
+pristinamycin iia	False		veterinary						resfinder
+proflavine	False		clinical						unknown
+propicillin	False		clinical						unknown
+prothionamide	False		antituberculosis	PTO					card|unknown
+prulifloxacin	False		clinical						unknown
+pseudouridimycin	False		clinical						unknown
+pulvomycin	False		clinical	PLV					card|unknown
+puromycin	False		clinical						unknown
+pyrazinamide	False		antituberculosis	PZA					card|resfinder
+pyrrolomycin a	False		clinical						unknown
+pyrrolomycin antibiotic	False		clinical						unknown
+pyrrolomycin b	False		clinical						unknown
+pyrrolomycin c	False		clinical						unknown
+pyrrolomycin d	False		clinical						unknown
+pyrrolomycin e	False		clinical						unknown
+pyrrolomycin f	False		clinical						unknown
+pyrrolomycin f2a	False		clinical						unknown
+pyrrolomycin f2b	False		clinical						unknown
+pyrrolomycin f3	False		clinical						unknown
+pyrrolomycin g	False		clinical						unknown
+pyrrolomycin h	False		clinical						unknown
+pyrrolomycin i	False		clinical						unknown
+pyrrolomycin j	False		clinical						unknown
+quaternary ammonium	False		biocide						ncbi
+quinolone	False		clinical						ncbi
+quinupristin	False		clinical						resfinder|unknown
+quinupristin+dalfopristin	True	quinupristin|dalfopristin	clinical						resfinder
+ramoplanin	False		clinical						unknown
+relebactam	False		inhibitor						unknown
+retapamulin	False		clinical						ncbi|unknown
+ribostamycin	False		clinical						ncbi|resfinder|unknown
+rifabutin	False		clinical	RFB					card|unknown
+rifalazil	False		clinical						unknown
+rifampicin	False		antituberculosis	RIF					card|ncbi|resfinder
+rifampin	False		clinical						unknown
+rifamycin	False		clinical						ncbi
+rifapentine	False		clinical						unknown
+rifaximin	False		clinical						unknown
+risedronate	False		clinical						unknown
+ristocetin	False		clinical						unknown
+rokitamycin	False		clinical						unknown
+rosaramicin	False		clinical						unknown
+roxithromycin	False		clinical						unknown
+s02030	False		clinical						unknown
+salinomycin	False		veterinary						ncbi|resfinder|unknown
+sarafloxacin	False		clinical						unknown
+sarecycline	False		clinical						unknown
+sb22484	False		clinical						unknown
+second-generation cephalosporin	False		clinical						unknown
+selamectin	False		clinical						unknown
+serine beta-lactamase inhibitor	False		clinical						unknown
+sisomicin	False		clinical						ncbi|resfinder|unknown
+sitafloxacin	False		clinical						unknown
+solithromycin	False		clinical						unknown
+sparfloxacin	False		clinical						unknown
+spectinomycin	False		clinical	SPT					card|ncbi|resfinder|unknown
+spiramycin	False		clinical						ncbi|resfinder|unknown
+streptogramin	False		clinical						ncbi
+streptogramin a	False		clinical						ncbi
+streptogramin b	False		clinical						ncbi
+streptomycin	False		clinical	STR					card|ncbi|resfinder|unknown
+streptothricin	False		clinical						ncbi|unknown
+sulbactam	False		inhibitor						unknown
+sulfacetamide	False		clinical						unknown
+sulfadiazine	False		clinical						unknown
+sulfadimidine	False		clinical						unknown
+sulfadoxine	False		clinical						unknown
+sulfamerazine	False		clinical						unknown
+sulfamethizole	False		clinical						unknown
+sulfamethoxazole	False		clinical						resfinder|unknown
+sulfanilamide	False		clinical						unknown
+sulfasalazine	False		clinical						unknown
+sulfisoxazole	False		clinical						unknown
+sulfonamide	False		clinical						ncbi
+sulopenem	False		clinical						unknown
+syn-1012	False		clinical						unknown
+taniborbactam	False		inhibitor						ncbi|unknown
+tartrolon	False		clinical						unknown
+tartrolon a	False		clinical						unknown
+tartrolon b	False		clinical						unknown
+tartrolon d	False		clinical						unknown
+tartrolon f	False		clinical						unknown
+tartrolon g	False		clinical						unknown
+tazobactam	False		inhibitor						resfinder|unknown
+tbi-223	False		clinical						unknown
+tebipenem	False		clinical						unknown
+tedizolid	False		clinical						ncbi|unknown
+teicoplanin	False		clinical						resfinder|unknown
+teixobactin	False		clinical						unknown
+telavancin	False		clinical						unknown
+telithromycin	False		clinical						ncbi|resfinder|unknown
+temocillin	False		clinical						resfinder|unknown
+tetracenomycin	False		clinical						ncbi
+tetracenomycin a2	False		clinical						unknown
+tetracenomycin c	False		clinical						unknown
+tetracenomycin x	False		clinical						unknown
+tetracycline	False		clinical	TET					card|ncbi|resfinder|unknown
+tetronomycin	False		clinical						unknown
+tetroxoprim	False		clinical						unknown
+thiacalixarene derivatives	False		clinical						unknown
+thiamphenicol	False		clinical						ncbi|unknown
+thioacetazone	False		clinical						unknown
+thiorphan	False		clinical						unknown
+thiostrepton	False		veterinary						ncbi
+third-generation cephalosporin	False		clinical						unknown
+thusin	False		clinical						unknown
+tiamulin	False		veterinary						ncbi|resfinder|unknown
+ticarcillin	False		clinical						resfinder|unknown
+ticarcillin+clavulanic acid	True	ticarcillin|clavulanic acid	clinical						resfinder
+tigecycline	False		clinical						ncbi|resfinder|unknown
+tildipirosin	False		clinical						unknown
+tilmicosin	False		clinical						unknown
+tinidazole	False		clinical						unknown
+tiopronin	False		clinical						unknown
+tnp-2198	False		clinical						unknown
+tobramycin	False		clinical	TOB					card|ncbi|resfinder|unknown
+tosufloxacin	False		clinical						unknown
+triclosan	False		biocide	TRC					card|unknown
+trimethoprim	False		clinical	TMP					card|ncbi|resfinder|unknown
+trispicen	False		clinical						unknown
+trispicen a	False		clinical						unknown
+trovafloxacin	False		clinical						unknown
+tulathromycin	False		clinical						unknown
+tunicamycin	False		clinical						unknown
+tylosin	False		veterinary	TYL					card|ncbi|resfinder|unknown
+tylvalosin	False		clinical						unknown
+uk-69,753	False		clinical						unknown
+unclassified metallo-beta-lactamase inhibitor	False		clinical						unknown
+unclassified serine beta-lactamase inhibitor	False		clinical						unknown
+unithiol	False		clinical						unknown
+unphenelfamycin	False		clinical						unknown
+vaborbactam	False		clinical						unknown
+valinomycin	False		clinical						unknown
+valnemulin	False		clinical						unknown
+vancomycin	False		clinical	VAN					card|ncbi|resfinder|unknown
+vanillobiocin	False		clinical						unknown
+verdamicin	False		clinical						unknown
+vernamycin b	False		clinical						ncbi
+vernamycin c	False		clinical						unknown
+vertilimicin	False		clinical						unknown
+viomycin	False		antituberculosis	VIO					card|ncbi|unknown
+virginiamycin	False		veterinary						ncbi
+virginiamycin m	False		veterinary						ncbi|resfinder
+virginiamycin m1	False		clinical						unknown
+virginiamycin s	False		veterinary						resfinder
+virginiamycin s2	False		clinical						unknown
+xeruborbactam	False		inhibitor						ncbi|unknown
+zabofloxacin	False		clinical						unknown
+zidebactam	False		clinical						unknown
+zidovudine	False		clinical						unknown
+zoliflodacin	False		clinical	ZOL					card|unknown
+zorbamycin	False		clinical						ncbi
+zosurabalpin	False		clinical						unknown
