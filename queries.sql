@@ -42,6 +42,21 @@ SELECT sd.canonical_drug, sd.evidence_sources
 FROM amr.sequence_drug sd
 WHERE sd.jrc_id = 'JRC8214f7c788';
 
+-- All genes linked to a specific canonical drug (direct NCBI path + via drug class membership)
+SELECT DISTINCT g.jrc_id, g.gene_name, g.source, g.card_short_name,
+       g.gene_family, g.resistance_mechanism, sd.evidence_sources
+FROM amr.sequence_drug sd
+JOIN amr.gene g ON g.jrc_id = sd.jrc_id
+WHERE sd.canonical_drug = 'ciprofloxacin'
+UNION
+SELECT DISTINCT g.jrc_id, g.gene_name, g.source, g.card_short_name,
+       g.gene_family, g.resistance_mechanism, sdc.evidence_sources
+FROM amr.sequence_drug_class sdc
+JOIN amr.drug_class_member dcm ON dcm.canonical_class = sdc.canonical_class
+JOIN amr.gene g ON g.jrc_id = sdc.jrc_id
+WHERE dcm.canonical_drug = 'ciprofloxacin'
+ORDER BY gene_name, source;
+
 -- Canonical metadata for a sequence across all sources
 SELECT * FROM amr.sequence_metadata WHERE jrc_id = 'JRC8214f7c788';
 
@@ -53,6 +68,32 @@ JOIN amr.gene g USING (jrc_id)
 GROUP BY s.jrc_id
 HAVING count(DISTINCT g.source) > 1
 LIMIT 10;
+
+
+-- -----------------------------------------------------------------------------
+-- Cluster queries
+-- -----------------------------------------------------------------------------
+
+-- All clusters: representative sequence + gene names + linked canonical drugs + drug classes + ATC groups
+SELECT
+    c.cluster_id,
+    c.representative_jrc                                                AS jrc_id,
+    s.sequence_length,
+    string_agg(DISTINCT g.gene_name,   ' / ' ORDER BY g.gene_name)     AS gene_names,
+    string_agg(DISTINCT g.source,      ' | ' ORDER BY g.source)        AS sources,
+    string_agg(DISTINCT sd.canonical_drug, ', ' ORDER BY sd.canonical_drug) AS linked_drugs,
+    string_agg(DISTINCT sdc.canonical_class, ' | ' ORDER BY sdc.canonical_class) AS drug_classes,
+    string_agg(DISTINCT d.atc_group1,  ' | ' ORDER BY d.atc_group1)    AS atc_groups1,
+    string_agg(DISTINCT d.atc_group2,  ' | ' ORDER BY d.atc_group2)    AS atc_groups2,
+    s.sequence
+FROM amr.cluster c
+JOIN amr.sequence               s   ON s.jrc_id          = c.representative_jrc
+LEFT JOIN amr.gene              g   ON g.jrc_id           = c.representative_jrc
+LEFT JOIN amr.sequence_drug     sd  ON sd.jrc_id          = c.representative_jrc
+LEFT JOIN amr.sequence_drug_class sdc ON sdc.jrc_id       = c.representative_jrc
+LEFT JOIN amr.drug              d   ON d.canonical_name   = sd.canonical_drug
+GROUP BY c.cluster_id, c.representative_jrc, s.sequence_length, s.sequence
+ORDER BY c.cluster_id;
 
 
 -- -----------------------------------------------------------------------------
