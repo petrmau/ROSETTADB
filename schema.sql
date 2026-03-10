@@ -138,6 +138,8 @@ CREATE TABLE IF NOT EXISTS amr.drug (
     pubchem_cid     TEXT,               -- PubChem canonical CID
     chebi_id        TEXT,               -- ChEBI identifier (e.g. "CHEBI:2637")
     loinc_codes     TEXT,               -- comma-separated LOINC susceptibility test codes
+    atc_group1      TEXT,               -- ATC level-2 group (e.g. "Aminoglycoside antibacterials")
+    atc_group2      TEXT,               -- ATC level-3 group (e.g. "Other aminoglycosides")
     sources         TEXT                -- pipe-delimited: card|ncbi|resfinder
 );
 
