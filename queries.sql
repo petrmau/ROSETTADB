@@ -56,6 +56,27 @@ LIMIT 10;
 
 
 -- -----------------------------------------------------------------------------
+-- Cluster queries
+-- -----------------------------------------------------------------------------
+
+-- All clusters: representative sequence + gene names + linked canonical drugs
+SELECT
+    c.cluster_id,
+    c.representative_jrc                                               AS jrc_id,
+    s.sequence_length,
+    string_agg(DISTINCT g.gene_name, ' / ' ORDER BY g.gene_name)      AS gene_names,
+    string_agg(DISTINCT g.source,    ' | ' ORDER BY g.source)         AS sources,
+    string_agg(sd.canonical_drug,    ', '  ORDER BY sd.canonical_drug) AS linked_drugs,
+    s.sequence
+FROM amr.cluster c
+JOIN amr.sequence     s  ON s.jrc_id  = c.representative_jrc
+LEFT JOIN amr.gene    g  ON g.jrc_id  = c.representative_jrc
+LEFT JOIN amr.sequence_drug sd ON sd.jrc_id = c.representative_jrc
+GROUP BY c.cluster_id, c.representative_jrc, s.sequence_length, s.sequence
+ORDER BY c.cluster_id;
+
+
+-- -----------------------------------------------------------------------------
 -- Drug class queries
 -- -----------------------------------------------------------------------------
 
