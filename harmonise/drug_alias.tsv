@@ -121,6 +121,39 @@ amoxicillin	zamocillin	synonym	amr_r
 amoxicillin	zamocilline	synonym	amr_r
 amoxicillin	zimox	synonym	amr_r
 amoxicillin+clavulanic acid	Amoxicillin+Clavulanic acid	source_name	resfinder
+amoxicillin+clavulanic acid	Amoxicillin/clavulanic acid	source_name	amr_r
+amoxicillin+clavulanic acid	a/c	abbreviation	amr_r
+amoxicillin+clavulanic acid	amcl	abbreviation	amr_r
+amoxicillin+clavulanic acid	aml	abbreviation	amr_r
+amoxicillin+clavulanic acid	amocla	abbreviation	amr_r
+amoxicillin+clavulanic acid	amocla	synonym	amr_r
+amoxicillin+clavulanic acid	amoclan	synonym	amr_r
+amoxicillin+clavulanic acid	amoclav	synonym	amr_r
+amoxicillin+clavulanic acid	amoksiclav	synonym	amr_r
+amoxicillin+clavulanic acid	amoxsiklav	synonym	amr_r
+amoxicillin+clavulanic acid	amoxyclav	synonym	amr_r
+amoxicillin+clavulanic acid	ancla	synonym	amr_r
+amoxicillin+clavulanic acid	aug	abbreviation	amr_r
+amoxicillin+clavulanic acid	augmentan	synonym	amr_r
+amoxicillin+clavulanic acid	augmentin	synonym	amr_r
+amoxicillin+clavulanic acid	augmentine	synonym	amr_r
+amoxicillin+clavulanic acid	auspilic	synonym	amr_r
+amoxicillin+clavulanic acid	clamentin	synonym	amr_r
+amoxicillin+clavulanic acid	clamobit	synonym	amr_r
+amoxicillin+clavulanic acid	clavam	synonym	amr_r
+amoxicillin+clavulanic acid	clavamox	synonym	amr_r
+amoxicillin+clavulanic acid	clavinex	synonym	amr_r
+amoxicillin+clavulanic acid	clavumox	synonym	amr_r
+amoxicillin+clavulanic acid	coamoxiclav	synonym	amr_r
+amoxicillin+clavulanic acid	curam	synonym	amr_r
+amoxicillin+clavulanic acid	eumetinex	synonym	amr_r
+amoxicillin+clavulanic acid	kesium	synonym	amr_r
+amoxicillin+clavulanic acid	kmoxilin	synonym	amr_r
+amoxicillin+clavulanic acid	spectramox	synonym	amr_r
+amoxicillin+clavulanic acid	synulox	synonym	amr_r
+amoxicillin+clavulanic acid	viaclav	synonym	amr_r
+amoxicillin+clavulanic acid	xiclav	synonym	amr_r
+amoxicillin+clavulanic acid	xl	abbreviation	amr_r
 ampicillin	adobacillin	synonym	amr_r
 ampicillin	alpen	synonym	amr_r
 ampicillin	am	abbreviation	amr_r
@@ -458,6 +491,10 @@ cefotaxime	tolycor	synonym	amr_r
 cefotaxime	xct	abbreviation	amr_r
 cefotaxime	zariviz	synonym	amr_r
 cefotaxime+clavulanic acid	Cefotaxime+Clavulanic acid	source_name	resfinder
+cefotaxime+clavulanic acid	Cefotaxime/clavulanic acid	source_name	amr_r
+cefotaxime+clavulanic acid	cxcl	abbreviation	amr_r
+cefotaxime+clavulanic acid	taxcla	abbreviation	amr_r
+cefotaxime+clavulanic acid	xctl	abbreviation	amr_r
 cefoxitin	betacef	synonym	amr_r
 cefoxitin	cefoxi	abbreviation	amr_r
 cefoxitin	cefoxil	synonym	amr_r
@@ -506,6 +543,10 @@ ceftazidime	tizime	synonym	amr_r
 ceftazidime	tz	abbreviation	amr_r
 ceftazidime	xtz	abbreviation	amr_r
 ceftazidime+avibactam	Ceftazidime+Avibactam	source_name	resfinder
+ceftazidime+avibactam	Ceftazidime/avibactam	source_name	amr_r
+ceftazidime+avibactam	avycaz	synonym	amr_r
+ceftazidime+avibactam	cfav	abbreviation	amr_r
+ceftazidime+avibactam	zavicefta	synonym	amr_r
 ceftazidime-avibactam	CZA	card_abbreviation	card
 ceftriaxone	axo	abbreviation	amr_r
 ceftriaxone	biotrakson	synonym	amr_r
@@ -2121,6 +2162,20 @@ piperacillin	pp	abbreviation	amr_r
 piperacillin	tazocin	synonym	amr_r
 piperacillin+clavulanic acid	Piperacillin+Clavulanic acid	source_name	resfinder
 piperacillin+tazobactam	Piperacillin+Tazobactam	source_name	resfinder
+piperacillin+tazobactam	Piperacillin/tazobactam	source_name	amr_r
+piperacillin+tazobactam	p/t	abbreviation	amr_r
+piperacillin+tazobactam	piptaz	abbreviation	amr_r
+piperacillin+tazobactam	piptazo	abbreviation	amr_r
+piperacillin+tazobactam	piptazobactam	synonym	amr_r
+piperacillin+tazobactam	pit	abbreviation	amr_r
+piperacillin+tazobactam	pita	abbreviation	amr_r
+piperacillin+tazobactam	pt	abbreviation	amr_r
+piperacillin+tazobactam	ptc	abbreviation	amr_r
+piperacillin+tazobactam	ptz	abbreviation	amr_r
+piperacillin+tazobactam	tazonam	synonym	amr_r
+piperacillin+tazobactam	tzp	abbreviation	amr_r
+piperacillin+tazobactam	zobactin	synonym	amr_r
+piperacillin+tazobactam	zosyn	synonym	amr_r
 plazomicin	zemdri	synonym	amr_r
 pleuromutilin	PLM	card_abbreviation	card
 pristinamycin	eskalin	synonym	amr_r
@@ -2191,6 +2246,15 @@ pyrazinamide	tebrazid	synonym	amr_r
 pyrazinamide	tisamid	synonym	amr_r
 pyrazinamide	unipyranamide	synonym	amr_r
 quinupristin+dalfopristin	Quinupristin+Dalfopristin	source_name	resfinder
+quinupristin+dalfopristin	Quinupristin/dalfopristin	source_name	amr_r
+quinupristin+dalfopristin	q/d	abbreviation	amr_r
+quinupristin+dalfopristin	qda	abbreviation	amr_r
+quinupristin+dalfopristin	qida	abbreviation	amr_r
+quinupristin+dalfopristin	quda	abbreviation	amr_r
+quinupristin+dalfopristin	rp	abbreviation	amr_r
+quinupristin+dalfopristin	syn	abbreviation	amr_r
+quinupristin+dalfopristin	synerc	abbreviation	amr_r
+quinupristin+dalfopristin	synercid	synonym	amr_r
 retapamulin	altabax	synonym	amr_r
 retapamulin	altargo	synonym	amr_r
 retapamulin	rebapamulin	synonym	amr_r
@@ -2461,6 +2525,14 @@ ticarcillin	ticarcilline	synonym	amr_r
 ticarcillin	ticarcillinum	synonym	amr_r
 ticarcillin	timentin	synonym	amr_r
 ticarcillin+clavulanic acid	Ticarcillin+Clavulanic acid	source_name	resfinder
+ticarcillin+clavulanic acid	Ticarcillin/clavulanic acid	source_name	amr_r
+ticarcillin+clavulanic acid	augpenin	synonym	amr_r
+ticarcillin+clavulanic acid	t/c	abbreviation	amr_r
+ticarcillin+clavulanic acid	tcc	abbreviation	amr_r
+ticarcillin+clavulanic acid	ticcla	abbreviation	amr_r
+ticarcillin+clavulanic acid	ticl	abbreviation	amr_r
+ticarcillin+clavulanic acid	tim	abbreviation	amr_r
+ticarcillin+clavulanic acid	tlc	abbreviation	amr_r
 tigecycline	tgc	abbreviation	amr_r
 tigecycline	tig	abbreviation	amr_r
 tigecycline	tige	abbreviation	amr_r

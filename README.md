@@ -173,12 +173,18 @@ python harmonise/parse_card_aro.py
 `enrich_amr_r.py` runs first and fills identifiers from the offline AMR R-package
 reference (`antimicrobials.txt`) — no network calls:
 
-| Field | Source column | Notes |
-|-------|--------------|-------|
-| `pubchem_cid` | `cid` | Filled only if currently blank |
-| `atc_code` | `atc` | J-category wins; same priority as `enrich.py` |
-| `loinc_codes` | `loinc` | Comma-separated susceptibility test identifiers |
+| Field | Source column | Behaviour |
+|-------|--------------|-----------|
+| `pubchem_cid` | `cid` | Filled only if currently blank; not overwritten |
+| `atc_code` | `atc` | All codes stored, sorted: J first, Q immediately after J, then other categories. Always updated when the reference has data (single-code values from a prior `enrich.py` run become full lists) |
+| `loinc_codes` | `loinc` | Comma-separated susceptibility test identifiers; always updated when present |
 | `drug_alias.tsv` | `name`, `synonyms`, `abbreviations` | Adds `synonym` and `abbreviation` rows with `source=amr_r` |
+
+**Combination drug matching:** canonical names using `+` or ` & ` separators
+(e.g. `piperacillin+tazobactam`) are matched against the reference (which uses
+`/`) by comparing the sorted frozenset of normalised component names —
+order-independent. This gives combination drugs their CID and full ATC code pair
+(e.g. `J01CR05,QJ01CR05`).
 
 `enrich.py` runs second and resolves the remaining identifiers via live APIs:
 

@@ -9,12 +9,17 @@ Source:
   https://raw.githubusercontent.com/msberends/AMR/main/data-raw/datasets/antimicrobials.txt
 
 For each canonical drug in drug_canonical.tsv the script:
-  - Fills in pubchem_cid  from the `cid`  column (if blank)
-  - Fills in atc_code     from the `atc`  column (J-category wins; same
-                          priority as enrich.py)
-  - Fills in loinc_codes  from the `loinc` column (comma-separated LOINC
-                          susceptibility test identifiers)
+  - Fills in pubchem_cid  from the `cid` column (if blank; not overwritten)
+  - Updates atc_code      from the `atc` column — stores ALL codes, sorted:
+                          J first, then Q immediately after J, then others.
+                          Always written when the reference has data, so a
+                          prior single-code value becomes the full list.
+  - Updates loinc_codes   from the `loinc` column (always written when present)
   - Adds synonyms and abbreviations to drug_alias.tsv
+
+Combination drugs (e.g. "amoxicillin+clavulanic acid") are matched against
+the reference by normalising both separators (/, +, &) and comparing the
+sorted frozenset of component names — order-independent.
 
 Running this before enrich.py reduces the number of live ChEBI/PubChem API
 calls needed.
@@ -39,8 +44,11 @@ AMR_TSV    = ROOT / "harmonise/antimicrobials.txt"
 AMR_URL    = ("https://raw.githubusercontent.com/msberends/AMR"
               "/main/data-raw/datasets/antimicrobials.txt")
 
-# Same ATC category priority as enrich.py
-ATC_PRIORITY = ["J", "P", "D", "A", "L", "B", "C", "G", "H", "M", "N", "R", "S", "V"]
+# ATC category priority.
+# Q (veterinary) comes immediately after J (human antiinfectives) because
+# most AMR drugs have a matching QJ... code and we want them adjacent.
+# All other categories follow standard ATC order.
+ATC_PRIORITY = ["J", "Q", "P", "D", "A", "L", "B", "C", "G", "H", "M", "N", "R", "S", "V"]
 
 
 # ---------------------------------------------------------------------------
@@ -52,20 +60,25 @@ def normalise(s: str) -> str:
     return re.sub(r"\s+", " ", s.strip().lower())
 
 
-def best_atc(atc_field: str) -> str:
+def sort_atcs(atc_field: str) -> str:
     """
-    Pick the best ATC code from a comma-separated list.
-    J (antiinfectives) wins; otherwise follows ATC_PRIORITY order.
-    Returns empty string if the field is absent or NA.
+    Return all ATC codes from a comma-separated field, sorted by ATC_PRIORITY
+    (J first, then Q, then others).  Duplicate and NA values are dropped.
+    Returns an empty string when nothing useful is present.
     """
     if not atc_field or atc_field.strip().upper() == "NA":
         return ""
-    codes = [c.strip() for c in atc_field.split(",")
-             if c.strip() and c.strip().upper() != "NA"]
+    codes_raw = [c.strip() for c in atc_field.split(",")
+                 if c.strip() and c.strip().upper() != "NA"]
+    # deduplicate, preserving first occurrence before sorting
+    seen: set[str] = set()
+    codes: list[str] = []
+    for c in codes_raw:
+        if c not in seen:
+            seen.add(c)
+            codes.append(c)
     if not codes:
         return ""
-    if len(codes) == 1:
-        return codes[0]
 
     def _rank(code: str) -> int:
         letter = code[0].upper() if code else "Z"
@@ -74,7 +87,7 @@ def best_atc(atc_field: str) -> str:
         except ValueError:
             return len(ATC_PRIORITY)
 
-    return sorted(codes, key=_rank)[0]
+    return ",".join(sorted(codes, key=_rank))
 
 
 def clean_loinc(loinc_field: str) -> str:
@@ -84,16 +97,23 @@ def clean_loinc(loinc_field: str) -> str:
     """
     if not loinc_field or loinc_field.strip().upper() == "NA":
         return ""
-    codes = [c.strip() for c in loinc_field.split(",")
-             if c.strip() and c.strip().upper() != "NA"]
-    # deduplicate while preserving order
     seen: set[str] = set()
-    unique = []
-    for c in codes:
-        if c not in seen:
+    unique: list[str] = []
+    for c in loinc_field.split(","):
+        c = c.strip()
+        if c and c.upper() != "NA" and c not in seen:
             seen.add(c)
             unique.append(c)
     return ",".join(unique)
+
+
+def combo_key(name: str) -> frozenset[str]:
+    """
+    Split a combination drug name on any of /, +, & and return a frozenset
+    of normalised component names.  Returns an empty frozenset for singles.
+    """
+    parts = re.split(r"[/+&]", name)
+    return frozenset(normalise(p) for p in parts if p.strip())
 
 
 # ---------------------------------------------------------------------------
@@ -123,12 +143,12 @@ def load_amr_reference() -> list[dict]:
 def build_name_index(amr_rows: list[dict]) -> dict[str, dict]:
     """
     Build a lookup: normalised name/alias → amr_row.
-    Indexes the `name` field first, then `synonyms`, then `abbreviations`
-    (first match wins so the canonical INN name takes priority).
+    Indexes `name` first (highest priority), then `synonyms`, then
+    `abbreviations`.  First match wins so the INN name takes priority.
     """
     index: dict[str, dict] = {}
 
-    # Pass 1: canonical INN names (highest priority)
+    # Pass 1: canonical INN names
     for row in amr_rows:
         key = normalise(row.get("name", ""))
         if key:
@@ -157,6 +177,73 @@ def build_name_index(amr_rows: list[dict]) -> dict[str, dict]:
     return index
 
 
+def build_combo_index(amr_rows: list[dict]) -> dict[frozenset, dict]:
+    """
+    Build a lookup: frozenset of normalised component names → amr_row,
+    restricted to entries whose name contains a combination separator (/ + &).
+    Used to match our canonical combo names (using + or &) against the
+    reference (which uses /).
+    """
+    index: dict[frozenset, dict] = {}
+    for row in amr_rows:
+        name = row.get("name", "")
+        if not re.search(r"[/+&]", name):
+            continue
+        key = combo_key(name)
+        if len(key) >= 2:
+            index.setdefault(key, row)
+    return index
+
+
+# ---------------------------------------------------------------------------
+# Apply enrichment from a matched reference row
+# ---------------------------------------------------------------------------
+
+def apply_hit(row: dict, hit: dict, cn: str,
+              new_aliases: list[tuple]) -> tuple[bool, bool, bool]:
+    """
+    Apply data from a matched AMR reference row to a drug_canonical row.
+    Returns (cid_filled, atc_updated, loinc_updated) booleans.
+    """
+    cid_filled = atc_updated = loinc_updated = False
+
+    # PubChem CID — only if currently blank (existing value is preserved)
+    if not row.get("pubchem_cid"):
+        cid = hit.get("cid", "").strip()
+        if cid and cid.upper() != "NA":
+            row["pubchem_cid"] = cid
+            cid_filled = True
+
+    # ATC codes — always update to get the full sorted list
+    atc = sort_atcs(hit.get("atc", ""))
+    if atc and atc != row.get("atc_code", ""):
+        row["atc_code"] = atc
+        atc_updated = True
+
+    # LOINC codes — always update when present
+    loinc = clean_loinc(hit.get("loinc", ""))
+    if loinc and loinc != row.get("loinc_codes", ""):
+        row["loinc_codes"] = loinc
+        loinc_updated = True
+
+    # Aliases — only from single-drug entries (combo aliases are not useful)
+    for field, alias_type in (
+        ("name",          "source_name"),
+        ("synonyms",      "synonym"),
+        ("abbreviations", "abbreviation"),
+    ):
+        raw = hit.get(field, "")
+        if not raw or raw.strip().upper() == "NA":
+            continue
+        values = raw.split(",") if field != "name" else [raw]
+        for v in values:
+            v = v.strip()
+            if v and normalise(v) != normalise(cn):
+                new_aliases.append((cn, v, alias_type, "amr_r"))
+
+    return cid_filled, atc_updated, loinc_updated
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -177,9 +264,11 @@ def main() -> None:
               f"(pass --download to refresh)")
 
     print("Loading AMR reference …")
-    amr_rows = load_amr_reference()
-    name_index = build_name_index(amr_rows)
-    print(f"  {len(amr_rows)} entries indexed under {len(name_index)} name/alias keys")
+    amr_rows    = load_amr_reference()
+    name_index  = build_name_index(amr_rows)
+    combo_index = build_combo_index(amr_rows)
+    print(f"  {len(amr_rows)} entries, {len(name_index)} name/alias keys, "
+          f"{len(combo_index)} combination keys")
 
     # ------------------------------------------------------------------
     # Enrich drug_canonical.tsv
@@ -191,7 +280,7 @@ def main() -> None:
         print("drug_canonical.tsv is empty — nothing to do.")
         return
 
-    # Ensure loinc_codes column exists in the in-memory rows
+    # Ensure loinc_codes column exists
     fieldnames = list(drugs[0].keys())
     if "loinc_codes" not in fieldnames:
         fieldnames.append("loinc_codes")
@@ -199,56 +288,41 @@ def main() -> None:
             row.setdefault("loinc_codes", "")
 
     new_aliases: list[tuple] = []
-    filled_cid = filled_atc = filled_loinc = 0
-    matched = 0
+    matched_single = matched_combo = 0
+    filled_cid = 0
+    updated_atc = updated_loinc = 0
 
     for row in drugs:
-        cn = row["canonical_name"]
+        cn  = row["canonical_name"]
         hit = name_index.get(normalise(cn))
+
+        if hit is None and row.get("is_combination", "").strip() == "True":
+            # Try combo matching by component set
+            key = combo_key(cn)
+            if len(key) >= 2:
+                hit = combo_index.get(key)
+            if hit is not None:
+                matched_combo += 1
+        elif hit is not None:
+            matched_single += 1
+
         if hit is None:
             continue
-        matched += 1
 
-        # PubChem CID
-        if not row.get("pubchem_cid"):
-            cid = hit.get("cid", "").strip()
-            if cid and cid.upper() != "NA":
-                row["pubchem_cid"] = cid
-                filled_cid += 1
+        cid_f, atc_u, loinc_u = apply_hit(row, hit, cn, new_aliases)
+        if cid_f:
+            filled_cid += 1
+        if atc_u:
+            updated_atc += 1
+        if loinc_u:
+            updated_loinc += 1
 
-        # ATC code
-        if not row.get("atc_code"):
-            atc = best_atc(hit.get("atc", ""))
-            if atc:
-                row["atc_code"] = atc
-                filled_atc += 1
-
-        # LOINC codes
-        if not row.get("loinc_codes"):
-            loinc = clean_loinc(hit.get("loinc", ""))
-            if loinc:
-                row["loinc_codes"] = loinc
-                filled_loinc += 1
-
-        # Collect aliases: INN name, synonyms, abbreviations
-        for field, alias_type in (
-            ("name",          "source_name"),
-            ("synonyms",      "synonym"),
-            ("abbreviations", "abbreviation"),
-        ):
-            raw = hit.get(field, "")
-            if not raw or raw.strip().upper() == "NA":
-                continue
-            values = raw.split(",") if field != "name" else [raw]
-            for v in values:
-                v = v.strip()
-                if v and normalise(v) != normalise(cn):
-                    new_aliases.append((cn, v, alias_type, "amr_r"))
-
-    print(f"\ndrug_canonical.tsv: {matched}/{len(drugs)} drugs matched")
-    print(f"  Filled pubchem_cid : {filled_cid}")
-    print(f"  Filled atc_code    : {filled_atc}")
-    print(f"  Filled loinc_codes : {filled_loinc}")
+    total_matched = matched_single + matched_combo
+    print(f"\ndrug_canonical.tsv: {total_matched}/{len(drugs)} drugs matched "
+          f"({matched_single} single, {matched_combo} combination)")
+    print(f"  Filled  pubchem_cid : {filled_cid}")
+    print(f"  Updated atc_code    : {updated_atc}")
+    print(f"  Updated loinc_codes : {updated_loinc}")
 
     with open(DRUG_TSV, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t",
@@ -275,8 +349,7 @@ def main() -> None:
         writer.writerow(["canonical_name", "alias", "alias_type", "source"])
         writer.writerows(all_aliases)
 
-    print(f"\ndrug_alias.tsv: added {len(new_unique)} new aliases "
-          f"(source=amr_r)")
+    print(f"\ndrug_alias.tsv: added {len(new_unique)} new aliases (source=amr_r)")
     print(f"  Total aliases now : {len(all_aliases)}")
 
 
