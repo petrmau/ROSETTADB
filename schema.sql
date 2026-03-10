@@ -137,6 +137,7 @@ CREATE TABLE IF NOT EXISTS amr.drug (
     inchikey        TEXT,               -- standard InChIKey (27 chars)
     pubchem_cid     TEXT,               -- PubChem canonical CID
     chebi_id        TEXT,               -- ChEBI identifier (e.g. "CHEBI:2637")
+    loinc_codes     TEXT,               -- comma-separated LOINC susceptibility test codes
     sources         TEXT                -- pipe-delimited: card|ncbi|resfinder
 );
 
