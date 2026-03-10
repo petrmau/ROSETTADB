@@ -460,15 +460,20 @@ def main():
             del cache[n]
         print(f"  Dropped {len(to_drop)} entries missing chebi_id → will re-fetch via ChEBI")
 
-    # Apply cached values to all rows first
+    # Apply cached values to all rows first.
+    # chebi_id and inchikey are always overwritten (enrich.py owns them).
+    # pubchem_cid and atc_code are fill-only: enrich_amr_r.py may have already
+    # written richer values (e.g. a full J+Q ATC list) that we must not discard.
     for row in rows:
         name = row["canonical_name"]
         if name in cache:
             data = cache[name]
-            row["chebi_id"]    = data.get("chebi_id", "")
-            row["inchikey"]    = data.get("inchikey", "")
-            row["pubchem_cid"] = data.get("pubchem_cid", "")
-            row["atc_code"]    = data.get("atc_code", "")
+            row["chebi_id"] = data.get("chebi_id", "")
+            row["inchikey"] = data.get("inchikey", "")
+            if not row.get("pubchem_cid"):
+                row["pubchem_cid"] = data.get("pubchem_cid", "")
+            if not row.get("atc_code"):
+                row["atc_code"] = data.get("atc_code", "")
 
     # Drugs still needing a live lookup
     to_enrich = [
@@ -486,10 +491,12 @@ def main():
 
         data = enrich_drug(name, cache, atc_table)
 
-        row["chebi_id"]    = data.get("chebi_id", "")
-        row["inchikey"]    = data.get("inchikey", "")
-        row["pubchem_cid"] = data.get("pubchem_cid", "")
-        row["atc_code"]    = data.get("atc_code", "")
+        row["chebi_id"] = data.get("chebi_id", "")
+        row["inchikey"] = data.get("inchikey", "")
+        if not row.get("pubchem_cid"):
+            row["pubchem_cid"] = data.get("pubchem_cid", "")
+        if not row.get("atc_code"):
+            row["atc_code"] = data.get("atc_code", "")
 
         parts = []
         if data.get("chebi_id"):    parts.append(f"ChEBI={data['chebi_id']}")
