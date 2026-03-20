@@ -37,9 +37,16 @@ CREATE TABLE IF NOT EXISTS amr.protein (
 CREATE INDEX IF NOT EXISTS idx_protein_md5 ON amr.protein(protein_md5);
 
 -- Add FK from amr.sequence.protein_id → amr.protein now that amr.protein exists
-ALTER TABLE amr.sequence
-    ADD CONSTRAINT IF NOT EXISTS fk_sequence_protein
-    FOREIGN KEY (protein_id) REFERENCES amr.protein(protein_id);
+DO $$ BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint
+        WHERE conname = 'fk_sequence_protein' AND conrelid = 'amr.sequence'::regclass
+    ) THEN
+        ALTER TABLE amr.sequence
+            ADD CONSTRAINT fk_sequence_protein
+            FOREIGN KEY (protein_id) REFERENCES amr.protein(protein_id);
+    END IF;
+END $$;
 
 -- ─────────────────────────────────────────────────────────
 -- Cluster table (group of 100%-identical sequences)
