@@ -371,7 +371,8 @@ def merge_drugs(*drug_lists) -> list[dict]:
             # track which sources mention this drug
             src = d.get("card_abbrev") and "card" or \
                   d.get("ncbi_subclass_raw") and "ncbi" or \
-                  d.get("resfinder_class") and "resfinder" or "unknown"
+                  d.get("resfinder_class") and "resfinder" or \
+                  d.get("source") or "unknown"
             entry["sources"].add(src)
             # prefer richer context flag (non-clinical beats clinical)
             if entry["context"] == "clinical" and d.get("context", "clinical") != "clinical":
@@ -532,6 +533,7 @@ def main():
             "context":        _context_flag(r["canonical_drug"]),
             "is_combination": False,
             "components":     [],
+            "source":         "CARD.obo",
         }
         for r in aro_drug_members
     ]

@@ -7,7 +7,7 @@ retrieve:
   - pubchem_cid   (integer canonical CID)
   - inchikey      (standard InChIKey, 27 chars)
   - chebi_id      (if available via PubChem xrefs)
-  - atc_code      (first ATC code from PubChem classification tree)
+  - atc_code      (pipe-delimited leaf ATC codes from PubChem classification trees)
 
 Results are written back into drug_canonical.tsv in-place.
 A cache file (harmonise/.pubchem_cache.json) avoids redundant API calls on
@@ -18,6 +18,7 @@ Rate-limit: PubChem allows ~5 req/s without API key; we use 0.22 s sleep.
 
 import csv
 import json
+import re
 import time
 import urllib.error
 import urllib.parse
@@ -116,29 +117,48 @@ def lookup_chebi(cid: int) -> str:
 
 def lookup_atc(cid: int) -> str:
     """
-    Return first ATC code from PubChem's pharmacology classification for CID.
-    PubChem stores ATC codes in the compound classification tree under
-    the WHO ATC source.  We fetch the /classification endpoint.
-    Falls back to empty string if none found.
+    Return pipe-delimited leaf ATC code(s) for CID from PubChem PUG View.
+
+    PubChem structures ATC data under an "ATC Code" heading.  Each
+    Information block represents one independent ATC classification tree
+    (a drug can belong to multiple trees, e.g. J01XX10 and G04BX13).
+    Within each block, StringWithMarkup entries run from root to leaf —
+    we want only the most specific (level-5) code per tree.
+
+    Level-5 ATC pattern: letter + 2 digits + 2 letters + 2 digits
+    Veterinary prefix adds a leading Q  (e.g. QJ01GB90).
+    We use a regex rather than positional heuristics so that strings like
+    "ATC: J01DD52 – …" or multi-level tree strings are handled correctly.
     """
+    # Matches full (level-5) ATC codes: e.g. J01XX10, QJ01GB90
+    ATC_RE = re.compile(r'\b(Q?[A-Z]\d{2}[A-Z]{2}\d{2})\b')
+
     url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/{cid}/JSON?heading=ATC+Code"
     data = pubchem_get_json(url)
     if data is None:
         return ""
-    # Navigate the PUG View tree looking for ATC Code sections
+
+    leaf_codes: list[str] = []
     try:
-        record = data.get("Record", {})
-        for section in record.get("Section", []):
+        for section in data.get("Record", {}).get("Section", []):
             for sub in section.get("Section", []):
-                if "ATC" in sub.get("TOCHeading", ""):
-                    for info in sub.get("Information", []):
-                        for val in info.get("Value", {}).get("StringWithMarkup", []):
-                            s = val.get("String", "")
-                            if s and len(s) >= 5:
-                                return s.split()[0]  # first token is the code
+                if "ATC" not in sub.get("TOCHeading", ""):
+                    continue
+                for info in sub.get("Information", []):
+                    # One Information block = one ATC tree; scan all its strings
+                    # and keep the last regex match (root→leaf ordering means
+                    # the last match is the most specific code).
+                    best: str | None = None
+                    for val in info.get("Value", {}).get("StringWithMarkup", []):
+                        m = ATC_RE.search(val.get("String", ""))
+                        if m:
+                            best = m.group(1)
+                    if best and best not in leaf_codes:
+                        leaf_codes.append(best)
     except Exception:
         pass
-    return ""
+
+    return "|".join(leaf_codes)
 
 
 # ---------------------------------------------------------------------------
