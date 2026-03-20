@@ -4,13 +4,36 @@
 CREATE SCHEMA IF NOT EXISTS amr;
 
 -- ─────────────────────────────────────────────────────────
+-- Protein table (one row per unique translated protein sequence)
+-- Groups nucleotide sequences that encode the same protein despite
+-- synonymous codon differences, alternative start codons, or
+-- stop-codon presence/absence variation.
+-- ─────────────────────────────────────────────────────────
+CREATE SEQUENCE IF NOT EXISTS amr.protein_id_seq START 1;
+
+CREATE TABLE IF NOT EXISTS amr.protein (
+    protein_id          TEXT        PRIMARY KEY
+                                        DEFAULT 'JRCPRO_' || lpad(nextval('amr.protein_id_seq')::text, 6, '0'),
+    protein_md5         CHAR(32)    NOT NULL UNIQUE,  -- MD5 of the translated AA sequence
+    protein_sequence    TEXT        NOT NULL,
+    protein_length      INTEGER     NOT NULL GENERATED ALWAYS AS (length(protein_sequence)) STORED,
+    representative_jrc  VARCHAR(13) NOT NULL UNIQUE   -- set after amr.sequence is populated
+                                        REFERENCES amr.sequence(jrc_id)
+                                        DEFERRABLE INITIALLY DEFERRED
+);
+
+CREATE INDEX IF NOT EXISTS idx_protein_md5 ON amr.protein(protein_md5);
+
+-- ─────────────────────────────────────────────────────────
 -- Core sequence table (one row per unique nucleotide sequence)
 -- ─────────────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS amr.sequence (
     jrc_id          VARCHAR(13) PRIMARY KEY,  -- JRC + first 10 chars of md5
     sequence_md5    CHAR(32)    NOT NULL UNIQUE,
     sequence        TEXT        NOT NULL,
-    sequence_length INTEGER     NOT NULL GENERATED ALWAYS AS (length(sequence)) STORED
+    sequence_length INTEGER     NOT NULL GENERATED ALWAYS AS (length(sequence)) STORED,
+    protein_id      TEXT        REFERENCES amr.protein(protein_id)
+                                -- NULL for non-CDS, frameshifted, or ambiguous sequences
 );
 
 -- ─────────────────────────────────────────────────────────
@@ -104,6 +127,7 @@ CREATE INDEX IF NOT EXISTS idx_gene_source   ON amr.gene(source);
 CREATE INDEX IF NOT EXISTS idx_gene_cluster  ON amr.gene(cluster_id);
 CREATE INDEX IF NOT EXISTS idx_gene_name     ON amr.gene(gene_name);
 CREATE INDEX IF NOT EXISTS idx_seq_md5       ON amr.sequence(sequence_md5);
+CREATE INDEX IF NOT EXISTS idx_seq_protein   ON amr.sequence(protein_id);
 CREATE INDEX IF NOT EXISTS idx_seqmeta_jrc   ON amr.sequence_metadata(jrc_id);
 CREATE INDEX IF NOT EXISTS idx_seqmeta_src   ON amr.sequence_metadata(source);
 
