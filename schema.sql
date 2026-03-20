@@ -4,6 +4,18 @@
 CREATE SCHEMA IF NOT EXISTS amr;
 
 -- ─────────────────────────────────────────────────────────
+-- Core sequence table (one row per unique nucleotide sequence)
+-- ─────────────────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS amr.sequence (
+    jrc_id          VARCHAR(13) PRIMARY KEY,  -- JRC + first 10 chars of md5
+    sequence_md5    CHAR(32)    NOT NULL UNIQUE,
+    sequence        TEXT        NOT NULL,
+    sequence_length INTEGER     NOT NULL GENERATED ALWAYS AS (length(sequence)) STORED,
+    protein_id      TEXT        -- FK to amr.protein added below after amr.protein is created
+                                -- NULL for non-CDS, frameshifted, or ambiguous sequences
+);
+
+-- ─────────────────────────────────────────────────────────
 -- Protein table (one row per unique translated protein sequence)
 -- Groups nucleotide sequences that encode the same protein despite
 -- synonymous codon differences, alternative start codons, or
@@ -24,17 +36,10 @@ CREATE TABLE IF NOT EXISTS amr.protein (
 
 CREATE INDEX IF NOT EXISTS idx_protein_md5 ON amr.protein(protein_md5);
 
--- ─────────────────────────────────────────────────────────
--- Core sequence table (one row per unique nucleotide sequence)
--- ─────────────────────────────────────────────────────────
-CREATE TABLE IF NOT EXISTS amr.sequence (
-    jrc_id          VARCHAR(13) PRIMARY KEY,  -- JRC + first 10 chars of md5
-    sequence_md5    CHAR(32)    NOT NULL UNIQUE,
-    sequence        TEXT        NOT NULL,
-    sequence_length INTEGER     NOT NULL GENERATED ALWAYS AS (length(sequence)) STORED,
-    protein_id      TEXT        REFERENCES amr.protein(protein_id)
-                                -- NULL for non-CDS, frameshifted, or ambiguous sequences
-);
+-- Add FK from amr.sequence.protein_id → amr.protein now that amr.protein exists
+ALTER TABLE amr.sequence
+    ADD CONSTRAINT IF NOT EXISTS fk_sequence_protein
+    FOREIGN KEY (protein_id) REFERENCES amr.protein(protein_id);
 
 -- ─────────────────────────────────────────────────────────
 -- Cluster table (group of 100%-identical sequences)
