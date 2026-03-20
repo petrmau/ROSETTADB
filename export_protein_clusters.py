@@ -5,6 +5,7 @@ export_protein_clusters.py
 Export a TSV table with one row per protein cluster:
 
     protein_id  protein_sequence  cluster_id  representative_jrc  representative_sequence
+    gene_name_resfinder  gene_name_card  gene_name_ncbi
 
 Usage:
     python export_protein_clusters.py [--dsn <connstr>] [--output <file.tsv>]
@@ -25,10 +26,19 @@ SELECT
     p.protein_sequence,
     c.cluster_id,
     c.representative_jrc,
-    s.sequence                  AS representative_sequence
+    s.sequence                          AS representative_sequence,
+    resfinder.gene_name                 AS gene_name_resfinder,
+    card.gene_name                      AS gene_name_card,
+    ncbi.gene_name                      AS gene_name_ncbi
 FROM amr.protein p
 JOIN amr.sequence s  ON s.jrc_id          = p.representative_jrc
 JOIN amr.cluster  c  ON c.representative_jrc = p.representative_jrc
+LEFT JOIN amr.sequence_metadata resfinder
+    ON resfinder.jrc_id = p.representative_jrc AND resfinder.source = 'RESFINDER'
+LEFT JOIN amr.sequence_metadata card
+    ON card.jrc_id = p.representative_jrc AND card.source = 'CARD'
+LEFT JOIN amr.sequence_metadata ncbi
+    ON ncbi.jrc_id = p.representative_jrc AND ncbi.source = 'NCBI'
 ORDER BY p.protein_id;
 """
 
@@ -38,6 +48,9 @@ COLUMNS = [
     "cluster_id",
     "representative_jrc",
     "representative_sequence",
+    "gene_name_resfinder",
+    "gene_name_card",
+    "gene_name_ncbi",
 ]
 
 
