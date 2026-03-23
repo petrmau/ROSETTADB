@@ -1,0 +1,3 @@
+[submodule "ROSETTADB"]
+	path = ROSETTADB
+	url = https://github.com/petrmau/ROSETTADB.git
