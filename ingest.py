@@ -202,7 +202,9 @@ def parse_resfinder_header(header: str) -> dict:
     ResFinder headers: <gene>_<allele_number>_<genbank_accession>
     e.g. ant(2'')-Ia_8_AY920928  -> allele=ant(2'')-Ia_8, source_acc=AY920928
          aac(6')-Ib_2_M23634     -> allele=aac(6')-Ib_2,  source_acc=M23634
-    The accession is the last _-delimited token that looks like a GenBank accession.
+         blaOXA-234_1_NG_050607  -> allele=blaOXA-234_1,  source_acc=NG_050607
+    The accession is the last _-delimited token (or two-token pair for RefSeq-style
+    accessions like NG_050607) that looks like a GenBank accession.
     allele = all tokens before the accession joined with '_'.
     gene_name = first token (gene family, e.g. ant(2'')-Ia).
     genbank_nucleotide = source_acc (they are the same for ResFinder).
@@ -210,18 +212,28 @@ def parse_resfinder_header(header: str) -> dict:
     info: dict = {}
     parts = header.split("_")
 
-    # Find the rightmost accession-like token
+    # Find the rightmost accession-like token or two-token accession (e.g. NG_050607)
     acc_idx = None
+    acc_end = None  # exclusive; accession = "_".join(parts[acc_idx:acc_end])
     for i in range(len(parts) - 1, 0, -1):
         p = parts[i]
-        # Match with or without version suffix (.1 etc.)
+        # Single-token accession: e.g. AY920928, M23634
         if _ACC_RE.fullmatch(p) or _ACC_RE.fullmatch(p.split(".")[0] + ".1"):
             acc_idx = i
+            acc_end = i + 1
             break
+        # Two-token accession with embedded underscore: e.g. NG_050607, NZ_CP012345
+        if i >= 2:
+            two = parts[i - 1] + "_" + p
+            if _ACC_RE.fullmatch(two) or _ACC_RE.fullmatch(two.split(".")[0] + ".1"):
+                acc_idx = i - 1
+                acc_end = i + 1
+                break
 
     if acc_idx is not None:
-        info["source_acc"] = parts[acc_idx]
-        info["genbank_nucleotide"] = parts[acc_idx]
+        acc = "_".join(parts[acc_idx:acc_end])
+        info["source_acc"] = acc
+        info["genbank_nucleotide"] = acc
         info["allele"] = "_".join(parts[:acc_idx])
     else:
         # fallback: treat last token as accession
@@ -304,6 +316,9 @@ def build_gene_records(source: str, fasta_path: Path,
                 rec["card_cvterm_id"]        = m.get("CVTERM ID")
                 rec["card_model_id"]         = m.get("Model ID")
                 rec["card_model_sequence_id"] = m.get("Model Sequence ID")
+            # For CARD, allele == gene_name
+            if not rec.get("allele"):
+                rec["allele"] = rec.get("gene_name")
 
         elif source == "NCBI":
             parsed = parse_ncbi_header(header)
@@ -326,6 +341,9 @@ def build_gene_records(source: str, fasta_path: Path,
                 # gene_name: allele first, then geneFamily
                 if not rec.get("gene_name"):
                     rec["gene_name"] = rec.get("allele") or rec.get("gene_family")
+                # For NCBI, allele falls back to gene_name when absent
+                if not rec.get("allele"):
+                    rec["allele"] = rec.get("gene_name")
 
         elif source == "RESFINDER":
             parsed = parse_resfinder_header(header)
