@@ -31,8 +31,8 @@ SELECT
     ncbi.gene_name                      AS gene_name_ncbi,
     resfinder.gene_name                 AS gene_name_resfinder
 FROM amr.cluster c
-JOIN amr.sequence s  ON s.jrc_id          = c.representative_jrc
-JOIN amr.protein  p  ON p.representative_jrc = c.representative_jrc
+JOIN amr.sequence s  ON s.jrc_id = c.representative_jrc
+LEFT JOIN amr.protein p  ON p.protein_id = s.protein_id
 LEFT JOIN amr.sequence_metadata card
     ON card.jrc_id = c.representative_jrc AND card.source = 'CARD'
 LEFT JOIN amr.sequence_metadata ncbi
@@ -89,7 +89,7 @@ def main():
     try:
         out.write("\t".join(COLUMNS) + "\n")
         for row in rows:
-            out.write("\t".join(str(row[col]) if row[col] is not None else "" for col in COLUMNS) + "\n")
+            out.write("\t".join(str(row[col]) if row[col] is not None else "NULL" for col in COLUMNS) + "\n")
     finally:
         if args.output:
             out.close()
