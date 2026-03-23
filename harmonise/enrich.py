@@ -66,19 +66,19 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-ROOT           = Path(__file__).parent.parent
-CACHE_PATH     = ROOT / "harmonise/.enrich_cache.json"
-DRUG_TSV       = ROOT / "harmonise/drug_canonical.tsv"
-ATC_TABLE_PATH = ROOT / "harmonise/atc_codes_all.tsv"
+ROOT              = Path(__file__).parent.parent
+CACHE_PATH        = ROOT / "harmonise/.enrich_cache.json"
+DRUG_TSV          = ROOT / "harmonise/drug_canonical.tsv"
+ATC_TABLE_PATH    = ROOT / "harmonise/atc_codes_all.tsv"
+ATCVET_TABLE_PATH = ROOT / "harmonise/atcvet_codes_all.tsv"
 
 CHEBI_SLEEP = 0.35
 PC_SLEEP    = 0.22
 MAX_RETRIES = 4
 
 # ATC category priority for disambiguation (most AMR-relevant first).
-# J = antiinfectives, P = antiparasitics, D = dermatologicals (topical antifungals),
-# A = alimentary (some antifungals/antiprotozoals), then remaining categories.
-ATC_PRIORITY = ["J", "P", "D", "A", "L", "B", "C", "G", "H", "M", "N", "R", "S", "V"]
+# J = antiinfectives, Q = veterinary (mirrors J with QJ prefix), then others.
+ATC_PRIORITY = ["J", "Q", "P", "D", "A", "L", "B", "C", "G", "H", "M", "N", "R", "S", "V"]
 
 CHEBI_BASE = "https://www.ebi.ac.uk/webservices/chebi/2.0/api"
 PC_BASE    = "https://pubchem.ncbi.nlm.nih.gov/rest/pug"
@@ -300,18 +300,21 @@ def pc_atc(cid: int) -> str:
 
 def load_atc_table() -> dict[str, list[str]]:
     """
-    Load harmonise/atc_codes_all.tsv into a lowercase-name → [atc_code, …] dict.
-    Returns empty dict if the file is missing (enrich.py still works without it).
+    Load ATC code tables into a lowercase-name → [atc_code, …] dict.
+    Merges both the human index (atc_codes_all.tsv) and the ATCvet index
+    (atcvet_codes_all.tsv) when available.  Either file may be absent —
+    the function still returns whatever it can find.
     """
-    if not ATC_TABLE_PATH.exists():
-        return {}
     table: dict[str, list[str]] = {}
-    with open(ATC_TABLE_PATH, newline="", encoding="utf-8") as f:
-        for row in csv.DictReader(f, delimiter="\t"):
-            code = row.get("atc_code", "").strip()
-            name = row.get("name", "").strip().lower()
-            if code and name:
-                table.setdefault(name, []).append(code)
+    for path in (ATC_TABLE_PATH, ATCVET_TABLE_PATH):
+        if not path.exists():
+            continue
+        with open(path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f, delimiter="\t"):
+                code = row.get("atc_code", "").strip()
+                name = row.get("name", "").strip().lower()
+                if code and name:
+                    table.setdefault(name, []).append(code)
     return table
 
 
@@ -439,8 +442,11 @@ def main():
     # Load local WHO ATC table and back-fill any cached entries missing ATC
     atc_table = load_atc_table()
     if atc_table:
+        sources = ", ".join(
+            p.name for p in (ATC_TABLE_PATH, ATCVET_TABLE_PATH) if p.exists()
+        )
         print(f"ATC table: {sum(len(v) for v in atc_table.values())} entries "
-              f"from {ATC_TABLE_PATH.name}")
+              f"from {sources}")
         upgraded = 0
         for n, v in cache.items():
             if not v.get("atc_code"):
