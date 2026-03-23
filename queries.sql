@@ -74,6 +74,19 @@ LIMIT 10;
 -- Cluster queries
 -- -----------------------------------------------------------------------------
 
+-- Protein clusters: protein_id, protein_sequence, cluster_id, representative_jrc,
+-- and the nucleotide sequence of that representative
+SELECT
+    p.protein_id,
+    p.protein_sequence,
+    c.cluster_id,
+    c.representative_jrc,
+    s.sequence                  AS representative_sequence
+FROM amr.protein p
+JOIN amr.sequence s  ON s.jrc_id     = p.representative_jrc
+JOIN amr.cluster  c  ON c.representative_jrc = p.representative_jrc
+ORDER BY p.protein_id;
+
 -- All clusters: representative sequence + gene names + linked canonical drugs + drug classes + ATC groups
 SELECT
     c.cluster_id,
