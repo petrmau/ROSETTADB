@@ -80,7 +80,7 @@ DEBUG = False
 
 def fetch_page(code):
     """Fetch ATCvet index page for a given code."""
-    url = f"{BASE_URL}?code={code}&showdescription=no"
+    url = f"{BASE_URL}?code={code}&showdescription=yes"
     if DEBUG:
         print(f"    [debug] GET {url}")
     try:
@@ -147,7 +147,13 @@ def parse_atcvet_page(html, parent_code):
 
         all_trs = table.find_all("tr")
 
-        has_th_keywords = any(kw in joined for kw in ("atc", "ddd", "adm", "name"))
+        # Accept table if it has recognisable column headers OR no headers at all
+        # (headerless tables trust structure; ATCvet uses "ATCvet code", "INN/common
+        # name", "DDD", "U", "Adm.R" — all covered by the keywords below).
+        has_th_keywords = any(
+            kw in joined
+            for kw in ("atc", "ddd", "adm", "name", "inn", "code", "route", "dose")
+        )
         no_headers = len(ths) == 0
 
         if not has_th_keywords and not no_headers:
@@ -160,24 +166,37 @@ def parse_atcvet_page(html, parent_code):
 
             cell_texts = [c.get_text(separator=" ", strip=True) for c in cells]
 
-            code_link = cells[0].find("a", href=True)
-            if code_link:
-                atcvet_code = extract_code_from_href(code_link["href"]) or cell_texts[0]
-            else:
-                atcvet_code = cell_texts[0]
+            # Try to find an ATCvet code in any cell (link first, then plain text).
+            # ATCvet pages sometimes put the code in a column other than column 0.
+            atcvet_code = None
+            code_col = None
+            for ci, cell in enumerate(cells):
+                link = cell.find("a", href=True)
+                candidate = None
+                if link:
+                    candidate = extract_code_from_href(link["href"])
+                if not candidate:
+                    candidate = cell_texts[ci].strip().upper()
+                if candidate and ATCVET_CODE_RE.match(candidate):
+                    atcvet_code = candidate
+                    code_col = ci
+                    break
 
-            if not atcvet_code or not ATCVET_CODE_RE.match(atcvet_code.strip().upper()):
+            if not atcvet_code:
                 continue
 
-            atcvet_code = atcvet_code.strip().upper()
+            # Build the row using positions relative to where the code was found
+            def _get(i, col=code_col, texts=cell_texts):
+                idx = col + i
+                return texts[idx] if 0 <= idx < len(texts) else ""
 
             rows.append({
                 "atc_code": atcvet_code,
-                "name":     cell_texts[1] if len(cell_texts) > 1 else "",
-                "ddd":      cell_texts[2] if len(cell_texts) > 2 else "",
-                "unit":     cell_texts[3] if len(cell_texts) > 3 else "",
-                "adm_r":    cell_texts[4] if len(cell_texts) > 4 else "",
-                "note":     cell_texts[5] if len(cell_texts) > 5 else "",
+                "name":     _get(1),
+                "ddd":      _get(2),
+                "unit":     _get(3),
+                "adm_r":    _get(4),
+                "note":     _get(5),
             })
 
     if DEBUG:
