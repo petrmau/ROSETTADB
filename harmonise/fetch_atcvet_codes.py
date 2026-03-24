@@ -76,6 +76,7 @@ HEADERS = {
 ATCVET_CODE_RE = re.compile(r'^Q[A-Z]\d{0,2}[A-Z]{0,2}\d{0,2}$')
 
 DEBUG = False
+DUMP_HTML = None  # path prefix for dumping raw HTML, set via --dump-html
 
 
 def fetch_page(code):
@@ -86,6 +87,12 @@ def fetch_page(code):
     try:
         response = requests.get(url, headers=HEADERS, timeout=15)
         response.raise_for_status()
+        if DUMP_HTML:
+            path = f"{DUMP_HTML}_{code}.html"
+            with open(path, "w", encoding="utf-8") as fh:
+                fh.write(response.text)
+            if DEBUG:
+                print(f"    [debug] HTML dumped to {path}")
         return response.text
     except requests.RequestException as e:
         print(f"  ERROR fetching {code}: {e}", file=sys.stderr)
@@ -140,6 +147,18 @@ def parse_atcvet_page(html, parent_code):
         for i, t in enumerate(tables):
             ths = [th.get_text(strip=True) for th in t.find_all("th")]
             print(f"      table[{i}] headers={ths}  rows={len(t.find_all('tr'))}")
+        if not tables:
+            # Show the tag types and classes present in the main content area
+            content = soup.find("div", id="content") or soup.find("main") or soup.body
+            if content:
+                tag_summary = {}
+                for tag in content.find_all(True):
+                    key = f"<{tag.name} class={tag.get('class',[])}>"
+                    tag_summary[key] = tag_summary.get(key, 0) + 1
+                top = sorted(tag_summary.items(), key=lambda x: -x[1])[:20]
+                print(f"    [debug] top tags in content: {top}")
+                # Also show first 1000 chars of body text
+                print(f"    [debug] body snippet:\n{content.get_text()[:500]}")
 
     for table in tables:
         ths = [th.get_text(strip=True).lower() for th in table.find_all("th")]
@@ -198,6 +217,93 @@ def parse_atcvet_page(html, parent_code):
                 "adm_r":    _get(4),
                 "note":     _get(5),
             })
+
+    # ------------------------------------------------------------------ #
+    # 3. Fallback: parse the <br>-separated <p> layout used by ATCvet    #
+    #    Actual page structure (confirmed from live HTML):                #
+    #      <p>CODE <b><a href="./?code=CODE">NAME</a></b><br>            #
+    #         CODE2 <b><a href="./?code=CODE2">NAME2</a></b><br></p>     #
+    #    Each segment between <br> tags represents one ATCvet entry.     #
+    # ------------------------------------------------------------------ #
+    if not rows:
+        DDD_UNITS = re.compile(r'^(mg|g|µg|ug|mmol|ml|MU|TU|U|IU|dose|doses?)$', re.IGNORECASE)
+        ADM_ROUTES = re.compile(r'^(O|P|N|Inhal|V|TD|SL|R|SL|Impl|GI|loz|chew|gum)$', re.IGNORECASE)
+        DDD_VALUE = re.compile(r'^\d[\d.,]*$')
+
+        content = soup.find("div", id="content") or soup.body
+        seen_codes_fallback = set()
+
+        for p_tag in content.find_all("p"):
+            # Split paragraph children into segments delimited by <br> tags
+            segments = []
+            current = []
+            for child in p_tag.children:
+                if hasattr(child, "name") and child.name == "br":
+                    segments.append(current)
+                    current = []
+                else:
+                    current.append(child)
+            if current:
+                segments.append(current)
+
+            for segment in segments:
+                # Find a <b><a href="?code=..."> within this segment.
+                # Structure: "CODE <b><a href="./?code=CODE">NAME</a></b> [DDD unit adm.r]"
+                # Text before the <b> holds the code as plain text (we ignore it since
+                # we already get the code from the href). Text after holds DDD/unit/route.
+                code = None
+                name = ""
+                post_text = ""   # text tokens AFTER the code element
+                found_code_elem = False
+                for elem in segment:
+                    if not hasattr(elem, "name"):
+                        # Plain text node
+                        if found_code_elem:
+                            post_text += str(elem)
+                        # text before the code element is just the code repeated — skip
+                        continue
+                    # Look for <b><a> or bare <a> with a code href
+                    a_tag = None
+                    if elem.name in ("b", "strong"):
+                        a_tag = elem.find("a", href=True)
+                    elif elem.name == "a" and elem.get("href"):
+                        a_tag = elem
+                    if a_tag and not found_code_elem:
+                        candidate = extract_code_from_href(a_tag["href"])
+                        if candidate and candidate.upper().startswith(parent_code.upper()):
+                            code = candidate
+                            name = a_tag.get_text(strip=True)
+                            found_code_elem = True
+                            continue
+                    if found_code_elem:
+                        post_text += elem.get_text(separator=" ", strip=False)
+
+                if not code or code in seen_codes_fallback:
+                    continue
+                seen_codes_fallback.add(code)
+
+                # Parse optional DDD/unit/route from post_text tokens
+                tokens = post_text.strip().split()
+                ddd = unit = adm_r = note = ""
+                i = 0
+                while i < len(tokens):
+                    tok = tokens[i]
+                    if DDD_VALUE.match(tok):
+                        ddd = tok
+                        if i + 1 < len(tokens) and DDD_UNITS.match(tokens[i + 1]):
+                            unit = tokens[i + 1]
+                            i += 1
+                        if i + 1 < len(tokens) and ADM_ROUTES.match(tokens[i + 1]):
+                            adm_r = tokens[i + 1]
+                            i += 1
+                        note = " ".join(tokens[i + 1:])
+                        break
+                    i += 1
+
+                rows.append({"atc_code": code, "name": name, "ddd": ddd, "unit": unit, "adm_r": adm_r, "note": note})
+
+        if DEBUG:
+            print(f"    [debug] fallback <br>-segment parser rows: {len(rows)}")
 
     if DEBUG:
         print(f"    [debug] rows parsed for {parent_code}: {len(rows)}")
@@ -299,8 +405,16 @@ def main():
         action="store_true",
         help="Print raw parse diagnostics to help troubleshoot empty results",
     )
+    parser.add_argument(
+        "--dump-html",
+        metavar="PREFIX",
+        default=None,
+        help="Save raw HTML for each fetched page to PREFIX_CODE.html (useful for debugging)",
+    )
     args = parser.parse_args()
     DEBUG = args.debug
+    global DUMP_HTML
+    DUMP_HTML = args.dump_html
 
     codes_to_fetch, default_filename = resolve_codes(args.codes)
     output_path = args.output or default_filename
