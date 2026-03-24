@@ -304,8 +304,6 @@ def parse_atcvet_page(html, parent_code):
 
         if DEBUG:
             print(f"    [debug] fallback <br>-segment parser rows: {len(rows)}")
-        if DEBUG:
-            print(f"    [debug] fallback list-parser rows: {len(rows)}")
 
     if DEBUG:
         print(f"    [debug] rows parsed for {parent_code}: {len(rows)}")
