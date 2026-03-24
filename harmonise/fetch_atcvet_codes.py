@@ -219,69 +219,91 @@ def parse_atcvet_page(html, parent_code):
             })
 
     # ------------------------------------------------------------------ #
-    # 3. Fallback: parse list-based layout (<li> / <p> / <div>)          #
-    #    ATCvet pages may render data as lists rather than tables.        #
+    # 3. Fallback: parse the <br>-separated <p> layout used by ATCvet    #
+    #    Actual page structure (confirmed from live HTML):                #
+    #      <p>CODE <b><a href="./?code=CODE">NAME</a></b><br>            #
+    #         CODE2 <b><a href="./?code=CODE2">NAME2</a></b><br></p>     #
+    #    Each segment between <br> tags represents one ATCvet entry.     #
     # ------------------------------------------------------------------ #
     if not rows:
-        # Walk every element that directly wraps an ATCvet code link.
-        # Typical pattern: <li><a href="?code=QD06BB01">QD06BB01</a> name DDD u adm.r</li>
-        # We collect text tokens from the parent element after stripping the code itself.
         DDD_UNITS = re.compile(r'^(mg|g|µg|ug|mmol|ml|MU|TU|U|IU|dose|doses?)$', re.IGNORECASE)
-        ADM_ROUTES = re.compile(r'^(O|P|N|Inhal|V|TD|SL|R|SL|Impl|GI|loz|chew|TD|gum)$', re.IGNORECASE)
+        ADM_ROUTES = re.compile(r'^(O|P|N|Inhal|V|TD|SL|R|SL|Impl|GI|loz|chew|gum)$', re.IGNORECASE)
         DDD_VALUE = re.compile(r'^\d[\d.,]*$')
 
+        content = soup.find("div", id="content") or soup.body
         seen_codes_fallback = set()
-        for a_tag in soup.find_all("a", href=True):
-            code = extract_code_from_href(a_tag["href"])
-            if not code or not code.upper().startswith(parent_code.upper()):
-                continue
-            if code in seen_codes_fallback:
-                continue
-            seen_codes_fallback.add(code)
 
-            # Climb to the nearest block-level or list-item parent
-            container = a_tag.parent
-            while container and container.name not in ("li", "p", "div", "td", "span", "body"):
-                container = container.parent
-            if not container:
-                continue
-
-            # Get the full text of the container, split into tokens
-            full_text = container.get_text(separator=" ", strip=True)
-            # Remove the code itself from the start of the text
-            text_without_code = re.sub(r'^\s*' + re.escape(code) + r'\s*', '', full_text, flags=re.IGNORECASE).strip()
-            tokens = text_without_code.split()
-            if not tokens:
-                # No name info — still record the code
-                rows.append({"atc_code": code, "name": "", "ddd": "", "unit": "", "adm_r": "", "note": ""})
-                continue
-
-            # Heuristic: find a DDD value (number) surrounded by unit/route tokens
-            name_tokens = []
-            ddd = unit = adm_r = note = ""
-            i = 0
-            while i < len(tokens):
-                tok = tokens[i]
-                if DDD_VALUE.match(tok):
-                    ddd = tok
-                    # Next token might be unit
-                    if i + 1 < len(tokens) and DDD_UNITS.match(tokens[i + 1]):
-                        unit = tokens[i + 1]
-                        i += 1
-                    # Next token might be adm route
-                    if i + 1 < len(tokens) and ADM_ROUTES.match(tokens[i + 1]):
-                        adm_r = tokens[i + 1]
-                        i += 1
-                    # Remaining tokens become note
-                    note = " ".join(tokens[i + 1:])
-                    break
+        for p_tag in content.find_all("p"):
+            # Split paragraph children into segments delimited by <br> tags
+            segments = []
+            current = []
+            for child in p_tag.children:
+                if hasattr(child, "name") and child.name == "br":
+                    segments.append(current)
+                    current = []
                 else:
-                    name_tokens.append(tok)
-                i += 1
+                    current.append(child)
+            if current:
+                segments.append(current)
 
-            name = " ".join(name_tokens)
-            rows.append({"atc_code": code, "name": name, "ddd": ddd, "unit": unit, "adm_r": adm_r, "note": note})
+            for segment in segments:
+                # Find a <b><a href="?code=..."> within this segment.
+                # Structure: "CODE <b><a href="./?code=CODE">NAME</a></b> [DDD unit adm.r]"
+                # Text before the <b> holds the code as plain text (we ignore it since
+                # we already get the code from the href). Text after holds DDD/unit/route.
+                code = None
+                name = ""
+                post_text = ""   # text tokens AFTER the code element
+                found_code_elem = False
+                for elem in segment:
+                    if not hasattr(elem, "name"):
+                        # Plain text node
+                        if found_code_elem:
+                            post_text += str(elem)
+                        # text before the code element is just the code repeated — skip
+                        continue
+                    # Look for <b><a> or bare <a> with a code href
+                    a_tag = None
+                    if elem.name in ("b", "strong"):
+                        a_tag = elem.find("a", href=True)
+                    elif elem.name == "a" and elem.get("href"):
+                        a_tag = elem
+                    if a_tag and not found_code_elem:
+                        candidate = extract_code_from_href(a_tag["href"])
+                        if candidate and candidate.upper().startswith(parent_code.upper()):
+                            code = candidate
+                            name = a_tag.get_text(strip=True)
+                            found_code_elem = True
+                            continue
+                    if found_code_elem:
+                        post_text += elem.get_text(separator=" ", strip=False)
 
+                if not code or code in seen_codes_fallback:
+                    continue
+                seen_codes_fallback.add(code)
+
+                # Parse optional DDD/unit/route from post_text tokens
+                tokens = post_text.strip().split()
+                ddd = unit = adm_r = note = ""
+                i = 0
+                while i < len(tokens):
+                    tok = tokens[i]
+                    if DDD_VALUE.match(tok):
+                        ddd = tok
+                        if i + 1 < len(tokens) and DDD_UNITS.match(tokens[i + 1]):
+                            unit = tokens[i + 1]
+                            i += 1
+                        if i + 1 < len(tokens) and ADM_ROUTES.match(tokens[i + 1]):
+                            adm_r = tokens[i + 1]
+                            i += 1
+                        note = " ".join(tokens[i + 1:])
+                        break
+                    i += 1
+
+                rows.append({"atc_code": code, "name": name, "ddd": ddd, "unit": unit, "adm_r": adm_r, "note": note})
+
+        if DEBUG:
+            print(f"    [debug] fallback <br>-segment parser rows: {len(rows)}")
         if DEBUG:
             print(f"    [debug] fallback list-parser rows: {len(rows)}")
 
