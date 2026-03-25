@@ -165,7 +165,8 @@ loaded into the database:
 | `build_drug_class_direct.py` | Generates `drug_class_direct.tsv` from the curated override list in the script; no live lookups |
 | `harmonise.py` | Parses all three AMR sources + CARD ARO OBO and produces `drug_canonical.tsv`, `drug_alias.tsv`, `drug_class_member.tsv`, `gene_drug_link.tsv`, `aro_drug_class_member.tsv`, `aro_gene_class.tsv` |
 | `parse_aro_obo.py` | Parses `sources/CARD/aro.obo` to extract (1) drug → drug class `is_a` hierarchy → `aro_drug_class_member.tsv`; (2) `confers_resistance_to_drug_class` edges → `aro_gene_class.tsv`; called automatically by `harmonise.py` |
-| `enrich_amr_r.py` | Pre-enriches `drug_canonical.tsv` (PubChem CID, ATC code, LOINC codes) and expands `drug_alias.tsv` with synonyms/abbreviations from the AMR R-package reference; **zero API calls**; run before `enrich.py` |
+| `enrich_amr_r.py` | Pre-enriches `drug_canonical.tsv` (PubChem CID, ATC code, LOINC codes) and expands `drug_alias.tsv` with synonyms/abbreviations from the AMR R-package reference; **zero API calls**; run before `enrich_atc_groups.py` and `enrich.py` |
+| `enrich_atc_groups.py` | Fills any remaining `atc_group1` / `atc_group2` gaps in `drug_canonical.tsv` by deriving them from the ATC code prefix (4-char → group1, 5-char → group2) using a lookup built from the already-enriched rows in `antimicrobials.txt`; **zero API calls**; run after `enrich_amr_r.py` |
 | `enrich.py` | Enriches `drug_canonical.tsv` with InChIKey and ChEBI ID via ChEBI/PubChem APIs (fills only what `enrich_amr_r.py` could not) |
 | `enrich_pubchem.py` | Low-level PubChem PUG REST helper used by `enrich.py`; `lookup_atc()` extracts the most-specific (level-5) ATC code per classification tree via regex, returning all trees pipe-delimited |
 | `fetch_atc_codes.py` | Rebuilds `atc_codes_all.tsv` by scraping atcddd.fhi.no (~10 min) |
@@ -197,6 +198,12 @@ python harmonise/harmonise.py
 #            Pass --download to refresh the cached antimicrobials.txt
 python harmonise/enrich_amr_r.py
 
+# Step 2.6 — Fill remaining atc_group1 / atc_group2 gaps from ATC code prefix (offline)
+#            Derives group labels from 4/5-char ATC prefix using a lookup built from
+#            already-labelled rows in antimicrobials.txt; run after enrich_amr_r.py
+#            Use --dry-run to preview changes without writing
+python harmonise/enrich_atc_groups.py
+
 # Step 3 — Enrich drug_canonical.tsv with InChIKey and ChEBI ID via live APIs
 #          (runs faster now because many CIDs/ATCs are already filled)
 python harmonise/enrich.py
@@ -205,7 +212,7 @@ python harmonise/enrich.py
 python harmonise/parse_card_aro.py
 ```
 
-#### Enrichment strategy (`enrich_amr_r.py` + `enrich.py`)
+#### Enrichment strategy (`enrich_amr_r.py` → `enrich_atc_groups.py` → `enrich.py`)
 
 `enrich_amr_r.py` runs first and fills identifiers from the offline AMR R-package
 reference (`antimicrobials.txt`) — no network calls:
@@ -218,6 +225,21 @@ reference (`antimicrobials.txt`) — no network calls:
 | `atc_group1` | `atc_group1` | ATC level-2 group (e.g. `"Aminoglycoside antibacterials"`); always updated when present |
 | `atc_group2` | `atc_group2` | ATC level-3 group (e.g. `"Other aminoglycosides"`); always updated when present |
 | `drug_alias.tsv` | `name`, `synonyms`, `abbreviations` | Adds `synonym` and `abbreviation` rows with `source=amr_r` |
+
+`enrich_atc_groups.py` runs second and fills any `atc_group1` / `atc_group2` values
+that `enrich_amr_r.py` could not set (drugs present in the database but absent from
+or unlabelled in `antimicrobials.txt`). It builds a prefix lookup from the rows that
+already have group labels:
+
+| Prefix length | Maps to | Example |
+|---------------|---------|---------|
+| 4 chars (`J01D`) | `atc_group1` | → "Other beta-lactam antibacterials" |
+| 5 chars (`J01DB`) | `atc_group2` | → "First-generation cephalosporins" |
+
+For drugs with multiple ATC codes the first code in J→Q→P→… priority order that
+yields a hit is used.  No network calls; requires only the local `antimicrobials.txt`
+cache.  Supports `--dry-run` to preview changes.  On current data this fills
+**53 additional `atc_group1`** and **52 additional `atc_group2`** values.
 
 **Combination drug matching:** canonical names using `+` or ` & ` separators
 (e.g. `piperacillin+tazobactam`) are matched against the reference (which uses
@@ -355,9 +377,10 @@ python harmonise/build_drug_class_direct.py # drug_class_direct.tsv
 python harmonise/fetch_atc_codes.py all
 python harmonise/fetch_atcvet_codes.py all
 
-python harmonise/harmonise.py      # drug classes + drugs + aliases + class membership
-python harmonise/enrich_amr_r.py   # offline pre-enrichment (CID/ATC/LOINC + aliases)
-python harmonise/enrich.py         # ChEBI/InChIKey via live APIs
+python harmonise/harmonise.py         # drug classes + drugs + aliases + class membership
+python harmonise/enrich_amr_r.py      # offline pre-enrichment (CID/ATC/LOINC + aliases)
+python harmonise/enrich_atc_groups.py # offline: fill remaining atc_group1/2 from ATC prefix
+python harmonise/enrich.py            # ChEBI/InChIKey via live APIs
 python harmonise/parse_card_aro.py # CARD gene → class links
 ```
 
