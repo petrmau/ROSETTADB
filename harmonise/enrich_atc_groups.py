@@ -2,21 +2,24 @@
 """
 enrich_atc_groups.py
 ====================
-Fill missing atc_group1 / atc_group2 values in drug_canonical.tsv by
-deriving them directly from the ATC code prefix, using a lookup table built
-from the AMR-R antimicrobials.txt reference.
+Two-pass offline enrichment of drug_canonical.tsv:
 
-ATC hierarchy used:
-  atc_group1  →  4-char prefix  (e.g. J01D → "Other beta-lactam antibacterials")
-  atc_group2  →  5-char prefix  (e.g. J01DB → "First-generation cephalosporins")
+Pass 1 — ATC code fill (name lookup)
+  For drugs that have no atc_code, look up the canonical_name
+  (case-insensitive) in the local WHO ATC/ATCvet code tables
+  (atc_codes_all.tsv and, if present, atcvet_codes_all.tsv).
+  J-category codes are preferred over other categories when a name
+  appears in multiple trees (same priority as enrich_amr_r.py /
+  enrich.py).  Only fills; never overwrites an existing atc_code.
 
-The lookup is learned from rows in antimicrobials.txt that already have both
-an ATC code and group labels, so no external API calls or internet access are
-required.
-
-A drug with multiple ATC codes (comma-separated) uses the first code whose
-prefix appears in the lookup.  J-prefixed codes are tried before others,
-mirroring the ATC priority convention in enrich_amr_r.py.
+Pass 2 — ATC group fill (prefix lookup)
+  For drugs that now have an atc_code but still lack atc_group1 /
+  atc_group2, derives the group labels from the ATC code prefix using
+  a lookup table built from the AMR-R antimicrobials.txt rows that
+  already carry group labels:
+    4-char prefix (e.g. J01D)  → atc_group1
+    5-char prefix (e.g. J01DB) → atc_group2
+  No network calls; no external dependencies beyond the local TSV files.
 
 Usage:
     python harmonise/enrich_atc_groups.py [--dry-run]
@@ -28,13 +31,20 @@ import argparse
 import csv
 from pathlib import Path
 
-ROOT      = Path(__file__).parent.parent
-DRUG_TSV  = ROOT / "harmonise/drug_canonical.tsv"
-AMR_TSV   = ROOT / "harmonise/antimicrobials.txt"
+ROOT         = Path(__file__).parent.parent
+DRUG_TSV     = ROOT / "harmonise/drug_canonical.tsv"
+AMR_TSV      = ROOT / "harmonise/antimicrobials.txt"
+ATC_TSV      = ROOT / "harmonise/atc_codes_all.tsv"
+ATCVET_TSV   = ROOT / "harmonise/atcvet_codes_all.tsv"
 
-# ATC priority order (J first, then Q, then others) — same as enrich_amr_r.py
+# ATC priority order — J first, Q (ATCvet) immediately after, then others.
+# Same convention used by enrich_amr_r.py and enrich.py.
 ATC_PRIORITY = ["J", "Q", "P", "D", "A", "L", "B", "C", "G", "H", "M", "N", "R", "S", "V"]
 
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
 
 def _atc_rank(code: str) -> int:
     letter = code[0].upper() if code else "Z"
@@ -51,6 +61,43 @@ def _split_atcs(field: str) -> list[str]:
     codes = [c.strip() for c in field.split(",") if c.strip() and c.strip().upper() != "NA"]
     return sorted(codes, key=_atc_rank)
 
+
+# ---------------------------------------------------------------------------
+# Pass 1 — build name → ATC code lookup from local WHO tables
+# ---------------------------------------------------------------------------
+
+def build_name_atc_map(*tsv_paths: Path) -> dict[str, str]:
+    """
+    Build a lowercase-name → best ATC code mapping from one or more ATC TSVs.
+
+    When the same name appears in multiple categories the highest-priority
+    category (J > Q > P > …) wins.  ATCvet (Q-prefix) codes from
+    atcvet_codes_all.tsv are included automatically if the file exists.
+    """
+    # name → list of codes (we pick best after collecting all)
+    name_codes: dict[str, list[str]] = {}
+
+    for path in tsv_paths:
+        if not path.exists():
+            continue
+        with open(path, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f, delimiter="\t"):
+                code = row.get("atc_code", "").strip()
+                name = row.get("name", "").strip().lower()
+                if not code or not name:
+                    continue
+                name_codes.setdefault(name, []).append(code)
+
+    # For each name keep the highest-priority code
+    return {
+        name: sorted(codes, key=_atc_rank)[0]
+        for name, codes in name_codes.items()
+    }
+
+
+# ---------------------------------------------------------------------------
+# Pass 2 — build ATC prefix → group label lookup from AMR-R reference
+# ---------------------------------------------------------------------------
 
 def build_prefix_maps(amr_tsv: Path) -> tuple[dict[str, str], dict[str, str]]:
     """
@@ -98,6 +145,10 @@ def lookup_groups(
     return g1, g2
 
 
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -106,7 +157,16 @@ def main() -> None:
     args = parser.parse_args()
 
     # ------------------------------------------------------------------
-    # Build lookup from AMR-R reference
+    # Pass 1 setup — name → ATC code lookup
+    # ------------------------------------------------------------------
+    atc_sources = [p for p in (ATC_TSV, ATCVET_TSV) if p.exists()]
+    print("Building name→ATC map from: %s" %
+          ", ".join(p.relative_to(ROOT).as_posix() for p in atc_sources))
+    name_atc_map = build_name_atc_map(*atc_sources)
+    print(f"  {len(name_atc_map)} unique drug names indexed")
+
+    # ------------------------------------------------------------------
+    # Pass 2 setup — prefix → group label lookup
     # ------------------------------------------------------------------
     print(f"Building ATC prefix maps from {AMR_TSV.relative_to(ROOT)} …")
     g1_map, g2_map = build_prefix_maps(AMR_TSV)
@@ -124,15 +184,34 @@ def main() -> None:
         return
 
     fieldnames = list(drugs[0].keys())
-    for col in ("atc_group1", "atc_group2"):
+    for col in ("atc_code", "atc_group1", "atc_group2"):
         if col not in fieldnames:
             fieldnames.append(col)
             for row in drugs:
                 row.setdefault(col, "")
 
     # ------------------------------------------------------------------
-    # Fill missing groups
+    # Pass 1 — fill missing atc_code from name lookup
     # ------------------------------------------------------------------
+    print("\n--- Pass 1: fill atc_code from local ATC name lookup ---")
+    filled_atc = 0
+
+    for row in drugs:
+        if row.get("atc_code", "").strip():
+            continue  # already has a code
+        name = row["canonical_name"].strip().lower()
+        code = name_atc_map.get(name)
+        if code:
+            if args.dry_run:
+                print(f"  [dry] {row['canonical_name']}: atc_code ← {code!r}")
+            else:
+                row["atc_code"] = code
+            filled_atc += 1
+
+    # ------------------------------------------------------------------
+    # Pass 2 — fill missing atc_group1 / atc_group2 from prefix
+    # ------------------------------------------------------------------
+    print("\n--- Pass 2: fill atc_group1/2 from ATC code prefix ---")
     filled_g1 = filled_g2 = skipped_no_atc = skipped_already = 0
     g2_still_missing: list[str] = []
 
@@ -169,16 +248,17 @@ def main() -> None:
             g2_still_missing.append(f"{row['canonical_name']} ({atc})")
 
     # ------------------------------------------------------------------
-    # Write (unless dry-run)
+    # Summary
     # ------------------------------------------------------------------
     print(f"\nResults:")
-    print(f"  Skipped (no atc_code)   : {skipped_no_atc}")
-    print(f"  Skipped (already set)   : {skipped_already}")
-    print(f"  Filled  atc_group1      : {filled_g1}")
-    print(f"  Filled  atc_group2      : {filled_g2}")
+    print(f"  Pass 1 — filled atc_code    : {filled_atc}")
+    print(f"  Pass 2 — skipped (no atc)   : {skipped_no_atc}")
+    print(f"  Pass 2 — skipped (complete) : {skipped_already}")
+    print(f"  Pass 2 — filled atc_group1  : {filled_g1}")
+    print(f"  Pass 2 — filled atc_group2  : {filled_g2}")
 
     if g2_still_missing:
-        print(f"  atc_group2 still empty  : {len(g2_still_missing)}")
+        print(f"  atc_group2 still empty      : {len(g2_still_missing)}")
         for entry in g2_still_missing:
             print(f"    {entry}")
 
