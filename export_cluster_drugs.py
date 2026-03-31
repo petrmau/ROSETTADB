@@ -21,11 +21,15 @@ One row is emitted per (cluster_id, canonical_drug) pair; link_source is the
 union of all evidence source tokens across every sequence in that cluster.
 
 Options:
-    --require-inchikey   Skip drugs that have no InChIKey in amr.drug.
+    --require-inchikey      Skip drugs that have no InChIKey in amr.drug.
+    --exclude-class-terms   Skip drugs whose context is 'drug_class_name'
+                            (class-level tokens such as "aminoglycoside" or
+                            "third-generation cephalosporin" that are not
+                            specific drug entities).
 
 Usage:
     python export_cluster_drugs.py [--dsn <connstr>] [--output <file.tsv>]
-                                   [--require-inchikey]
+                                   [--require-inchikey] [--exclude-class-terms]
 
 Output goes to stdout if --output is not given.
 """
@@ -135,14 +139,23 @@ def main():
         action="store_true",
         help="Skip drugs that have no InChIKey in amr.drug.",
     )
+    parser.add_argument(
+        "--exclude-class-terms",
+        action="store_true",
+        help="Skip drugs with context='drug_class_name' (class-level tokens, not specific drugs).",
+    )
     args = parser.parse_args()
 
     if not args.dsn:
         print("ERROR: provide --dsn or set $ROSETTADB_DSN", file=sys.stderr)
         sys.exit(1)
 
-    inchikey_filter = "WHERE d.inchikey IS NOT NULL AND d.inchikey <> ''" \
-                      if args.require_inchikey else ""
+    filters = []
+    if args.require_inchikey:
+        filters.append("d.inchikey IS NOT NULL AND d.inchikey <> ''")
+    if args.exclude_class_terms:
+        filters.append("d.context != 'drug_class_name'")
+    inchikey_filter = ("WHERE " + " AND ".join(filters)) if filters else ""
     query = QUERY.format(inchikey_filter=inchikey_filter)
 
     conn = psycopg2.connect(args.dsn)

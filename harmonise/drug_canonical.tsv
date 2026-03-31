@@ -8,7 +8,7 @@ acriflavine	False		clinical						CARD.obo
 actinomycin	False		clinical						CARD.obo			
 albicidin	False		clinical						CARD.obo			
 amikacin	False		clinical	AMK	J01GB06,QD06AX12,QJ01GB06,QS01AA21,D06AX12,S01AA21		37768		CARD.obo|card|ncbi|resfinder	101493-5,11-7,12-5,13-3,13546-7,14-1,15098-7,17798-0,18860-7,20373-7,23624-0,25174-4,25175-1,25176-9,25177-7,25178-5,25179-3,31097-9,31098-7,31099-5,3319-1,3320-9,3321-7,35669-1,42642-9,48169-7,50802-8,50803-6,56628-1,59378-0,60564-2,60565-9,6975-7,80972-3,89484-0	Aminoglycoside antibacterials	Other aminoglycosides
-aminoglycoside	False		clinical						ncbi			
+aminoglycoside	False		drug_class_name						ncbi			
 aminonucleoside antibiotic	False		clinical						CARD.obo			
 amoxicillin	False		clinical	AMX	J01CA04,QG51AA03,QJ01CA04		33613		CARD.obo|card|resfinder	101498-4,15-8,16-6,16365-9,17-4,18-2,18861-5,18862-3,19-0,20-8,21-6,22-4,25274-2,25310-4,3344-9,55614-2,55615-9,55616-7,6976-5,6977-3,80133-2	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
 amoxicillin+clavulanic acid	True	amoxicillin|clavulanic acid	clinical		J01CR02,QJ01CR02		23665637		resfinder		Beta-lactam antibacterials, penicillins	Combinations of penicillins, incl. beta-lactamase inhibitors
@@ -51,10 +51,10 @@ battacin	False		clinical						CARD.obo
 bedaquiline	False		antituberculosis	BDQ	J04AK05,QJ04AK05		5388906		CARD.obo|card|resfinder	80637-2,88703-4,88704-2,94274-8,96107-8	Drugs for treatment of tuberculosis	Other drugs for treatment of tuberculosis
 benzalkonium chloride	False		clinical						CARD.obo			
 benzylpenicillin	False		clinical		J01CE01,QJ01CE01,QJ51CE01,QS01AA14,S01AA14		5904		CARD.obo		Combinations of antibacterials	Combinations of antibacterials
-beta-lactam	False		clinical						ncbi			
+beta-lactam	False		drug_class_name						ncbi			
 beta-lactam derived beta-lactamase inhibitor	False		clinical						CARD.obo			
-beta-lactamase resistant penicillin	False		clinical						CARD.obo			
-beta-lactamase sensitive penicillin	False		clinical						CARD.obo			
+beta-lactamase resistant penicillin	False		drug_class_name						CARD.obo			
+beta-lactamase sensitive penicillin	False		drug_class_name						CARD.obo			
 betaxolol	False		clinical		C07AB05				CARD.obo			
 biapenem	False		clinical		J01DH05,QJ01DH05		71339		CARD.obo	41665-1,41666-9,41667-7,41728-7	Other beta-lactam antibacterials	Carbapenems
 bicyclomycin	False		clinical				65807		CARD.obo			
@@ -79,7 +79,7 @@ cadaside b	False		clinical						CARD.obo
 calcimycin	False		clinical						CARD.obo			
 caprazamycin	False		clinical						CARD.obo			
 capreomycin	False		antituberculosis	CAP	J04AB30,QJ04AB30		135565060		CARD.obo|card|ncbi|resfinder	16545-6,18872-2,23607-5,25210-6,25211-4,25212-2,42643-7,48170-5,55-4,55623-3,56-2,57-0,58-8,61355-4,89483-2	Drugs for treatment of tuberculosis	Antibiotics
-carbapenem	False		clinical						ncbi			
+carbapenem	False		drug_class_name						ncbi			
 carbenicillin	False		clinical		J01CA03,QJ01CA03		20824		CARD.obo	18873-0,3434-8,41668-5,59-6,60-4,61-2,62-0	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
 carbomycin	False		veterinary						CARD.obo|resfinder			
 carrimycin	False		clinical						CARD.obo			
@@ -141,7 +141,7 @@ ceftriaxone	False		clinical		J01DD04,QJ01DD04		5479530		CARD.obo|resfinder	10148
 cefuroxime	False		clinical		J01DC02,QJ01DC02,QJ51DC02,QS01AA27,S01AA27		5479529		CARD.obo|resfinder	101503-1,144-6,145-3,146-1,147-9,18896-1,20460-2,25245-2,3452-0,35782-2,35783-0,51724-3,51774-8,55653-0,55654-8,6999-7,74699-0,80608-3,80617-4	Other beta-lactam antibacterials	Second-generation cephalosporins
 celesticetin	False		clinical						CARD.obo			
 cephaloridine	False		clinical		J01DB02,QJ01DB02		5773		CARD.obo		Other beta-lactam antibacterials	First-generation cephalosporins
-cephalosporin	False		clinical						ncbi			
+cephalosporin	False		drug_class_name						ncbi			
 cephalothin	False		clinical		J01DB03,QJ01DB03		6024		ncbi|resfinder		Other beta-lactam antibacterials	First-generation cephalosporins
 cephapirin	False		clinical		J01DB08,QG51AA05,QJ01DB08,QJ51DB08		30699		CARD.obo		Other beta-lactam antibacterials	First-generation cephalosporins
 cethromycin	False		clinical						CARD.obo			
@@ -224,7 +224,7 @@ faropenem	False		clinical		J01DI03,QJ01DI03		65894		CARD.obo	73600-9,73622-3,736
 fengycin	False		clinical						CARD.obo			
 fidaxomicin	False		clinical		QA07AA12,A07AA12		10034073		CARD.obo	73599-3,73621-5,73644-7	Antimycotics for systemic use	Antibiotics
 finafloxacin	False		clinical				11567473		CARD.obo	73598-5,73620-7,73643-9		
-first-generation cephalosporin	False		clinical						CARD.obo			
+first-generation cephalosporin	False		drug_class_name						CARD.obo			
 fisetin	False		clinical						CARD.obo			
 fleroxacin	False		clinical		J01MA08,QJ01MA08		3357		CARD.obo	25411-0,32372-5,35806-9,7012-8	Quinolone antibacterials	Fluoroquinolones
 flomoxef	False		clinical		J01DC14,QJ01DC14		65864		CARD.obo	100052-0,53822-3	Other beta-lactam antibacterials	Second-generation cephalosporins
@@ -236,7 +236,7 @@ formicin	False		clinical						CARD.obo
 fortimicin	False		clinical				5284517		resfinder			
 fosfomycin	False		clinical	FOF	J01XX01,QJ01XX01,QS02AA17,S02AA17		446987		CARD.obo|card|ncbi|resfinder	25596-8,25653-7,35809-3,35810-1	Other antibacterials	Other antibacterials
 fosmidomycin	False		clinical				572		CARD.obo			
-fourth-generation cephalosporin	False		clinical						CARD.obo			
+fourth-generation cephalosporin	False		drug_class_name						CARD.obo			
 furazidin	False		clinical		J01XE03,QJ01XE03		6870646		CARD.obo		Other antibacterials	Nitrofuran derivatives
 furazolidone	False		clinical		QG01AX06,QJ01XE90,G01AX06		5323714		CARD.obo	69574-2,87794-4	Antimycotics for systemic use	Antibiotics
 fusidic acid	False		clinical	FA	J01XC01,QD06AX01,QD09AA02,QJ01XC01,QS01AA13,D06AX01,D09AA02,S01AA13		3000226		CARD.obo|card|ncbi|resfinder		Other antibacterials	Steroid antibacterials
@@ -296,7 +296,7 @@ levofloxacin	False		clinical	LEV	J01MA12,QJ01MA12,QS01AE05,S01AE05		149096		CARD
 levonadifloxacin	False		clinical		J01MA24,QJ01MA24		9850038		CARD.obo		Quinolone antibacterials	Fluoroquinolones
 lff571	False		clinical						CARD.obo			
 lincomycin	False		clinical		J01FF02,QJ01FF02,QJ51FF02		3000540		CARD.obo|ncbi|resfinder	18938-1,298-0,299-8,300-4,301-2,41700-6,87597-1	Macrolides, lincosamides and streptogramins	Lincosamides
-lincosamide	False		clinical						ncbi			
+lincosamide	False		drug_class_name						ncbi			
 linezolid	False		clinical	LZD	J01XX08,QJ01XX08		441401		CARD.obo|card|ncbi|resfinder	29254-0,29255-7,29258-1,33332-8,34202-2,41500-0,80609-1,88706-7,96111-0	Other antibacterials	Other antibacterials
 linoleic acid	False		clinical						CARD.obo			
 lipoic acid	False		clinical						CARD.obo			
@@ -311,7 +311,7 @@ lysocin	False		clinical						CARD.obo
 lysocin (e)	False		clinical	LYS					card			
 lysocin e	False		clinical						CARD.obo			
 macrocyclic peptide antibiotics	False		clinical						CARD.obo			
-macrolide	False		clinical						ncbi			
+macrolide	False		drug_class_name						ncbi			
 madumycin ii	False		clinical						CARD.obo			
 maduramicin	False		veterinary						ncbi|resfinder			
 mafenide	False		clinical		D06BA03				CARD.obo		Other antibacterials	Long-acting sulfonamides
@@ -384,7 +384,7 @@ ostreogrycin	False		veterinary				11136668		ncbi
 ostreogrycin b3	False		clinical						CARD.obo			
 other cephalosporins and penems	False		clinical						CARD.obo			
 oxacillin	False		clinical		J01CF04,QJ01CF04,QJ51CF04		6196		CARD.obo	18961-3,25265-0,382-2,383-0,384-8,385-5,3882-8,7039-1	Beta-lactam antibacterials, penicillins	Beta-lactamase resistant penicillins
-oxazolidinone	False		clinical	OXZ					card|ncbi			
+oxazolidinone	False		drug_class_name	OXZ					card|ncbi			
 oxytetracycline	False		clinical		J01AA06,QA01AB25,QD06AA03,QG01AA07,QG51AA01,QJ01AA06,QJ51AA06,QS01AA04,D06AA03,A01AB25,G01AA07,S01AA04		54675779		CARD.obo	17396-3,18962-1,25266-8,386-3,387-1,388-9,389-7,55699-3,87595-5	Tetracyclines	Tetracyclines
 pactamycin	False		clinical	PAC					CARD.obo|card			
 palmitic acid	False		clinical						CARD.obo			
@@ -396,7 +396,7 @@ patricin b	False		clinical						CARD.obo
 pefloxacin	False		clinical		J01MA03,QJ01MA03		51081		CARD.obo	18963-9,35828-3,390-5,3906-5,7040-9	Quinolone antibacterials	Fluoroquinolones
 penamecillin	False		clinical		J01CE06,QJ01CE06		10250769		CARD.obo		Beta-lactam antibacterials, penicillins	Beta-lactamase sensitive penicillins
 penicillin	False		clinical		J01CE01,QJ01CE01,QJ51CE01,QS01AA14,S01AA14		5904		resfinder		Combinations of antibacterials	Combinations of antibacterials
-penicillin with extended spectrum	False		clinical						CARD.obo			
+penicillin with extended spectrum	False		drug_class_name						CARD.obo			
 perchlozone	False		clinical	PCL					CARD.obo|card			
 phenelfamycin a	False		clinical						CARD.obo			
 phenelfamycin b	False		clinical						CARD.obo			
@@ -419,7 +419,7 @@ pivampicillin	False		clinical		J01CA02,QJ01CA02		33478		CARD.obo	18971-2,415-0,4
 pivmecillinam	False		clinical		J01CA08,QJ01CA08		115163		CARD.obo		Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
 plazomicin	False		clinical		J01GB14,QJ01GB14		42613186		CARD.obo|ncbi	73592-8,73614-0,73637-1,92024-9,94719-2	Aminoglycoside antibacterials	Other aminoglycosides
 pleuromutilin	False		clinical	PLM					CARD.obo|card|ncbi			
-polymyxin antibiotic	False		clinical						CARD.obo			
+polymyxin antibiotic	False		drug_class_name						CARD.obo			
 polymyxin b	False		clinical		J01XB02,QA07AA05,QJ01XB02,QJ51XB02,QS01AA18,QS02AA11,QS03AA03,A07AA05,S01AA18,S02AA11,S03AA03		49800004		CARD.obo	17473-0,18972-0,25269-2,35832-5,419-2,420-0,421-8,422-6	Other antibacterials	Polymyxins
 polymyxin b1	False		clinical						CARD.obo			
 polymyxin b2	False		clinical						CARD.obo			
@@ -455,7 +455,7 @@ pyrrolomycin h	False		clinical						CARD.obo
 pyrrolomycin i	False		clinical						CARD.obo			
 pyrrolomycin j	False		clinical						CARD.obo			
 quaternary ammonium	False		biocide						ncbi			
-quinolone	False		clinical						ncbi			
+quinolone	False		drug_class_name						ncbi			
 quinupristin	False		clinical						CARD.obo|resfinder			
 quinupristin+dalfopristin	True	quinupristin|dalfopristin	clinical		QJ01FG02		11979418		resfinder	23640-6,23641-4,33334-4,35835-8,58712-1	Macrolides, lincosamides and streptogramins	Streptogramins
 ramoplanin	False		clinical				16132338		CARD.obo	41710-5,41711-3,41712-1,41737-8		
@@ -479,7 +479,7 @@ salinomycin	False		veterinary		QP51BB01		3085092		CARD.obo|ncbi|resfinder	35836-
 sarafloxacin	False		clinical		QJ01MA98		56208		CARD.obo	73588-6,73610-8,73633-0	Aminoglycoside antibacterials	Other quinolones
 sarecycline	False		clinical		J01AA14,QJ01AA14		54681908		CARD.obo		Tetracyclines	Tetracyclines
 sb22484	False		clinical						CARD.obo			
-second-generation cephalosporin	False		clinical						CARD.obo			
+second-generation cephalosporin	False		drug_class_name						CARD.obo			
 selamectin	False		clinical						CARD.obo			
 serine beta-lactamase inhibitor	False		clinical						CARD.obo			
 sisomicin	False		clinical		J01GB08,QJ01GB08		36119		CARD.obo|ncbi|resfinder	18979-5,447-3,448-1,449-9,450-7,55714-0	Aminoglycoside antibacterials	Other aminoglycosides
@@ -488,9 +488,9 @@ solithromycin	False		clinical		J01FA16,QJ01FA16		25242512		CARD.obo	73587-8,7360
 sparfloxacin	False		clinical		J01MA09,QJ01MA09		60464		CARD.obo	20397-6,23610-9,23628-1,35839-0,7047-4	Quinolone antibacterials	Fluoroquinolones
 spectinomycin	False		clinical	SPT	J01XX04,QJ01XX04		15541		CARD.obo|card|ncbi|resfinder	18980-3,35840-8,451-5,452-3,453-1,454-9	Other antibacterials	Other antibacterials
 spiramycin	False		clinical		J01FA02,QJ01FA02,QJ51FA02		6419898		CARD.obo|ncbi|resfinder	18981-1,455-6,456-4,457-2,458-0,55715-7	Macrolides, lincosamides and streptogramins	Macrolides
-streptogramin	False		clinical						ncbi			
-streptogramin a	False		clinical						ncbi			
-streptogramin b	False		clinical						ncbi			
+streptogramin	False		drug_class_name						ncbi			
+streptogramin a	False		drug_class_name						ncbi			
+streptogramin b	False		drug_class_name						ncbi			
 streptomycin	False		clinical	STR	J01GA01,QA07AA04,QJ01GA01,A07AA04		19649		CARD.obo|card|ncbi|resfinder	18982-9,18983-7,20462-8,23626-5,25185-0,25205-6,25206-4,35841-6,4039-4,42658-5,42659-3,459-8,460-6,461-4,462-2,46719-1,48177-0,6933-6,7048-2,7049-0,96114-4	Aminoglycoside antibacterials	Streptomycins
 streptothricin	False		clinical						CARD.obo|ncbi			
 sulbactam	False		inhibitor		J01CG01,QJ01CG01		130313		CARD.obo	41716-2,41717-0,41718-8,41739-4	Beta-lactam antibacterials, penicillins	Beta-lactamase inhibitors
@@ -504,7 +504,7 @@ sulfamethoxazole	False		clinical		J01EC01,QJ01EQ11		5329		CARD.obo|resfinder	103
 sulfanilamide	False		clinical		J01EB06,QD06BA05,QJ01EQ06,D06BA05		5333		CARD.obo		Sulfonamides and trimethoprim	Short-acting sulfonamides
 sulfasalazine	False		clinical		A07EC01				CARD.obo			
 sulfisoxazole	False		clinical						CARD.obo	11578-2,18986-0,25226-2,471-3,472-1,473-9,474-7,9701-4		
-sulfonamide	False		clinical				86225		ncbi	17674-3,17675-0,18987-8,35842-4,4040-2,4041-0,4042-8,475-4,476-2,477-0,478-8,75650-2		
+sulfonamide	False		drug_class_name				86225		ncbi	17674-3,17675-0,18987-8,35842-4,4040-2,4041-0,4042-8,475-4,476-2,477-0,478-8,75650-2		
 sulopenem	False		clinical				9950244		CARD.obo	55289-3,55290-1,55291-9		
 syn-1012	False		clinical						CARD.obo			
 taniborbactam	False		inhibitor				76902493		CARD.obo|ncbi			
@@ -535,7 +535,7 @@ thiamphenicol	False		clinical		J01BA02,QJ01BA02,QJ51BA02		27200		CARD.obo|ncbi	4
 thioacetazone	False		clinical		J04AK07,QJ04AK07				CARD.obo		Drugs for treatment of tuberculosis	Other drugs for treatment of tuberculosis
 thiorphan	False		clinical						CARD.obo			
 thiostrepton	False		veterinary				16129666		ncbi			
-third-generation cephalosporin	False		clinical						CARD.obo			
+third-generation cephalosporin	False		drug_class_name						CARD.obo			
 thusin	False		clinical						CARD.obo			
 tiamulin	False		veterinary		QJ01XQ01		656958		CARD.obo|ncbi|resfinder	35846-5,35847-3,35848-1,87589-8	Aminoglycoside antibacterials	Other antibacterials
 ticarcillin	False		clinical		J01CA13,QJ01CA13		36921		CARD.obo|resfinder	18994-4,18995-1,25254-4,4054-3,4055-0,499-4,500-9,501-7,502-5,503-3,504-1,505-8,506-6,55716-5,55717-3,55718-1,55719-9,7053-2,7054-0	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
