@@ -5,8 +5,7 @@ export_cluster_drugs.py
 Export a TSV table with one row per (cluster × canonical drug) pair:
 
     cluster_id  canonical_drug  link_source
-    atc_code  inchikey  pubchem_cid  chebi_id  sources  loinc_codes
-    atc_group1  atc_group2
+    atc_code  inchikey  pubchem_cid  chebi_id  sources  atc_group1  atc_group2
 
 link_source is a pipe-delimited set of evidence sources:
   NCBI        — sequence_drug: NCBI gene_name → gene_drug_link → drug (direct)
@@ -101,7 +100,6 @@ SELECT
     d.pubchem_cid,
     d.chebi_id,
     d.sources,
-    d.loinc_codes,
     d.atc_group1,
     d.atc_group2
 FROM aggregated a
@@ -113,7 +111,7 @@ ORDER BY a.cluster_id, a.canonical_drug;
 COLUMNS = [
     "cluster_id", "canonical_drug", "link_source",
     "atc_code", "inchikey", "pubchem_cid", "chebi_id",
-    "sources", "loinc_codes", "atc_group1", "atc_group2",
+    "sources", "atc_group1", "atc_group2",
 ]
 
 
