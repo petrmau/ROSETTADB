@@ -6,15 +6,18 @@ Export a TSV table with one row per (cluster × canonical drug) pair:
 
     cluster_id  canonical_drug  link_source
 
-link_source records how the drug was linked to the cluster:
-  NCBI        — via amr.sequence_drug (NCBI gene_name → gene_drug_link → drug)
-  CARD        — via amr.sequence_drug_class + drug_class_member (CARD ARO path)
-  RESFINDER   — via amr.sequence_drug_class + drug_class_member (ResFinder path)
-  NCBI|CARD, NCBI|CARD|RESFINDER, … — multiple evidence paths (pipe-delimited)
+link_source is a pipe-delimited set of evidence sources:
+  NCBI        — sequence_drug: NCBI gene_name → gene_drug_link → drug (direct)
+  CARD        — sequence_drug_class + drug_class_member: CARD ARO path
+  RESFINDER   — sequence_drug_class + drug_class_member: ResFinder path
 
-The same drug may be reachable from multiple sequences within a cluster.
+Two evidence paths are combined:
+  Path A (direct):  cluster → gene → sequence_drug → canonical_drug
+  Path B (via class): cluster → gene → sequence_drug_class
+                              → drug_class_member → canonical_drug
+
 One row is emitted per (cluster_id, canonical_drug) pair; link_source is the
-union of all evidence sources across every sequence in that cluster.
+union of all evidence source tokens across every sequence in that cluster.
 
 Usage:
     python export_cluster_drugs.py [--dsn <connstr>] [--output <file.tsv>]
@@ -32,44 +35,55 @@ import psycopg2.extras
 # ---------------------------------------------------------------------------
 # Query
 # ---------------------------------------------------------------------------
-# Aggregates evidence_sources across all sequences in a cluster, then merges
-# the pipe-delimited tokens into a single sorted, deduplicated pipe string.
+# Two evidence paths are unioned before aggregation:
 #
-# Evidence path:
-#   cluster → gene.jrc_id → sequence_drug.canonical_drug  (direct NCBI link)
-#   cluster → gene.jrc_id → sequence_drug_class           (class path)
-#                         → drug_class_member.canonical_drug
+# Path A — direct drug link (NCBI only, via amr.sequence_drug):
+#   cluster → gene.jrc_id → sequence_drug → canonical_drug
+#   evidence_source token: taken directly from sequence_drug.evidence_sources
 #
-# Both paths write their evidence_sources into amr.sequence_drug already, so
-# a single join to sequence_drug is sufficient — NCBI, CARD, and RESFINDER
-# labels are already encoded there by ingest.py.
+# Path B — via drug class (CARD + RESFINDER, via amr.sequence_drug_class):
+#   cluster → gene.jrc_id → sequence_drug_class → drug_class_member → drug
+#   evidence_source token: taken from sequence_drug_class.evidence_sources
+#   (CARD and RESFINDER write there; NCBI class links also present but drugs
+#    already covered by Path A)
+#
+# Both paths are deduplicated per (cluster_id, canonical_drug) and the source
+# tokens are merged into a single sorted pipe-delimited string.
 # ---------------------------------------------------------------------------
 
 QUERY = """
-WITH cluster_drug AS (
+WITH raw AS (
+
+    -- Path A: direct sequence → drug (NCBI gene_drug_link path)
     SELECT
         g.cluster_id,
         sd.canonical_drug,
-        sd.evidence_sources
+        sdt.source_token
     FROM amr.gene g
-    JOIN amr.sequence_drug sd ON sd.jrc_id = g.jrc_id
-),
-aggregated AS (
+    JOIN amr.sequence_drug sd ON sd.jrc_id = g.jrc_id,
+    LATERAL unnest(string_to_array(sd.evidence_sources, '|')) AS sdt(source_token)
+
+    UNION
+
+    -- Path B: sequence → drug class → drug (CARD + RESFINDER class path)
     SELECT
-        cluster_id,
-        canonical_drug,
-        -- collect all unique source tokens across every sequence in the cluster
-        array_agg(DISTINCT source_token ORDER BY source_token) AS source_tokens
-    FROM cluster_drug,
-         -- unnest the pipe-delimited evidence_sources into individual tokens
-         LATERAL unnest(string_to_array(evidence_sources, '|')) AS source_token
-    GROUP BY cluster_id, canonical_drug
+        g.cluster_id,
+        dcm.canonical_drug,
+        sdt.source_token
+    FROM amr.gene g
+    JOIN amr.sequence_drug_class sdc ON sdc.jrc_id = g.jrc_id
+    JOIN amr.drug_class_member   dcm ON dcm.canonical_class = sdc.canonical_class,
+    LATERAL unnest(string_to_array(sdc.evidence_sources, '|')) AS sdt(source_token)
+
 )
 SELECT
     cluster_id,
     canonical_drug,
-    array_to_string(source_tokens, '|') AS link_source
-FROM aggregated
+    array_to_string(
+        array_agg(DISTINCT source_token ORDER BY source_token), '|'
+    ) AS link_source
+FROM raw
+GROUP BY cluster_id, canonical_drug
 ORDER BY cluster_id, canonical_drug;
 """
 
