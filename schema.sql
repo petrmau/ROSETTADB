@@ -167,7 +167,8 @@ CREATE TABLE IF NOT EXISTS amr.drug (
     components      TEXT,               -- pipe-delimited component names for combinations
     context         TEXT NOT NULL DEFAULT 'clinical',
                                         -- clinical | antituberculosis | veterinary |
-                                        -- inhibitor | biocide | research_tool | non_therapeutic
+                                        -- inhibitor | biocide | research_tool | non_therapeutic |
+                                        -- drug_class_name (class-level token, not a specific drug)
     card_abbrev     TEXT,               -- AAC abbreviation (e.g. "AMK")
     atc_code        TEXT,               -- WHO ATC code (e.g. "J01GB06")
     inchikey        TEXT,               -- standard InChIKey (27 chars)

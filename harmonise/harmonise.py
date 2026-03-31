@@ -327,6 +327,21 @@ ANTITUBERCULOSIS = {"isoniazid", "pyrazinamide", "ethambutol", "rifampicin",
                     "delamanid", "bedaquiline", "capreomycin", "viomycin",
                     "clofazimine", "cycloserine", "d-cycloserine"}
 BIOCIDES = {"triclosan", "quaternary ammonium"}
+# Entries that are drug-class names rather than specific drugs.
+# They appear in drug_canonical because NCBI subclass tokens or CARD ARO
+# ontology nodes use class-level names (e.g. "aminoglycoside", "carbapenem").
+# Marking them allows downstream consumers to filter with context != 'drug_class_name'.
+CLASS_TERM_DRUGS = {
+    # NCBI subclass tokens
+    "aminoglycoside", "beta-lactam", "carbapenem", "cephalosporin",
+    "lincosamide", "macrolide", "oxazolidinone", "quinolone",
+    "streptogramin", "streptogramin a", "streptogramin b", "sulfonamide",
+    # CARD ARO ontology nodes
+    "first-generation cephalosporin", "second-generation cephalosporin",
+    "third-generation cephalosporin", "fourth-generation cephalosporin",
+    "beta-lactamase resistant penicillin", "beta-lactamase sensitive penicillin",
+    "penicillin with extended spectrum", "polymyxin antibiotic",
+}
 
 def _context_flag(name: str) -> str:
     if name in RESEARCH_TOOLS:
@@ -341,6 +356,8 @@ def _context_flag(name: str) -> str:
         return "veterinary"
     if name in ANTITUBERCULOSIS:
         return "antituberculosis"
+    if name in CLASS_TERM_DRUGS:
+        return "drug_class_name"
     return "clinical"
 
 
