@@ -26,10 +26,17 @@ Options:
                             (class-level tokens such as "aminoglycoside" or
                             "third-generation cephalosporin" that are not
                             specific drug entities).
+    --direct-links-only     Use only Path A (sequence_drug): each drug must be
+                            named explicitly in the NCBI gene_drug_link table for
+                            that gene. Skips the class fan-out (Path B) that links
+                            every member of a resistance class to the cluster.
+                            Produces a tighter, higher-confidence set at the cost
+                            of missing CARD/ResFinder-only drugs.
 
 Usage:
     python export_cluster_drugs.py [--dsn <connstr>] [--output <file.tsv>]
                                    [--require-inchikey] [--exclude-class-terms]
+                                   [--direct-links-only]
 
 Output goes to stdout if --output is not given.
 """
@@ -60,7 +67,26 @@ import psycopg2.extras
 # tokens are merged into a single sorted pipe-delimited string.
 # ---------------------------------------------------------------------------
 
-QUERY = """
+_QUERY_TAIL = """
+SELECT
+    a.cluster_id,
+    a.canonical_drug,
+    a.link_source,
+    d.atc_code,
+    d.inchikey,
+    d.pubchem_cid,
+    d.chebi_id,
+    d.sources,
+    d.atc_group1,
+    d.atc_group2
+FROM aggregated a
+JOIN amr.drug d ON d.canonical_name = a.canonical_drug
+{where}
+ORDER BY a.cluster_id, a.canonical_drug;
+"""
+
+# Full query: Path A (direct NCBI drug link) UNION Path B (class fan-out).
+QUERY_FULL = """
 WITH raw AS (
 
     -- Path A: direct sequence → drug (NCBI gene_drug_link path)
@@ -95,22 +121,36 @@ aggregated AS (
     FROM raw
     GROUP BY cluster_id, canonical_drug
 )
-SELECT
-    a.cluster_id,
-    a.canonical_drug,
-    a.link_source,
-    d.atc_code,
-    d.inchikey,
-    d.pubchem_cid,
-    d.chebi_id,
-    d.sources,
-    d.atc_group1,
-    d.atc_group2
-FROM aggregated a
-JOIN amr.drug d ON d.canonical_name = a.canonical_drug
-{inchikey_filter}
-ORDER BY a.cluster_id, a.canonical_drug;
-"""
+""" + _QUERY_TAIL
+
+# Direct-only query: Path A only — each drug must be named explicitly in
+# amr.sequence_drug (i.e. appear as a canonical_drug_token in gene_drug_link).
+# Avoids the class fan-out that links every member of a resistance class to the
+# cluster regardless of whether the gene was specifically tested against it.
+QUERY_DIRECT = """
+WITH raw AS (
+
+    -- Path A only: direct sequence → drug (NCBI gene_drug_link path)
+    SELECT
+        g.cluster_id,
+        sd.canonical_drug,
+        sdt.source_token
+    FROM amr.gene g
+    JOIN amr.sequence_drug sd ON sd.jrc_id = g.jrc_id,
+    LATERAL unnest(string_to_array(sd.evidence_sources, '|')) AS sdt(source_token)
+
+),
+aggregated AS (
+    SELECT
+        cluster_id,
+        canonical_drug,
+        array_to_string(
+            array_agg(DISTINCT source_token ORDER BY source_token), '|'
+        ) AS link_source
+    FROM raw
+    GROUP BY cluster_id, canonical_drug
+)
+""" + _QUERY_TAIL
 
 COLUMNS = [
     "cluster_id", "canonical_drug", "link_source",
@@ -144,6 +184,15 @@ def main():
         action="store_true",
         help="Skip drugs with context='drug_class_name' (class-level tokens, not specific drugs).",
     )
+    parser.add_argument(
+        "--direct-links-only",
+        action="store_true",
+        help=(
+            "Use only Path A (sequence_drug): drugs must be named explicitly in "
+            "NCBI gene_drug_link. Skips the class fan-out (Path B) that expands "
+            "every resistance class to all its member drugs."
+        ),
+    )
     args = parser.parse_args()
 
     if not args.dsn:
@@ -155,8 +204,10 @@ def main():
         filters.append("d.inchikey IS NOT NULL AND d.inchikey <> ''")
     if args.exclude_class_terms:
         filters.append("d.context != 'drug_class_name'")
-    inchikey_filter = ("WHERE " + " AND ".join(filters)) if filters else ""
-    query = QUERY.format(inchikey_filter=inchikey_filter)
+    where = ("WHERE " + " AND ".join(filters)) if filters else ""
+
+    base_query = QUERY_DIRECT if args.direct_links_only else QUERY_FULL
+    query = base_query.format(where=where)
 
     conn = psycopg2.connect(args.dsn)
     try:
