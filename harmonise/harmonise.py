@@ -540,7 +540,7 @@ def main():
     print("Parsing NCBI AMRFinderPlus …")
     ncbi_drugs, ncbi_aliases, ncbi_gene_links = parse_ncbi()
 
-    aro_drug_members, aro_gene_links = parse_aro_obo.parse()
+    aro_drug_members, aro_gene_links, aro_gene_drug_links = parse_aro_obo.parse()
 
     # Convert ARO drug→class entries into drug dicts for merge_drugs()
     aro_drugs = [
@@ -616,6 +616,13 @@ def main():
          "class_aro_accession", "source"],
     )
 
+    write_tsv(
+        out / "aro_gene_drug.tsv",
+        aro_gene_drug_links,
+        ["aro_accession", "gene_name", "canonical_drug",
+         "drug_aro_accession", "source"],
+    )
+
     # Summary stats
     aro_new_drugs = len({r["canonical_drug"] for r in aro_drug_members})
     aro_new_links = sum(1 for r in membership if r.get("source") == "aro_obo")
@@ -628,6 +635,7 @@ def main():
     print(f"    of which ARO-sourced : {aro_new_links}")
     print(f"  Gene→drug links (NCBI) : {len(ncbi_gene_links)}")
     print(f"  Gene→class (ARO OBO)   : {len(aro_gene_links)}")
+    print(f"  Gene→drug  (ARO OBO)   : {len(aro_gene_drug_links)}")
 
     # Warn about drugs with no class assignment
     classed = {r["canonical_drug"] for r in membership}

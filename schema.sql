@@ -255,6 +255,24 @@ CREATE INDEX IF NOT EXISTS idx_cgc_family  ON amr.card_gene_class(gene_family)
     WHERE gene_family IS NOT NULL AND gene_family <> '';
 
 -- ─────────────────────────────────────────────────────────
+-- ARO gene → canonical drug links (from ARO OBO confers_resistance_to_antibiotic)
+-- One row per ARO gene model × canonical drug.
+-- Source: CARD aro.obo, confers_resistance_to_antibiotic relationships.
+-- Complements card_gene_class with high-specificity drug-level evidence.
+-- ─────────────────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS amr.aro_gene_drug (
+    aro_accession        TEXT NOT NULL,  -- ARO accession of the AMR gene model
+    gene_name            TEXT NOT NULL,  -- full ARO Name (e.g. TEM-1)
+    canonical_drug       TEXT NOT NULL
+        REFERENCES amr.drug(canonical_name),
+    drug_aro_accession   TEXT NOT NULL,  -- ARO accession of the drug term
+    PRIMARY KEY (aro_accession, canonical_drug)
+);
+
+CREATE INDEX IF NOT EXISTS idx_agd_aro   ON amr.aro_gene_drug(aro_accession);
+CREATE INDEX IF NOT EXISTS idx_agd_drug  ON amr.aro_gene_drug(canonical_drug);
+
+-- ─────────────────────────────────────────────────────────
 -- Sequence → harmonised drug class (non-redundant link table)
 -- One row per unique sequence × canonical drug class.
 -- Aggregates evidence from all three source paths:
