@@ -41,6 +41,7 @@ DRUG_ALIAS_TSV      = HARMONISE / "drug_alias.tsv"
 DRUG_CLASS_MEMBER_TSV = HARMONISE / "drug_class_member.tsv"
 GENE_DRUG_LINK_TSV  = HARMONISE / "gene_drug_link.tsv"
 CARD_GENE_CLASS_TSV = HARMONISE / "card_gene_class.tsv"
+ARO_GENE_DRUG_TSV   = HARMONISE / "aro_gene_drug.tsv"
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -677,6 +678,37 @@ def load_harmonise(cur):
         """, data)
         print(f"  card_gene_class: {len(data)} rows", file=sys.stderr)
 
+    # ── aro_gene_drug ──
+    if ARO_GENE_DRUG_TSV.exists():
+        with open(ARO_GENE_DRUG_TSV) as f:
+            rows = list(csv.DictReader(f, delimiter="\t"))
+        seen_agd: set = set()
+        data = []
+        for r in rows:
+            aro = r["aro_accession"].strip()
+            drug = r["canonical_drug"].strip()
+            if not aro or not drug:
+                continue
+            pk = (aro, drug)
+            if pk in seen_agd:
+                continue
+            seen_agd.add(pk)
+            data.append((
+                aro,
+                r["gene_name"].strip(),
+                drug,
+                r["drug_aro_accession"].strip(),
+            ))
+        execute_values(cur, """
+            INSERT INTO amr.aro_gene_drug
+                (aro_accession, gene_name, canonical_drug, drug_aro_accession)
+            VALUES %s
+            ON CONFLICT (aro_accession, canonical_drug) DO UPDATE SET
+                gene_name          = EXCLUDED.gene_name,
+                drug_aro_accession = EXCLUDED.drug_aro_accession
+        """, data)
+        print(f"  aro_gene_drug: {len(data)} rows", file=sys.stderr)
+
 
 # ── Sequence → drug class / drug population ───────────────────────────────────
 
@@ -765,7 +797,7 @@ def populate_sequence_links(cur):
     cur.execute("SELECT count(*) FROM amr.sequence_drug_class")
     print(f"  sequence_drug_class total: {cur.fetchone()[0]} rows", file=sys.stderr)
 
-    # ── Step 3: sequence → drug (NCBI path only) ──
+    # ── Step 3a: sequence → drug (NCBI path) ──
     cur.execute("""
         INSERT INTO amr.sequence_drug (jrc_id, canonical_drug, evidence_sources)
         SELECT DISTINCT g.jrc_id, d.canonical_name, 'NCBI'
@@ -778,6 +810,23 @@ def populate_sequence_links(cur):
         ON CONFLICT (jrc_id, canonical_drug) DO UPDATE
             SET evidence_sources = EXCLUDED.evidence_sources
     """)
+
+    # ── Step 3b: sequence → drug (CARD path via aro_gene_drug) ──
+    cur.execute("""
+        INSERT INTO amr.sequence_drug (jrc_id, canonical_drug, evidence_sources)
+        SELECT DISTINCT g.jrc_id, agd.canonical_drug, 'CARD'
+        FROM amr.gene g
+        JOIN amr.aro_gene_drug agd ON g.aro_accession = agd.aro_accession
+        WHERE g.source = 'CARD'
+          AND g.aro_accession IS NOT NULL
+        ON CONFLICT (jrc_id, canonical_drug) DO UPDATE
+            SET evidence_sources = CASE
+                WHEN amr.sequence_drug.evidence_sources LIKE '%CARD%'
+                THEN amr.sequence_drug.evidence_sources
+                ELSE amr.sequence_drug.evidence_sources || '|CARD'
+            END
+    """)
+
     cur.execute("SELECT count(*) FROM amr.sequence_drug")
     print(f"  sequence_drug total:        {cur.fetchone()[0]} rows", file=sys.stderr)
 

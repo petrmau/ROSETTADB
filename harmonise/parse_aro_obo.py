@@ -11,7 +11,14 @@ Parse the CARD Antibiotic Resistance Ontology (ARO) OBO file to extract:
 2. Gene → drug class confers_resistance_to_drug_class edges  →  aro_gene_class.tsv
    One row per (gene ARO accession, canonical_class) pair.
 
-Both outputs are keyed against canonical class names in class_mapping.tsv.
+3. Gene → drug confers_resistance_to_antibiotic edges  →  aro_gene_drug.tsv
+   One row per (gene ARO accession, canonical_drug) pair where the antibiotic
+   target name matches a canonical drug in drug_canonical.tsv.
+   This is the high-specificity complement to (2): CARD encodes exact drug
+   targets here (e.g. TEM-1 → ampicillin, cefalotin) rather than broad classes.
+
+Outputs (1) and (2) are keyed against canonical class names in class_mapping.tsv.
+Output (3) is keyed against canonical drug names in drug_canonical.tsv.
 """
 
 import csv
@@ -19,7 +26,8 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
-OBO_PATH = ROOT / "sources/CARD/aro.obo"
+OBO_PATH        = ROOT / "sources/CARD/aro.obo"
+DRUG_TSV_PATH   = ROOT / "harmonise/drug_canonical.tsv"
 
 
 # ---------------------------------------------------------------------------
@@ -235,6 +243,81 @@ def extract_gene_class_links(
 
 
 # ---------------------------------------------------------------------------
+# Load canonical drug names from drug_canonical.tsv
+# ---------------------------------------------------------------------------
+
+def load_canonical_drugs(path: Path) -> dict[str, str]:
+    """
+    Returns lowercase_name → canonical_name for every drug in drug_canonical.tsv.
+    """
+    mapping: dict[str, str] = {}
+    if not path.exists():
+        return mapping
+    with open(path) as f:
+        for row in csv.DictReader(f, delimiter="\t"):
+            cn = row["canonical_name"].strip()
+            mapping[cn.lower()] = cn
+    return mapping
+
+
+# ---------------------------------------------------------------------------
+# Extract gene → drug (confers_resistance_to_antibiotic)
+# ---------------------------------------------------------------------------
+
+def extract_gene_drug_links(
+    terms: dict,
+    canonical_drugs: dict[str, str],
+) -> list[dict]:
+    """
+    For each term with confers_resistance_to_antibiotic relationships, resolve
+    the target name against canonical_drugs and emit one row per
+    (gene ARO accession, canonical_drug) pair.
+
+    Only targets whose lowercase name appears in canonical_drugs are emitted —
+    unknown experimental compounds are skipped.
+    """
+    rows = []
+    seen: set[tuple[str, str]] = set()
+
+    for aro_id, term in terms.items():
+        if term.get("obsolete"):
+            continue
+        name = term.get("name", "").strip()
+        if not name:
+            continue
+
+        targets = term.get("relationships", {}).get(
+            "confers_resistance_to_antibiotic", []
+        )
+        if not targets:
+            continue
+
+        for drug_aro in targets:
+            drug_term = terms.get(drug_aro)
+            if not drug_term:
+                continue
+            drug_name_lower = drug_term.get("name", "").strip().lower()
+            canonical_drug = canonical_drugs.get(drug_name_lower)
+            if not canonical_drug:
+                continue
+
+            key = (aro_id, canonical_drug)
+            if key in seen:
+                continue
+            seen.add(key)
+
+            rows.append({
+                "aro_accession": aro_id,
+                "gene_name":     name,
+                "canonical_drug": canonical_drug,
+                "drug_aro_accession": drug_aro,
+                "source":        "aro_obo",
+            })
+
+    return sorted(rows, key=lambda x: (x["gene_name"], x["canonical_drug"]))
+
+
+# ---------------------------------------------------------------------------
 # Write TSV helper
 # ---------------------------------------------------------------------------
 
@@ -252,23 +335,29 @@ def write_tsv(path: Path, rows: list[dict], fieldnames: list[str]):
 # Public entry point (called from harmonise.py)
 # ---------------------------------------------------------------------------
 
-def parse(obo_path: Path = OBO_PATH) -> tuple[list[dict], list[dict]]:
+def parse(
+    obo_path: Path = OBO_PATH,
+    drug_tsv_path: Path = DRUG_TSV_PATH,
+) -> tuple[list[dict], list[dict], list[dict]]:
     """
     Returns:
       drug_class_members : list of drug→class dicts (for drug_class_member.tsv)
       gene_class_links   : list of gene→class dicts (for aro_gene_class.tsv)
+      gene_drug_links    : list of gene→drug dicts  (for aro_gene_drug.tsv)
     """
     class_mapping_path = ROOT / "harmonise/class_mapping.tsv"
     aro_to_canonical, name_to_canonical = load_canonical_classes(class_mapping_path)
+    canonical_drugs = load_canonical_drugs(drug_tsv_path)
 
     print(f"Parsing ARO OBO ({obo_path.name}) …")
     terms = parse_obo(obo_path)
     print(f"  Loaded {len(terms)} terms")
 
-    drug_members = extract_drug_class_members(terms, aro_to_canonical, name_to_canonical)
-    gene_links   = extract_gene_class_links(terms, aro_to_canonical, name_to_canonical)
+    drug_members    = extract_drug_class_members(terms, aro_to_canonical, name_to_canonical)
+    gene_links      = extract_gene_class_links(terms, aro_to_canonical, name_to_canonical)
+    gene_drug_links = extract_gene_drug_links(terms, canonical_drugs)
 
-    return drug_members, gene_links
+    return drug_members, gene_links, gene_drug_links
 
 
 # ---------------------------------------------------------------------------
@@ -278,7 +367,7 @@ def parse(obo_path: Path = OBO_PATH) -> tuple[list[dict], list[dict]]:
 if __name__ == "__main__":
     out = ROOT / "harmonise"
 
-    drug_members, gene_links = parse()
+    drug_members, gene_links, gene_drug_links = parse()
 
     write_tsv(
         out / "aro_drug_class_member.tsv",
@@ -292,11 +381,19 @@ if __name__ == "__main__":
         ["aro_accession", "gene_name", "canonical_class",
          "class_aro_accession", "source"],
     )
+    write_tsv(
+        out / "aro_gene_drug.tsv",
+        gene_drug_links,
+        ["aro_accession", "gene_name", "canonical_drug",
+         "drug_aro_accession", "source"],
+    )
 
     # Stats
     unique_drugs   = len({r["canonical_drug"]   for r in drug_members})
     unique_classes = len({r["canonical_class"]  for r in drug_members})
-    unique_genes   = len({r["aro_accession"]    for r in gene_links})
+    unique_genes_c = len({r["aro_accession"]    for r in gene_links})
+    unique_genes_d = len({r["aro_accession"]    for r in gene_drug_links})
     print(f"\nSummary:")
-    print(f"  Drug→class pairs : {len(drug_members)}  ({unique_drugs} drugs, {unique_classes} classes)")
-    print(f"  Gene→class pairs : {len(gene_links)}  ({unique_genes} genes)")
+    print(f"  Drug→class pairs  : {len(drug_members)}  ({unique_drugs} drugs, {unique_classes} classes)")
+    print(f"  Gene→class pairs  : {len(gene_links)}  ({unique_genes_c} genes)")
+    print(f"  Gene→drug pairs   : {len(gene_drug_links)}  ({unique_genes_d} genes)")
