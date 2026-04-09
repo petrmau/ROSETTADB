@@ -75,8 +75,34 @@ def parse_fasta(path: Path):
 
 # ── Metadata loaders ──────────────────────────────────────────────────────────
 
+def _ncbi_composite_key(accession: str, range_list: list) -> str | None:
+    """Build 'acc:begin-end' composite key from a genbankNucleotide/refseqNucleotide
+    range entry, matching the verbatim token in NCBI FASTA headers."""
+    if not accession or not range_list:
+        return None
+    r = range_list[0]
+    begin = r.get("begin", "")
+    end   = r.get("end", "")
+    if begin and end:
+        return f"{accession}:{begin}-{end}"
+    return None
+
+
 def load_ncbi_report(path: Path) -> dict:
-    """Return dict keyed by RefSeq nucleotide accession."""
+    """
+    Return dict keyed by coordinate-qualified nucleotide accession.
+
+    Primary keys  (unique per gene):
+      "AE002098.2:330791-332317"   ← genbankNucleotide acc + range (preferred)
+      "NC_003112.2:c1234-567"      ← refseqNucleotide  acc + range
+
+    Fallback keys (bare accession, only added when no range is present):
+      "AE002098.2", "AE002098"     ← bare genbank acc (without / with version)
+      "NC_003112.2", "NC_003112"   ← bare refseq acc
+
+    Bare accessions are deliberately skipped when range info is available to
+    avoid multiple genes on the same genome overwriting each other.
+    """
     meta = {}
     if not path.exists():
         return meta
@@ -86,15 +112,21 @@ def load_ncbi_report(path: Path) -> dict:
                 d = json.loads(line)
             except json.JSONDecodeError:
                 continue
-            acc = (d.get("refseqNucleotide") or {}).get("accessionVersion", "")
-            if acc:
-                meta[acc.split(".")[0]] = d   # index without version
-                meta[acc] = d                  # also with version
-            # also index by genbank
-            gb = (d.get("genbankNucleotide") or {}).get("accessionVersion", "")
-            if gb:
-                meta[gb.split(".")[0]] = d
-                meta[gb] = d
+            for field in ("refseqNucleotide", "genbankNucleotide"):
+                block = d.get(field) or {}
+                acc   = block.get("accessionVersion", "")
+                if not acc:
+                    continue
+                ranges = block.get("range", [])
+                ck = _ncbi_composite_key(acc, ranges)
+                if ck:
+                    # Coordinate-qualified key — safe even when many genes share
+                    # the same genome accession.
+                    meta[ck] = d
+                else:
+                    # No range info: fall back to bare accession (legacy behaviour)
+                    meta[acc] = d
+                    meta[acc.split(".")[0]] = d
     return meta
 
 
@@ -188,13 +220,16 @@ def parse_ncbi_header(header: str) -> dict:
     """
     Format: NG_242157.1:101-637 Product name gene_name, description
     or:     NZ_CP012138.1:c1234-567 ...
+
+    source_acc is set to the full "acc:begin-end" token so it matches the
+    coordinate-qualified key built by load_ncbi_report, avoiding collisions
+    between multiple genes that share the same genome accession.
     """
     info: dict = {}
     tok = header.split()
     if tok:
-        acc_range = tok[0]
-        acc = acc_range.split(":")[0]
-        info["source_acc"] = acc
+        acc_range = tok[0]   # e.g. "AE002098.2:330791-332317"
+        info["source_acc"] = acc_range
     return info
 
 
@@ -325,7 +360,13 @@ def build_gene_records(source: str, fasta_path: Path,
             parsed = parse_ncbi_header(header)
             rec.update(parsed)
             acc = rec.get("source_acc", "")
-            m = ncbi_meta.get(acc) or ncbi_meta.get(acc.split(".")[0])
+            # acc is now "AE002098.2:330791-332317" — try composite key first,
+            # then bare accession (with and without version) for entries that
+            # have no range info in the report.
+            bare = acc.split(":")[0]            # "AE002098.2"
+            m = (ncbi_meta.get(acc)
+                 or ncbi_meta.get(bare)
+                 or ncbi_meta.get(bare.split(".")[0]))
             if m:
                 rec["product_name"]          = m.get("productName")
                 rec["gene_family"]           = m.get("geneFamily")
