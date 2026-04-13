@@ -48,6 +48,10 @@ SOURCE_TO_INN = {
     # NCBI subclass tokens → INN
     "rifampin": "rifampicin",
     "methicillin": "meticillin",      # INN is meticillin; keep methicillin as alias
+    # Protect drugs that antimicrobials.txt incorrectly conflates with other INNs
+    "virginiamycin": "virginiamycin", # distinct streptogramin from pristinamycin;
+                                      # antimicrobials.txt lists it as pristinamycin synonym
+                                      # but they differ in organism, spectrum, and use
 }
 
 # Populated at runtime by load_inn_synonym_map(); maps synonym.lower() → INN.lower()
@@ -545,7 +549,7 @@ def build_class_membership(
 
     # From manually curated direct drug→class mappings
     for dm in direct_mappings:
-        drug = dm["canonical_drug"].strip()
+        drug = normalise_name(dm["canonical_drug"].strip())   # ensure INN consistency
         cls = dm["canonical_class"].strip()
         if not drug or not cls:
             continue
