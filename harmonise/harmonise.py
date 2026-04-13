@@ -50,12 +50,62 @@ SOURCE_TO_INN = {
     "methicillin": "meticillin",      # INN is meticillin; keep methicillin as alias
 }
 
+# Populated at runtime by load_inn_synonym_map(); maps synonym.lower() → INN.lower()
+_INN_SYNONYM_MAP: dict[str, str] = {}
+
+
+def load_inn_synonym_map(path: Path) -> dict[str, str]:
+    """
+    Build a comprehensive synonym → INN lookup from antimicrobials.txt.
+
+    The 'name' column is the INN (e.g. "meticillin").  The 'synonyms' and
+    'abbreviations' columns carry comma-separated alternatives (brand names,
+    regional spellings, lab codes).  Every synonym is mapped to its INN.
+    Entries that are ambiguous (same synonym → two different INNs) are
+    silently dropped so they cannot introduce wrong redirections.
+    """
+    mapping: dict[str, str] = {}
+    conflicts: set[str] = set()
+    if not path.exists():
+        return mapping
+    with open(path, newline="") as f:
+        reader = csv.DictReader(f, delimiter="\t")
+        for row in reader:
+            inn = row.get("name", "").strip().lower()
+            if not inn or inn == "na":
+                continue
+            # INN always maps to itself (idempotent)
+            mapping[inn] = inn
+            for col in ("synonyms", "abbreviations"):
+                raw = row.get(col, "").strip()
+                if not raw or raw.upper() == "NA":
+                    continue
+                for syn in raw.split(","):
+                    syn = syn.strip().lower()
+                    if not syn:
+                        continue
+                    if syn in mapping and mapping[syn] != inn:
+                        conflicts.add(syn)   # ambiguous — drop later
+                    elif syn not in conflicts:
+                        mapping[syn] = inn
+    for c in conflicts:
+        mapping.pop(c, None)
+    return mapping
+
 def normalise_name(name: str) -> str:
-    """Lowercase, strip, collapse whitespace, apply UK→INN and typo fixes."""
+    """
+    Lowercase, strip, collapse whitespace, then resolve to INN.
+
+    Resolution order (each step may redirect to the INN):
+      1. UK / regional spelling → INN  (UK_TO_INN)
+      2. Known source-specific overrides  (SOURCE_TO_INN)
+      3. Comprehensive synonym table from antimicrobials.txt  (_INN_SYNONYM_MAP)
+    """
     name = name.strip().lower()
     name = re.sub(r"\s+", " ", name)
     name = UK_TO_INN.get(name, name)
     name = SOURCE_TO_INN.get(name, name)
+    name = _INN_SYNONYM_MAP.get(name, name)
     return name
 
 
@@ -525,6 +575,13 @@ def build_class_membership(
 # ---------------------------------------------------------------------------
 
 def main():
+    # Load INN synonym map first so normalise_name() is fully initialised
+    # before any source parser runs.
+    global _INN_SYNONYM_MAP
+    amr_txt = ROOT / "harmonise/antimicrobials.txt"
+    _INN_SYNONYM_MAP = load_inn_synonym_map(amr_txt)
+    print(f"Loaded {len(_INN_SYNONYM_MAP)} synonym→INN entries from {amr_txt.name}")
+
     print("Loading class mapping …")
     class_mapping, resfinder_lookup, ncbi_lookup, card_class_abbrevs = load_class_mapping()
 
@@ -541,6 +598,19 @@ def main():
     ncbi_drugs, ncbi_aliases, ncbi_gene_links = parse_ncbi()
 
     aro_drug_members, aro_gene_links, aro_gene_drug_links = parse_aro_obo.parse()
+
+    # Apply INN normalisation to ARO OBO drug names.  parse_aro_obo uses raw
+    # OBO term names (e.g. "methicillin") which bypass normalise_name(); fix
+    # that here and collapse any duplicates produced by the remapping.
+    seen_aro_dm: set[tuple[str, str]] = set()
+    normalised_aro_dm = []
+    for r in aro_drug_members:
+        r["canonical_drug"] = normalise_name(r["canonical_drug"])
+        key = (r["canonical_drug"], r["canonical_class"])
+        if key not in seen_aro_dm:
+            seen_aro_dm.add(key)
+            normalised_aro_dm.append(r)
+    aro_drug_members = normalised_aro_dm
 
     # Convert ARO drug→class entries into drug dicts for merge_drugs()
     aro_drugs = [
