@@ -194,16 +194,25 @@ in order:
 | Layer | Source | Example |
 |-------|--------|---------|
 | 1 — UK/regional spellings | `UK_TO_INN` dict (in-code) | `amoxycillin` → `amoxicillin` |
-| 2 — Known source overrides | `SOURCE_TO_INN` dict (in-code) | `rifampin` → `rifampicin`, typos in CARD |
-| 3 — Comprehensive synonym table | `antimicrobials.txt` (`name`, `synonyms`, `abbreviations` columns) | `methicillin` → `meticillin`, brand names, lab codes |
+| 2 — Known source overrides | `SOURCE_TO_INN` dict (in-code) | `rifampin` → `rifampicin`; typos in CARD; explicit identity entries that block wrong redirects from layer 3 |
+| 3 — Comprehensive synonym table | `antimicrobials.txt` (`name`, `synonyms`, `abbreviations` columns) | `methicillin` → `meticillin`, `prothionamide` → `protionamide`, brand names, lab codes |
+
+Layer 2 is checked **before** layer 3, so `SOURCE_TO_INN` can protect a drug from
+an incorrect redirect that `antimicrobials.txt` would otherwise apply.  For
+example, `virginiamycin` is listed there as a pristinamycin synonym, but they are
+distinct antibiotics (different organisms, spectra, and use profiles); an identity
+entry `"virginiamycin": "virginiamycin"` in `SOURCE_TO_INN` prevents the wrong
+merge.  Add similar entries there whenever a source-data synonym conflict is found.
 
 The synonym table is loaded from `antimicrobials.txt` at the start of each
 `harmonise.py` run.  Synonyms that would map ambiguously to two different INNs
 are silently excluded to avoid incorrect redirections.
 
-This ensures that the same compound is never stored twice under different
-spellings, regardless of which source introduced it — `meticillin` is always
-preferred over `methicillin`, etc.
+`normalise_name()` is applied consistently to **every** drug name that enters the
+pipeline: source parsers (ResFinder, CARD, NCBI), ARO OBO drug terms, and the
+curated `drug_class_direct.tsv` overrides.  This guarantees that
+`drug_canonical.tsv` and `drug_class_member.tsv` always reference the same
+spelling, satisfying the foreign key between them.
 
 ### Regenerate harmonised TSVs
 
