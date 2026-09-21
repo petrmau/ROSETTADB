@@ -15,7 +15,6 @@ Canonical class names follow CARD ARO drug class names.
 """
 
 import csv
-import json
 import re
 import sys
 from collections import defaultdict
@@ -320,46 +319,47 @@ def parse_ncbi() -> tuple[list, list, list]:
     aliases = []
     gene_links = []
 
-    path = ROOT / "sources/amr_finder_plus/ncbi_dataset/data/data_report.jsonl"
-    with open(path) as f:
-        for line in f:
-            record = json.loads(line)
-            gene_name = record.get("geneFamily", "")
-            accession = (
-                (record.get("refseqProtein") or {}).get("accessionVersion", "")
-                or (record.get("refseqNucleotide") or {}).get("accessionVersion", "")
-            )
-            class_raw = record.get("class", "")
-            subclass_raw = record.get("subclass", "")
-            element_type = record.get("type", "")
+    path = ROOT / "sources/amr_finder_plus/ReferenceGeneCatalog.txt"
+    with open(path, newline="") as f:
+        reader = csv.DictReader(f, delimiter="\t")
+        rows = list(reader)
+    for record in rows:
+        gene_name = record.get("Gene family", "")
+        accession = (
+            record.get("RefSeq protein", "")
+            or record.get("RefSeq nucleotide", "")
+        )
+        class_raw = record.get("Class", "")
+        subclass_raw = record.get("Subclass", "")
+        element_type = record.get("Type", "")
 
-            # Split multi-class and multi-drug slash combos
-            class_tokens = split_ncbi_combo(class_raw) if class_raw else []
-            subclass_tokens = split_ncbi_combo(subclass_raw) if subclass_raw else []
+        # Split multi-class and multi-drug slash combos
+        class_tokens = split_ncbi_combo(class_raw) if class_raw else []
+        subclass_tokens = split_ncbi_combo(subclass_raw) if subclass_raw else []
 
-            for token in subclass_tokens:
-                if not token:
-                    continue
-                ctx = _context_flag(token)
-                drugs.append({
-                    "canonical_name": token,
-                    "source_name": token,
+        for token in subclass_tokens:
+            if not token:
+                continue
+            ctx = _context_flag(token)
+            drugs.append({
+                "canonical_name": token,
+                "source_name": token,
+                "ncbi_subclass_raw": subclass_raw,
+                "context": ctx,
+            })
+
+        # gene → drug/class links
+        for cls in class_tokens:
+            for sub in subclass_tokens if subclass_tokens else [""]:
+                gene_links.append({
+                    "gene_name": gene_name,
+                    "accession": accession,
+                    "element_type": element_type,
+                    "ncbi_class_raw": class_raw,
                     "ncbi_subclass_raw": subclass_raw,
-                    "context": ctx,
+                    "canonical_class_token": cls,
+                    "canonical_drug_token": sub,
                 })
-
-            # gene → drug/class links
-            for cls in class_tokens:
-                for sub in subclass_tokens if subclass_tokens else [""]:
-                    gene_links.append({
-                        "gene_name": gene_name,
-                        "accession": accession,
-                        "element_type": element_type,
-                        "ncbi_class_raw": class_raw,
-                        "ncbi_subclass_raw": subclass_raw,
-                        "canonical_class_token": cls,
-                        "canonical_drug_token": sub,
-                    })
 
     return drugs, aliases, gene_links
 

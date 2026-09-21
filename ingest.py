@@ -12,8 +12,8 @@ Defaults read from environment / constants below.
 """
 
 import argparse
+import csv
 import hashlib
-import json
 import re
 import sys
 from collections import defaultdict
@@ -28,9 +28,9 @@ DEFAULT_DSN = "host=localhost dbname=rosettadb user=postgres password=postgres"
 BASE = Path(__file__).parent / "sources"
 DEFAULT_RESFINDER = BASE / "resfinder_db" / "all.fsa"
 DEFAULT_CARD      = BASE / "CARD" / "nucleotide_fasta_protein_homolog_model.fasta"
-DEFAULT_NCBI      = BASE / "amr_finder_plus" / "ncbi_dataset" / "data" / "nucleotide.fna"
+DEFAULT_NCBI      = BASE / "amr_finder_plus" / "AMR_CDS.fa"
 
-NCBI_REPORT          = BASE / "amr_finder_plus" / "ncbi_dataset" / "data" / "data_report.jsonl"
+NCBI_REPORT          = BASE / "amr_finder_plus" / "ReferenceGeneCatalog.txt"
 CARD_ARO             = BASE / "CARD" / "aro_index.tsv"
 RESFINDER_PHENOTYPES = BASE / "resfinder_db" / "phenotypes.txt"
 
@@ -75,58 +75,33 @@ def parse_fasta(path: Path):
 
 # ── Metadata loaders ──────────────────────────────────────────────────────────
 
-def _ncbi_composite_key(accession: str, range_list: list) -> str | None:
-    """Build 'acc:begin-end' composite key from a genbankNucleotide/refseqNucleotide
-    range entry, matching the verbatim token in NCBI FASTA headers."""
-    if not accession or not range_list:
-        return None
-    r = range_list[0]
-    begin = r.get("begin", "")
-    end   = r.get("end", "")
-    if begin and end:
-        return f"{accession}:{begin}-{end}"
-    return None
-
-
 def load_ncbi_report(path: Path) -> dict:
     """
-    Return dict keyed by coordinate-qualified nucleotide accession.
+    Read ReferenceGeneCatalog.txt (tab-separated) from AMRFinder FTP.
 
-    Primary keys  (unique per gene):
-      "AE002098.2:330791-332317"   ← genbankNucleotide acc + range (preferred)
-      "NC_003112.2:c1234-567"      ← refseqNucleotide  acc + range
+    Returns dict with three sets of keys (all unique per gene):
+      protein_acc      e.g. "AAA16360.1"  (GenBank protein — pipe[0] of AMR_CDS.fa header)
+      refseq_prot_acc  e.g. "WP_000123.1" (RefSeq protein, when present)
+      refseq_nuc_acc   e.g. "NG_050607.1" (RefSeq nucleotide NG_, when present)
 
-    Fallback keys (bare accession, only added when no range is present):
-      "AE002098.2", "AE002098"     ← bare genbank acc (without / with version)
-      "NC_003112.2", "NC_003112"   ← bare refseq acc
-
-    Bare accessions are deliberately skipped when range info is available to
-    avoid multiple genes on the same genome overwriting each other.
+    GenBank nucleotide accessions are intentionally NOT used as keys because
+    223 entries share the same genome accession (e.g. AE002098.2).
     """
     meta = {}
     if not path.exists():
         return meta
-    with open(path) as fh:
-        for line in fh:
-            try:
-                d = json.loads(line)
-            except json.JSONDecodeError:
-                continue
-            for field in ("refseqNucleotide", "genbankNucleotide"):
-                block = d.get(field) or {}
-                acc   = block.get("accessionVersion", "")
-                if not acc:
-                    continue
-                ranges = block.get("range", [])
-                ck = _ncbi_composite_key(acc, ranges)
-                if ck:
-                    # Coordinate-qualified key — safe even when many genes share
-                    # the same genome accession.
-                    meta[ck] = d
-                else:
-                    # No range info: fall back to bare accession (legacy behaviour)
-                    meta[acc] = d
-                    meta[acc.split(".")[0]] = d
+    with open(path, newline="") as fh:
+        reader = csv.DictReader(fh, delimiter="\t")
+        for row in reader:
+            gb_prot  = (row.get("GenBank protein") or "").strip()
+            rs_prot  = (row.get("RefSeq protein") or "").strip()
+            rs_nuc   = (row.get("RefSeq nucleotide") or "").strip()
+            if gb_prot:
+                meta[gb_prot] = row
+            if rs_prot:
+                meta[rs_prot] = row
+            if rs_nuc:
+                meta[rs_nuc] = row
     return meta
 
 
@@ -218,18 +193,30 @@ def parse_card_header(header: str) -> dict:
 
 def parse_ncbi_header(header: str) -> dict:
     """
-    Format: NG_242157.1:101-637 Product name gene_name, description
-    or:     NZ_CP012138.1:c1234-567 ...
+    AMR_CDS.fa format:
+      AAA16360.1|L11078.1|1|1|stxA2b|stxA2b|Shiga_toxin_Stx2b_subunit_A L11078.1:177-1136
 
-    source_acc is set to the full "acc:begin-end" token so it matches the
-    coordinate-qualified key built by load_ncbi_report, avoiding collisions
-    between multiple genes that share the same genome accession.
+    pipe[0] = GenBank protein accession  (primary lookup key, unique per gene)
+    pipe[1] = GenBank nucleotide accession
+    pipe[4] = gene name
+    pipe[5] = allele designation
+    Second space-token = coordinate-qualified nucleotide acc (nuc_acc:begin-end)
     """
     info: dict = {}
-    tok = header.split()
-    if tok:
-        acc_range = tok[0]   # e.g. "AE002098.2:330791-332317"
-        info["source_acc"] = acc_range
+    # Split off the coordinate qualifier (second space-delimited token)
+    space_parts = header.split(" ", 1)
+    pipe_section = space_parts[0]
+    pipes = pipe_section.split("|")
+
+    if len(pipes) >= 1:
+        info["genbank_protein"] = pipes[0].strip()
+        info["source_acc"]      = pipes[0].strip()   # primary lookup key
+    if len(pipes) >= 2:
+        info["genbank_nucleotide"] = pipes[1].strip()
+    if len(pipes) >= 5:
+        info["gene_name"] = pipes[4].strip()
+    if len(pipes) >= 6:
+        info["allele"] = pipes[5].strip()
     return info
 
 
@@ -359,31 +346,31 @@ def build_gene_records(source: str, fasta_path: Path,
         elif source == "NCBI":
             parsed = parse_ncbi_header(header)
             rec.update(parsed)
-            acc = rec.get("source_acc", "")
-            # acc is now "AE002098.2:330791-332317" — try composite key first,
-            # then bare accession (with and without version) for entries that
-            # have no range info in the report.
-            bare = acc.split(":")[0]            # "AE002098.2"
-            m = (ncbi_meta.get(acc)
-                 or ncbi_meta.get(bare)
-                 or ncbi_meta.get(bare.split(".")[0]))
+            # Primary lookup by GenBank protein accession (unique per gene);
+            # fallback to GenBank nucleotide bare acc and RefSeq nucleotide.
+            gb_prot = rec.get("genbank_protein", "")
+            gb_nuc  = rec.get("genbank_nucleotide", "")
+            m = (ncbi_meta.get(gb_prot)
+                 or ncbi_meta.get(gb_nuc)
+                 or ncbi_meta.get(gb_nuc.split(".")[0] if gb_nuc else ""))
             if m:
-                rec["product_name"]          = m.get("productName")
-                rec["gene_family"]           = m.get("geneFamily")
-                rec["allele"]                = m.get("allele")
-                rec["amr_class"]             = m.get("class")
-                rec["amr_subclass"]          = m.get("subclass")
-                rec["ncbi_type"]             = m.get("type")
-                rec["ncbi_subtype"]          = m.get("subtype")
-                rec["scope"]                 = m.get("scope")
-                rec["refseq_nucleotide"]     = (m.get("refseqNucleotide") or {}).get("accessionVersion")
-                rec["refseq_protein"]        = (m.get("refseqProtein") or {}).get("accessionVersion")
-                rec["genbank_nucleotide"]    = (m.get("genbankNucleotide") or {}).get("accessionVersion")
-                rec["genbank_protein"]       = (m.get("genbankProtein") or {}).get("accessionVersion")
-                # gene_name: allele first, then geneFamily
+                rec["product_name"]          = m.get("Product name") or None
+                rec["gene_family"]           = m.get("Gene family") or None
+                rec["amr_class"]             = m.get("Class") or None
+                rec["amr_subclass"]          = m.get("Subclass") or None
+                rec["ncbi_type"]             = m.get("Type") or None
+                rec["ncbi_subtype"]          = m.get("Subtype") or None
+                rec["scope"]                 = m.get("Scope") or None
+                rec["refseq_nucleotide"]     = m.get("RefSeq nucleotide") or None
+                rec["refseq_protein"]        = m.get("RefSeq protein") or None
+                rec["genbank_nucleotide"]    = m.get("GenBank nucleotide") or rec.get("genbank_nucleotide")
+                rec["genbank_protein"]       = m.get("GenBank protein") or rec.get("genbank_protein")
+                # allele: prefer header-parsed value, fallback to TSV #Allele column
+                if not rec.get("allele"):
+                    rec["allele"] = m.get("#Allele") or None
+                # gene_name: parsed from header; fallback chain
                 if not rec.get("gene_name"):
                     rec["gene_name"] = rec.get("allele") or rec.get("gene_family")
-                # For NCBI, allele falls back to gene_name when absent
                 if not rec.get("allele"):
                     rec["allele"] = rec.get("gene_name")
 
