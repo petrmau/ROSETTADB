@@ -575,6 +575,72 @@ def build_class_membership(
 
 
 # ---------------------------------------------------------------------------
+# argNorm ARO map builder
+# ---------------------------------------------------------------------------
+
+# Cut-off levels considered reliable enough for ARO enrichment.
+# Loose is excluded: RGI's loose threshold has too many cross-gene false hits.
+_RELIABLE_CUTOFFS = {"Perfect", "Strict", "Manual"}
+
+
+def build_argnorm_aro_map() -> list[dict]:
+    """
+    Build a flat lookup table (source, lookup_key, aro_accession, cutoff)
+    from argNorm's bundled mapping tables.
+
+    ResFinder : lookup_key = full FASTA header (e.g. 'ARR-2_1_HQ141279')
+    NCBI      : lookup_key = allele name (pipe[5]) OR WP_ protein accession (pipe[1])
+
+    Only Perfect / Strict / Manual cut-off entries are emitted.
+    When the same key appears multiple times, the highest-quality hit wins
+    (Perfect > Strict > Manual).
+    """
+    try:
+        from argnorm.lib import get_aro_mapping_table
+    except ImportError:
+        print("  WARN: argnorm not installed — skipping ARO map build")
+        return []
+
+    _PRIORITY = {"Perfect": 0, "Strict": 1, "Manual": 2, "Loose": 3}
+    rows: dict[tuple[str, str], dict] = {}   # (source, key) → best row
+
+    def _add(source: str, key: str, aro: str, cutoff: str):
+        if cutoff not in _RELIABLE_CUTOFFS:
+            return
+        k = (source, key)
+        prev = rows.get(k)
+        if prev is None or _PRIORITY[cutoff] < _PRIORITY[prev["cutoff"]]:
+            rows[k] = {"source": source, "lookup_key": key,
+                       "aro_accession": aro, "cutoff": cutoff}
+
+    # ── ResFinder ──────────────────────────────────────────────────────────
+    df_rf = get_aro_mapping_table("resfinder")
+    for orig_id, row in df_rf.iterrows():
+        aro    = str(row["ARO"]).strip()
+        cutoff = str(row["Cut_Off"]).strip()
+        if aro and aro != "nan" and orig_id:
+            _add("resfinder", str(orig_id), aro, cutoff)
+
+    # ── NCBI ───────────────────────────────────────────────────────────────
+    df_nc = get_aro_mapping_table("ncbi")
+    for orig_id, row in df_nc.iterrows():
+        aro    = str(row["ARO"]).strip()
+        cutoff = str(row["Cut_Off"]).strip()
+        if not aro or aro == "nan":
+            continue
+        parts = str(orig_id).split("|")
+        if len(parts) >= 6:
+            prot   = parts[1].strip()   # WP_ or GenBank protein acc
+            allele = parts[5].strip()   # specific allele name (e.g. blaLEN-42)
+            if allele:
+                _add("ncbi", allele, aro, cutoff)
+            if prot:
+                _add("ncbi", prot, aro, cutoff)
+
+    return sorted(rows.values(), key=lambda r: (r["source"], r["lookup_key"]))
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -600,6 +666,9 @@ def main():
 
     print("Parsing NCBI AMRFinderPlus …")
     ncbi_drugs, ncbi_aliases, ncbi_gene_links = parse_ncbi()
+
+    print("Building argNorm ARO map …")
+    argnorm_rows = build_argnorm_aro_map()
 
     aro_drug_members, aro_gene_links, aro_gene_drug_links = parse_aro_obo.parse()
 
@@ -697,6 +766,12 @@ def main():
          "drug_aro_accession", "source"],
     )
 
+    write_tsv(
+        out / "argnorm_aro_map.tsv",
+        argnorm_rows,
+        ["source", "lookup_key", "aro_accession", "cutoff"],
+    )
+
     # Summary stats
     aro_new_drugs = len({r["canonical_drug"] for r in aro_drug_members})
     aro_new_links = sum(1 for r in membership if r.get("source") == "aro_obo")
@@ -710,6 +785,10 @@ def main():
     print(f"  Gene→drug links (NCBI) : {len(ncbi_gene_links)}")
     print(f"  Gene→class (ARO OBO)   : {len(aro_gene_links)}")
     print(f"  Gene→drug  (ARO OBO)   : {len(aro_gene_drug_links)}")
+    rf_mapped  = sum(1 for r in argnorm_rows if r["source"] == "resfinder")
+    ncbi_mapped = sum(1 for r in argnorm_rows if r["source"] == "ncbi")
+    print(f"  argNorm ARO map        : {len(argnorm_rows)} entries "
+          f"(resfinder={rf_mapped}, ncbi={ncbi_mapped})")
 
     # Warn about drugs with no class assignment
     classed = {r["canonical_drug"] for r in membership}

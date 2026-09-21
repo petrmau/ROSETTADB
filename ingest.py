@@ -42,6 +42,7 @@ DRUG_CLASS_MEMBER_TSV = HARMONISE / "drug_class_member.tsv"
 GENE_DRUG_LINK_TSV  = HARMONISE / "gene_drug_link.tsv"
 CARD_GENE_CLASS_TSV = HARMONISE / "card_gene_class.tsv"
 ARO_GENE_DRUG_TSV   = HARMONISE / "aro_gene_drug.tsv"
+ARGNORM_ARO_MAP_TSV = HARMONISE / "argnorm_aro_map.tsv"
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -103,6 +104,30 @@ def load_ncbi_report(path: Path) -> dict:
             if rs_nuc:
                 meta[rs_nuc] = row
     return meta
+
+
+def load_argnorm_map(path: Path) -> dict[str, dict[str, str]]:
+    """
+    Load argnorm_aro_map.tsv produced by harmonise.py.
+
+    Returns nested dict: {source: {lookup_key: aro_accession}}
+    Sources present: 'resfinder', 'ncbi'
+    ResFinder keys  = full FASTA header (e.g. 'ARR-2_1_HQ141279')
+    NCBI keys       = allele name (e.g. 'blaLEN-42') or WP_ protein acc
+    Only Perfect / Strict / Manual cut-off entries are included.
+    """
+    result: dict[str, dict[str, str]] = {"resfinder": {}, "ncbi": {}}
+    if not path.exists():
+        return result
+    with open(path, newline="") as fh:
+        reader = csv.DictReader(fh, delimiter="\t")
+        for row in reader:
+            src = row.get("source", "").strip()
+            key = row.get("lookup_key", "").strip()
+            aro = row.get("aro_accession", "").strip()
+            if src in result and key and aro:
+                result[src][key] = aro
+    return result
 
 
 def load_card_aro(path: Path) -> dict:
@@ -273,7 +298,8 @@ def parse_resfinder_header(header: str) -> dict:
 
 def build_gene_records(source: str, fasta_path: Path,
                        ncbi_meta: dict, card_meta: dict,
-                       resfinder_meta: dict | None = None) -> list[dict]:
+                       resfinder_meta: dict | None = None,
+                       argnorm_map: dict | None = None) -> list[dict]:
     """
     Parse a FASTA file and return a list of dicts ready for DB insertion.
     Also returns the raw sequence keyed by jrc_id.
@@ -386,6 +412,20 @@ def build_gene_records(source: str, fasta_path: Path,
                     rec["pmid"]                 = m["pmid"]
                     rec["notes"]                = m["notes"]
                     rec["required_gene"]        = m["required_gene"]
+            # argNorm ARO enrichment: key = full FASTA header
+            if not rec.get("aro_accession") and argnorm_map:
+                aro = argnorm_map.get("resfinder", {}).get(header)
+                if aro:
+                    rec["aro_accession"] = aro
+
+        # argNorm ARO enrichment for NCBI (applied after NCBI block above)
+        if source == "NCBI" and not rec.get("aro_accession") and argnorm_map:
+            ncbi_argnorm = argnorm_map.get("ncbi", {})
+            allele  = rec.get("allele") or ""
+            gb_prot = rec.get("genbank_protein") or ""
+            aro = ncbi_argnorm.get(allele) or ncbi_argnorm.get(gb_prot)
+            if aro:
+                rec["aro_accession"] = aro
 
         records.append(rec)
     return records
@@ -912,6 +952,12 @@ def main():
     resfinder_meta = load_resfinder_phenotypes(RESFINDER_PHENOTYPES)
     print(f"  {len(resfinder_meta)} gene entries", file=sys.stderr)
 
+    print("Loading argNorm ARO map …", file=sys.stderr)
+    argnorm_map = load_argnorm_map(ARGNORM_ARO_MAP_TSV)
+    rf_keys  = len(argnorm_map.get("resfinder", {}))
+    ncb_keys = len(argnorm_map.get("ncbi", {}))
+    print(f"  {rf_keys} ResFinder + {ncb_keys} NCBI keys", file=sys.stderr)
+
     # ── Parse FASTA sources ──
     all_records: list[dict] = []
 
@@ -926,7 +972,8 @@ def main():
             continue
         print(f"Parsing {source}: {path} …", file=sys.stderr)
         recs = build_gene_records(source, path, ncbi_meta, card_meta,
-                                  resfinder_meta if source == "RESFINDER" else None)
+                                  resfinder_meta if source == "RESFINDER" else None,
+                                  argnorm_map)
         print(f"  {len(recs)} sequences", file=sys.stderr)
         all_records.extend(recs)
         sources_found.append(source)
