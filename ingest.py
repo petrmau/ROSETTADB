@@ -12,8 +12,8 @@ Defaults read from environment / constants below.
 """
 
 import argparse
+import csv
 import hashlib
-import json
 import re
 import sys
 from collections import defaultdict
@@ -28,9 +28,9 @@ DEFAULT_DSN = "host=localhost dbname=rosettadb user=postgres password=postgres"
 BASE = Path(__file__).parent / "sources"
 DEFAULT_RESFINDER = BASE / "resfinder_db" / "all.fsa"
 DEFAULT_CARD      = BASE / "CARD" / "nucleotide_fasta_protein_homolog_model.fasta"
-DEFAULT_NCBI      = BASE / "amr_finder_plus" / "ncbi_dataset" / "data" / "nucleotide.fna"
+DEFAULT_NCBI      = BASE / "amr_finder_plus" / "AMR_CDS.fa"
 
-NCBI_REPORT          = BASE / "amr_finder_plus" / "ncbi_dataset" / "data" / "data_report.jsonl"
+NCBI_REPORT          = BASE / "amr_finder_plus" / "ReferenceGeneCatalog.txt"
 CARD_ARO             = BASE / "CARD" / "aro_index.tsv"
 RESFINDER_PHENOTYPES = BASE / "resfinder_db" / "phenotypes.txt"
 
@@ -42,6 +42,7 @@ DRUG_CLASS_MEMBER_TSV = HARMONISE / "drug_class_member.tsv"
 GENE_DRUG_LINK_TSV  = HARMONISE / "gene_drug_link.tsv"
 CARD_GENE_CLASS_TSV = HARMONISE / "card_gene_class.tsv"
 ARO_GENE_DRUG_TSV   = HARMONISE / "aro_gene_drug.tsv"
+ARGNORM_ARO_MAP_TSV = HARMONISE / "argnorm_aro_map.tsv"
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -75,59 +76,58 @@ def parse_fasta(path: Path):
 
 # ── Metadata loaders ──────────────────────────────────────────────────────────
 
-def _ncbi_composite_key(accession: str, range_list: list) -> str | None:
-    """Build 'acc:begin-end' composite key from a genbankNucleotide/refseqNucleotide
-    range entry, matching the verbatim token in NCBI FASTA headers."""
-    if not accession or not range_list:
-        return None
-    r = range_list[0]
-    begin = r.get("begin", "")
-    end   = r.get("end", "")
-    if begin and end:
-        return f"{accession}:{begin}-{end}"
-    return None
-
-
 def load_ncbi_report(path: Path) -> dict:
     """
-    Return dict keyed by coordinate-qualified nucleotide accession.
+    Read ReferenceGeneCatalog.txt (tab-separated) from AMRFinder FTP.
 
-    Primary keys  (unique per gene):
-      "AE002098.2:330791-332317"   ← genbankNucleotide acc + range (preferred)
-      "NC_003112.2:c1234-567"      ← refseqNucleotide  acc + range
+    Returns dict with three sets of keys (all unique per gene):
+      protein_acc      e.g. "AAA16360.1"  (GenBank protein — pipe[0] of AMR_CDS.fa header)
+      refseq_prot_acc  e.g. "WP_000123.1" (RefSeq protein, when present)
+      refseq_nuc_acc   e.g. "NG_050607.1" (RefSeq nucleotide NG_, when present)
 
-    Fallback keys (bare accession, only added when no range is present):
-      "AE002098.2", "AE002098"     ← bare genbank acc (without / with version)
-      "NC_003112.2", "NC_003112"   ← bare refseq acc
-
-    Bare accessions are deliberately skipped when range info is available to
-    avoid multiple genes on the same genome overwriting each other.
+    GenBank nucleotide accessions are intentionally NOT used as keys because
+    223 entries share the same genome accession (e.g. AE002098.2).
     """
     meta = {}
     if not path.exists():
         return meta
-    with open(path) as fh:
-        for line in fh:
-            try:
-                d = json.loads(line)
-            except json.JSONDecodeError:
-                continue
-            for field in ("refseqNucleotide", "genbankNucleotide"):
-                block = d.get(field) or {}
-                acc   = block.get("accessionVersion", "")
-                if not acc:
-                    continue
-                ranges = block.get("range", [])
-                ck = _ncbi_composite_key(acc, ranges)
-                if ck:
-                    # Coordinate-qualified key — safe even when many genes share
-                    # the same genome accession.
-                    meta[ck] = d
-                else:
-                    # No range info: fall back to bare accession (legacy behaviour)
-                    meta[acc] = d
-                    meta[acc.split(".")[0]] = d
+    with open(path, newline="") as fh:
+        reader = csv.DictReader(fh, delimiter="\t")
+        for row in reader:
+            gb_prot  = (row.get("GenBank protein") or "").strip()
+            rs_prot  = (row.get("RefSeq protein") or "").strip()
+            rs_nuc   = (row.get("RefSeq nucleotide") or "").strip()
+            if gb_prot:
+                meta[gb_prot] = row
+            if rs_prot:
+                meta[rs_prot] = row
+            if rs_nuc:
+                meta[rs_nuc] = row
     return meta
+
+
+def load_argnorm_map(path: Path) -> dict[str, dict[str, str]]:
+    """
+    Load argnorm_aro_map.tsv produced by harmonise.py.
+
+    Returns nested dict: {source: {lookup_key: aro_accession}}
+    Sources present: 'resfinder', 'ncbi'
+    ResFinder keys  = full FASTA header (e.g. 'ARR-2_1_HQ141279')
+    NCBI keys       = allele name (e.g. 'blaLEN-42') or WP_ protein acc
+    Only Perfect / Strict / Manual cut-off entries are included.
+    """
+    result: dict[str, dict[str, str]] = {"resfinder": {}, "ncbi": {}}
+    if not path.exists():
+        return result
+    with open(path, newline="") as fh:
+        reader = csv.DictReader(fh, delimiter="\t")
+        for row in reader:
+            src = row.get("source", "").strip()
+            key = row.get("lookup_key", "").strip()
+            aro = row.get("aro_accession", "").strip()
+            if src in result and key and aro:
+                result[src][key] = aro
+    return result
 
 
 def load_card_aro(path: Path) -> dict:
@@ -218,18 +218,30 @@ def parse_card_header(header: str) -> dict:
 
 def parse_ncbi_header(header: str) -> dict:
     """
-    Format: NG_242157.1:101-637 Product name gene_name, description
-    or:     NZ_CP012138.1:c1234-567 ...
+    AMR_CDS.fa format:
+      AAA16360.1|L11078.1|1|1|stxA2b|stxA2b|Shiga_toxin_Stx2b_subunit_A L11078.1:177-1136
 
-    source_acc is set to the full "acc:begin-end" token so it matches the
-    coordinate-qualified key built by load_ncbi_report, avoiding collisions
-    between multiple genes that share the same genome accession.
+    pipe[0] = GenBank protein accession  (primary lookup key, unique per gene)
+    pipe[1] = GenBank nucleotide accession
+    pipe[4] = gene name
+    pipe[5] = allele designation
+    Second space-token = coordinate-qualified nucleotide acc (nuc_acc:begin-end)
     """
     info: dict = {}
-    tok = header.split()
-    if tok:
-        acc_range = tok[0]   # e.g. "AE002098.2:330791-332317"
-        info["source_acc"] = acc_range
+    # Split off the coordinate qualifier (second space-delimited token)
+    space_parts = header.split(" ", 1)
+    pipe_section = space_parts[0]
+    pipes = pipe_section.split("|")
+
+    if len(pipes) >= 1:
+        info["genbank_protein"] = pipes[0].strip()
+        info["source_acc"]      = pipes[0].strip()   # primary lookup key
+    if len(pipes) >= 2:
+        info["genbank_nucleotide"] = pipes[1].strip()
+    if len(pipes) >= 5:
+        info["gene_name"] = pipes[4].strip()
+    if len(pipes) >= 6:
+        info["allele"] = pipes[5].strip()
     return info
 
 
@@ -286,7 +298,8 @@ def parse_resfinder_header(header: str) -> dict:
 
 def build_gene_records(source: str, fasta_path: Path,
                        ncbi_meta: dict, card_meta: dict,
-                       resfinder_meta: dict | None = None) -> list[dict]:
+                       resfinder_meta: dict | None = None,
+                       argnorm_map: dict | None = None) -> list[dict]:
     """
     Parse a FASTA file and return a list of dicts ready for DB insertion.
     Also returns the raw sequence keyed by jrc_id.
@@ -359,31 +372,31 @@ def build_gene_records(source: str, fasta_path: Path,
         elif source == "NCBI":
             parsed = parse_ncbi_header(header)
             rec.update(parsed)
-            acc = rec.get("source_acc", "")
-            # acc is now "AE002098.2:330791-332317" — try composite key first,
-            # then bare accession (with and without version) for entries that
-            # have no range info in the report.
-            bare = acc.split(":")[0]            # "AE002098.2"
-            m = (ncbi_meta.get(acc)
-                 or ncbi_meta.get(bare)
-                 or ncbi_meta.get(bare.split(".")[0]))
+            # Primary lookup by GenBank protein accession (unique per gene);
+            # fallback to GenBank nucleotide bare acc and RefSeq nucleotide.
+            gb_prot = rec.get("genbank_protein", "")
+            gb_nuc  = rec.get("genbank_nucleotide", "")
+            m = (ncbi_meta.get(gb_prot)
+                 or ncbi_meta.get(gb_nuc)
+                 or ncbi_meta.get(gb_nuc.split(".")[0] if gb_nuc else ""))
             if m:
-                rec["product_name"]          = m.get("productName")
-                rec["gene_family"]           = m.get("geneFamily")
-                rec["allele"]                = m.get("allele")
-                rec["amr_class"]             = m.get("class")
-                rec["amr_subclass"]          = m.get("subclass")
-                rec["ncbi_type"]             = m.get("type")
-                rec["ncbi_subtype"]          = m.get("subtype")
-                rec["scope"]                 = m.get("scope")
-                rec["refseq_nucleotide"]     = (m.get("refseqNucleotide") or {}).get("accessionVersion")
-                rec["refseq_protein"]        = (m.get("refseqProtein") or {}).get("accessionVersion")
-                rec["genbank_nucleotide"]    = (m.get("genbankNucleotide") or {}).get("accessionVersion")
-                rec["genbank_protein"]       = (m.get("genbankProtein") or {}).get("accessionVersion")
-                # gene_name: allele first, then geneFamily
+                rec["product_name"]          = m.get("Product name") or None
+                rec["gene_family"]           = m.get("Gene family") or None
+                rec["amr_class"]             = m.get("Class") or None
+                rec["amr_subclass"]          = m.get("Subclass") or None
+                rec["ncbi_type"]             = m.get("Type") or None
+                rec["ncbi_subtype"]          = m.get("Subtype") or None
+                rec["scope"]                 = m.get("Scope") or None
+                rec["refseq_nucleotide"]     = m.get("RefSeq nucleotide") or None
+                rec["refseq_protein"]        = m.get("RefSeq protein") or None
+                rec["genbank_nucleotide"]    = m.get("GenBank nucleotide") or rec.get("genbank_nucleotide")
+                rec["genbank_protein"]       = m.get("GenBank protein") or rec.get("genbank_protein")
+                # allele: prefer header-parsed value, fallback to TSV #Allele column
+                if not rec.get("allele"):
+                    rec["allele"] = m.get("#Allele") or None
+                # gene_name: parsed from header; fallback chain
                 if not rec.get("gene_name"):
                     rec["gene_name"] = rec.get("allele") or rec.get("gene_family")
-                # For NCBI, allele falls back to gene_name when absent
                 if not rec.get("allele"):
                     rec["allele"] = rec.get("gene_name")
 
@@ -399,6 +412,20 @@ def build_gene_records(source: str, fasta_path: Path,
                     rec["pmid"]                 = m["pmid"]
                     rec["notes"]                = m["notes"]
                     rec["required_gene"]        = m["required_gene"]
+            # argNorm ARO enrichment: key = full FASTA header
+            if not rec.get("aro_accession") and argnorm_map:
+                aro = argnorm_map.get("resfinder", {}).get(header)
+                if aro:
+                    rec["aro_accession"] = aro
+
+        # argNorm ARO enrichment for NCBI (applied after NCBI block above)
+        if source == "NCBI" and not rec.get("aro_accession") and argnorm_map:
+            ncbi_argnorm = argnorm_map.get("ncbi", {})
+            allele  = rec.get("allele") or ""
+            gb_prot = rec.get("genbank_protein") or ""
+            aro = ncbi_argnorm.get(allele) or ncbi_argnorm.get(gb_prot)
+            if aro:
+                rec["aro_accession"] = aro
 
         records.append(rec)
     return records
@@ -925,6 +952,12 @@ def main():
     resfinder_meta = load_resfinder_phenotypes(RESFINDER_PHENOTYPES)
     print(f"  {len(resfinder_meta)} gene entries", file=sys.stderr)
 
+    print("Loading argNorm ARO map …", file=sys.stderr)
+    argnorm_map = load_argnorm_map(ARGNORM_ARO_MAP_TSV)
+    rf_keys  = len(argnorm_map.get("resfinder", {}))
+    ncb_keys = len(argnorm_map.get("ncbi", {}))
+    print(f"  {rf_keys} ResFinder + {ncb_keys} NCBI keys", file=sys.stderr)
+
     # ── Parse FASTA sources ──
     all_records: list[dict] = []
 
@@ -939,7 +972,8 @@ def main():
             continue
         print(f"Parsing {source}: {path} …", file=sys.stderr)
         recs = build_gene_records(source, path, ncbi_meta, card_meta,
-                                  resfinder_meta if source == "RESFINDER" else None)
+                                  resfinder_meta if source == "RESFINDER" else None,
+                                  argnorm_map)
         print(f"  {len(recs)} sequences", file=sys.stderr)
         all_records.extend(recs)
         sources_found.append(source)
