@@ -404,6 +404,8 @@ def build_gene_records(source: str, fasta_path: Path,
                 rec["ncbi_type"]             = _ncbi_col(m, "Type",               "type")               or None
                 rec["ncbi_subtype"]          = _ncbi_col(m, "Subtype",            "subtype")            or None
                 rec["scope"]                 = _ncbi_col(m, "Scope",              "scope")              or None
+                if rec["ncbi_type"] in ("STRESS", "VIRULENCE"):
+                    continue
                 if not include_ncbi_plus and rec["scope"] == "plus":
                     continue
                 rec["refseq_nucleotide"]     = _ncbi_col(m, "RefSeq nucleotide",  "refseq_nucleotide_accession")  or None
