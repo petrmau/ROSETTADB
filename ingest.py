@@ -77,6 +77,19 @@ def parse_fasta(path: Path):
 
 # ── Metadata loaders ──────────────────────────────────────────────────────────
 
+def _ncbi_col(row: dict, *names: str) -> str:
+    """Return the first non-empty value from a list of alternative column names.
+
+    ReferenceGeneCatalog.txt changed from Title Case to snake_case in a later
+    AMRFinder release.  Both old and new names are tried in the order given.
+    """
+    for name in names:
+        v = row.get(name)
+        if v:
+            return v.strip()
+    return ""
+
+
 def load_ncbi_report(path: Path) -> dict:
     """
     Read ReferenceGeneCatalog.txt (tab-separated) from AMRFinder FTP.
@@ -88,6 +101,8 @@ def load_ncbi_report(path: Path) -> dict:
 
     GenBank nucleotide accessions are intentionally NOT used as keys because
     223 entries share the same genome accession (e.g. AE002098.2).
+
+    Accepts both the old Title Case column names and the newer snake_case names.
     """
     meta = {}
     if not path.exists():
@@ -95,9 +110,9 @@ def load_ncbi_report(path: Path) -> dict:
     with open(path, newline="") as fh:
         reader = csv.DictReader(fh, delimiter="\t")
         for row in reader:
-            gb_prot  = (row.get("GenBank protein") or "").strip()
-            rs_prot  = (row.get("RefSeq protein") or "").strip()
-            rs_nuc   = (row.get("RefSeq nucleotide") or "").strip()
+            gb_prot = _ncbi_col(row, "GenBank protein", "genbank_protein_accession")
+            rs_prot = _ncbi_col(row, "RefSeq protein",  "refseq_protein_accession")
+            rs_nuc  = _ncbi_col(row, "RefSeq nucleotide", "refseq_nucleotide_accession")
             if gb_prot:
                 meta[gb_prot] = row
             if rs_prot:
@@ -382,22 +397,22 @@ def build_gene_records(source: str, fasta_path: Path,
                  or ncbi_meta.get(gb_nuc)
                  or ncbi_meta.get(gb_nuc.split(".")[0] if gb_nuc else ""))
             if m:
-                rec["product_name"]          = m.get("Product name") or None
-                rec["gene_family"]           = m.get("Gene family") or None
-                rec["amr_class"]             = m.get("Class") or None
-                rec["amr_subclass"]          = m.get("Subclass") or None
-                rec["ncbi_type"]             = m.get("Type") or None
-                rec["ncbi_subtype"]          = m.get("Subtype") or None
-                rec["scope"]                 = m.get("Scope") or None
+                rec["product_name"]          = _ncbi_col(m, "Product name",       "product_name")       or None
+                rec["gene_family"]           = _ncbi_col(m, "Gene family",        "gene_family")        or None
+                rec["amr_class"]             = _ncbi_col(m, "Class",              "class")              or None
+                rec["amr_subclass"]          = _ncbi_col(m, "Subclass",           "subclass")           or None
+                rec["ncbi_type"]             = _ncbi_col(m, "Type",               "type")               or None
+                rec["ncbi_subtype"]          = _ncbi_col(m, "Subtype",            "subtype")            or None
+                rec["scope"]                 = _ncbi_col(m, "Scope",              "scope")              or None
                 if not include_ncbi_plus and rec["scope"] == "plus":
                     continue
-                rec["refseq_nucleotide"]     = m.get("RefSeq nucleotide") or None
-                rec["refseq_protein"]        = m.get("RefSeq protein") or None
-                rec["genbank_nucleotide"]    = m.get("GenBank nucleotide") or rec.get("genbank_nucleotide")
-                rec["genbank_protein"]       = m.get("GenBank protein") or rec.get("genbank_protein")
-                # allele: prefer header-parsed value, fallback to TSV #Allele column
+                rec["refseq_nucleotide"]     = _ncbi_col(m, "RefSeq nucleotide",  "refseq_nucleotide_accession")  or None
+                rec["refseq_protein"]        = _ncbi_col(m, "RefSeq protein",     "refseq_protein_accession")     or None
+                rec["genbank_nucleotide"]    = _ncbi_col(m, "GenBank nucleotide", "genbank_nucleotide_accession") or rec.get("genbank_nucleotide")
+                rec["genbank_protein"]       = _ncbi_col(m, "GenBank protein",    "genbank_protein_accession")    or rec.get("genbank_protein")
+                # allele: prefer header-parsed value, fallback to TSV allele/#Allele column
                 if not rec.get("allele"):
-                    rec["allele"] = m.get("#Allele") or None
+                    rec["allele"] = _ncbi_col(m, "#Allele", "allele") or None
                 # gene_name: parsed from header; fallback chain
                 if not rec.get("gene_name"):
                     rec["gene_name"] = rec.get("allele") or rec.get("gene_family")
