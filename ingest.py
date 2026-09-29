@@ -893,6 +893,21 @@ def populate_sequence_links(cur):
     cur.execute("SELECT count(*) FROM _sdc_raw WHERE evidence_source = 'RESFINDER'")
     print(f"  RSFND → sequence_drug_class: {cur.fetchone()[0]} raw rows", file=sys.stderr)
 
+    # argNorm path – non-CARD genes enriched with ARO accession via argNorm
+    # → card_gene_class → canonical drug class.
+    # Complements source-specific paths for ResFinder/NCBI genes that argNorm
+    # could map; source filter is intentionally absent so all non-CARD sources benefit.
+    cur.execute("""
+        INSERT INTO _sdc_raw (jrc_id, canonical_class, evidence_source)
+        SELECT DISTINCT g.jrc_id, cgc.canonical_class, 'CARD.aro'
+        FROM amr.gene g
+        JOIN amr.card_gene_class cgc ON g.aro_accession = cgc.aro_accession
+        WHERE g.source <> 'CARD'
+          AND g.aro_accession IS NOT NULL
+    """)
+    cur.execute("SELECT count(*) FROM _sdc_raw WHERE evidence_source = 'CARD.aro'")
+    print(f"  CARD.aro → sequence_drug_class: {cur.fetchone()[0]} raw rows", file=sys.stderr)
+
     # ── Step 2: aggregate evidence sources and upsert ──
     cur.execute("""
         INSERT INTO amr.sequence_drug_class (jrc_id, canonical_class, evidence_sources)
@@ -935,6 +950,24 @@ def populate_sequence_links(cur):
                 WHEN amr.sequence_drug.evidence_sources LIKE '%CARD%'
                 THEN amr.sequence_drug.evidence_sources
                 ELSE amr.sequence_drug.evidence_sources || '|CARD'
+            END
+    """)
+
+    # ── Step 3c: sequence → drug (argNorm path via aro_gene_drug for non-CARD sources) ──
+    # Extends drug-level links to ResFinder/NCBI sequences that argNorm mapped to
+    # an ARO accession (Perfect/Strict/Manual quality — no Loose matches present).
+    cur.execute("""
+        INSERT INTO amr.sequence_drug (jrc_id, canonical_drug, evidence_sources)
+        SELECT DISTINCT g.jrc_id, agd.canonical_drug, 'CARD.aro'
+        FROM amr.gene g
+        JOIN amr.aro_gene_drug agd ON g.aro_accession = agd.aro_accession
+        WHERE g.source <> 'CARD'
+          AND g.aro_accession IS NOT NULL
+        ON CONFLICT (jrc_id, canonical_drug) DO UPDATE
+            SET evidence_sources = CASE
+                WHEN amr.sequence_drug.evidence_sources LIKE '%CARD.aro%'
+                THEN amr.sequence_drug.evidence_sources
+                ELSE amr.sequence_drug.evidence_sources || '|CARD.aro'
             END
     """)
 
