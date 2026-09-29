@@ -319,7 +319,9 @@ def parse_ncbi() -> tuple[list, list, list]:
     aliases = []
     gene_links = []
 
-    path = ROOT / "sources/amr_finder_plus/ReferenceGeneCatalog.txt"
+    path = (ROOT / "sources/amr_finder_plus/ReferenceGeneCatalog.txt"
+            if (ROOT / "sources/amr_finder_plus/ReferenceGeneCatalog.txt").exists()
+            else ROOT / "sources/amr_finder_plus/refgenes_AMR_AMR.tsv")
     with open(path, newline="") as f:
         reader = csv.DictReader(f, delimiter="\t")
         rows = list(reader)
@@ -698,8 +700,24 @@ def main():
         for r in aro_drug_members
     ]
 
+    # Ensure every drug referenced in drug_class_direct.tsv (curated mappings)
+    # is also present in the canonical drug table, so ingest.py never hits a FK
+    # violation when loading drug_class_member rows with source='curated'.
+    curated_drugs = [
+        {
+            "canonical_name": normalise_name(dm["canonical_drug"].strip()),
+            "source_name":    dm["canonical_drug"].strip(),
+            "context":        _context_flag(dm["canonical_drug"].strip()),
+            "is_combination": False,
+            "components":     [],
+            "source":         "curated",
+        }
+        for dm in direct_mappings
+        if dm.get("canonical_drug", "").strip()
+    ]
+
     print("Merging drug canonical table …")
-    all_drugs = merge_drugs(rf_drugs, card_drugs, ncbi_drugs, aro_drugs)
+    all_drugs = merge_drugs(rf_drugs, card_drugs, ncbi_drugs, aro_drugs, curated_drugs)
 
     print("Building class membership …")
     membership = build_class_membership(
