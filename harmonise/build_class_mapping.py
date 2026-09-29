@@ -155,9 +155,9 @@ CURATED_CLASSES = [
 
     # ---- phenicols ----
     dict(canonical_name="phenicol antibiotic",
-         resfinder_alias="Amphenicol", ncbi_alias="PHENICOL",
+         resfinder_alias="Amphenicol|Phenicol", ncbi_alias="PHENICOL",
          card_abbrev="CHL", card_class_abbrev="", category="antibiotic",
-         notes='ResFinder uses "Amphenicol"; INN class = phenicol'),
+         notes='ResFinder uses "Amphenicol" (older entries) or "Phenicol" (newer entries); INN class = phenicol'),
 
     # ---- pleuromutilins ----
     dict(canonical_name="pleuromutilin antibiotic",
@@ -209,8 +209,9 @@ CURATED_CLASSES = [
 
     # ---- tetracyclines ----
     dict(canonical_name="tetracycline antibiotic",
-         resfinder_alias="Tetracycline", ncbi_alias="TETRACYCLINE",
-         card_abbrev="TET", card_class_abbrev="", category="antibiotic", notes=""),
+         resfinder_alias="Tetracycline|Tetracyclines", ncbi_alias="TETRACYCLINE",
+         card_abbrev="TET", card_class_abbrev="", category="antibiotic",
+         notes='some ResFinder entries use the plural "Tetracyclines"'),
 
     # ---- thioamides ----
     dict(canonical_name="thioamide antibiotic",
