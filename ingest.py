@@ -1039,6 +1039,16 @@ def main():
     with open(args.schema) as fh:
         cur.execute(fh.read())
 
+    # ── Clear gene-level tables before (re)loading so re-runs don't accumulate rows ──
+    # amr.gene has no natural unique key (gene_id is serial), so ON CONFLICT never fires.
+    # sequence and sequence_metadata use ON CONFLICT, so they are safe to upsert.
+    cur.execute("""
+        TRUNCATE amr.sequence_drug_class,
+                 amr.sequence_drug,
+                 amr.sequence_metadata,
+                 amr.gene
+    """)
+
     # ── Insert sequences ──
     seq_list = [
         {"jrc_id": jid, "sequence_md5": md5hex(r["sequence"]), "sequence": r["sequence"]}
