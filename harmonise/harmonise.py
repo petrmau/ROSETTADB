@@ -141,8 +141,10 @@ def load_class_mapping() -> dict[str, dict]:
             mapping[cn] = row
 
             rf = row["resfinder_alias"].strip().lower()
-            if rf:
-                resfinder_lookup[rf] = cn
+            for rf_alias in rf.split("|"):
+                rf_alias = rf_alias.strip()
+                if rf_alias:
+                    resfinder_lookup[rf_alias] = cn
 
             for token in row["ncbi_alias"].strip().lower().split("/"):
                 token = token.strip()

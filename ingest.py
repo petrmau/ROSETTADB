@@ -67,7 +67,7 @@ def parse_fasta(path: Path):
             if line.startswith(">"):
                 if header is not None:
                     yield header, "".join(parts).upper()
-                header = line[1:]
+                header = line[1:].rstrip()  # strip trailing whitespace (some FASTA files have it)
                 parts = []
             else:
                 parts.append(line.strip())
@@ -873,16 +873,22 @@ def populate_sequence_links(cur):
     cur.execute("SELECT count(*) FROM _sdc_raw WHERE evidence_source = 'NCBI'")
     print(f"  NCBI  → sequence_drug_class: {cur.fetchone()[0]} raw rows", file=sys.stderr)
 
-    # ResFinder path – match on resfinder_alias (case-insensitive) or canonical_name
+    # ResFinder path – split comma-separated drug_class tokens, match each against
+    # resfinder_alias (which may be pipe-delimited for classes with multiple aliases)
+    # or canonical_name.
     cur.execute("""
         INSERT INTO _sdc_raw (jrc_id, canonical_class, evidence_source)
         SELECT DISTINCT g.jrc_id, dc.canonical_name, 'RESFINDER'
         FROM amr.gene g
+        CROSS JOIN LATERAL unnest(string_to_array(g.drug_class, ', ')) AS t(token)
         JOIN amr.drug_class dc
-          ON lower(g.drug_class) = lower(dc.resfinder_alias)
-          OR lower(g.drug_class) = lower(dc.canonical_name)
+          ON lower(trim(t.token)) = ANY(
+              string_to_array(lower(coalesce(dc.resfinder_alias, '')), '|')
+          )
+          OR lower(trim(t.token)) = lower(dc.canonical_name)
         WHERE g.source = 'RESFINDER'
           AND g.drug_class IS NOT NULL
+          AND g.drug_class <> ''
     """)
     cur.execute("SELECT count(*) FROM _sdc_raw WHERE evidence_source = 'RESFINDER'")
     print(f"  RSFND → sequence_drug_class: {cur.fetchone()[0]} raw rows", file=sys.stderr)

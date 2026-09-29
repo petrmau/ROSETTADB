@@ -20,7 +20,7 @@ lincosamide antibiotic	ARO:0000017	Lincosamide	LINCOSAMIDE	CLI		antibiotic	e.g. 
 macrolide antibiotic	ARO:0000000	Macrolide	MACROLIDE		MAC	antibiotic	MAC is CARD class abbrev
 nitroimidazole antibiotic	ARO:3004115	Nitroimidazole	NITROIMIDAZOLE	MTZ		antibiotic	e.g. metronidazole, delamanid (antituberculosis)
 oxazolidinone antibiotic	ARO:3000079	Oxazolidinone	OXAZOLIDINONE	OXZ		antibiotic	e.g. linezolid
-phenicol antibiotic	ARO:3000387	Amphenicol	PHENICOL	CHL		antibiotic	"ResFinder uses ""Amphenicol""; INN class = phenicol"
+phenicol antibiotic	ARO:3000387	Amphenicol|Phenicol	PHENICOL	CHL		antibiotic	"ResFinder uses ""Amphenicol"" (older entries) or ""Phenicol"" (newer entries); INN class = phenicol"
 pleuromutilin antibiotic	ARO:3000670	Pleuromutilin	PLEUROMUTILIN	PLM		antibiotic	e.g. tiamulin, retapamulin
 peptide antibiotic	ARO:3000053	Polymyxin	COLISTIN			antibiotic	"ResFinder uses class ""Polymyxin""; NCBI names the drug ""COLISTIN"" as class"
 mupirocin-like antibiotic	ARO:3007151	Pseudomonic acid	MUPIROCIN	MUP		antibiotic	"ResFinder ""Pseudomonic acid"" = mupirocin class"
@@ -30,7 +30,7 @@ fusidane antibiotic	ARO:3007153	Steroid antibacterial	FUSIDIC ACID	FA		antibioti
 streptogramin A antibiotic	ARO:0000034	Streptogramin A	STREPTOGRAMIN			antibiotic	
 streptogramin B antibiotic	ARO:0000050	Streptogramin B	STREPTOGRAMIN			antibiotic	
 streptogramin antibiotic	ARO:0000026		STREPTOGRAMIN			antibiotic	parent class when A/B not specified
-tetracycline antibiotic	ARO:3000050	Tetracycline	TETRACYCLINE	TET		antibiotic	
+tetracycline antibiotic	ARO:3000050	Tetracycline|Tetracyclines	TETRACYCLINE	TET		antibiotic
 thioamide antibiotic	ARO:3007156	Thioamide		ETO		antibiotic	INN: ethionamide; also prothionamide; antituberculosis
 pyrazinamide		Synthetic derivative of nicotinamide		PZA		antibiotic	INN: pyrazinamide; antituberculosis; structurally unique
 ethambutol		Unspecified		EMB		antibiotic	"INN: ethambutol; antituberculosis; listed as ""Unspecified"" in ResFinder"
