@@ -7,6 +7,7 @@ longest FASTA header.
 
 Usage:
     python ingest.py [--dsn DSN] [--resfinder PATH] [--card PATH] [--ncbi PATH]
+                     [--include-ncbi-plus]
 
 Defaults read from environment / constants below.
 """
@@ -299,7 +300,8 @@ def parse_resfinder_header(header: str) -> dict:
 def build_gene_records(source: str, fasta_path: Path,
                        ncbi_meta: dict, card_meta: dict,
                        resfinder_meta: dict | None = None,
-                       argnorm_map: dict | None = None) -> list[dict]:
+                       argnorm_map: dict | None = None,
+                       include_ncbi_plus: bool = False) -> list[dict]:
     """
     Parse a FASTA file and return a list of dicts ready for DB insertion.
     Also returns the raw sequence keyed by jrc_id.
@@ -387,6 +389,8 @@ def build_gene_records(source: str, fasta_path: Path,
                 rec["ncbi_type"]             = m.get("Type") or None
                 rec["ncbi_subtype"]          = m.get("Subtype") or None
                 rec["scope"]                 = m.get("Scope") or None
+                if not include_ncbi_plus and rec["scope"] == "plus":
+                    continue
                 rec["refseq_nucleotide"]     = m.get("RefSeq nucleotide") or None
                 rec["refseq_protein"]        = m.get("RefSeq protein") or None
                 rec["genbank_nucleotide"]    = m.get("GenBank nucleotide") or rec.get("genbank_nucleotide")
@@ -908,6 +912,8 @@ def main():
     ap.add_argument("--card",      type=Path, default=DEFAULT_CARD)
     ap.add_argument("--ncbi",      type=Path, default=DEFAULT_NCBI)
     ap.add_argument("--schema",    type=Path, default=Path(__file__).parent / "schema.sql")
+    ap.add_argument("--include-ncbi-plus", action="store_true",
+                    help="Also import NCBI 'plus'-scope genes (intrinsic/chromosomal). Excluded by default.")
     ap.add_argument("--skip-harmonise", action="store_true",
                     help="Skip loading harmonise/ drug vocabulary tables")
     ap.add_argument("--skip-links", action="store_true",
@@ -973,7 +979,8 @@ def main():
         print(f"Parsing {source}: {path} …", file=sys.stderr)
         recs = build_gene_records(source, path, ncbi_meta, card_meta,
                                   resfinder_meta if source == "RESFINDER" else None,
-                                  argnorm_map)
+                                  argnorm_map,
+                                  include_ncbi_plus=args.include_ncbi_plus)
         print(f"  {len(recs)} sequences", file=sys.stderr)
         all_records.extend(recs)
         sources_found.append(source)
