@@ -700,6 +700,26 @@ def main():
         for r in aro_drug_members
     ]
 
+    # Also seed drugs from ARO gene→drug edges: these may reference drugs that
+    # have no drug→class edge in ARO OBO and would otherwise be absent from
+    # drug_canonical.tsv, causing FK violations when loading aro_gene_drug.
+    aro_gene_drug_names = {
+        normalise_name(r["canonical_drug"])
+        for r in aro_gene_drug_links
+        if r.get("canonical_drug")
+    }
+    aro_gene_only_drugs = [
+        {
+            "canonical_name": name,
+            "source_name":    name,
+            "context":        _context_flag(name),
+            "is_combination": False,
+            "components":     [],
+            "source":         "CARD.obo",
+        }
+        for name in aro_gene_drug_names
+    ]
+
     # Ensure every drug referenced in drug_class_direct.tsv (curated mappings)
     # is also present in the canonical drug table, so ingest.py never hits a FK
     # violation when loading drug_class_member rows with source='curated'.
@@ -717,7 +737,8 @@ def main():
     ]
 
     print("Merging drug canonical table …")
-    all_drugs = merge_drugs(rf_drugs, card_drugs, ncbi_drugs, aro_drugs, curated_drugs)
+    all_drugs = merge_drugs(rf_drugs, card_drugs, ncbi_drugs, aro_drugs,
+                            aro_gene_only_drugs, curated_drugs)
 
     print("Building class membership …")
     membership = build_class_membership(

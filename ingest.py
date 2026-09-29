@@ -659,6 +659,20 @@ def load_harmonise(cur):
         """, data)
         print(f"  drug_alias: {len(data)} rows", file=sys.stderr)
 
+    # ── ensure referenced drugs exist ──
+    # Both drug_class_member and aro_gene_drug reference amr.drug via FK.
+    # If harmonise.py generated a smaller drug_canonical.tsv than the TSVs
+    # were built from, insert minimal stub rows for any missing drugs so the
+    # FK is never violated.
+    def _ensure_drugs(canonical_drug_names: list[str]):
+        if not canonical_drug_names:
+            return
+        execute_values(cur, """
+            INSERT INTO amr.drug (canonical_name, context)
+            VALUES %s
+            ON CONFLICT (canonical_name) DO NOTHING
+        """, [(n, "unknown") for n in canonical_drug_names])
+
     # ── drug_class_member ──
     if DRUG_CLASS_MEMBER_TSV.exists():
         with open(DRUG_CLASS_MEMBER_TSV) as f:
@@ -674,6 +688,7 @@ def load_harmonise(cur):
             for r in rows
             if ( r.get("canonical_drug") or "" ).strip() and ( r.get("canonical_class") or "" ).strip()
         ]
+        _ensure_drugs([d[0] for d in data])
         execute_values(cur, """
             INSERT INTO amr.drug_class_member
                 (canonical_drug, canonical_class, aro_accession, category, evidence_source)
@@ -771,6 +786,7 @@ def load_harmonise(cur):
                 drug,
                 r["drug_aro_accession"].strip(),
             ))
+        _ensure_drugs([d[2] for d in data])
         execute_values(cur, """
             INSERT INTO amr.aro_gene_drug
                 (aro_accession, gene_name, canonical_drug, drug_aro_accession)
