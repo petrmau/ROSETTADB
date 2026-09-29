@@ -333,12 +333,15 @@ def parse_ncbi() -> tuple[list, list, list]:
         return ""
 
     for record in rows:
+        element_type = _ncbi_col(record, "Type",     "type")
+        if element_type in ("STRESS", "VIRULENCE"):
+            continue
+
         gene_name    = _ncbi_col(record, "Gene family",       "gene_family")
         accession    = (_ncbi_col(record, "RefSeq protein",   "refseq_protein_accession")
                         or _ncbi_col(record, "RefSeq nucleotide", "refseq_nucleotide_accession"))
         class_raw    = _ncbi_col(record, "Class",    "class")
         subclass_raw = _ncbi_col(record, "Subclass", "subclass")
-        element_type = _ncbi_col(record, "Type",     "type")
 
         # Split multi-class and multi-drug slash combos
         class_tokens = split_ncbi_combo(class_raw) if class_raw else []
