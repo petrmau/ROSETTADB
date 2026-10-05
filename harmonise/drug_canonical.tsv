@@ -1,579 +1,579 @@
-canonical_name	is_combination	components	context	card_abbrev	atc_code	inchikey	pubchem_cid	chebi_id	sources
-2'-n-ethylnetilmicin	False		clinical						CARD.obo
-5-episisomicin	False		clinical						CARD.obo
-5-fluorocytosine	False		clinical						CARD.obo
-6'-n-ethylnetilmicin	False		clinical						CARD.obo
-a201a	False		clinical						CARD.obo
-acriflavine	False		clinical						CARD.obo
-actinomycin	False		clinical						CARD.obo
-albicidin	False		clinical						CARD.obo
-amikacin	False		clinical	AMK					CARD.obo|card|ncbi|resfinder
-aminoglycoside	False		drug_class_name						ncbi
-aminonucleoside antibiotic	False		clinical						CARD.obo
-amoxicillin	False		clinical	AMX					CARD.obo|card|resfinder
-amoxicillin+clavulanic acid	True	amoxicillin|clavulanic acid	clinical						resfinder
-ampicillin	False		clinical						CARD.obo|resfinder
-ampicillin+clavulanic acid	True	ampicillin|clavulanic acid	clinical						resfinder
-amythiamicin a	False		clinical						CARD.obo
-ant-431	False		clinical						CARD.obo
-ant3310	False		clinical						CARD.obo
-antibiotic a40926	False		clinical						CARD.obo
-antibiotic a47934	False		clinical						CARD.obo
-aplasmomycin	False		clinical						CARD.obo
-apramycin	False		clinical						CARD.obo|ncbi|resfinder
-arbekacin	False		clinical						CARD.obo|resfinder
-arx1796	False		clinical						CARD.obo
-arylomycin	False		clinical						CARD.obo
-aspergillomarasmine a	False		clinical						CARD.obo
-aspoxicillin	False		clinical						CARD.obo
-astromicin	False		clinical						CARD.obo|resfinder
-aurodox	False		clinical						CARD.obo
-avalimycin	False		clinical						CARD.obo
-avibactam	False		inhibitor	AVI					CARD.obo|card|ncbi|resfinder
-avilamycin	False		veterinary						ncbi
-avoparcin	False		clinical						CARD.obo
-azalomycin f	False		clinical						CARD.obo
-azamulin	False		clinical						CARD.obo
-azidamfenicol	False		clinical						CARD.obo
-azidocillin	False		clinical						CARD.obo
-azimycin	False		clinical						CARD.obo
-azithromycin	False		clinical	AZM					CARD.obo|card|ncbi|resfinder
-azlocillin	False		clinical						CARD.obo
-aztreonam	False		clinical	ATM					CARD.obo|card|resfinder
-bacitracin	False		clinical						CARD.obo|ncbi
-bacitracin a	False		clinical						CARD.obo
-bacitracin b	False		clinical						CARD.obo
-bacitracin f	False		clinical						CARD.obo
-bal30072	False		clinical						CARD.obo
-balhimycin	False		clinical						CARD.obo
-battacin	False		clinical						CARD.obo
-bedaquiline	False		antituberculosis	BDQ					CARD.obo|card|resfinder
-benzalkonium chloride	False		clinical						CARD.obo
-benzylpenicillin	False		clinical						CARD.obo|resfinder
-beta-lactam	False		drug_class_name						ncbi
-beta-lactam derived beta-lactamase inhibitor	False		clinical						CARD.obo
-beta-lactamase resistant penicillin	False		drug_class_name						CARD.obo
-beta-lactamase sensitive penicillin	False		drug_class_name						CARD.obo
-betaxolol	False		clinical						CARD.obo
-biapenem	False		clinical						CARD.obo
-bicyclomycin	False		clinical						CARD.obo
-bispicen	False		clinical						CARD.obo
-bisthiazolidine metallo-beta-lactamase inhibitor	False		clinical						CARD.obo
-bleomycin	False		non_therapeutic						CARD.obo|ncbi|resfinder
-bleomycin a2	False		clinical						CARD.obo
-bleomycin b2	False		clinical						CARD.obo
-bleomycinic acid	False		clinical						CARD.obo
-bli-489	False		clinical						CARD.obo
-boromycin	False		clinical						CARD.obo
-boronic acid beta-lactamase inhibitor	False		clinical						CARD.obo
-bp2	False		clinical						CARD.obo
-bpi	False		clinical						CARD.obo
-brefeldin a	False		clinical						CARD.obo
-brodimoprim	False		clinical						CARD.obo
-butiromycin	False		clinical						resfinder
-butirosin	False		clinical						CARD.obo|resfinder
-cadaside a	False		clinical						CARD.obo
-cadaside antibiotic	False		clinical						CARD.obo
-cadaside b	False		clinical						CARD.obo
-calcimycin	False		clinical						CARD.obo
-caprazamycin	False		clinical						CARD.obo
-capreomycin	False		antituberculosis	CAP					CARD.obo|card|ncbi|resfinder
-carbapenem	False		drug_class_name						ncbi
-carbenicillin	False		clinical						CARD.obo
-carbomycin	False		veterinary						CARD.obo|resfinder
-carrimycin	False		clinical						CARD.obo
-carumonam	False		clinical						CARD.obo
-cbp c1-aminomethylene vancomycin	False		clinical						CARD.obo
-cefacetrile	False		clinical						CARD.obo
-cefaclor	False		clinical						CARD.obo
-cefadroxil	False		clinical						CARD.obo
-cefalexin	False		clinical						CARD.obo
-cefaloridine	False		clinical						CARD.obo
-cefalotin	False		clinical						CARD.obo|ncbi|resfinder
-cefamandole	False		clinical						CARD.obo
-cefapirin	False		clinical						CARD.obo
-cefatrizine	False		clinical						CARD.obo
-cefazedone	False		clinical						CARD.obo
-cefazolin	False		clinical						CARD.obo|resfinder
-cefbuperazone	False		clinical						CARD.obo
-cefcapene	False		clinical						CARD.obo
-cefdinir	False		clinical						CARD.obo
-cefditoren	False		clinical						CARD.obo
-cefepime	False		clinical						CARD.obo|resfinder
-cefepime-taniborbactam	False		clinical						CARD.obo|ncbi
-cefetamet	False		clinical						CARD.obo
-cefiderocol	False		clinical						CARD.obo|ncbi
-cefixime	False		clinical						CARD.obo|resfinder
-cefmenoxime	False		clinical						CARD.obo
-cefmetazole	False		clinical						CARD.obo
-cefminox	False		clinical						CARD.obo
-cefodizime	False		clinical						CARD.obo
-cefonicid	False		clinical						CARD.obo
-cefoperazone	False		clinical						CARD.obo
-ceforanide	False		clinical						CARD.obo
-cefotaxime	False		clinical						CARD.obo|resfinder
-cefotaxime+clavulanic acid	True	cefotaxime|clavulanic acid	clinical						resfinder
-cefotetan	False		clinical						CARD.obo
-cefotiam	False		clinical						CARD.obo
-cefovecin	False		clinical						CARD.obo
-cefoxitin	False		clinical						CARD.obo|resfinder
-cefozopran	False		clinical						CARD.obo
-cefpiramide	False		clinical						CARD.obo
-cefpirome	False		clinical						CARD.obo
-cefpodoxime	False		clinical						CARD.obo
-cefprozil	False		clinical						CARD.obo
-cefquinome	False		clinical						CARD.obo
-cefroxadine	False		clinical						CARD.obo
-cefsulodin	False		clinical						CARD.obo
-ceftaroline	False		clinical						CARD.obo|ncbi|resfinder
-ceftazidime	False		clinical	CEF					CARD.obo|card|resfinder
-ceftazidime+avibactam	True	ceftazidime|avibactam	clinical						resfinder
-ceftazidime-avibactam	False		clinical	CZA					CARD.obo|card|curated
-cefteram	False		clinical						CARD.obo
-ceftezole	False		clinical						CARD.obo
-ceftibuten	False		clinical						CARD.obo
-ceftibuten-avibactam	False		clinical						ncbi
-ceftiofur	False		clinical						CARD.obo
-ceftizoxime	False		clinical						CARD.obo
-ceftobiprole	False		clinical						CARD.obo
-ceftolozane	False		clinical						CARD.obo
-ceftriaxone	False		clinical						CARD.obo|resfinder
-cefuroxime	False		clinical						CARD.obo|resfinder
-celesticetin	False		clinical						CARD.obo
-cephalosporin	False		drug_class_name						ncbi
-cephradine	False		clinical						CARD.obo
-cethromycin	False		clinical						CARD.obo
-cezomycin	False		clinical						CARD.obo
-chalcomycin	False		clinical						CARD.obo
-chloramphenicol	False		clinical	CHL					CARD.obo|card|ncbi|resfinder
-chlorhexidine	False		clinical						CARD.obo
-chloroeremomycin	False		clinical						CARD.obo
-chlortetracycline	False		clinical						CARD.obo
-chrysomycin a	False		clinical						CARD.obo
-cinoxacin	False		clinical						CARD.obo
-ciprofloxacin	False		clinical	CIP					CARD.obo|card|resfinder
-clarithromycin	False		clinical	CLR					CARD.obo|card|ncbi
-clavulanic acid	False		inhibitor						CARD.obo|resfinder
-clinafloxacin	False		clinical						CARD.obo
-clindamycin	False		clinical	CLI					CARD.obo|card|ncbi|resfinder
-clofazimine	False		antituberculosis	CFZ					CARD.obo|card|curated|resfinder
-clometocillin	False		clinical						CARD.obo
-clorobiocin	False		clinical						CARD.obo
-cloxacillin	False		clinical						CARD.obo
-colistin	False		clinical	CST					CARD.obo|card|ncbi|resfinder
-colistin a	False		clinical						CARD.obo
-colistin b	False		clinical						CARD.obo
-complestatin	False		clinical						CARD.obo
-contezolid	False		clinical						CARD.obo
-corbomycin	False		clinical						CARD.obo
-cordycepin	False		clinical						CARD.obo
-coumermycin a1	False		clinical						CARD.obo
-cyclic thiazolyl peptide elfamycin	False		clinical						CARD.obo
-cycloserine	False		antituberculosis						CARD.obo
-d-captopril	False		clinical						CARD.obo
-d-cycloserine	False		antituberculosis	DCS					card|resfinder
-dactinomycin	False		clinical						CARD.obo
-dalbavancin	False		clinical						CARD.obo
-dalfopristin	False		clinical						CARD.obo|resfinder
-dapsone	False		clinical	DAO					CARD.obo|card|curated
-daptomycin	False		clinical	DAP					CARD.obo|card|ncbi
-darobactin a	False		clinical						CARD.obo
-declovanillobiocin	False		clinical						CARD.obo
-defensin	False		clinical						CARD.obo
-delafloxacin	False		clinical						CARD.obo
-delamanid	False		antituberculosis	DLM					CARD.obo|card|curated
-demeclocycline	False		clinical						CARD.obo
-diazabicyclooctane	False		clinical						CARD.obo
-dibekacin	False		clinical						CARD.obo|resfinder
-dicloxacillin	False		clinical						CARD.obo
-diflunisal	False		clinical						CARD.obo
-dihydromocimycin	False		clinical						CARD.obo
-dimercaprol	False		clinical						CARD.obo
-dirithromycin	False		clinical						CARD.obo
-doripenem	False		clinical						CARD.obo
-doxycycline	False		clinical						CARD.obo|ncbi|resfinder
-durlobactam	False		clinical						CARD.obo
-edeine	False		clinical	EDN					CARD.obo|card|curated
-edeine a	False		clinical						CARD.obo
-edeine b	False		clinical						CARD.obo
-edeine d	False		clinical						CARD.obo
-edeine f	False		clinical						CARD.obo
-efflux	False		clinical						ncbi
-efrotomycin	False		clinical						CARD.obo
-elfamycin	False		clinical	ELF					card|curated
-emerione a	False		clinical						CARD.obo
-enacyloxin iia	False		clinical	ENC					CARD.obo|card|curated
-enmetazobactam	False		clinical						CARD.obo
-enoxacin	False		clinical						CARD.obo
-enramycin	False		clinical						CARD.obo
-enrofloxacin	False		clinical	ENR					CARD.obo|card|curated
-epicillin	False		clinical						CARD.obo
-epinecidin-1	False		clinical						CARD.obo
-eravacycline	False		clinical						CARD.obo
-eremomycin pyrrolidide	False		clinical						CARD.obo
-ertapenem	False		clinical						CARD.obo|resfinder
-erythromycin	False		clinical	ERY					CARD.obo|card|ncbi|resfinder
-ethambutol	False		antituberculosis	EMB					CARD.obo|card|resfinder
-ethambutol & capreomycin	True	ethambutol|capreomycin	clinical	EMCM					card
-ethionamide	False		antituberculosis	ETO					CARD.obo|card|resfinder
-evernimicin	False		clinical						CARD.obo
-factumycin	False		clinical						CARD.obo
-faropenem	False		clinical						CARD.obo
-fengycin	False		clinical						CARD.obo
-fidaxomicin	False		clinical						CARD.obo
-finafloxacin	False		clinical						CARD.obo
-first-generation cephalosporin	False		drug_class_name						CARD.obo
-fisetin	False		clinical						CARD.obo
-fleroxacin	False		clinical						CARD.obo
-flomoxef	False		clinical						CARD.obo
-florfenicol	False		clinical						CARD.obo|ncbi|resfinder
-flucloxacillin	False		clinical						CARD.obo
-flumequine	False		clinical						CARD.obo
-fluoroquinolone	False		clinical						resfinder
-formicin	False		clinical						CARD.obo
-fosfomycin	False		clinical	FOF					CARD.obo|card|ncbi|resfinder
-fosmidomycin	False		clinical						CARD.obo
-fourth-generation cephalosporin	False		drug_class_name						CARD.obo
-furazidin	False		clinical						CARD.obo
-furazolidone	False		clinical						CARD.obo
-fusidic acid	False		clinical	FA					CARD.obo|card|ncbi|resfinder
-g418	False		research_tool	G418					CARD.obo|card|resfinder
-gamithromycin	False		clinical						CARD.obo
-ganefromycin	False		clinical						CARD.obo
-gatifloxacin	False		clinical						CARD.obo
-ge2270a	False		clinical	GE2A					CARD.obo|card|curated
-ge37468	False		clinical						CARD.obo
-gemifloxacin	False		clinical						CARD.obo
-gentamicin	False		clinical	GEN					CARD.obo|card|ncbi|resfinder
-gentamicin a	False		clinical						CARD.obo
-gentamicin b	False		clinical						CARD.obo
-gentamicin c	False		clinical	GENC					CARD.obo|card|resfinder
-gentamicin x	False		clinical						CARD.obo
-gepotidacin	False		clinical						CARD.obo
-gramicidin	False		clinical						CARD.obo
-gramicidin a	False		clinical						CARD.obo
-gramicidin b	False		clinical						CARD.obo
-gramicidin c	False		clinical						CARD.obo
-gramicidin d	False		clinical						CARD.obo
-gramicidin s	False		clinical						CARD.obo
-grepafloxacin	False		clinical						CARD.obo
-griseoviridin	False		clinical						CARD.obo
-halolitoralin	False		clinical						CARD.obo
-halolitoralin a	False		clinical						CARD.obo
-halolitoralin b	False		clinical						CARD.obo
-halolitoralin c	False		clinical						CARD.obo
-heneicomycin	False		clinical						CARD.obo
-hetacillin	False		clinical						CARD.obo
-hygromycin	False		clinical						ncbi|resfinder
-hygromycin b	False		clinical	HGM					CARD.obo|card|curated
-iboxamycin	False		clinical						CARD.obo
-iclaprim	False		clinical						CARD.obo
-imipenem	False		clinical	IPM					CARD.obo|card|resfinder
-isepamicin	False		clinical						CARD.obo|resfinder
-isoniazid	False		antituberculosis	INH					CARD.obo|card|resfinder
-isovanillobiocin	False		clinical						CARD.obo
-josamycin	False		clinical						CARD.obo
-kanamycin	False		clinical	KAN					card|ncbi|resfinder
-kanamycin a	False		clinical						CARD.obo|resfinder
-kasugamycin	False		clinical	KAS					CARD.obo|card|ncbi|resfinder
-kirromycin	False		clinical	KIR					CARD.obo|card|curated
-kirromycin-like antibiotics	False		clinical						CARD.obo
-kirrothricin	False		clinical						CARD.obo
-kitasamycin	False		clinical						CARD.obo
-klebsidin	False		clinical						CARD.obo
-l-681,217	False		clinical						CARD.obo
-l-captopril	False		clinical						CARD.obo
-l-cs319	False		clinical						CARD.obo
-lascufloxacin	False		clinical						CARD.obo
-lassomycin	False		clinical						CARD.obo
-latamoxef	False		clinical						CARD.obo
-ledaborbactam	False		clinical						CARD.obo
-ledaborbactam etzadroxil	False		clinical						CARD.obo
-lefamulin	False		clinical						CARD.obo
-levofloxacin	False		clinical	LEV					CARD.obo|card|curated
-levonadifloxacin	False		clinical						CARD.obo
-lff571	False		clinical						CARD.obo
-lincomycin	False		clinical						CARD.obo|ncbi|resfinder
-lincosamide	False		drug_class_name						ncbi
-linezolid	False		clinical	LZD					CARD.obo|card|ncbi|resfinder
-linoleic acid	False		clinical						CARD.obo
-lipoic acid	False		clinical						CARD.obo
-lividomycin	False		clinical						CARD.obo|resfinder
-lividomycin a	False		clinical						CARD.obo
-lividomycin b	False		clinical						CARD.obo
-lomefloxacin	False		clinical						CARD.obo
-loracarbef	False		clinical						CARD.obo
-lugdunin	False		clinical						CARD.obo
-lys228	False		clinical						CARD.obo
-lysocin	False		clinical						CARD.obo
-lysocin (e)	False		clinical	LYS					card|curated
-lysocin e	False		clinical						CARD.obo
-macrocyclic peptide antibiotics	False		clinical						CARD.obo
-macrolide	False		drug_class_name						ncbi
-madumycin ii	False		clinical						CARD.obo
-maduramicin	False		veterinary						ncbi|resfinder
-mafenide	False		clinical						CARD.obo
-magainin	False		clinical						CARD.obo
-magainin 1	False		clinical						CARD.obo
-magainin 2	False		clinical						CARD.obo
-magainin a	False		clinical						CARD.obo
-magainin b	False		clinical						CARD.obo
-magainin g	False		clinical						CARD.obo
-magainin h	False		clinical						CARD.obo
-malacidin a	False		clinical						CARD.obo
-marbofloxacin	False		clinical						CARD.obo
-marinomycin	False		clinical						CARD.obo
-marinomycin a	False		clinical						CARD.obo
-marinomycin b	False		clinical						CARD.obo
-marinomycin c	False		clinical						CARD.obo
-marinomycin d	False		clinical						CARD.obo
-me1071	False		clinical						CARD.obo
-mecillinam	False		clinical						CARD.obo
-megalomycin	False		clinical						CARD.obo
-meropenem	False		clinical						CARD.obo|resfinder
-metallo-beta-lactamase inhibitor	False		clinical						CARD.obo
-methimazole	False		clinical						CARD.obo
-methotrexate	False		clinical						CARD.obo
-methymycin	False		clinical						CARD.obo
-meticillin	False		clinical						CARD.obo|ncbi
-metronidazole	False		clinical	MTZ					CARD.obo|card|resfinder
-mezlocillin	False		clinical						CARD.obo
-microcin j25	False		clinical						CARD.obo
-midecamycin	False		clinical						CARD.obo
-minocycline	False		clinical						CARD.obo|ncbi|resfinder
-moenomycin a1	False		clinical						CARD.obo
-monensin sodium	False		clinical						CARD.obo
-moxifloxacin	False		clinical	MXF					CARD.obo|card|curated
-mupirocin	False		clinical	MUP					CARD.obo|card|ncbi|resfinder
-mutanobactin	False		clinical						CARD.obo
-mycaminosyltylonolide	False		clinical						CARD.obo
-mycinamicin	False		clinical						CARD.obo
-nacubactam	False		clinical						CARD.obo
-nafcillin	False		clinical						CARD.obo
-nalidixic acid	False		clinical						CARD.obo|resfinder
-narasin	False		veterinary						CARD.obo|ncbi|resfinder
-narbomycin	False		clinical						CARD.obo
-nemonoxacin	False		clinical						CARD.obo
-neomycin	False		clinical	NEO					CARD.obo|card|resfinder
-netilmicin	False		clinical						CARD.obo|resfinder
-neutramycin	False		clinical						CARD.obo
-niddamycin	False		clinical						CARD.obo
-nifuratel	False		clinical						CARD.obo
-nifuroxazide	False		clinical						CARD.obo
-nigericin	False		clinical						CARD.obo
-nitrofurantoin	False		clinical	NIT					CARD.obo|card|curated
-nitroimidazole	False		clinical						ncbi
-nocardamine	False		clinical						CARD.obo
-nordihydroguaiaretic acid	False		clinical						CARD.obo
-norfloxacin	False		clinical						CARD.obo
-norvancomycin	False		clinical						CARD.obo
-novobiocin	False		clinical						CARD.obo
-nybomycin	False		clinical						CARD.obo
-ofloxacin	False		clinical	OFX					CARD.obo|card|curated
-oleandomycin	False		clinical						CARD.obo|ncbi|resfinder
-oleic acid	False		clinical						CARD.obo
-omadacycline	False		clinical						CARD.obo
-oncocin	False		clinical						CARD.obo
-oritavancin	False		clinical						CARD.obo
-ornidazole	False		clinical						CARD.obo
-ostreogrycin	False		veterinary						curated|ncbi
-ostreogrycin b3	False		clinical						CARD.obo
-other cephalosporins and penems	False		clinical						CARD.obo
-oxacillin	False		clinical						CARD.obo
-oxazolidinone	False		drug_class_name	OXZ					card|curated|ncbi
-oxytetracycline	False		clinical						CARD.obo
-pactamycin	False		clinical	PAC					CARD.obo|card|curated
-palmitic acid	False		clinical						CARD.obo
-panipenem	False		clinical						CARD.obo
-para-aminosalicylic acid	False		antituberculosis	PAS					CARD.obo|card|resfinder
-paromomycin	False		clinical	PAR					CARD.obo|card|ncbi|resfinder
-patricin a	False		clinical						CARD.obo
-patricin b	False		clinical						CARD.obo
-pefloxacin	False		clinical						CARD.obo
-penamecillin	False		clinical						CARD.obo
-penicillin with extended spectrum	False		drug_class_name						CARD.obo
-perchlozone	False		clinical	PCL					CARD.obo|card|curated
-phenelfamycin a	False		clinical						CARD.obo
-phenelfamycin b	False		clinical						CARD.obo
-phenelfamycin c	False		clinical						CARD.obo
-phenelfamycin d	False		clinical						CARD.obo
-phenelfamycin e	False		clinical						CARD.obo
-phenelfamycin f	False		clinical						CARD.obo
-phenelfamycin g	False		clinical						CARD.obo
-phenelfamycin h	False		clinical						CARD.obo
-pheneticillin	False		clinical						CARD.obo
-phenicol	False		clinical						ncbi
-phenoxymethylpenicillin	False		clinical						CARD.obo
-phosphonate metallo-beta-lactamase inhibitor	False		clinical						CARD.obo
-pikromycin	False		clinical						CARD.obo
-piperacillin	False		clinical						CARD.obo|resfinder
-piperacillin+clavulanic acid	True	piperacillin|clavulanic acid	clinical						resfinder
-piperacillin+tazobactam	True	piperacillin|tazobactam	clinical						resfinder
-pirlimycin	False		clinical						CARD.obo
-pivampicillin	False		clinical						CARD.obo
-pivmecillinam	False		clinical						CARD.obo
-plazomicin	False		clinical						CARD.obo|ncbi
-pleuromutilin	False		clinical	PLM					CARD.obo|card|ncbi
-polymyxin antibiotic	False		drug_class_name						CARD.obo
-polymyxin b	False		clinical						CARD.obo
-polymyxin b1	False		clinical						CARD.obo
-polymyxin b2	False		clinical						CARD.obo
-polymyxin b3	False		clinical						CARD.obo
-polymyxin b4	False		clinical						CARD.obo
-polypyridine metallo-beta-lactamase inhibitor	False		clinical						CARD.obo
-pretomanid	False		clinical						CARD.obo
-pristinamycin	False		veterinary						curated|ncbi
-pristinamycin ia	False		veterinary						CARD.obo|resfinder
-pristinamycin ib	False		clinical						CARD.obo
-pristinamycin ic	False		clinical						CARD.obo
-pristinamycin iia	False		veterinary						resfinder
-proflavine	False		clinical						CARD.obo
-propicillin	False		clinical						CARD.obo
-protionamide	False		antituberculosis	PTO					CARD.obo|card|curated
-prulifloxacin	False		clinical						CARD.obo
-pseudouridimycin	False		clinical						CARD.obo
-pulvomycin	False		clinical	PLV					CARD.obo|card|curated
-puromycin	False		clinical						CARD.obo
-pyrazinamide	False		antituberculosis	PZA					CARD.obo|card|resfinder
-pyrrolomycin a	False		clinical						CARD.obo
-pyrrolomycin antibiotic	False		clinical						CARD.obo
-pyrrolomycin b	False		clinical						CARD.obo
-pyrrolomycin c	False		clinical						CARD.obo
-pyrrolomycin d	False		clinical						CARD.obo
-pyrrolomycin e	False		clinical						CARD.obo
-pyrrolomycin f	False		clinical						CARD.obo
-pyrrolomycin f2a	False		clinical						CARD.obo
-pyrrolomycin f2b	False		clinical						CARD.obo
-pyrrolomycin f3	False		clinical						CARD.obo
-pyrrolomycin g	False		clinical						CARD.obo
-pyrrolomycin h	False		clinical						CARD.obo
-pyrrolomycin i	False		clinical						CARD.obo
-pyrrolomycin j	False		clinical						CARD.obo
-quaternary ammonium	False		biocide						ncbi
-quinolone	False		drug_class_name						ncbi
-quinupristin	False		clinical						CARD.obo|resfinder
-quinupristin+dalfopristin	True	quinupristin|dalfopristin	clinical						resfinder
-ramoplanin	False		clinical						CARD.obo
-relebactam	False		inhibitor						CARD.obo
-retapamulin	False		clinical						CARD.obo|curated|ncbi
-ribostamycin	False		clinical						CARD.obo|ncbi|resfinder
-rifabutin	False		clinical	RFB					CARD.obo|card|curated
-rifalazil	False		clinical						CARD.obo
-rifampicin	False		antituberculosis	RIF					CARD.obo|card|ncbi|resfinder
-rifamycin	False		clinical						ncbi
-rifapentine	False		clinical						CARD.obo
-rifaximin	False		clinical						CARD.obo
-risedronate	False		clinical						CARD.obo
-ristocetin	False		clinical						CARD.obo
-rokitamycin	False		clinical						CARD.obo
-rosaramicin	False		clinical						CARD.obo
-roxithromycin	False		clinical						CARD.obo
-s02030	False		clinical						CARD.obo
-salinomycin	False		veterinary						CARD.obo|ncbi|resfinder
-sarafloxacin	False		clinical						CARD.obo
-sarecycline	False		clinical						CARD.obo
-sb22484	False		clinical						CARD.obo
-second-generation cephalosporin	False		drug_class_name						CARD.obo
-selamectin	False		clinical						CARD.obo
-serine beta-lactamase inhibitor	False		clinical						CARD.obo
-sisomicin	False		clinical						CARD.obo|ncbi|resfinder
-sitafloxacin	False		clinical						CARD.obo
-solithromycin	False		clinical						CARD.obo
-sparfloxacin	False		clinical						CARD.obo
-spectinomycin	False		clinical	SPT					CARD.obo|card|ncbi|resfinder
-spiramycin	False		clinical						CARD.obo|ncbi|resfinder
-streptogramin	False		drug_class_name						ncbi
-streptogramin a	False		drug_class_name						curated|ncbi
-streptogramin b	False		drug_class_name						curated|ncbi
-streptomycin	False		clinical	STR					CARD.obo|card|ncbi|resfinder
-streptothricin	False		clinical						CARD.obo|ncbi
-sulbactam	False		inhibitor						CARD.obo
-sulfacetamide	False		clinical						CARD.obo
-sulfadiazine	False		clinical						CARD.obo
-sulfadimidine	False		clinical						CARD.obo
-sulfadoxine	False		clinical						CARD.obo
-sulfamerazine	False		clinical						CARD.obo
-sulfamethizole	False		clinical						CARD.obo
-sulfamethoxazole	False		clinical						CARD.obo|resfinder
-sulfanilamide	False		clinical						CARD.obo
-sulfasalazine	False		clinical						CARD.obo
-sulfisoxazole	False		clinical						CARD.obo
-sulfonamide	False		drug_class_name						ncbi
-sulopenem	False		clinical						CARD.obo
-syn-1012	False		clinical						CARD.obo
-taniborbactam	False		inhibitor						CARD.obo|ncbi
-tartrolon	False		clinical						CARD.obo
-tartrolon a	False		clinical						CARD.obo
-tartrolon b	False		clinical						CARD.obo
-tartrolon d	False		clinical						CARD.obo
-tartrolon f	False		clinical						CARD.obo
-tartrolon g	False		clinical						CARD.obo
-tazobactam	False		inhibitor						CARD.obo|resfinder
-tbi-223	False		clinical						CARD.obo
-tebipenem	False		clinical						CARD.obo
-tedizolid	False		clinical						CARD.obo|curated|ncbi
-teicoplanin	False		clinical						CARD.obo|resfinder
-teixobactin	False		clinical						CARD.obo
-telavancin	False		clinical						CARD.obo
-telithromycin	False		clinical						CARD.obo|ncbi|resfinder
-temocillin	False		clinical						CARD.obo|resfinder
-tetracenomycin	False		clinical						ncbi
-tetracenomycin a2	False		clinical						CARD.obo
-tetracenomycin c	False		clinical						CARD.obo
-tetracenomycin x	False		clinical						CARD.obo
-tetracycline	False		clinical	TET					CARD.obo|card|ncbi|resfinder
-tetronomycin	False		clinical						CARD.obo
-tetroxoprim	False		clinical						CARD.obo
-thiacalixarene derivatives	False		clinical						CARD.obo
-thiamphenicol	False		clinical						CARD.obo|curated|ncbi
-thioacetazone	False		clinical						CARD.obo
-thiorphan	False		clinical						CARD.obo
-thiostrepton	False		veterinary						CARD.obo|ncbi
-third-generation cephalosporin	False		drug_class_name						CARD.obo
-thusin	False		clinical						CARD.obo
-tiamulin	False		veterinary						CARD.obo|ncbi|resfinder
-ticarcillin	False		clinical						CARD.obo|resfinder
-ticarcillin+clavulanic acid	True	ticarcillin|clavulanic acid	clinical						resfinder
-tigecycline	False		clinical						CARD.obo|ncbi|resfinder
-tildipirosin	False		clinical						CARD.obo
-tilmicosin	False		clinical						CARD.obo
-tinidazole	False		clinical						CARD.obo
-tiopronin	False		clinical						CARD.obo
-tnp-2198	False		clinical						CARD.obo
-tobramycin	False		clinical	TOB					CARD.obo|card|ncbi|resfinder
-tosufloxacin	False		clinical						CARD.obo
-triclosan	False		biocide	TRC					CARD.obo|card|curated
-trimethoprim	False		clinical	TMP					CARD.obo|card|ncbi|resfinder
-trispicen	False		clinical						CARD.obo
-trispicen a	False		clinical						CARD.obo
-trovafloxacin	False		clinical						CARD.obo
-tulathromycin	False		clinical						CARD.obo
-tunicamycin	False		clinical						CARD.obo
-tylosin	False		veterinary	TYL					CARD.obo|card|ncbi|resfinder
-tylvalosin	False		clinical						CARD.obo
-uk-69,753	False		clinical						CARD.obo
-unclassified metallo-beta-lactamase inhibitor	False		clinical						CARD.obo
-unclassified serine beta-lactamase inhibitor	False		clinical						CARD.obo
-unithiol	False		clinical						CARD.obo
-unphenelfamycin	False		clinical						CARD.obo
-vaborbactam	False		clinical						CARD.obo
-valinomycin	False		clinical						CARD.obo
-valnemulin	False		clinical						CARD.obo
-vancomycin	False		clinical	VAN					CARD.obo|card|ncbi|resfinder
-vanillobiocin	False		clinical						CARD.obo
-verdamicin	False		clinical						CARD.obo
-vernamycin b	False		clinical						curated|ncbi
-vernamycin c	False		clinical						CARD.obo
-vertilimicin	False		clinical						CARD.obo
-viomycin	False		antituberculosis	VIO					CARD.obo|card|ncbi
-virginiamycin m	False		veterinary						ncbi|resfinder
-virginiamycin m1	False		clinical						CARD.obo
-virginiamycin s	False		veterinary						resfinder
-virginiamycin s2	False		clinical						CARD.obo
-xeruborbactam	False		inhibitor						CARD.obo|ncbi
-zabofloxacin	False		clinical						CARD.obo
-zidebactam	False		clinical						CARD.obo
-zidovudine	False		clinical						CARD.obo
-zoliflodacin	False		clinical	ZOL					CARD.obo|card|curated
-zorbamycin	False		clinical						ncbi
-zosurabalpin	False		clinical						CARD.obo
+canonical_name	is_combination	components	context	card_abbrev	atc_code	inchikey	pubchem_cid	chebi_id	sources	atc_group1	atc_group2
+2'-n-ethylnetilmicin	False		clinical						CARD.obo		
+5-episisomicin	False		clinical						CARD.obo		
+5-fluorocytosine	False		clinical						CARD.obo		
+6'-n-ethylnetilmicin	False		clinical						CARD.obo		
+a201a	False		clinical						CARD.obo		
+acriflavine	False		clinical						CARD.obo		
+actinomycin	False		clinical						CARD.obo		
+albicidin	False		clinical						CARD.obo		
+amikacin	False		clinical	AMK	J01GB06				CARD.obo|card|ncbi|resfinder	Aminoglycoside antibacterials	Other aminoglycosides
+aminoglycoside	False		drug_class_name						ncbi		
+aminonucleoside antibiotic	False		clinical						CARD.obo		
+amoxicillin	False		clinical	AMX	J01CA04				CARD.obo|card|resfinder	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+amoxicillin+clavulanic acid	True	amoxicillin|clavulanic acid	clinical						resfinder		
+ampicillin	False		clinical		J01CA01				CARD.obo|resfinder	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+ampicillin+clavulanic acid	True	ampicillin|clavulanic acid	clinical						resfinder		
+amythiamicin a	False		clinical						CARD.obo		
+ant-431	False		clinical						CARD.obo		
+ant3310	False		clinical						CARD.obo		
+antibiotic a40926	False		clinical						CARD.obo		
+antibiotic a47934	False		clinical						CARD.obo		
+aplasmomycin	False		clinical						CARD.obo		
+apramycin	False		clinical						CARD.obo|ncbi|resfinder		
+arbekacin	False		clinical		J01GB12				CARD.obo|resfinder	Aminoglycoside antibacterials	Other aminoglycosides
+arx1796	False		clinical						CARD.obo		
+arylomycin	False		clinical						CARD.obo		
+aspergillomarasmine a	False		clinical						CARD.obo		
+aspoxicillin	False		clinical		J01CA19				CARD.obo	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+astromicin	False		clinical						CARD.obo|resfinder		
+aurodox	False		clinical						CARD.obo		
+avalimycin	False		clinical						CARD.obo		
+avibactam	False		inhibitor	AVI					CARD.obo|card|ncbi|resfinder		
+avilamycin	False		veterinary						ncbi		
+avoparcin	False		clinical						CARD.obo		
+azalomycin f	False		clinical						CARD.obo		
+azamulin	False		clinical						CARD.obo		
+azidamfenicol	False		clinical		S01AA25				CARD.obo		
+azidocillin	False		clinical		J01CE04				CARD.obo	Beta-lactam antibacterials, penicillins	Beta-lactamase sensitive penicillins
+azimycin	False		clinical						CARD.obo		
+azithromycin	False		clinical	AZM	J01FA10				CARD.obo|card|ncbi|resfinder	Macrolides, lincosamides and streptogramins	Macrolides
+azlocillin	False		clinical		J01CA09				CARD.obo	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+aztreonam	False		clinical	ATM	J01DF01				CARD.obo|card|resfinder	Other beta-lactam antibacterials	Monobactams
+bacitracin	False		clinical		J01XX10				CARD.obo|ncbi	Other antibacterials	Other antibacterials
+bacitracin a	False		clinical						CARD.obo		
+bacitracin b	False		clinical						CARD.obo		
+bacitracin f	False		clinical						CARD.obo		
+bal30072	False		clinical						CARD.obo		
+balhimycin	False		clinical						CARD.obo		
+battacin	False		clinical						CARD.obo		
+bedaquiline	False		antituberculosis	BDQ	J04AK05				CARD.obo|card|resfinder	Drugs for treatment of tuberculosis	Other drugs for treatment of tuberculosis
+benzalkonium chloride	False		clinical						CARD.obo		
+benzylpenicillin	False		clinical		J01CE01				CARD.obo|resfinder	Beta-lactam antibacterials, penicillins	Beta-lactamase sensitive penicillins
+beta-lactam	False		drug_class_name						ncbi		
+beta-lactam derived beta-lactamase inhibitor	False		clinical						CARD.obo		
+beta-lactamase resistant penicillin	False		drug_class_name						CARD.obo		
+beta-lactamase sensitive penicillin	False		drug_class_name						CARD.obo		
+betaxolol	False		clinical		C07AB05				CARD.obo		
+biapenem	False		clinical		J01DH05				CARD.obo	Other beta-lactam antibacterials	Carbapenems
+bicyclomycin	False		clinical						CARD.obo		
+bispicen	False		clinical						CARD.obo		
+bisthiazolidine metallo-beta-lactamase inhibitor	False		clinical						CARD.obo		
+bleomycin	False		non_therapeutic		L01DC01				CARD.obo|ncbi|resfinder		
+bleomycin a2	False		clinical						CARD.obo		
+bleomycin b2	False		clinical						CARD.obo		
+bleomycinic acid	False		clinical						CARD.obo		
+bli-489	False		clinical						CARD.obo		
+boromycin	False		clinical						CARD.obo		
+boronic acid beta-lactamase inhibitor	False		clinical						CARD.obo		
+bp2	False		clinical						CARD.obo		
+bpi	False		clinical						CARD.obo		
+brefeldin a	False		clinical						CARD.obo		
+brodimoprim	False		clinical		J01EA02				CARD.obo	Sulfonamides and trimethoprim	Trimethoprim and derivatives
+butiromycin	False		clinical						resfinder		
+butirosin	False		clinical						CARD.obo|resfinder		
+cadaside a	False		clinical						CARD.obo		
+cadaside antibiotic	False		clinical						CARD.obo		
+cadaside b	False		clinical						CARD.obo		
+calcimycin	False		clinical						CARD.obo		
+caprazamycin	False		clinical						CARD.obo		
+capreomycin	False		antituberculosis	CAP	J04AB30				CARD.obo|card|ncbi|resfinder	Drugs for treatment of tuberculosis	Antibiotics
+carbapenem	False		drug_class_name						ncbi		
+carbenicillin	False		clinical		J01CA03				CARD.obo	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+carbomycin	False		veterinary						CARD.obo|resfinder		
+carrimycin	False		clinical						CARD.obo		
+carumonam	False		clinical		J01DF02				CARD.obo	Other beta-lactam antibacterials	Monobactams
+cbp c1-aminomethylene vancomycin	False		clinical						CARD.obo		
+cefacetrile	False		clinical		J01DB10				CARD.obo	Other beta-lactam antibacterials	First-generation cephalosporins
+cefaclor	False		clinical		J01DC04				CARD.obo	Other beta-lactam antibacterials	Second-generation cephalosporins
+cefadroxil	False		clinical		J01DB05				CARD.obo	Other beta-lactam antibacterials	First-generation cephalosporins
+cefalexin	False		clinical		J01DB01				CARD.obo	Other beta-lactam antibacterials	First-generation cephalosporins
+cefaloridine	False		clinical		J01DB02				CARD.obo	Other beta-lactam antibacterials	First-generation cephalosporins
+cefalotin	False		clinical		J01DB03				CARD.obo|ncbi|resfinder	Other beta-lactam antibacterials	First-generation cephalosporins
+cefamandole	False		clinical		J01DC03				CARD.obo	Other beta-lactam antibacterials	Second-generation cephalosporins
+cefapirin	False		clinical		J01DB08				CARD.obo	Other beta-lactam antibacterials	First-generation cephalosporins
+cefatrizine	False		clinical		J01DB07				CARD.obo	Other beta-lactam antibacterials	First-generation cephalosporins
+cefazedone	False		clinical		J01DB06				CARD.obo	Other beta-lactam antibacterials	First-generation cephalosporins
+cefazolin	False		clinical		J01DB04				CARD.obo|resfinder	Other beta-lactam antibacterials	First-generation cephalosporins
+cefbuperazone	False		clinical		J01DC13				CARD.obo	Other beta-lactam antibacterials	Second-generation cephalosporins
+cefcapene	False		clinical		J01DD17				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+cefdinir	False		clinical		J01DD15				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+cefditoren	False		clinical		J01DD16				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+cefepime	False		clinical		J01DE01				CARD.obo|resfinder	Other beta-lactam antibacterials	Fourth-generation cephalosporins
+cefepime-taniborbactam	False		clinical						CARD.obo|ncbi		
+cefetamet	False		clinical		J01DD10				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+cefiderocol	False		clinical		J01DI04				CARD.obo|ncbi	Other beta-lactam antibacterials	Other cephalosporins and penems
+cefixime	False		clinical		J01DD08				CARD.obo|resfinder	Other beta-lactam antibacterials	Third-generation cephalosporins
+cefmenoxime	False		clinical		J01DD05				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+cefmetazole	False		clinical		J01DC09				CARD.obo	Other beta-lactam antibacterials	Second-generation cephalosporins
+cefminox	False		clinical		J01DC12				CARD.obo	Other beta-lactam antibacterials	Second-generation cephalosporins
+cefodizime	False		clinical		J01DD09				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+cefonicid	False		clinical		J01DC06				CARD.obo	Other beta-lactam antibacterials	Second-generation cephalosporins
+cefoperazone	False		clinical		J01DD12				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+ceforanide	False		clinical		J01DC11				CARD.obo	Other beta-lactam antibacterials	Second-generation cephalosporins
+cefotaxime	False		clinical		J01DD01				CARD.obo|resfinder	Other beta-lactam antibacterials	Third-generation cephalosporins
+cefotaxime+clavulanic acid	True	cefotaxime|clavulanic acid	clinical						resfinder		
+cefotetan	False		clinical		J01DC05				CARD.obo	Other beta-lactam antibacterials	Second-generation cephalosporins
+cefotiam	False		clinical		J01DC07				CARD.obo	Other beta-lactam antibacterials	Second-generation cephalosporins
+cefovecin	False		clinical						CARD.obo		
+cefoxitin	False		clinical		J01DC01				CARD.obo|resfinder	Other beta-lactam antibacterials	Second-generation cephalosporins
+cefozopran	False		clinical		J01DE03				CARD.obo	Other beta-lactam antibacterials	Fourth-generation cephalosporins
+cefpiramide	False		clinical		J01DD11				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+cefpirome	False		clinical		J01DE02				CARD.obo	Other beta-lactam antibacterials	Fourth-generation cephalosporins
+cefpodoxime	False		clinical		J01DD13				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+cefprozil	False		clinical		J01DC10				CARD.obo	Other beta-lactam antibacterials	Second-generation cephalosporins
+cefquinome	False		clinical						CARD.obo		
+cefroxadine	False		clinical		J01DB11				CARD.obo	Other beta-lactam antibacterials	First-generation cephalosporins
+cefsulodin	False		clinical		J01DD03				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+ceftaroline	False		clinical						CARD.obo|ncbi|resfinder		
+ceftazidime	False		clinical	CEF	J01DD02				CARD.obo|card|resfinder	Other beta-lactam antibacterials	Third-generation cephalosporins
+ceftazidime+avibactam	True	ceftazidime|avibactam	clinical						resfinder		
+ceftazidime-avibactam	False		clinical	CZA					CARD.obo|card|curated		
+cefteram	False		clinical		J01DD18				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+ceftezole	False		clinical		J01DB12				CARD.obo	Other beta-lactam antibacterials	First-generation cephalosporins
+ceftibuten	False		clinical		J01DD14				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+ceftibuten-avibactam	False		clinical						ncbi		
+ceftiofur	False		clinical						CARD.obo		
+ceftizoxime	False		clinical		J01DD07				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+ceftobiprole	False		clinical						CARD.obo		
+ceftolozane	False		clinical						CARD.obo		
+ceftriaxone	False		clinical		J01DD04				CARD.obo|resfinder	Other beta-lactam antibacterials	Third-generation cephalosporins
+cefuroxime	False		clinical		J01DC02				CARD.obo|resfinder	Other beta-lactam antibacterials	Second-generation cephalosporins
+celesticetin	False		clinical						CARD.obo		
+cephalosporin	False		drug_class_name						ncbi		
+cephradine	False		clinical						CARD.obo		
+cethromycin	False		clinical						CARD.obo		
+cezomycin	False		clinical						CARD.obo		
+chalcomycin	False		clinical						CARD.obo		
+chloramphenicol	False		clinical	CHL	J01BA01				CARD.obo|card|ncbi|resfinder	Amphenicols	Amphenicols
+chlorhexidine	False		clinical		D08AC02				CARD.obo		
+chloroeremomycin	False		clinical						CARD.obo		
+chlortetracycline	False		clinical		J01AA03				CARD.obo	Tetracyclines	Tetracyclines
+chrysomycin a	False		clinical						CARD.obo		
+cinoxacin	False		clinical		J01MB06				CARD.obo	Quinolone antibacterials	Other quinolones
+ciprofloxacin	False		clinical	CIP	J01MA02				CARD.obo|card|resfinder	Quinolone antibacterials	Fluoroquinolones
+clarithromycin	False		clinical	CLR	J01FA09				CARD.obo|card|ncbi	Macrolides, lincosamides and streptogramins	Macrolides
+clavulanic acid	False		inhibitor						CARD.obo|resfinder		
+clinafloxacin	False		clinical						CARD.obo		
+clindamycin	False		clinical	CLI	J01FF01				CARD.obo|card|ncbi|resfinder	Macrolides, lincosamides and streptogramins	Lincosamides
+clofazimine	False		antituberculosis	CFZ	J04BA01				CARD.obo|card|curated|resfinder	Drugs for treatment of lepra	Drugs for treatment of lepra
+clometocillin	False		clinical		J01CE07				CARD.obo	Beta-lactam antibacterials, penicillins	Beta-lactamase sensitive penicillins
+clorobiocin	False		clinical						CARD.obo		
+cloxacillin	False		clinical		J01CF02				CARD.obo	Beta-lactam antibacterials, penicillins	Beta-lactamase resistant penicillins
+colistin	False		clinical	CST	J01XB01				CARD.obo|card|ncbi|resfinder	Other antibacterials	Polymyxins
+colistin a	False		clinical						CARD.obo		
+colistin b	False		clinical						CARD.obo		
+complestatin	False		clinical						CARD.obo		
+contezolid	False		clinical						CARD.obo		
+corbomycin	False		clinical						CARD.obo		
+cordycepin	False		clinical						CARD.obo		
+coumermycin a1	False		clinical						CARD.obo		
+cyclic thiazolyl peptide elfamycin	False		clinical						CARD.obo		
+cycloserine	False		antituberculosis		J04AB01				CARD.obo	Drugs for treatment of tuberculosis	Antibiotics
+d-captopril	False		clinical						CARD.obo		
+d-cycloserine	False		antituberculosis	DCS					card|resfinder		
+dactinomycin	False		clinical		L01DA01				CARD.obo		
+dalbavancin	False		clinical		J01XA04				CARD.obo	Other antibacterials	Glycopeptide antibacterials
+dalfopristin	False		clinical						CARD.obo|resfinder		
+dapsone	False		clinical	DAO	J04BA02				CARD.obo|card|curated	Drugs for treatment of lepra	Drugs for treatment of lepra
+daptomycin	False		clinical	DAP	J01XX09				CARD.obo|card|ncbi	Other antibacterials	Other antibacterials
+darobactin a	False		clinical						CARD.obo		
+declovanillobiocin	False		clinical						CARD.obo		
+defensin	False		clinical						CARD.obo		
+delafloxacin	False		clinical		J01MA23				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+delamanid	False		antituberculosis	DLM	J04AK06				CARD.obo|card|curated	Drugs for treatment of tuberculosis	Other drugs for treatment of tuberculosis
+demeclocycline	False		clinical		J01AA01				CARD.obo	Tetracyclines	Tetracyclines
+diazabicyclooctane	False		clinical						CARD.obo		
+dibekacin	False		clinical		J01GB09				CARD.obo|resfinder	Aminoglycoside antibacterials	Other aminoglycosides
+dicloxacillin	False		clinical		J01CF01				CARD.obo	Beta-lactam antibacterials, penicillins	Beta-lactamase resistant penicillins
+diflunisal	False		clinical		N02BA11				CARD.obo		
+dihydromocimycin	False		clinical						CARD.obo		
+dimercaprol	False		clinical		V03AB09				CARD.obo		
+dirithromycin	False		clinical		J01FA13				CARD.obo	Macrolides, lincosamides and streptogramins	Macrolides
+doripenem	False		clinical		J01DH04				CARD.obo	Other beta-lactam antibacterials	Carbapenems
+doxycycline	False		clinical		J01AA02				CARD.obo|ncbi|resfinder	Tetracyclines	Tetracyclines
+durlobactam	False		clinical						CARD.obo		
+edeine	False		clinical	EDN					CARD.obo|card|curated		
+edeine a	False		clinical						CARD.obo		
+edeine b	False		clinical						CARD.obo		
+edeine d	False		clinical						CARD.obo		
+edeine f	False		clinical						CARD.obo		
+efflux	False		clinical						ncbi		
+efrotomycin	False		clinical						CARD.obo		
+elfamycin	False		clinical	ELF					card|curated		
+emerione a	False		clinical						CARD.obo		
+enacyloxin iia	False		clinical	ENC					CARD.obo|card|curated		
+enmetazobactam	False		clinical						CARD.obo		
+enoxacin	False		clinical		J01MA04				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+enramycin	False		clinical						CARD.obo		
+enrofloxacin	False		clinical	ENR					CARD.obo|card|curated		
+epicillin	False		clinical		J01CA07				CARD.obo	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+epinecidin-1	False		clinical						CARD.obo		
+eravacycline	False		clinical		J01AA13				CARD.obo	Tetracyclines	Tetracyclines
+eremomycin pyrrolidide	False		clinical						CARD.obo		
+ertapenem	False		clinical		J01DH03				CARD.obo|resfinder	Other beta-lactam antibacterials	Carbapenems
+erythromycin	False		clinical	ERY	J01FA01				CARD.obo|card|ncbi|resfinder	Macrolides, lincosamides and streptogramins	Macrolides
+ethambutol	False		antituberculosis	EMB	J04AK02				CARD.obo|card|resfinder	Drugs for treatment of tuberculosis	Other drugs for treatment of tuberculosis
+ethambutol & capreomycin	True	ethambutol|capreomycin	clinical	EMCM					card		
+ethionamide	False		antituberculosis	ETO	J04AD03				CARD.obo|card|resfinder	Drugs for treatment of tuberculosis	Thiocarbamide derivatives
+evernimicin	False		clinical						CARD.obo		
+factumycin	False		clinical						CARD.obo		
+faropenem	False		clinical		J01DI03				CARD.obo	Other beta-lactam antibacterials	Other cephalosporins and penems
+fengycin	False		clinical						CARD.obo		
+fidaxomicin	False		clinical		A07AA12				CARD.obo		
+finafloxacin	False		clinical						CARD.obo		
+first-generation cephalosporin	False		drug_class_name						CARD.obo		
+fisetin	False		clinical						CARD.obo		
+fleroxacin	False		clinical		J01MA08				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+flomoxef	False		clinical		J01DC14				CARD.obo	Other beta-lactam antibacterials	Second-generation cephalosporins
+florfenicol	False		clinical						CARD.obo|ncbi|resfinder		
+flucloxacillin	False		clinical		J01CF05				CARD.obo	Beta-lactam antibacterials, penicillins	Beta-lactamase resistant penicillins
+flumequine	False		clinical		J01MB07				CARD.obo	Quinolone antibacterials	Other quinolones
+fluoroquinolone	False		clinical						resfinder		
+formicin	False		clinical						CARD.obo		
+fosfomycin	False		clinical	FOF	J01XX01				CARD.obo|card|ncbi|resfinder	Other antibacterials	Other antibacterials
+fosmidomycin	False		clinical						CARD.obo		
+fourth-generation cephalosporin	False		drug_class_name						CARD.obo		
+furazidin	False		clinical		J01XE03				CARD.obo	Other antibacterials	Nitrofuran derivatives
+furazolidone	False		clinical		G01AX06				CARD.obo		
+fusidic acid	False		clinical	FA	J01XC01				CARD.obo|card|ncbi|resfinder	Other antibacterials	Steroid antibacterials
+g418	False		research_tool	G418					CARD.obo|card|resfinder		
+gamithromycin	False		clinical						CARD.obo		
+ganefromycin	False		clinical						CARD.obo		
+gatifloxacin	False		clinical		J01MA16				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+ge2270a	False		clinical	GE2A					CARD.obo|card|curated		
+ge37468	False		clinical						CARD.obo		
+gemifloxacin	False		clinical		J01MA15				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+gentamicin	False		clinical	GEN	J01GB03				CARD.obo|card|ncbi|resfinder	Aminoglycoside antibacterials	Other aminoglycosides
+gentamicin a	False		clinical						CARD.obo		
+gentamicin b	False		clinical						CARD.obo		
+gentamicin c	False		clinical	GENC					CARD.obo|card|resfinder		
+gentamicin x	False		clinical						CARD.obo		
+gepotidacin	False		clinical		J01XX13				CARD.obo	Other antibacterials	Other antibacterials
+gramicidin	False		clinical		R02AB30				CARD.obo		
+gramicidin a	False		clinical						CARD.obo		
+gramicidin b	False		clinical						CARD.obo		
+gramicidin c	False		clinical						CARD.obo		
+gramicidin d	False		clinical						CARD.obo		
+gramicidin s	False		clinical						CARD.obo		
+grepafloxacin	False		clinical		J01MA11				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+griseoviridin	False		clinical						CARD.obo		
+halolitoralin	False		clinical						CARD.obo		
+halolitoralin a	False		clinical						CARD.obo		
+halolitoralin b	False		clinical						CARD.obo		
+halolitoralin c	False		clinical						CARD.obo		
+heneicomycin	False		clinical						CARD.obo		
+hetacillin	False		clinical		J01CA18				CARD.obo	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+hygromycin	False		clinical						ncbi|resfinder		
+hygromycin b	False		clinical	HGM					CARD.obo|card|curated		
+iboxamycin	False		clinical						CARD.obo		
+iclaprim	False		clinical		J01EA03				CARD.obo	Sulfonamides and trimethoprim	Trimethoprim and derivatives
+imipenem	False		clinical	IPM					CARD.obo|card|resfinder		
+isepamicin	False		clinical		J01GB11				CARD.obo|resfinder	Aminoglycoside antibacterials	Other aminoglycosides
+isoniazid	False		antituberculosis	INH	J04AC01				CARD.obo|card|resfinder	Drugs for treatment of tuberculosis	Hydrazides
+isovanillobiocin	False		clinical						CARD.obo		
+josamycin	False		clinical		J01FA07				CARD.obo	Macrolides, lincosamides and streptogramins	Macrolides
+kanamycin	False		clinical	KAN	J01GB04				card|ncbi|resfinder	Aminoglycoside antibacterials	Other aminoglycosides
+kanamycin a	False		clinical						CARD.obo|resfinder		
+kasugamycin	False		clinical	KAS					CARD.obo|card|ncbi|resfinder		
+kirromycin	False		clinical	KIR					CARD.obo|card|curated		
+kirromycin-like antibiotics	False		clinical						CARD.obo		
+kirrothricin	False		clinical						CARD.obo		
+kitasamycin	False		clinical						CARD.obo		
+klebsidin	False		clinical						CARD.obo		
+l-681,217	False		clinical						CARD.obo		
+l-captopril	False		clinical						CARD.obo		
+l-cs319	False		clinical						CARD.obo		
+lascufloxacin	False		clinical		J01MA25				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+lassomycin	False		clinical						CARD.obo		
+latamoxef	False		clinical		J01DD06				CARD.obo	Other beta-lactam antibacterials	Third-generation cephalosporins
+ledaborbactam	False		clinical						CARD.obo		
+ledaborbactam etzadroxil	False		clinical						CARD.obo		
+lefamulin	False		clinical		J01XX12				CARD.obo	Other antibacterials	Other antibacterials
+levofloxacin	False		clinical	LEV	J01MA12				CARD.obo|card|curated	Quinolone antibacterials	Fluoroquinolones
+levonadifloxacin	False		clinical		J01MA24				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+lff571	False		clinical						CARD.obo		
+lincomycin	False		clinical		J01FF02				CARD.obo|ncbi|resfinder	Macrolides, lincosamides and streptogramins	Lincosamides
+lincosamide	False		drug_class_name						ncbi		
+linezolid	False		clinical	LZD	J01XX08				CARD.obo|card|ncbi|resfinder	Other antibacterials	Other antibacterials
+linoleic acid	False		clinical						CARD.obo		
+lipoic acid	False		clinical						CARD.obo		
+lividomycin	False		clinical						CARD.obo|resfinder		
+lividomycin a	False		clinical						CARD.obo		
+lividomycin b	False		clinical						CARD.obo		
+lomefloxacin	False		clinical		J01MA07				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+loracarbef	False		clinical		J01DC08				CARD.obo	Other beta-lactam antibacterials	Second-generation cephalosporins
+lugdunin	False		clinical						CARD.obo		
+lys228	False		clinical						CARD.obo		
+lysocin	False		clinical						CARD.obo		
+lysocin (e)	False		clinical	LYS					card|curated		
+lysocin e	False		clinical						CARD.obo		
+macrocyclic peptide antibiotics	False		clinical						CARD.obo		
+macrolide	False		drug_class_name						ncbi		
+madumycin ii	False		clinical						CARD.obo		
+maduramicin	False		veterinary						ncbi|resfinder		
+mafenide	False		clinical		D06BA03				CARD.obo		
+magainin	False		clinical						CARD.obo		
+magainin 1	False		clinical						CARD.obo		
+magainin 2	False		clinical						CARD.obo		
+magainin a	False		clinical						CARD.obo		
+magainin b	False		clinical						CARD.obo		
+magainin g	False		clinical						CARD.obo		
+magainin h	False		clinical						CARD.obo		
+malacidin a	False		clinical						CARD.obo		
+marbofloxacin	False		clinical						CARD.obo		
+marinomycin	False		clinical						CARD.obo		
+marinomycin a	False		clinical						CARD.obo		
+marinomycin b	False		clinical						CARD.obo		
+marinomycin c	False		clinical						CARD.obo		
+marinomycin d	False		clinical						CARD.obo		
+me1071	False		clinical						CARD.obo		
+mecillinam	False		clinical		J01CA11				CARD.obo	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+megalomycin	False		clinical						CARD.obo		
+meropenem	False		clinical		J01DH02				CARD.obo|resfinder	Other beta-lactam antibacterials	Carbapenems
+metallo-beta-lactamase inhibitor	False		clinical						CARD.obo		
+methimazole	False		clinical						CARD.obo		
+methotrexate	False		clinical		L01BA01				CARD.obo		
+methymycin	False		clinical						CARD.obo		
+meticillin	False		clinical		J01CF03				CARD.obo|ncbi	Beta-lactam antibacterials, penicillins	Beta-lactamase resistant penicillins
+metronidazole	False		clinical	MTZ	J01XD01				CARD.obo|card|resfinder	Other antibacterials	Imidazole derivatives
+mezlocillin	False		clinical		J01CA10				CARD.obo	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+microcin j25	False		clinical						CARD.obo		
+midecamycin	False		clinical		J01FA03				CARD.obo	Macrolides, lincosamides and streptogramins	Macrolides
+minocycline	False		clinical		J01AA08				CARD.obo|ncbi|resfinder	Tetracyclines	Tetracyclines
+moenomycin a1	False		clinical						CARD.obo		
+monensin sodium	False		clinical						CARD.obo		
+moxifloxacin	False		clinical	MXF	J01MA14				CARD.obo|card|curated	Quinolone antibacterials	Fluoroquinolones
+mupirocin	False		clinical	MUP	D06AX09				CARD.obo|card|ncbi|resfinder		
+mutanobactin	False		clinical						CARD.obo		
+mycaminosyltylonolide	False		clinical						CARD.obo		
+mycinamicin	False		clinical						CARD.obo		
+nacubactam	False		clinical						CARD.obo		
+nafcillin	False		clinical		J01CF06				CARD.obo	Beta-lactam antibacterials, penicillins	Beta-lactamase resistant penicillins
+nalidixic acid	False		clinical		J01MB02				CARD.obo|resfinder	Quinolone antibacterials	Other quinolones
+narasin	False		veterinary						CARD.obo|ncbi|resfinder		
+narbomycin	False		clinical						CARD.obo		
+nemonoxacin	False		clinical		J01MB08				CARD.obo	Quinolone antibacterials	Other quinolones
+neomycin	False		clinical	NEO	J01GB05				CARD.obo|card|resfinder	Aminoglycoside antibacterials	Other aminoglycosides
+netilmicin	False		clinical		J01GB07				CARD.obo|resfinder	Aminoglycoside antibacterials	Other aminoglycosides
+neutramycin	False		clinical						CARD.obo		
+niddamycin	False		clinical						CARD.obo		
+nifuratel	False		clinical		G01AX05				CARD.obo		
+nifuroxazide	False		clinical		A07AX03				CARD.obo		
+nigericin	False		clinical						CARD.obo		
+nitrofurantoin	False		clinical	NIT	J01XE01				CARD.obo|card|curated	Other antibacterials	Nitrofuran derivatives
+nitroimidazole	False		clinical						ncbi		
+nocardamine	False		clinical						CARD.obo		
+nordihydroguaiaretic acid	False		clinical						CARD.obo		
+norfloxacin	False		clinical		J01MA06				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+norvancomycin	False		clinical						CARD.obo		
+novobiocin	False		clinical						CARD.obo		
+nybomycin	False		clinical						CARD.obo		
+ofloxacin	False		clinical	OFX	J01MA01				CARD.obo|card|curated	Quinolone antibacterials	Fluoroquinolones
+oleandomycin	False		clinical		J01FA05				CARD.obo|ncbi|resfinder	Macrolides, lincosamides and streptogramins	Macrolides
+oleic acid	False		clinical						CARD.obo		
+omadacycline	False		clinical		J01AA15				CARD.obo	Tetracyclines	Tetracyclines
+oncocin	False		clinical						CARD.obo		
+oritavancin	False		clinical		J01XA05				CARD.obo	Other antibacterials	Glycopeptide antibacterials
+ornidazole	False		clinical		J01XD03				CARD.obo	Other antibacterials	Imidazole derivatives
+ostreogrycin	False		veterinary						curated|ncbi		
+ostreogrycin b3	False		clinical						CARD.obo		
+other cephalosporins and penems	False		clinical						CARD.obo		
+oxacillin	False		clinical		J01CF04				CARD.obo	Beta-lactam antibacterials, penicillins	Beta-lactamase resistant penicillins
+oxazolidinone	False		drug_class_name	OXZ					card|curated|ncbi		
+oxytetracycline	False		clinical		J01AA06				CARD.obo	Tetracyclines	Tetracyclines
+pactamycin	False		clinical	PAC					CARD.obo|card|curated		
+palmitic acid	False		clinical						CARD.obo		
+panipenem	False		clinical						CARD.obo		
+para-aminosalicylic acid	False		antituberculosis	PAS					CARD.obo|card|resfinder		
+paromomycin	False		clinical	PAR	A07AA06				CARD.obo|card|ncbi|resfinder		
+patricin a	False		clinical						CARD.obo		
+patricin b	False		clinical						CARD.obo		
+pefloxacin	False		clinical		J01MA03				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+penamecillin	False		clinical		J01CE06				CARD.obo	Beta-lactam antibacterials, penicillins	Beta-lactamase sensitive penicillins
+penicillin with extended spectrum	False		drug_class_name						CARD.obo		
+perchlozone	False		clinical	PCL					CARD.obo|card|curated		
+phenelfamycin a	False		clinical						CARD.obo		
+phenelfamycin b	False		clinical						CARD.obo		
+phenelfamycin c	False		clinical						CARD.obo		
+phenelfamycin d	False		clinical						CARD.obo		
+phenelfamycin e	False		clinical						CARD.obo		
+phenelfamycin f	False		clinical						CARD.obo		
+phenelfamycin g	False		clinical						CARD.obo		
+phenelfamycin h	False		clinical						CARD.obo		
+pheneticillin	False		clinical		J01CE05				CARD.obo	Beta-lactam antibacterials, penicillins	Beta-lactamase sensitive penicillins
+phenicol	False		clinical						ncbi		
+phenoxymethylpenicillin	False		clinical		J01CE02				CARD.obo	Beta-lactam antibacterials, penicillins	Beta-lactamase sensitive penicillins
+phosphonate metallo-beta-lactamase inhibitor	False		clinical						CARD.obo		
+pikromycin	False		clinical						CARD.obo		
+piperacillin	False		clinical		J01CA12				CARD.obo|resfinder	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+piperacillin+clavulanic acid	True	piperacillin|clavulanic acid	clinical						resfinder		
+piperacillin+tazobactam	True	piperacillin|tazobactam	clinical						resfinder		
+pirlimycin	False		clinical						CARD.obo		
+pivampicillin	False		clinical		J01CA02				CARD.obo	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+pivmecillinam	False		clinical		J01CA08				CARD.obo	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+plazomicin	False		clinical		J01GB14				CARD.obo|ncbi	Aminoglycoside antibacterials	Other aminoglycosides
+pleuromutilin	False		clinical	PLM					CARD.obo|card|ncbi		
+polymyxin antibiotic	False		drug_class_name						CARD.obo		
+polymyxin b	False		clinical		J01XB02				CARD.obo	Other antibacterials	Polymyxins
+polymyxin b1	False		clinical						CARD.obo		
+polymyxin b2	False		clinical						CARD.obo		
+polymyxin b3	False		clinical						CARD.obo		
+polymyxin b4	False		clinical						CARD.obo		
+polypyridine metallo-beta-lactamase inhibitor	False		clinical						CARD.obo		
+pretomanid	False		clinical		J04AK08				CARD.obo	Drugs for treatment of tuberculosis	Other drugs for treatment of tuberculosis
+pristinamycin	False		veterinary		J01FG01				curated|ncbi	Macrolides, lincosamides and streptogramins	Streptogramins
+pristinamycin ia	False		veterinary						CARD.obo|resfinder		
+pristinamycin ib	False		clinical						CARD.obo		
+pristinamycin ic	False		clinical						CARD.obo		
+pristinamycin iia	False		veterinary						resfinder		
+proflavine	False		clinical						CARD.obo		
+propicillin	False		clinical		J01CE03				CARD.obo	Beta-lactam antibacterials, penicillins	Beta-lactamase sensitive penicillins
+protionamide	False		antituberculosis	PTO	J04AD01				CARD.obo|card|curated	Drugs for treatment of tuberculosis	Thiocarbamide derivatives
+prulifloxacin	False		clinical		J01MA17				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+pseudouridimycin	False		clinical						CARD.obo		
+pulvomycin	False		clinical	PLV					CARD.obo|card|curated		
+puromycin	False		clinical						CARD.obo		
+pyrazinamide	False		antituberculosis	PZA	J04AK01				CARD.obo|card|resfinder	Drugs for treatment of tuberculosis	Other drugs for treatment of tuberculosis
+pyrrolomycin a	False		clinical						CARD.obo		
+pyrrolomycin antibiotic	False		clinical						CARD.obo		
+pyrrolomycin b	False		clinical						CARD.obo		
+pyrrolomycin c	False		clinical						CARD.obo		
+pyrrolomycin d	False		clinical						CARD.obo		
+pyrrolomycin e	False		clinical						CARD.obo		
+pyrrolomycin f	False		clinical						CARD.obo		
+pyrrolomycin f2a	False		clinical						CARD.obo		
+pyrrolomycin f2b	False		clinical						CARD.obo		
+pyrrolomycin f3	False		clinical						CARD.obo		
+pyrrolomycin g	False		clinical						CARD.obo		
+pyrrolomycin h	False		clinical						CARD.obo		
+pyrrolomycin i	False		clinical						CARD.obo		
+pyrrolomycin j	False		clinical						CARD.obo		
+quaternary ammonium	False		biocide						ncbi		
+quinolone	False		drug_class_name						ncbi		
+quinupristin	False		clinical						CARD.obo|resfinder		
+quinupristin+dalfopristin	True	quinupristin|dalfopristin	clinical						resfinder		
+ramoplanin	False		clinical						CARD.obo		
+relebactam	False		inhibitor						CARD.obo		
+retapamulin	False		clinical		D06AX13				CARD.obo|curated|ncbi		
+ribostamycin	False		clinical		J01GB10				CARD.obo|ncbi|resfinder	Aminoglycoside antibacterials	Other aminoglycosides
+rifabutin	False		clinical	RFB	J04AB04				CARD.obo|card|curated	Drugs for treatment of tuberculosis	Antibiotics
+rifalazil	False		clinical						CARD.obo		
+rifampicin	False		antituberculosis	RIF	J04AB02				CARD.obo|card|ncbi|resfinder	Drugs for treatment of tuberculosis	Antibiotics
+rifamycin	False		clinical		J04AB03				ncbi	Drugs for treatment of tuberculosis	Antibiotics
+rifapentine	False		clinical		J04AB05				CARD.obo	Drugs for treatment of tuberculosis	Antibiotics
+rifaximin	False		clinical		D06AX11				CARD.obo		
+risedronate	False		clinical						CARD.obo		
+ristocetin	False		clinical						CARD.obo		
+rokitamycin	False		clinical		J01FA12				CARD.obo	Macrolides, lincosamides and streptogramins	Macrolides
+rosaramicin	False		clinical						CARD.obo		
+roxithromycin	False		clinical		J01FA06				CARD.obo	Macrolides, lincosamides and streptogramins	Macrolides
+s02030	False		clinical						CARD.obo		
+salinomycin	False		veterinary						CARD.obo|ncbi|resfinder		
+sarafloxacin	False		clinical						CARD.obo		
+sarecycline	False		clinical		J01AA14				CARD.obo	Tetracyclines	Tetracyclines
+sb22484	False		clinical						CARD.obo		
+second-generation cephalosporin	False		drug_class_name						CARD.obo		
+selamectin	False		clinical						CARD.obo		
+serine beta-lactamase inhibitor	False		clinical						CARD.obo		
+sisomicin	False		clinical		J01GB08				CARD.obo|ncbi|resfinder	Aminoglycoside antibacterials	Other aminoglycosides
+sitafloxacin	False		clinical		J01MA21				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+solithromycin	False		clinical		J01FA16				CARD.obo	Macrolides, lincosamides and streptogramins	Macrolides
+sparfloxacin	False		clinical		J01MA09				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+spectinomycin	False		clinical	SPT	J01XX04				CARD.obo|card|ncbi|resfinder	Other antibacterials	Other antibacterials
+spiramycin	False		clinical		J01FA02				CARD.obo|ncbi|resfinder	Macrolides, lincosamides and streptogramins	Macrolides
+streptogramin	False		drug_class_name						ncbi		
+streptogramin a	False		drug_class_name						curated|ncbi		
+streptogramin b	False		drug_class_name						curated|ncbi		
+streptomycin	False		clinical	STR	J01GA01				CARD.obo|card|ncbi|resfinder	Aminoglycoside antibacterials	Streptomycins
+streptothricin	False		clinical						CARD.obo|ncbi		
+sulbactam	False		inhibitor		J01CG01				CARD.obo	Beta-lactam antibacterials, penicillins	Beta-lactamase inhibitors
+sulfacetamide	False		clinical		D10AF06				CARD.obo		
+sulfadiazine	False		clinical		J01EC02				CARD.obo	Sulfonamides and trimethoprim	Intermediate-acting sulfonamides
+sulfadimidine	False		clinical		J01EB03				CARD.obo	Sulfonamides and trimethoprim	Short-acting sulfonamides
+sulfadoxine	False		clinical						CARD.obo		
+sulfamerazine	False		clinical		J01ED07				CARD.obo	Sulfonamides and trimethoprim	Long-acting sulfonamides
+sulfamethizole	False		clinical		J01EB02				CARD.obo	Sulfonamides and trimethoprim	Short-acting sulfonamides
+sulfamethoxazole	False		clinical		J01EC01				CARD.obo|resfinder	Sulfonamides and trimethoprim	Intermediate-acting sulfonamides
+sulfanilamide	False		clinical		J01EB06				CARD.obo	Sulfonamides and trimethoprim	Short-acting sulfonamides
+sulfasalazine	False		clinical		A07EC01				CARD.obo		
+sulfisoxazole	False		clinical						CARD.obo		
+sulfonamide	False		drug_class_name						ncbi		
+sulopenem	False		clinical						CARD.obo		
+syn-1012	False		clinical						CARD.obo		
+taniborbactam	False		inhibitor						CARD.obo|ncbi		
+tartrolon	False		clinical						CARD.obo		
+tartrolon a	False		clinical						CARD.obo		
+tartrolon b	False		clinical						CARD.obo		
+tartrolon d	False		clinical						CARD.obo		
+tartrolon f	False		clinical						CARD.obo		
+tartrolon g	False		clinical						CARD.obo		
+tazobactam	False		inhibitor		J01CG02				CARD.obo|resfinder	Beta-lactam antibacterials, penicillins	Beta-lactamase inhibitors
+tbi-223	False		clinical						CARD.obo		
+tebipenem	False		clinical						CARD.obo		
+tedizolid	False		clinical		J01XX11				CARD.obo|curated|ncbi	Other antibacterials	Other antibacterials
+teicoplanin	False		clinical		J01XA02				CARD.obo|resfinder	Other antibacterials	Glycopeptide antibacterials
+teixobactin	False		clinical						CARD.obo		
+telavancin	False		clinical		J01XA03				CARD.obo	Other antibacterials	Glycopeptide antibacterials
+telithromycin	False		clinical		J01FA15				CARD.obo|ncbi|resfinder	Macrolides, lincosamides and streptogramins	Macrolides
+temocillin	False		clinical		J01CA17				CARD.obo|resfinder	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+tetracenomycin	False		clinical						ncbi		
+tetracenomycin a2	False		clinical						CARD.obo		
+tetracenomycin c	False		clinical						CARD.obo		
+tetracenomycin x	False		clinical						CARD.obo		
+tetracycline	False		clinical	TET	J01AA07				CARD.obo|card|ncbi|resfinder	Tetracyclines	Tetracyclines
+tetronomycin	False		clinical						CARD.obo		
+tetroxoprim	False		clinical						CARD.obo		
+thiacalixarene derivatives	False		clinical						CARD.obo		
+thiamphenicol	False		clinical		J01BA02				CARD.obo|curated|ncbi	Amphenicols	Amphenicols
+thioacetazone	False		clinical		J04AK07				CARD.obo	Drugs for treatment of tuberculosis	Other drugs for treatment of tuberculosis
+thiorphan	False		clinical						CARD.obo		
+thiostrepton	False		veterinary						CARD.obo|ncbi		
+third-generation cephalosporin	False		drug_class_name						CARD.obo		
+thusin	False		clinical						CARD.obo		
+tiamulin	False		veterinary						CARD.obo|ncbi|resfinder		
+ticarcillin	False		clinical		J01CA13				CARD.obo|resfinder	Beta-lactam antibacterials, penicillins	Penicillins with extended spectrum
+ticarcillin+clavulanic acid	True	ticarcillin|clavulanic acid	clinical						resfinder		
+tigecycline	False		clinical		J01AA12				CARD.obo|ncbi|resfinder	Tetracyclines	Tetracyclines
+tildipirosin	False		clinical						CARD.obo		
+tilmicosin	False		clinical						CARD.obo		
+tinidazole	False		clinical		J01XD02				CARD.obo	Other antibacterials	Imidazole derivatives
+tiopronin	False		clinical		G04BX16				CARD.obo		
+tnp-2198	False		clinical						CARD.obo		
+tobramycin	False		clinical	TOB	J01GB01				CARD.obo|card|ncbi|resfinder	Aminoglycoside antibacterials	Other aminoglycosides
+tosufloxacin	False		clinical		J01MA22				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+triclosan	False		biocide	TRC	D08AE04				CARD.obo|card|curated		
+trimethoprim	False		clinical	TMP	J01EA01				CARD.obo|card|ncbi|resfinder	Sulfonamides and trimethoprim	Trimethoprim and derivatives
+trispicen	False		clinical						CARD.obo		
+trispicen a	False		clinical						CARD.obo		
+trovafloxacin	False		clinical		J01MA13				CARD.obo	Quinolone antibacterials	Fluoroquinolones
+tulathromycin	False		clinical						CARD.obo		
+tunicamycin	False		clinical						CARD.obo		
+tylosin	False		veterinary	TYL					CARD.obo|card|ncbi|resfinder		
+tylvalosin	False		clinical						CARD.obo		
+uk-69,753	False		clinical						CARD.obo		
+unclassified metallo-beta-lactamase inhibitor	False		clinical						CARD.obo		
+unclassified serine beta-lactamase inhibitor	False		clinical						CARD.obo		
+unithiol	False		clinical						CARD.obo		
+unphenelfamycin	False		clinical						CARD.obo		
+vaborbactam	False		clinical						CARD.obo		
+valinomycin	False		clinical						CARD.obo		
+valnemulin	False		clinical						CARD.obo		
+vancomycin	False		clinical	VAN	J01XA01				CARD.obo|card|ncbi|resfinder	Other antibacterials	Glycopeptide antibacterials
+vanillobiocin	False		clinical						CARD.obo		
+verdamicin	False		clinical						CARD.obo		
+vernamycin b	False		clinical						curated|ncbi		
+vernamycin c	False		clinical						CARD.obo		
+vertilimicin	False		clinical						CARD.obo		
+viomycin	False		antituberculosis	VIO					CARD.obo|card|ncbi		
+virginiamycin m	False		veterinary						ncbi|resfinder		
+virginiamycin m1	False		clinical						CARD.obo		
+virginiamycin s	False		veterinary						resfinder		
+virginiamycin s2	False		clinical						CARD.obo		
+xeruborbactam	False		inhibitor						CARD.obo|ncbi		
+zabofloxacin	False		clinical						CARD.obo		
+zidebactam	False		clinical						CARD.obo		
+zidovudine	False		clinical		J05AF01				CARD.obo		
+zoliflodacin	False		clinical	ZOL					CARD.obo|card|curated		
+zorbamycin	False		clinical						ncbi		
+zosurabalpin	False		clinical						CARD.obo		
