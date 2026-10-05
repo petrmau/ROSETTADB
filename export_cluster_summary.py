@@ -109,32 +109,26 @@ ORDER BY cl.cluster_id;
 
 SQL_DRUG_CLASSES = """
 SELECT
-    g.cluster_id,
+    cl.cluster_id,
     sdc.canonical_class,
     sdc.evidence_sources
-FROM amr.gene g
-JOIN amr.sequence_drug_class sdc ON sdc.jrc_id = g.jrc_id
-WHERE g.jrc_id IN (
-    SELECT representative_jrc FROM amr.cluster
-)
-ORDER BY g.cluster_id, sdc.canonical_class;
+FROM amr.cluster cl
+JOIN amr.sequence_drug_class sdc ON sdc.jrc_id = cl.representative_jrc
+ORDER BY cl.cluster_id, sdc.canonical_class;
 """
 
 SQL_DRUG_NAMES = """
 SELECT
-    g.cluster_id,
+    cl.cluster_id,
     sd.canonical_drug,
     sd.evidence_sources,
     d.inchikey,
     d.atc_code,
     d.atc_group1
-FROM amr.gene g
-JOIN amr.sequence_drug sd ON sd.jrc_id = g.jrc_id
+FROM amr.cluster cl
+JOIN amr.sequence_drug sd ON sd.jrc_id = cl.representative_jrc
 LEFT JOIN amr.drug d ON d.canonical_name = sd.canonical_drug
-WHERE g.jrc_id IN (
-    SELECT representative_jrc FROM amr.cluster
-)
-ORDER BY g.cluster_id, sd.canonical_drug;
+ORDER BY cl.cluster_id, sd.canonical_drug;
 """
 
 COLUMNS = [
