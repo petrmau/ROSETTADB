@@ -1234,5 +1234,665 @@
     "inchikey": "",
     "chebi_id": "",
     "atc_code": ""
+  },
+  "ant-431": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ant3310": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "antibiotic a40926": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "antibiotic a47934": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "aplasmomycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "arx1796": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "arylomycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "aspergillomarasmine a": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "aspoxicillin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "aurodox": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "avalimycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "avoparcin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "azalomycin f": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "azamulin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "azidamfenicol": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "azidocillin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "azimycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "azlocillin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bacitracin a": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bacitracin b": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bacitracin f": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bal30072": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "balhimycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "battacin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "benzalkonium chloride": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "benzylpenicillin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "beta-lactam derived beta-lactamase inhibitor": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "beta-lactamase resistant penicillin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "beta-lactamase sensitive penicillin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "betaxolol": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "biapenem": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bicyclomycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bispicen": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bisthiazolidine metallo-beta-lactamase inhibitor": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bleomycin a2": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bleomycin b2": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bleomycinic acid": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bli-489": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "boromycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "boronic acid beta-lactamase inhibitor": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bp2": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "bpi": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "brefeldin a": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "brodimoprim": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cadaside a": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cadaside antibiotic": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cadaside b": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "calcimycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "caprazamycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "carbenicillin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "carrimycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "carumonam": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cbp c1-aminomethylene vancomycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefacetrile": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefadroxil": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefalexin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefaloridine": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefalotin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefapirin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefatrizine": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefazedone": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefbuperazone": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefcapene": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefdinir": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefditoren": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefetamet": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefmenoxime": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefmetazole": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefminox": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefodizime": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefonicid": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ceforanide": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefotetan": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefotiam": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefovecin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefozopran": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefpiramide": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefpirome": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefquinome": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefroxadine": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefsulodin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cefteram": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ceftezole": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ceftibuten": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ceftiofur": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ceftizoxime": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ceftobiprole": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "ceftolozane": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "celesticetin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cephradine": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cethromycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cezomycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "chalcomycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "chlorhexidine": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "chloroeremomycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "chrysomycin a": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cinoxacin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "clinafloxacin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "clometocillin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "clorobiocin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "colistin a": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "colistin b": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "complestatin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "contezolid": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "corbomycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cordycepin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "coumermycin a1": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "cyclic thiazolyl peptide elfamycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "d-captopril": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
+  },
+  "dactinomycin": {
+    "pubchem_cid": "",
+    "inchikey": "",
+    "chebi_id": "",
+    "atc_code": ""
   }
 }
