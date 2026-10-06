@@ -500,12 +500,39 @@ ARO:3001815	ACC-1	cefotetan	ARO:3004004	aro_obo
 ARO:3001815	ACC-1	cefpirome	ARO:3004726	aro_obo
 ARO:3001815	ACC-1	ceftazidime	ARO:0000060	aro_obo
 ARO:3001815	ACC-1	flomoxef	ARO:3004014	aro_obo
-ARO:3001815	ACC-1	moxalactam	ARO:3004017	aro_obo
 ARO:3001815	ACC-1	piperacillin	ARO:0000078	aro_obo
+ARO:3006228	ACC-1a	aztreonam	ARO:3000550	aro_obo_inherited
+ARO:3006228	ACC-1a	cefepime	ARO:0000059	aro_obo_inherited
+ARO:3006228	ACC-1a	cefotaxime	ARO:3000645	aro_obo_inherited
+ARO:3006228	ACC-1a	cefotetan	ARO:3004004	aro_obo_inherited
+ARO:3006228	ACC-1a	cefpirome	ARO:3004726	aro_obo_inherited
 ARO:3006228	ACC-1a	ceftazidime	ARO:0000060	aro_obo
+ARO:3006228	ACC-1a	flomoxef	ARO:3004014	aro_obo_inherited
+ARO:3006228	ACC-1a	piperacillin	ARO:0000078	aro_obo_inherited
+ARO:3006229	ACC-1b	aztreonam	ARO:3000550	aro_obo_inherited
+ARO:3006229	ACC-1b	cefepime	ARO:0000059	aro_obo_inherited
+ARO:3006229	ACC-1b	cefotaxime	ARO:3000645	aro_obo_inherited
+ARO:3006229	ACC-1b	cefotetan	ARO:3004004	aro_obo_inherited
+ARO:3006229	ACC-1b	cefpirome	ARO:3004726	aro_obo_inherited
 ARO:3006229	ACC-1b	ceftazidime	ARO:0000060	aro_obo
+ARO:3006229	ACC-1b	flomoxef	ARO:3004014	aro_obo_inherited
+ARO:3006229	ACC-1b	piperacillin	ARO:0000078	aro_obo_inherited
+ARO:3006230	ACC-1c	aztreonam	ARO:3000550	aro_obo_inherited
+ARO:3006230	ACC-1c	cefepime	ARO:0000059	aro_obo_inherited
+ARO:3006230	ACC-1c	cefotaxime	ARO:3000645	aro_obo_inherited
+ARO:3006230	ACC-1c	cefotetan	ARO:3004004	aro_obo_inherited
+ARO:3006230	ACC-1c	cefpirome	ARO:3004726	aro_obo_inherited
 ARO:3006230	ACC-1c	ceftazidime	ARO:0000060	aro_obo
+ARO:3006230	ACC-1c	flomoxef	ARO:3004014	aro_obo_inherited
+ARO:3006230	ACC-1c	piperacillin	ARO:0000078	aro_obo_inherited
+ARO:3006231	ACC-1d	aztreonam	ARO:3000550	aro_obo_inherited
+ARO:3006231	ACC-1d	cefepime	ARO:0000059	aro_obo_inherited
+ARO:3006231	ACC-1d	cefotaxime	ARO:3000645	aro_obo_inherited
+ARO:3006231	ACC-1d	cefotetan	ARO:3004004	aro_obo_inherited
+ARO:3006231	ACC-1d	cefpirome	ARO:3004726	aro_obo_inherited
 ARO:3006231	ACC-1d	ceftazidime	ARO:0000060	aro_obo
+ARO:3006231	ACC-1d	flomoxef	ARO:3004014	aro_obo_inherited
+ARO:3006231	ACC-1d	piperacillin	ARO:0000078	aro_obo_inherited
 ARO:3001816	ACC-2	cefotaxime	ARO:3000645	aro_obo
 ARO:3001816	ACC-2	ceftazidime	ARO:0000060	aro_obo
 ARO:3001817	ACC-3	ceftazidime	ARO:0000060	aro_obo
@@ -725,7 +752,6 @@ ARO:3003581	Acinetobacter mutant Lpx gene conferring resistance to colistin	coli
 ARO:3000384	AcrAB-TolC	ampicillin	ARO:3000637	aro_obo
 ARO:3000384	AcrAB-TolC	cefalotin	ARO:3000704	aro_obo
 ARO:3000384	AcrAB-TolC	chloramphenicol	ARO:3000385	aro_obo
-ARO:3000384	AcrAB-TolC	rifampin	ARO:3000169	aro_obo
 ARO:3000384	AcrAB-TolC	tetracycline	ARO:0000051	aro_obo
 ARO:3000384	AcrAB-TolC	tigecycline	ARO:0000030	aro_obo
 ARO:3000384	AcrAB-TolC	triclosan	ARO:3000870	aro_obo
@@ -740,7 +766,6 @@ ARO:3000770	AdeABC	tigecycline	ARO:0000030	aro_obo
 ARO:3000771	AdeFGH	tetracycline	ARO:0000051	aro_obo
 ARO:3000772	AdeIJK	chloramphenicol	ARO:3000385	aro_obo
 ARO:3000772	AdeIJK	imipenem	ARO:3000170	aro_obo
-ARO:3000772	AdeIJK	rifampin	ARO:3000169	aro_obo
 ARO:3000772	AdeIJK	tetracycline	ARO:0000051	aro_obo
 ARO:3000772	AdeIJK	ticarcillin	ARO:3003832	aro_obo
 ARO:3000772	AdeIJK	trimethoprim	ARO:3000188	aro_obo
@@ -763,7 +788,6 @@ ARO:3002672	Bacillus pumilus cat86	chloramphenicol	ARO:3000385	aro_obo
 ARO:3002672	Bacillus pumilus cat86	thiamphenicol	ARO:3000456	aro_obo
 ARO:3003324	Bacillus subtilis mprF	defensin	ARO:3000693	aro_obo
 ARO:3003788	Bacillus subtilis pgsA with mutation conferring resistance to daptomycin	daptomycin	ARO:0000068	aro_obo
-ARO:3007073	Bacillus subtilis rpoB mutants conferring resistance to rifampin	rifampin	ARO:3000169	aro_obo
 ARO:3007527	Bacillus subtilis rpsE mutations conferring resistance to spectinomycin	spectinomycin	ARO:0000039	aro_obo
 ARO:3003984	BahA	bacitracin	ARO:0000041	aro_obo
 ARO:3003297	Bartonella bacilliformis gyrA conferring resistance to fluoroquinolones	ciprofloxacin	ARO:0000036	aro_obo
@@ -782,7 +806,6 @@ ARO:3003297	Bartonella bacilliformis gyrA conferring resistance to fluoroquinolo
 ARO:3003302	Bartonella bacilliformis gyrB conferring resistance to aminocoumarin	clorobiocin	ARO:3000132	aro_obo
 ARO:3003302	Bartonella bacilliformis gyrB conferring resistance to aminocoumarin	coumermycin a1	ARO:3000150	aro_obo
 ARO:3003302	Bartonella bacilliformis gyrB conferring resistance to aminocoumarin	novobiocin	ARO:3000111	aro_obo
-ARO:3004480	Bifidobacterium adolescentis rpoB mutants conferring resistance to rifampicin	rifampin	ARO:3000169	aro_obo
 ARO:3003730	Bifidobacterium bifidum ileS conferring resistance to mupirocin	mupirocin	ARO:3000554	aro_obo
 ARO:3003504	Borreliella burgdorferi 16S rRNA mutation conferring resistance to gentamicin	gentamicin c	ARO:0000014	aro_obo
 ARO:3003503	Borreliella burgdorferi 16S rRNA mutation conferring resistance to kanamycin	kanamycin a	ARO:0000049	aro_obo
@@ -809,7 +832,6 @@ ARO:3004559	CAM-1	imipenem	ARO:3000170	aro_obo
 ARO:3004559	CAM-1	meropenem	ARO:0000073	aro_obo
 ARO:3007650	CDA-1	cefalotin	ARO:3000704	aro_obo
 ARO:3007650	CDA-1	cefoxitin	ARO:0000008	aro_obo
-ARO:3007650	CDA-1	cephaloridine	ARO:3004129	aro_obo
 ARO:3007650	CDA-1	ticarcillin	ARO:3003832	aro_obo
 ARO:3004854	CMY-136	cefotaxime	ARO:3000645	aro_obo
 ARO:3004854	CMY-136	ceftolozane	ARO:3003927	aro_obo
@@ -853,8 +875,6 @@ ARO:3003931	Capnocytophaga gingivalis gyrA conferring resistance to fluoroquinol
 ARO:3003983	CatU	azidamfenicol	ARO:3000382	aro_obo
 ARO:3003983	CatU	chloramphenicol	ARO:3000385	aro_obo
 ARO:3003983	CatU	thiamphenicol	ARO:3000456	aro_obo
-ARO:3002998	CblA beta-lactamase	cephaloridine	ARO:3004129	aro_obo
-ARO:3002999	CblA-1	cephaloridine	ARO:3004129	aro_obo
 ARO:3003001	CfxA	cefmetazole	ARO:3004001	aro_obo
 ARO:3003001	CfxA	cefotetan	ARO:3004004	aro_obo
 ARO:3003001	CfxA	cefoxitin	ARO:0000008	aro_obo
@@ -885,7 +905,6 @@ ARO:3004562	Clostridioides difficile gyrB conferring resistance to fluoroquinolo
 ARO:3004562	Clostridioides difficile gyrB conferring resistance to fluoroquinolones	moxifloxacin	ARO:0000074	aro_obo
 ARO:3004561	Clostridioides difficile murG with mutation conferring resistance to vancomycin	vancomycin	ARO:0000028	aro_obo
 ARO:3007671	Clostridioides difficile nimB	metronidazole	ARO:3000689	aro_obo
-ARO:3004563	Clostridioides difficile rpoB with mutation conferring resistance to rifampicin	rifampin	ARO:3000169	aro_obo
 ARO:3004563	Clostridioides difficile rpoB with mutation conferring resistance to rifampicin	rifaximin	ARO:3000517	aro_obo
 ARO:3004681	Clostridioides difficile rpoC with mutation conferring resistance to vancomycin	vancomycin	ARO:0000028	aro_obo
 ARO:3002674	Clostridium butyricum catB	azidamfenicol	ARO:3000382	aro_obo
@@ -921,7 +940,6 @@ ARO:3005349	DfrA38	trimethoprim	ARO:3000188	aro_obo
 ARO:3005351	DfrA39	trimethoprim	ARO:3000188	aro_obo
 ARO:3005350	DfrB9	trimethoprim	ARO:3000188	aro_obo
 ARO:3000248	DnaA	rifabutin	ARO:3000530	aro_obo
-ARO:3000248	DnaA	rifampin	ARO:3000169	aro_obo
 ARO:3000248	DnaA	rifapentine	ARO:3000534	aro_obo
 ARO:3000248	DnaA	rifaximin	ARO:3000517	aro_obo
 ARO:3007437	EBR-5	ampicillin	ARO:3000637	aro_obo
@@ -940,7 +958,6 @@ ARO:3004064	Edeine acetyltransferase	edeine d	ARO:3000135	aro_obo
 ARO:3004064	Edeine acetyltransferase	edeine f	ARO:3000136	aro_obo
 ARO:3003947	EfrAB	ciprofloxacin	ARO:0000036	aro_obo
 ARO:3003947	EfrAB	erythromycin	ARO:0000006	aro_obo
-ARO:3003947	EfrAB	rifampin	ARO:3000169	aro_obo
 ARO:3000344	EmrAB-TolC	nalidixic acid	ARO:3000661	aro_obo
 ARO:3000373	EmrKY-TolC	tetracycline	ARO:0000051	aro_obo
 ARO:3003374	Enterobacter aerogenes acrR with mutation conferring multidrug antibiotic resistance	acriflavine	ARO:0000045	aro_obo
@@ -1554,7 +1571,6 @@ ARO:3003370	Escherichia coli EF-Tu mutants conferring resistance to Enacyloxin I
 ARO:3003369	Escherichia coli EF-Tu mutants conferring resistance to Pulvomycin	pulvomycin	ARO:3000586	aro_obo
 ARO:3003368	Escherichia coli EF-Tu mutants conferring resistance to kirromycin	kirromycin	ARO:3001234	aro_obo
 ARO:3003889	Escherichia coli GlpT with mutation conferring resistance to fosfomycin	fosfomycin	ARO:0000025	aro_obo
-ARO:3004126	Escherichia coli LamB	balofloxacin	ARO:3004130	aro_obo
 ARO:3004126	Escherichia coli LamB	chlortetracycline	ARO:3000528	aro_obo
 ARO:3004126	Escherichia coli LamB	ciprofloxacin	ARO:0000036	aro_obo
 ARO:3004126	Escherichia coli LamB	nalidixic acid	ARO:3000661	aro_obo
@@ -1631,7 +1647,6 @@ ARO:3003316	Escherichia coli parE conferring resistance to fluoroquinolones	pefl
 ARO:3003316	Escherichia coli parE conferring resistance to fluoroquinolones	sparfloxacin	ARO:3000666	aro_obo
 ARO:3003316	Escherichia coli parE conferring resistance to fluoroquinolones	trovafloxacin	ARO:3000664	aro_obo
 ARO:3003288	Escherichia coli rpoB mutants conferring resistance to rifampicin	rifabutin	ARO:3000530	aro_obo
-ARO:3003288	Escherichia coli rpoB mutants conferring resistance to rifampicin	rifampin	ARO:3000169	aro_obo
 ARO:3003288	Escherichia coli rpoB mutants conferring resistance to rifampicin	rifapentine	ARO:3000534	aro_obo
 ARO:3003288	Escherichia coli rpoB mutants conferring resistance to rifampicin	rifaximin	ARO:3000517	aro_obo
 ARO:3003381	Escherichia coli soxR with mutation conferring antibiotic resistance	chloramphenicol	ARO:3000385	aro_obo
@@ -1691,7 +1706,6 @@ ARO:3003925	Haemophilus parainfluenzae parC conferring resistance to fluoroquino
 ARO:3004180	Halobacterium halobium 23S rRNA mutation conferring resistance to chloramphenicol	chloramphenicol	ARO:3000385	aro_obo
 ARO:3003977	Halobacterium salinarum 16S rRNA mutation conferring resistance to pactamycin	pactamycin	ARO:3003975	aro_obo
 ARO:3007208	HelR	rifabutin	ARO:3000530	aro_obo
-ARO:3007208	HelR	rifampin	ARO:3000169	aro_obo
 ARO:3007208	HelR	rifaximin	ARO:3000517	aro_obo
 ARO:3003510	Helicobacter pylori 16S rRNA mutation conferring resistance to tetracycline	tetracycline	ARO:0000051	aro_obo
 ARO:3004134	Helicobacter pylori 23S rRNA with mutation conferring resistance to clarithromycin	clarithromycin	ARO:0000065	aro_obo
@@ -1704,7 +1718,6 @@ ARO:3007058	Helicobacter pylori pbp2 mutants conferring resistance to amoxicilli
 ARO:3007057	Helicobacter pylori pbp3 conferring resistance to amoxicillin	amoxicillin	ARO:0000064	aro_obo
 ARO:3007055	Helicobacter pylori rdxA mutation conferring resistance to metronidazole	metronidazole	ARO:3000689	aro_obo
 ARO:3007051	Helicobacter pylori rpoB mutation conferring resistance to rifampicin	levofloxacin	ARO:0000071	aro_obo
-ARO:3007051	Helicobacter pylori rpoB mutation conferring resistance to rifampicin	rifampin	ARO:3000169	aro_obo
 ARO:3004466	ICR-Mc	colistin a	ARO:3000622	aro_obo
 ARO:3004466	ICR-Mc	colistin b	ARO:3000624	aro_obo
 ARO:3004569	ICR-Mo	colistin a	ARO:3000622	aro_obo
@@ -1743,7 +1756,6 @@ ARO:3004585	Klebsiella pneumoniae KpnEF	chlorhexidine	ARO:3007039	aro_obo
 ARO:3004585	Klebsiella pneumoniae KpnEF	colistin a	ARO:3000622	aro_obo
 ARO:3004585	Klebsiella pneumoniae KpnEF	colistin b	ARO:3000624	aro_obo
 ARO:3004585	Klebsiella pneumoniae KpnEF	erythromycin	ARO:0000006	aro_obo
-ARO:3004585	Klebsiella pneumoniae KpnEF	rifampin	ARO:3000169	aro_obo
 ARO:3004585	Klebsiella pneumoniae KpnEF	streptomycin	ARO:0000040	aro_obo
 ARO:3004585	Klebsiella pneumoniae KpnEF	tetracycline	ARO:0000051	aro_obo
 ARO:3004585	Klebsiella pneumoniae KpnEF	triclosan	ARO:3000870	aro_obo
@@ -1823,7 +1835,6 @@ ARO:3005051	LpsB	defensin	ARO:3000693	aro_obo
 ARO:3005059	LptD	imipenem	ARO:3000170	aro_obo
 ARO:3005059	LptD	novobiocin	ARO:3000111	aro_obo
 ARO:3005059	LptD	polymyxin b	ARO:3000454	aro_obo
-ARO:3005059	LptD	rifampin	ARO:3000169	aro_obo
 ARO:3003573	LpxA	colistin a	ARO:3000622	aro_obo
 ARO:3003573	LpxA	colistin b	ARO:3000624	aro_obo
 ARO:3003574	LpxC	colistin a	ARO:3000622	aro_obo
@@ -2061,7 +2072,6 @@ ARO:3000788	MdtEF-TolC	oxacillin	ARO:0000056	aro_obo
 ARO:3001327	MdtK	ciprofloxacin	ARO:0000036	aro_obo
 ARO:3004101	MdtNOP	acriflavine	ARO:0000045	aro_obo
 ARO:3004101	MdtNOP	puromycin	ARO:0000047	aro_obo
-ARO:3005046	MecC-type methicillin resistance repressor MecI	methicillin	ARO:0000015	aro_obo
 ARO:3004659	Mef(En2)	lincomycin	ARO:0000046	aro_obo
 ARO:3000386	MexAB-OprM	ampicillin	ARO:3000637	aro_obo
 ARO:3000386	MexAB-OprM	azithromycin	ARO:3000158	aro_obo
@@ -2082,13 +2092,19 @@ ARO:3000797	MexCD-OprJ	chloramphenicol	ARO:3000385	aro_obo
 ARO:3000797	MexCD-OprJ	novobiocin	ARO:3000111	aro_obo
 ARO:3000797	MexCD-OprJ	tetracycline	ARO:0000051	aro_obo
 ARO:3000797	MexCD-OprJ	trimethoprim	ARO:3000188	aro_obo
+ARO:3004061	MexCD-OprJ with type A NfxB mutation	chloramphenicol	ARO:3000385	aro_obo_inherited
 ARO:3004061	MexCD-OprJ with type A NfxB mutation	erythromycin	ARO:0000006	aro_obo
+ARO:3004061	MexCD-OprJ with type A NfxB mutation	novobiocin	ARO:3000111	aro_obo_inherited
 ARO:3004061	MexCD-OprJ with type A NfxB mutation	ofloxacin	ARO:3000663	aro_obo
+ARO:3004061	MexCD-OprJ with type A NfxB mutation	tetracycline	ARO:0000051	aro_obo_inherited
+ARO:3004061	MexCD-OprJ with type A NfxB mutation	trimethoprim	ARO:3000188	aro_obo_inherited
 ARO:3004062	MexCD-OprJ with type B NfxB mutation	chloramphenicol	ARO:3000385	aro_obo
 ARO:3004062	MexCD-OprJ with type B NfxB mutation	erythromycin	ARO:0000006	aro_obo
 ARO:3004062	MexCD-OprJ with type B NfxB mutation	gentamicin c	ARO:0000014	aro_obo
+ARO:3004062	MexCD-OprJ with type B NfxB mutation	novobiocin	ARO:3000111	aro_obo_inherited
 ARO:3004062	MexCD-OprJ with type B NfxB mutation	ofloxacin	ARO:3000663	aro_obo
 ARO:3004062	MexCD-OprJ with type B NfxB mutation	tetracycline	ARO:0000051	aro_obo
+ARO:3004062	MexCD-OprJ with type B NfxB mutation	trimethoprim	ARO:3000188	aro_obo_inherited
 ARO:3000798	MexEF-OprN	chloramphenicol	ARO:3000385	aro_obo
 ARO:3000798	MexEF-OprN	trimethoprim	ARO:3000188	aro_obo
 ARO:3004068	MexEF-OprN with MexS mutations conferring resistance to chloramphenicol, ciprofloxacin, and trimethoprim	chloramphenicol	ARO:3000385	aro_obo
@@ -2099,6 +2115,7 @@ ARO:3004066	MexEF-OprN with MexT mutation conferring resistance to chloramphenic
 ARO:3004066	MexEF-OprN with MexT mutation conferring resistance to chloramphenicol, ciprofloxacin, and trimethoprim	trimethoprim	ARO:3000188	aro_obo
 ARO:3004070	MexEF-OprN with MvaT deletion conferring resistance to chloramphenicol and norfloxacin	chloramphenicol	ARO:3000385	aro_obo
 ARO:3004070	MexEF-OprN with MvaT deletion conferring resistance to chloramphenicol and norfloxacin	norfloxacin	ARO:3000662	aro_obo
+ARO:3004070	MexEF-OprN with MvaT deletion conferring resistance to chloramphenicol and norfloxacin	trimethoprim	ARO:3000188	aro_obo_inherited
 ARO:3000799	MexGHI-OpmD	acriflavine	ARO:0000045	aro_obo
 ARO:3000799	MexGHI-OpmD	norfloxacin	ARO:3000662	aro_obo
 ARO:3000799	MexGHI-OpmD	tetracycline	ARO:0000051	aro_obo
@@ -2207,7 +2224,6 @@ ARO:3003304	Mycobacterium leprae gyrB conferring resistance to fluoroquinolones	
 ARO:3003304	Mycobacterium leprae gyrB conferring resistance to fluoroquinolones	sparfloxacin	ARO:3000666	aro_obo
 ARO:3003304	Mycobacterium leprae gyrB conferring resistance to fluoroquinolones	trovafloxacin	ARO:3000664	aro_obo
 ARO:3003284	Mycobacterium leprae rpoB mutations conferring resistance to rifampicin	rifabutin	ARO:3000530	aro_obo
-ARO:3003284	Mycobacterium leprae rpoB mutations conferring resistance to rifampicin	rifampin	ARO:3000169	aro_obo
 ARO:3003284	Mycobacterium leprae rpoB mutations conferring resistance to rifampicin	rifapentine	ARO:3000534	aro_obo
 ARO:3003284	Mycobacterium leprae rpoB mutations conferring resistance to rifampicin	rifaximin	ARO:3000517	aro_obo
 ARO:3007536	Mycobacterium tuberculosis 16S rRNA (rrnS) mutation conferring resistance to amikacin	kanamycin a	ARO:0000049	aro_obo
@@ -2248,16 +2264,13 @@ ARO:3004919	Mycobacterium tuberculosis eccC5 conferring resistance to fluoroquin
 ARO:3004963	Mycobacterium tuberculosis eis mutations confer resistance to kanamycin	kanamycin a	ARO:0000049	aro_obo
 ARO:3003453	Mycobacterium tuberculosis embA mutant conferring resistance to ethambutol	ethambutol	ARO:3000497	aro_obo
 ARO:3003326	Mycobacterium tuberculosis embB mutant conferring resistance to ethambutol	ethambutol	ARO:3000497	aro_obo
-ARO:3003465	Mycobacterium tuberculosis embB with mutation conferring resistance to rifampicin	rifampin	ARO:3000169	aro_obo
 ARO:3003327	Mycobacterium tuberculosis embC mutant conferring resistance to ethambutol	ethambutol	ARO:3000497	aro_obo
 ARO:3003455	Mycobacterium tuberculosis embR mutant conferring resistance to ethambutol	ethambutol	ARO:3000497	aro_obo
 ARO:3005105	Mycobacterium tuberculosis ethA mutations conferring resistance to isoniazid	isoniazid	ARO:3000520	aro_obo
 ARO:3005178	Mycobacterium tuberculosis ethA mutations conferring resistance to perchlozone	perchlozone	ARO:3005175	aro_obo
-ARO:3005106	Mycobacterium tuberculosis ethA mutations conferring resistance to prothionamide	prothionamide	ARO:3004025	aro_obo
 ARO:3003458	Mycobacterium tuberculosis ethA with mutation conferring resistance to ethionamide	ethionamide	ARO:3003474	aro_obo
 ARO:3004933	Mycobacterium tuberculosis fabG1 mutation conferring resistance to ethionamide	ethionamide	ARO:3003474	aro_obo
 ARO:3004922	Mycobacterium tuberculosis fabG1 mutations confer resistance to isoniazid	isoniazid	ARO:3000520	aro_obo
-ARO:3007811	Mycobacterium tuberculosis fabG1 with mutations conferring resistance to prothionamide	prothionamide	ARO:3004025	aro_obo
 ARO:3007849	Mycobacterium tuberculosis fgd1 with mutation conferring resistance to delamanid	delamanid	ARO:3004490	aro_obo
 ARO:3004157	Mycobacterium tuberculosis folC with mutation conferring resistance to para-aminosalicylic acid	para-aminosalicylic acid	ARO:3004019	aro_obo
 ARO:3004923	Mycobacterium tuberculosis furA mutations confer resistance to isoniazid	isoniazid	ARO:3000520	aro_obo
@@ -2303,11 +2316,9 @@ ARO:3003451	Mycobacterium tuberculosis iniC mutant conferring resistance to etha
 ARO:3003784	Mycobacterium tuberculosis intrinsic murA conferring resistance to fosfomycin	fosfomycin	ARO:0000025	aro_obo
 ARO:3003463	Mycobacterium tuberculosis kasA mutant conferring resistance to isoniazid	isoniazid	ARO:3000520	aro_obo
 ARO:3003392	Mycobacterium tuberculosis katG mutations conferring resistance to isoniazid	isoniazid	ARO:3000520	aro_obo
-ARO:3005102	Mycobacterium tuberculosis katG mutations conferring resistance to prothionamide	prothionamide	ARO:3004025	aro_obo
 ARO:3004978	Mycobacterium tuberculosis mas mutations confer resistance to pyrazinamide	pyrazinamide	ARO:3003413	aro_obo
 ARO:3004929	Mycobacterium tuberculosis mmaA3 mutations conferring resistance to isoniazid	isoniazid	ARO:3000520	aro_obo
 ARO:3004925	Mycobacterium tuberculosis mshA mutations conferring resistance to isoniazid	isoniazid	ARO:3000520	aro_obo
-ARO:3005108	Mycobacterium tuberculosis mshA mutations conferring resistance to prothionamide	prothionamide	ARO:3004025	aro_obo
 ARO:3004934	Mycobacterium tuberculosis mshC mutations conferring resistance to ethionamide	ethionamide	ARO:3003474	aro_obo
 ARO:3004927	Mycobacterium tuberculosis mshC mutations conferring resistance to isoniazid	isoniazid	ARO:3000520	aro_obo
 ARO:3004928	Mycobacterium tuberculosis mymA mutations conferring resistance to isoniazid	isoniazid	ARO:3000520	aro_obo
@@ -2317,17 +2328,13 @@ ARO:3004935	Mycobacterium tuberculosis nudC mutations conferring resistance to e
 ARO:3004931	Mycobacterium tuberculosis nudC mutations conferring resistance to isoniazid	isoniazid	ARO:3000520	aro_obo
 ARO:3003394	Mycobacterium tuberculosis pncA mutations conferring resistance to pyrazinamide	pyrazinamide	ARO:3003413	aro_obo
 ARO:3004960	Mycobacterium tuberculosis ponA1 mutations conferring resistance to rifabutin	rifabutin	ARO:3000530	aro_obo
-ARO:3004960	Mycobacterium tuberculosis ponA1 mutations conferring resistance to rifabutin	rifampin	ARO:3000169	aro_obo
 ARO:3004975	Mycobacterium tuberculosis ppsC mutations confer resistance to pyrazinamide	pyrazinamide	ARO:3003413	aro_obo
 ARO:3004976	Mycobacterium tuberculosis ppsD mutations confer resistance to pyrazinamide	pyrazinamide	ARO:3003413	aro_obo
 ARO:3004184	Mycobacterium tuberculosis ribD with mutation conferring resistance to para-aminosalicylic acid	para-aminosalicylic acid	ARO:3004019	aro_obo
-ARO:3004999	Mycobacterium tuberculosis rpoA mutations confer resistance to rifampicin	rifampin	ARO:3000169	aro_obo
 ARO:3003283	Mycobacterium tuberculosis rpoB with mutations conferring resistance to rifampicin	rifabutin	ARO:3000530	aro_obo
-ARO:3003283	Mycobacterium tuberculosis rpoB with mutations conferring resistance to rifampicin	rifampin	ARO:3000169	aro_obo
 ARO:3003283	Mycobacterium tuberculosis rpoB with mutations conferring resistance to rifampicin	rifapentine	ARO:3000534	aro_obo
 ARO:3003283	Mycobacterium tuberculosis rpoB with mutations conferring resistance to rifampicin	rifaximin	ARO:3000517	aro_obo
 ARO:3004994	Mycobacterium tuberculosis rpoC mutations confer resistance to rifampicin	rifabutin	ARO:3000530	aro_obo
-ARO:3004994	Mycobacterium tuberculosis rpoC mutations confer resistance to rifampicin	rifampin	ARO:3000169	aro_obo
 ARO:3004721	Mycobacterium tuberculosis rpsA mutations conferring resistance to pyrazinamide	pyrazinamide	ARO:3003413	aro_obo
 ARO:3003395	Mycobacterium tuberculosis rpsL mutations conferring resistance to Streptomycin	streptomycin	ARO:0000040	aro_obo
 ARO:3004932	Mycobacterium tuberculosis sigI mutations conferring resistance to isoniazid	isoniazid	ARO:3000520	aro_obo
@@ -2426,22 +2433,1371 @@ ARO:3007646	Neobacillus vireti vmlR2	virginiamycin m1	ARO:3000669	aro_obo
 ARO:3003589	NmcA	ampicillin	ARO:3000637	aro_obo
 ARO:3003589	NmcA	cefazolin	ARO:0000058	aro_obo
 ARO:3003589	NmcA	cefoxitin	ARO:0000008	aro_obo
-ARO:3007210	Nocardia farcinica rox	rifampin	ARO:3000169	aro_obo
 ARO:3000017	OXA beta-lactamase	oxacillin	ARO:0000056	aro_obo
 ARO:3001396	OXA-1	amoxicillin	ARO:0000064	aro_obo
 ARO:3001396	OXA-1	ampicillin	ARO:3000637	aro_obo
 ARO:3001396	OXA-1	cefalotin	ARO:3000704	aro_obo
+ARO:3001396	OXA-1	oxacillin	ARO:0000056	aro_obo_inherited
 ARO:3001396	OXA-1	piperacillin	ARO:0000078	aro_obo
+ARO:3007696	OXA-1-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001405	OXA-10	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007697	OXA-10-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001438	OXA-100	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008421	OXA-1000	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008422	OXA-1001	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008423	OXA-1002	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008424	OXA-1003	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008425	OXA-1004	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008426	OXA-1005	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008427	OXA-1006	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008428	OXA-1007	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008429	OXA-1008	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008430	OXA-1009	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001439	OXA-101	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008431	OXA-1010	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008432	OXA-1011	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008433	OXA-1012	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008434	OXA-1013	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008435	OXA-1014	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008436	OXA-1015	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008437	OXA-1016	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008438	OXA-1017	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008439	OXA-1018	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008440	OXA-1019	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001706	OXA-102	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008441	OXA-1020	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008442	OXA-1021	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008443	OXA-1022	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008444	OXA-1023	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008445	OXA-1024	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008446	OXA-1025	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008447	OXA-1026	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008448	OXA-1027	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008449	OXA-1028	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008450	OXA-1029	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001707	OXA-103	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008451	OXA-1030	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008452	OXA-1031	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008453	OXA-1032	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008454	OXA-1033	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008455	OXA-1034	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008456	OXA-1035	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008457	OXA-1036	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008458	OXA-1037	oxacillin	ARO:0000056	aro_obo_inherited
 ARO:3007561	OXA-1038	meropenem	ARO:0000073	aro_obo
+ARO:3007561	OXA-1038	oxacillin	ARO:0000056	aro_obo_inherited
 ARO:3007562	OXA-1039	meropenem	ARO:0000073	aro_obo
+ARO:3007562	OXA-1039	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001636	OXA-104	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008459	OXA-1040	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008460	OXA-1041	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008461	OXA-1042	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008462	OXA-1043	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008463	OXA-1044	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008464	OXA-1045	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008465	OXA-1046	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008466	OXA-1047	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008467	OXA-1048	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008468	OXA-1049	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001708	OXA-105	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008469	OXA-1050	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008470	OXA-1051	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008471	OXA-1052	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008472	OXA-1053	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008473	OXA-1055	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008474	OXA-1056	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008475	OXA-1057	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008476	OXA-1058	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008477	OXA-1059	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001637	OXA-106	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008478	OXA-1060	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008479	OXA-1061	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008480	OXA-1062	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008481	OXA-1063	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008482	OXA-1064	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008483	OXA-1065	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008484	OXA-1066	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008485	OXA-1067	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008486	OXA-1068	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008487	OXA-1069	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001638	OXA-107	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008488	OXA-1070	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008489	OXA-1071	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008490	OXA-1072	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008491	OXA-1073	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008492	OXA-1074	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008493	OXA-1075	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008494	OXA-1076	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008495	OXA-1077	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008496	OXA-1078	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008497	OXA-1079	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001639	OXA-108	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008498	OXA-1080	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008499	OXA-1081	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008500	OXA-1082	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008501	OXA-1083	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008502	OXA-1084	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008503	OXA-1085	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008504	OXA-1086	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008505	OXA-1087	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008506	OXA-1088	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008507	OXA-1089	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001640	OXA-109	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008508	OXA-1090	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008509	OXA-1091	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008510	OXA-1092	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008511	OXA-1093	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008512	OXA-1094	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008513	OXA-1095	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008514	OXA-1096	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008515	OXA-1097	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008516	OXA-1098	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008517	OXA-1099	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001406	OXA-11	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001641	OXA-110	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008518	OXA-1100	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008519	OXA-1101	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008520	OXA-1102	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008521	OXA-1103	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008522	OXA-1104	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008523	OXA-1105	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008524	OXA-1106	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008525	OXA-1107	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008526	OXA-1108	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008527	OXA-1109	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001642	OXA-111	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008528	OXA-1110	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008529	OXA-1111	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008530	OXA-1112	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008531	OXA-1113	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008532	OXA-1114	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008533	OXA-1115	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008534	OXA-1116	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008535	OXA-1117	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008536	OXA-1118	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008537	OXA-1119	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001643	OXA-112	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008538	OXA-1120	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008539	OXA-1121	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008540	OXA-1122	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008541	OXA-1123	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008542	OXA-1124	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008543	OXA-1125	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008544	OXA-1126	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008545	OXA-1127	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008546	OXA-1128	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008547	OXA-1129	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001644	OXA-113	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008548	OXA-1130	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008549	OXA-1131	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008550	OXA-1132	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008551	OXA-1133	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008552	OXA-1134	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008553	OXA-1135	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008554	OXA-1136	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008555	OXA-1137	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008556	OXA-1138	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008557	OXA-1139	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007698	OXA-114-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008558	OXA-1140	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008559	OXA-1141	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008560	OXA-1142	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008561	OXA-1143	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008562	OXA-1144	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008563	OXA-1145	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008564	OXA-1146	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008565	OXA-1147	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008566	OXA-1148	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008567	OXA-1149	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001609	OXA-114a	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005702	OXA-114b	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005703	OXA-114c	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005704	OXA-114d	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005705	OXA-114e	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005706	OXA-114f	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005707	OXA-114g	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005708	OXA-114h	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005709	OXA-114i	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005710	OXA-114j	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005711	OXA-114k	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005712	OXA-114l	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005713	OXA-114m	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005714	OXA-114n	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005715	OXA-114p	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005716	OXA-114q	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005717	OXA-114r	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005718	OXA-114s	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005719	OXA-114t	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005720	OXA-114u	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005721	OXA-114v	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005722	OXA-114w	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005723	OXA-114x	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001440	OXA-115	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008568	OXA-1150	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008569	OXA-1151	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008570	OXA-1152	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008571	OXA-1153	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008572	OXA-1154	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008573	OXA-1155	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008574	OXA-1156	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008575	OXA-1157	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008576	OXA-1158	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008577	OXA-1159	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001441	OXA-116	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008578	OXA-1160	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008579	OXA-1161	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008580	OXA-1162	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008581	OXA-1163	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008582	OXA-1164	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008583	OXA-1165	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008584	OXA-1166	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008585	OXA-1167	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008586	OXA-1168	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008587	OXA-1169	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001442	OXA-117	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008588	OXA-1170	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008589	OXA-1171	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008590	OXA-1172	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008591	OXA-1173	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008592	OXA-1174	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008593	OXA-1175	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008594	OXA-1176	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008595	OXA-1177	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008596	OXA-1178	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001768	OXA-118	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008597	OXA-1181	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008598	OXA-1182	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008599	OXA-1183	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008600	OXA-1184	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008601	OXA-1185	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008602	OXA-1186	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008603	OXA-1187	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008604	OXA-1188	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008605	OXA-1189	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001775	OXA-119	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008606	OXA-1190	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008607	OXA-1191	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008608	OXA-1193	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008609	OXA-1194	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008610	OXA-1198	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008611	OXA-1199	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001407	OXA-12	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007699	OXA-12-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001672	OXA-120	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008612	OXA-1200	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008613	OXA-1201	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008614	OXA-1202	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008615	OXA-1203	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008616	OXA-1204	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008617	OXA-1205	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008618	OXA-1206	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008619	OXA-1207	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008620	OXA-1208	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001443	OXA-121	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008621	OXA-1211	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008622	OXA-1212	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008623	OXA-1213	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008624	OXA-1214	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008625	OXA-1215	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008626	OXA-1216	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008627	OXA-1217	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008628	OXA-1218	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008629	OXA-1219	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001444	OXA-122	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008630	OXA-1220	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008631	OXA-1221	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008632	OXA-1222	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008633	OXA-1223	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008634	OXA-1224	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008635	OXA-1225	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008636	OXA-1226	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008637	OXA-1227	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008638	OXA-1228	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008639	OXA-1229	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001445	OXA-123	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008640	OXA-1230	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008641	OXA-1231	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008642	OXA-1232	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008643	OXA-1233	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008644	OXA-1234	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008645	OXA-1235	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008646	OXA-1236	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008647	OXA-1237	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008648	OXA-1238	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008649	OXA-1239	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001446	OXA-124	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008650	OXA-1240	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008651	OXA-1241	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008652	OXA-1242	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008653	OXA-1243	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008654	OXA-1244	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008655	OXA-1245	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008656	OXA-1246	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008657	OXA-1247	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008658	OXA-1248	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008659	OXA-1249	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001447	OXA-125	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008660	OXA-1250	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008661	OXA-1251	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008662	OXA-1252	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008663	OXA-1253	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008664	OXA-1254	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008665	OXA-1255	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008666	OXA-1256	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008667	OXA-1257	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008668	OXA-1258	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008669	OXA-1259	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001448	OXA-126	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008670	OXA-1260	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008671	OXA-1261	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008674	OXA-1264	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008675	OXA-1265	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008676	OXA-1266	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008677	OXA-1267	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008678	OXA-1268	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008679	OXA-1269	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001449	OXA-127	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008680	OXA-1270	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008681	OXA-1271	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008682	OXA-1272	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008683	OXA-1273	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008684	OXA-1274	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008685	OXA-1275	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008686	OXA-1276	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008687	OXA-1277	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008688	OXA-1278	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008689	OXA-1279	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001648	OXA-128	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008690	OXA-1280	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008691	OXA-1281	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008692	OXA-1282	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008693	OXA-1283	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008694	OXA-1284	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008695	OXA-1285	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008696	OXA-1286	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008697	OXA-1287	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008698	OXA-1288	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008699	OXA-1289	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001811	OXA-129	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008700	OXA-1290	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008701	OXA-1291	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008702	OXA-1292	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008703	OXA-1293	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008704	OXA-1294	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008705	OXA-1295	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008706	OXA-1296	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008707	OXA-1297	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008708	OXA-1298	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008709	OXA-1299	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001408	OXA-13	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001651	OXA-130	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008710	OXA-1300	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008711	OXA-1301	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008712	OXA-1302	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008713	OXA-1303	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008714	OXA-1304	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008715	OXA-1305	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008716	OXA-1306	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008717	OXA-1307	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008718	OXA-1308	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008719	OXA-1309	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001652	OXA-131	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001653	OXA-132	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001702	OXA-133	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001695	OXA-134	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007700	OXA-134-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001765	OXA-136	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001767	OXA-137	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001655	OXA-138	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001451	OXA-139	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001409	OXA-14	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001452	OXA-140	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001802	OXA-141	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001803	OXA-142	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001654	OXA-143	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007701	OXA-143-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3002480	OXA-144	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001804	OXA-145	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001779	OXA-146	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001801	OXA-147	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001453	OXA-148	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001454	OXA-149	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001410	OXA-15	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001455	OXA-150	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001456	OXA-151	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001457	OXA-152	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001458	OXA-153	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001459	OXA-154	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001460	OXA-155	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001461	OXA-156	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001462	OXA-157	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001463	OXA-158	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001464	OXA-159	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001411	OXA-16	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001663	OXA-160	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001799	OXA-161	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001776	OXA-162	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001783	OXA-163	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001662	OXA-164	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001465	OXA-165	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001466	OXA-166	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001467	OXA-167	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001468	OXA-168	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001469	OXA-169	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001412	OXA-17	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001470	OXA-170	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001471	OXA-171	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001656	OXA-172	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001657	OXA-173	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001658	OXA-174	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001659	OXA-175	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001660	OXA-176	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001661	OXA-177	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001472	OXA-178	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001473	OXA-179	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001413	OXA-18	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001474	OXA-180	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001784	OXA-181	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001709	OXA-182	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001475	OXA-183	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001476	OXA-184	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007702	OXA-184-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001477	OXA-185	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001696	OXA-186	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001697	OXA-187	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001698	OXA-188	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001699	OXA-189	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001414	OXA-19	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001700	OXA-190	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001701	OXA-191	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001766	OXA-192	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001478	OXA-193	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001479	OXA-194	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001480	OXA-195	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001481	OXA-196	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001482	OXA-197	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001805	OXA-198	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007703	OXA-198-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001814	OXA-199	oxacillin	ARO:0000056	aro_obo_inherited
 ARO:3001397	OXA-2	amoxicillin	ARO:0000064	aro_obo
 ARO:3001397	OXA-2	ampicillin	ARO:3000637	aro_obo
 ARO:3001397	OXA-2	ceftazidime	ARO:0000060	aro_obo
+ARO:3001397	OXA-2	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007704	OXA-2-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001415	OXA-20	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001665	OXA-200	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001666	OXA-201	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001667	OXA-202	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001664	OXA-203	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001788	OXA-204	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001483	OXA-205	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001484	OXA-206	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001485	OXA-207	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001486	OXA-208	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001809	OXA-209	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001416	OXA-21	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001487	OXA-210	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001710	OXA-211	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007705	OXA-211-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001711	OXA-212	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001712	OXA-213	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007706	OXA-213-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001713	OXA-214	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007707	OXA-214-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001714	OXA-215	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001488	OXA-216	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001489	OXA-217	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001668	OXA-219	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001417	OXA-22	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007708	OXA-22-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001490	OXA-220	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001491	OXA-221	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001492	OXA-222	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001669	OXA-223	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001806	OXA-224	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001493	OXA-225	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001800	OXA-226	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001494	OXA-227	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001691	OXA-228	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001692	OXA-229	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007709	OXA-229-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001418	OXA-23	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007710	OXA-23-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001693	OXA-230	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001670	OXA-231	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001778	OXA-232	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001495	OXA-233	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001496	OXA-234	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001676	OXA-235	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001677	OXA-236	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001678	OXA-237	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001497	OXA-238	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001498	OXA-239	oxacillin	ARO:0000056	aro_obo_inherited
 ARO:3001419	OXA-24	bal30072	ARO:3003821	aro_obo
+ARO:3001419	OXA-24	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007711	OXA-24-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001499	OXA-240	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001679	OXA-241	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001680	OXA-242	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001610	OXA-243	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001786	OXA-244	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001787	OXA-245	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001807	OXA-246	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001791	OXA-247	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001673	OXA-248	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001674	OXA-249	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001420	OXA-25	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001675	OXA-250	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001500	OXA-251	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001501	OXA-252	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001689	OXA-253	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001682	OXA-254	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001690	OXA-255	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001502	OXA-256	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001694	OXA-257	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001503	OXA-258	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001715	OXA-259	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001421	OXA-26	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001716	OXA-260	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001717	OXA-261	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001718	OXA-262	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001719	OXA-263	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001720	OXA-264	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001721	OXA-265	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001722	OXA-266	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007712	OXA-266-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001723	OXA-267	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001724	OXA-268	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001725	OXA-269	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001422	OXA-27	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001726	OXA-270	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001727	OXA-271	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001728	OXA-272	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001729	OXA-273	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001730	OXA-274	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007713	OXA-274-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001731	OXA-275	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001732	OXA-276	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001733	OXA-277	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001681	OXA-278	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001734	OXA-279	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001423	OXA-28	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001735	OXA-280	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001736	OXA-281	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001737	OXA-282	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001738	OXA-283	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001739	OXA-284	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001740	OXA-285	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001741	OXA-286	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007714	OXA-286-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001742	OXA-287	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001743	OXA-288	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001744	OXA-289	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001424	OXA-29	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001745	OXA-290	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001746	OXA-291	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001747	OXA-292	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001748	OXA-293	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001749	OXA-294	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007715	OXA-294-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001750	OXA-295	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001751	OXA-296	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001752	OXA-297	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001753	OXA-298	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001754	OXA-299	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001398	OXA-3	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001755	OXA-300	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001756	OXA-301	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001757	OXA-302	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001758	OXA-303	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001759	OXA-304	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001760	OXA-305	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001761	OXA-306	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001762	OXA-307	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001763	OXA-308	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001504	OXA-309	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001425	OXA-31	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001505	OXA-310	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001506	OXA-311	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001683	OXA-312	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001684	OXA-313	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001685	OXA-314	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001686	OXA-315	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001687	OXA-316	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001688	OXA-317	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001507	OXA-318	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001508	OXA-319	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001426	OXA-32	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001793	OXA-320	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001509	OXA-321	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001510	OXA-322	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001511	OXA-323	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001512	OXA-324	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001513	OXA-325	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001514	OXA-326	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001515	OXA-327	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001516	OXA-328	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001517	OXA-329	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001427	OXA-33	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001518	OXA-330	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001519	OXA-331	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001520	OXA-332	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001521	OXA-333	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001522	OXA-334	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001523	OXA-335	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001524	OXA-336	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001525	OXA-337	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001526	OXA-338	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001527	OXA-339	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001428	OXA-34	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001528	OXA-340	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001529	OXA-341	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001530	OXA-342	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001531	OXA-343	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001532	OXA-344	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001533	OXA-345	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001534	OXA-346	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001777	OXA-347	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001535	OXA-348	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001536	OXA-349	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001429	OXA-35	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001537	OXA-350	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001538	OXA-351	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001539	OXA-352	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001540	OXA-353	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001541	OXA-354	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001542	OXA-355	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001543	OXA-356	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001544	OXA-357	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001545	OXA-358	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001546	OXA-359	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001430	OXA-36	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001547	OXA-360	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001548	OXA-361	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001549	OXA-362	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001550	OXA-363	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001551	OXA-364	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007716	OXA-364-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001552	OXA-365	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001553	OXA-366	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001554	OXA-367	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001555	OXA-368	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001431	OXA-37	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001774	OXA-370	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001557	OXA-371	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001558	OXA-372	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007717	OXA-372-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001559	OXA-373	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001560	OXA-374	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001561	OXA-375	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001562	OXA-376	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001563	OXA-377	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001564	OXA-378	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001565	OXA-379	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001432	OXA-38	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001566	OXA-380	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001567	OXA-381	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001568	OXA-382	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001569	OXA-383	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001570	OXA-384	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001571	OXA-385	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001572	OXA-386	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001573	OXA-387	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001574	OXA-388	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001575	OXA-389	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001433	OXA-39	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001576	OXA-390	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001577	OXA-391	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001578	OXA-392	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001579	OXA-393	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001580	OXA-394	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001581	OXA-395	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001582	OXA-396	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001583	OXA-397	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001584	OXA-398	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001585	OXA-399	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001399	OXA-4	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001586	OXA-400	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001587	OXA-401	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001588	OXA-402	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001589	OXA-403	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001595	OXA-404	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001596	OXA-405	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001597	OXA-406	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001598	OXA-407	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001599	OXA-408	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001600	OXA-409	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001434	OXA-41	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001601	OXA-410	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001602	OXA-411	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001603	OXA-412	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001604	OXA-413	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001605	OXA-414	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001606	OXA-415	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001607	OXA-416	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001608	OXA-417	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3002496	OXA-418	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003159	OXA-419	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001769	OXA-42	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007718	OXA-42-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003116	OXA-420	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003117	OXA-421	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003160	OXA-422	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003161	OXA-423	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003147	OXA-424	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003148	OXA-425	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003149	OXA-426	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003115	OXA-427	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007719	OXA-427-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003119	OXA-428	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003120	OXA-429	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001770	OXA-43	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003121	OXA-430	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003124	OXA-431	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003125	OXA-432	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003126	OXA-433	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003127	OXA-434	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003162	OXA-435	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003128	OXA-436	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003593	OXA-437	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003594	OXA-438	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003595	OXA-439	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001435	OXA-44	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003596	OXA-440	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003597	OXA-441	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003598	OXA-442	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003599	OXA-443	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003600	OXA-444	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003601	OXA-445	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003602	OXA-446	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003603	OXA-447	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003604	OXA-448	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003605	OXA-449	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001794	OXA-45	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003606	OXA-450	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003607	OXA-451	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003608	OXA-452	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003609	OXA-453	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003610	OXA-454	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003611	OXA-455	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003612	OXA-456	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003613	OXA-457	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003614	OXA-458	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003615	OXA-459	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001797	OXA-46	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007720	OXA-46-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003616	OXA-460	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003617	OXA-461	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003618	OXA-462	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003619	OXA-463	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003620	OXA-464	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003621	OXA-465	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003622	OXA-466	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003623	OXA-467	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003624	OXA-468	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003625	OXA-469	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001781	OXA-47	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003626	OXA-470	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003627	OXA-471	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003628	OXA-472	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003629	OXA-473	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003631	OXA-474	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003632	OXA-475	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003633	OXA-476	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003634	OXA-477	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003635	OXA-478	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003636	OXA-479	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001782	OXA-48	oxacillin	ARO:0000056	aro_obo_inherited
 ARO:3001782	OXA-48	temocillin	ARO:3003831	aro_obo
+ARO:3007721	OXA-48-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003637	OXA-480	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003638	OXA-481	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003639	OXA-482	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003640	OXA-483	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003641	OXA-484	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003642	OXA-485	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003643	OXA-486	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003644	OXA-487	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3003645	OXA-488	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005724	OXA-489	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001671	OXA-49	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005725	OXA-491	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005726	OXA-493	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007722	OXA-493-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005727	OXA-494	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005335	OXA-496	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005728	OXA-497	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005729	OXA-498	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005343	OXA-499	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001400	OXA-5	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007723	OXA-5-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
 ARO:3001796	OXA-50	ampicillin	ARO:3000637	aro_obo
 ARO:3001796	OXA-50	cefalotin	ARO:3000704	aro_obo
+ARO:3001796	OXA-50	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007724	OXA-50-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005730	OXA-500	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005731	OXA-501	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005732	OXA-502	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005733	OXA-503	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005734	OXA-504	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005735	OXA-505	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005736	OXA-506	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005737	OXA-507	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005738	OXA-508	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005739	OXA-509	oxacillin	ARO:0000056	aro_obo_inherited
 ARO:3001612	OXA-51	bal30072	ARO:3003821	aro_obo
+ARO:3001612	OXA-51	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007725	OXA-51-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005740	OXA-510	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005741	OXA-511	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005742	OXA-512	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005743	OXA-513	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005744	OXA-514	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005745	OXA-515	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005746	OXA-516	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005747	OXA-517	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005748	OXA-518	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005749	OXA-519	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001436	OXA-52	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005750	OXA-520	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005751	OXA-521	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005752	OXA-522	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005753	OXA-523	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005754	OXA-524	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005755	OXA-525	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005756	OXA-526	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005757	OXA-527	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005758	OXA-528	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005759	OXA-529	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001810	OXA-53	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005760	OXA-530	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005761	OXA-531	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005762	OXA-532	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005763	OXA-533	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005764	OXA-534	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3004362	OXA-535	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005765	OXA-536	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005766	OXA-537	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005767	OXA-538	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005317	OXA-539	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001812	OXA-54	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005314	OXA-540	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005321	OXA-541	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005768	OXA-542	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005318	OXA-543	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005222	OXA-544	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005769	OXA-545	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005770	OXA-546	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005771	OXA-547	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005772	OXA-548	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007726	OXA-548-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005773	OXA-549	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001813	OXA-55	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007727	OXA-55-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005774	OXA-550	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005775	OXA-551	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005776	OXA-552	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005777	OXA-553	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005778	OXA-554	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005779	OXA-555	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005780	OXA-556	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005781	OXA-557	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005782	OXA-558	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005783	OXA-559	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001795	OXA-56	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005784	OXA-560	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005785	OXA-561	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005786	OXA-562	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005787	OXA-563	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005788	OXA-564	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005789	OXA-565	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005790	OXA-566	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005791	OXA-567	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005792	OXA-568	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005793	OXA-569	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001771	OXA-57	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005324	OXA-570	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005326	OXA-571	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005794	OXA-572	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005325	OXA-573	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005795	OXA-574	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005796	OXA-575	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005797	OXA-576	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005798	OXA-577	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005799	OXA-578	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005800	OXA-579	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001611	OXA-58	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007728	OXA-58-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005801	OXA-580	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005802	OXA-581	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005803	OXA-582	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005804	OXA-583	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005805	OXA-584	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005806	OXA-585	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005807	OXA-586	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005808	OXA-587	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005809	OXA-588	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005810	OXA-589	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001772	OXA-59	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005811	OXA-590	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005812	OXA-591	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005813	OXA-592	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005814	OXA-593	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005815	OXA-594	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005816	OXA-595	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005817	OXA-596	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005818	OXA-597	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005819	OXA-598	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005820	OXA-599	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001401	OXA-6	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001808	OXA-60	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007729	OXA-60-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005821	OXA-600	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005822	OXA-601	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005823	OXA-602	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005824	OXA-603	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005825	OXA-604	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005826	OXA-605	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005827	OXA-606	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005828	OXA-607	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005829	OXA-608	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005830	OXA-609	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001773	OXA-61	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007730	OXA-61-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005831	OXA-610	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005832	OXA-611	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005833	OXA-612	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005834	OXA-613	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005835	OXA-614	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005836	OXA-615	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005837	OXA-616	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005838	OXA-617	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005839	OXA-618	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005840	OXA-619	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001792	OXA-62	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007731	OXA-62-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005841	OXA-620	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005842	OXA-621	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005843	OXA-622	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005844	OXA-623	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005845	OXA-624	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005846	OXA-625	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005847	OXA-626	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005848	OXA-627	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005849	OXA-628	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005850	OXA-629	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001764	OXA-63	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007732	OXA-63-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005851	OXA-630	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005852	OXA-631	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005853	OXA-632	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005854	OXA-633	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005855	OXA-634	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005856	OXA-635	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005857	OXA-636	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005858	OXA-637	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005859	OXA-638	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005860	OXA-639	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001613	OXA-64	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005861	OXA-640	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005333	OXA-641	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005862	OXA-642	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005863	OXA-643	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005864	OXA-644	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005865	OXA-645	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005339	OXA-646	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005337	OXA-647	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005338	OXA-648	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005340	OXA-649	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001614	OXA-65	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005866	OXA-650	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005867	OXA-651	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005868	OXA-652	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005342	OXA-653	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005869	OXA-654	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005870	OXA-655	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005871	OXA-656	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005872	OXA-657	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005873	OXA-658	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005874	OXA-659	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001615	OXA-66	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005875	OXA-660	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005876	OXA-661	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005877	OXA-662	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3004489	OXA-663	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3004479	OXA-664	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3004478	OXA-665	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005878	OXA-666	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005879	OXA-667	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005158	OXA-668	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005880	OXA-669	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001437	OXA-67	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005881	OXA-670	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005328	OXA-671	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005327	OXA-672	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005329	OXA-673	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005882	OXA-674	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005883	OXA-675	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005884	OXA-676	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005885	OXA-677	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005886	OXA-678	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005887	OXA-679	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007733	OXA-679-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001616	OXA-68	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005888	OXA-680	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005319	OXA-681	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005889	OXA-682	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005890	OXA-683	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005891	OXA-684	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005892	OXA-685	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005893	OXA-686	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005894	OXA-687	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005895	OXA-688	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005896	OXA-689	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001617	OXA-69	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005897	OXA-690	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005898	OXA-691	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005899	OXA-692	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005900	OXA-693	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005901	OXA-694	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005902	OXA-695	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005903	OXA-696	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005904	OXA-697	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005905	OXA-698	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005906	OXA-699	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001402	OXA-7	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001618	OXA-70	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005907	OXA-700	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005908	OXA-701	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005909	OXA-702	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005910	OXA-703	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005911	OXA-704	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005912	OXA-705	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005913	OXA-706	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005914	OXA-707	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005915	OXA-708	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005916	OXA-709	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001619	OXA-71	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005917	OXA-710	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005918	OXA-711	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005919	OXA-712	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005920	OXA-713	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005921	OXA-714	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005922	OXA-715	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005923	OXA-716	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005924	OXA-717	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005925	OXA-718	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005926	OXA-719	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001705	OXA-72	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005927	OXA-720	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005928	OXA-721	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005929	OXA-722	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005930	OXA-723	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3004837	OXA-724	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008720	OXA-725	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005931	OXA-726	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005932	OXA-727	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007734	OXA-727-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005933	OXA-728	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005934	OXA-729	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001785	OXA-73	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005935	OXA-730	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005936	OXA-731	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005937	OXA-732	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005938	OXA-733	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005939	OXA-734	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005940	OXA-735	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005941	OXA-736	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005320	OXA-737	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005942	OXA-738	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005943	OXA-739	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001798	OXA-74	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005944	OXA-740	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005945	OXA-741	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005946	OXA-742	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005947	OXA-743	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005948	OXA-744	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005949	OXA-745	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005950	OXA-746	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005951	OXA-747	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005952	OXA-748	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005953	OXA-749	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001620	OXA-75	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005954	OXA-750	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005955	OXA-751	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005956	OXA-752	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005957	OXA-753	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005958	OXA-754	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005959	OXA-755	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005960	OXA-756	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005961	OXA-757	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005962	OXA-758	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005963	OXA-759	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001621	OXA-76	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005964	OXA-760	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005965	OXA-761	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005966	OXA-762	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005967	OXA-763	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005968	OXA-764	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005969	OXA-765	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005970	OXA-766	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005971	OXA-767	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005972	OXA-768	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005973	OXA-769	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001622	OXA-77	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005974	OXA-770	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005975	OXA-771	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005976	OXA-772	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005977	OXA-773	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005978	OXA-774	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005979	OXA-775	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005980	OXA-776	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005981	OXA-777	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005982	OXA-778	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005315	OXA-779	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001645	OXA-78	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005983	OXA-780	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005984	OXA-781	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005985	OXA-782	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005986	OXA-783	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005987	OXA-784	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005988	OXA-785	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005989	OXA-786	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005990	OXA-787	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005991	OXA-788	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005992	OXA-789	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001633	OXA-79	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008721	OXA-790	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008722	OXA-791	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005993	OXA-793	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005994	OXA-794	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005995	OXA-795	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005996	OXA-796	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005997	OXA-797	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005998	OXA-798	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005999	OXA-799	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001403	OXA-8	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001634	OXA-80	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006000	OXA-800	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006001	OXA-801	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006002	OXA-802	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006003	OXA-803	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006004	OXA-804	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006005	OXA-805	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006006	OXA-806	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006007	OXA-807	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006008	OXA-808	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006009	OXA-809	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006010	OXA-810	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006011	OXA-811	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005160	OXA-812	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006012	OXA-813	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006013	OXA-814	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006014	OXA-815	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006015	OXA-816	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006016	OXA-817	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005159	OXA-818	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006017	OXA-819	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001635	OXA-82	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006018	OXA-820	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006019	OXA-821	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006020	OXA-822	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006021	OXA-823	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006022	OXA-824	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005344	OXA-825	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006023	OXA-826	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006024	OXA-827	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006025	OXA-828	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006026	OXA-829	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001623	OXA-83	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006027	OXA-830	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006028	OXA-831	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006029	OXA-832	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006030	OXA-833	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006031	OXA-834	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005322	OXA-835	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006032	OXA-836	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005060	OXA-837	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005316	OXA-838	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006033	OXA-839	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001624	OXA-84	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006034	OXA-840	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006035	OXA-841	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006036	OXA-842	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006037	OXA-843	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006038	OXA-844	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006039	OXA-845	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005130	OXA-846	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006040	OXA-847	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006041	OXA-848	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006042	OXA-849	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001780	OXA-85	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005138	OXA-850	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006043	OXA-851	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006044	OXA-852	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006045	OXA-853	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006046	OXA-854	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006047	OXA-855	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006048	OXA-856	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006049	OXA-857	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006050	OXA-858	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006051	OXA-859	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001703	OXA-86	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006052	OXA-860	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006053	OXA-861	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006054	OXA-862	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006055	OXA-863	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006056	OXA-864	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006057	OXA-865	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006058	OXA-866	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006059	OXA-867	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006060	OXA-868	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006061	OXA-869	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001704	OXA-87	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006062	OXA-870	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006063	OXA-871	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006064	OXA-872	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006065	OXA-873	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006066	OXA-874	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006067	OXA-875	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006068	OXA-876	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006069	OXA-877	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006070	OXA-878	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006071	OXA-879	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001626	OXA-88	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006072	OXA-880	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006073	OXA-881	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006074	OXA-882	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006075	OXA-883	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006076	OXA-884	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006077	OXA-885	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006078	OXA-886	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006079	OXA-887	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006080	OXA-888	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006081	OXA-889	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001625	OXA-89	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006082	OXA-890	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006083	OXA-891	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006084	OXA-892	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006085	OXA-893	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006086	OXA-894	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005332	OXA-895	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006087	OXA-896	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005341	OXA-897	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005094	OXA-898	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005093	OXA-899	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001404	OXA-9	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3007735	OXA-9-like beta-lactamase	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001650	OXA-90	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006088	OXA-900	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006089	OXA-901	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006090	OXA-902	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006091	OXA-903	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006092	OXA-904	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006093	OXA-905	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005136	OXA-906	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006094	OXA-907	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006095	OXA-908	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006096	OXA-909	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001627	OXA-91	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006097	OXA-910	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006098	OXA-911	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006099	OXA-912	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006100	OXA-913	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006101	OXA-914	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005336	OXA-915	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006102	OXA-916	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006103	OXA-917	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006104	OXA-918	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006105	OXA-919	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001632	OXA-92	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006106	OXA-920	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006107	OXA-921	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006108	OXA-922	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006109	OXA-923	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006110	OXA-924	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006111	OXA-925	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005323	OXA-926	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006112	OXA-927	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006113	OXA-928	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006114	OXA-929	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001628	OXA-93	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005331	OXA-930	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3005330	OXA-931	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006115	OXA-932	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008723	OXA-933	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008724	OXA-934	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006116	OXA-935	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008725	OXA-936	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006117	OXA-937	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006118	OXA-938	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006119	OXA-939	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001629	OXA-94	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006120	OXA-940	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006121	OXA-941	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006122	OXA-942	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006123	OXA-943	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008726	OXA-944	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006124	OXA-945	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006125	OXA-946	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006126	OXA-947	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006127	OXA-948	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3006128	OXA-949	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001630	OXA-95	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008727	OXA-950	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008728	OXA-951	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008729	OXA-952	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008730	OXA-953	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008731	OXA-954	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008732	OXA-955	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008733	OXA-956	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008734	OXA-957	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008735	OXA-958	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008736	OXA-959	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001631	OXA-96	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008737	OXA-960	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008738	OXA-961	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008739	OXA-962	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008740	OXA-963	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008741	OXA-964	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008742	OXA-965	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008743	OXA-966	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008744	OXA-967	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008745	OXA-968	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008746	OXA-969	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001647	OXA-97	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008747	OXA-970	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008748	OXA-971	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008749	OXA-972	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008750	OXA-973	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008751	OXA-974	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008752	OXA-975	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008753	OXA-976	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008754	OXA-977	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008755	OXA-978	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008756	OXA-979	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001646	OXA-98	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008757	OXA-980	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008758	OXA-981	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008759	OXA-982	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008760	OXA-983	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008761	OXA-984	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008762	OXA-985	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008763	OXA-986	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008764	OXA-987	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008765	OXA-988	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008766	OXA-989	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3001649	OXA-99	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008767	OXA-990	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008768	OXA-991	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008769	OXA-992	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008770	OXA-993	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008771	OXA-994	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008772	OXA-995	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008773	OXA-996	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008774	OXA-997	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008775	OXA-998	oxacillin	ARO:0000056	aro_obo_inherited
+ARO:3008776	OXA-999	oxacillin	ARO:0000056	aro_obo_inherited
 ARO:3005044	OmpA	defensin	ARO:3000693	aro_obo
 ARO:3005044	OmpA	polymyxin b	ARO:3000454	aro_obo
 ARO:3007199	PAM-1	ceftazidime	ARO:0000060	aro_obo
@@ -2533,106 +3889,748 @@ ARO:3004379	QepA4	ciprofloxacin	ARO:0000036	aro_obo
 ARO:3004379	QepA4	nalidixic acid	ARO:3000661	aro_obo
 ARO:3004379	QepA4	norfloxacin	ARO:3000662	aro_obo
 ARO:3002707	QnrA1	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002707	QnrA1	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002707	QnrA1	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002707	QnrA1	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002707	QnrA1	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002707	QnrA1	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002707	QnrA1	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002708	QnrA2	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002708	QnrA2	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002708	QnrA2	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002708	QnrA2	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002708	QnrA2	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002708	QnrA2	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002708	QnrA2	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002709	QnrA3	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002709	QnrA3	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002709	QnrA3	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002709	QnrA3	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002709	QnrA3	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002709	QnrA3	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002709	QnrA3	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002710	QnrA4	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002710	QnrA4	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002710	QnrA4	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002710	QnrA4	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002710	QnrA4	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002710	QnrA4	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002710	QnrA4	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002711	QnrA5	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002711	QnrA5	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002711	QnrA5	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002711	QnrA5	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002711	QnrA5	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002711	QnrA5	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002711	QnrA5	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002712	QnrA6	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002712	QnrA6	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002712	QnrA6	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002712	QnrA6	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002712	QnrA6	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002712	QnrA6	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002712	QnrA6	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002713	QnrA7	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002713	QnrA7	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002713	QnrA7	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002713	QnrA7	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002713	QnrA7	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002713	QnrA7	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002713	QnrA7	sparfloxacin	ARO:3000666	aro_obo_inherited
+ARO:3004668	QnrAS	ciprofloxacin	ARO:0000036	aro_obo_inherited
+ARO:3004668	QnrAS	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3004668	QnrAS	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3004668	QnrAS	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3004668	QnrAS	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3004668	QnrAS	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3004668	QnrAS	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002714	QnrB1	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002714	QnrB1	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002714	QnrB1	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002714	QnrB1	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002714	QnrB1	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002714	QnrB1	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002714	QnrB1	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002724	QnrB10	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002724	QnrB10	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002724	QnrB10	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002724	QnrB10	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002724	QnrB10	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002724	QnrB10	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002724	QnrB10	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002725	QnrB11	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002725	QnrB11	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002725	QnrB11	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002725	QnrB11	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002725	QnrB11	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002725	QnrB11	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002725	QnrB11	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002726	QnrB12	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002726	QnrB12	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002726	QnrB12	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002726	QnrB12	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002726	QnrB12	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002726	QnrB12	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002726	QnrB12	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002727	QnrB13	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002727	QnrB13	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002727	QnrB13	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002727	QnrB13	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002727	QnrB13	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002727	QnrB13	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002727	QnrB13	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002728	QnrB14	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002728	QnrB14	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002728	QnrB14	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002728	QnrB14	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002728	QnrB14	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002728	QnrB14	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002728	QnrB14	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002730	QnrB15	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002730	QnrB15	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002730	QnrB15	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002730	QnrB15	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002730	QnrB15	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002730	QnrB15	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002730	QnrB15	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002731	QnrB16	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002731	QnrB16	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002731	QnrB16	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002731	QnrB16	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002731	QnrB16	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002731	QnrB16	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002731	QnrB16	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002732	QnrB17	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002732	QnrB17	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002732	QnrB17	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002732	QnrB17	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002732	QnrB17	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002732	QnrB17	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002732	QnrB17	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002733	QnrB18	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002733	QnrB18	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002733	QnrB18	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002733	QnrB18	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002733	QnrB18	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002733	QnrB18	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002733	QnrB18	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002734	QnrB19	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002734	QnrB19	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002734	QnrB19	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002734	QnrB19	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002734	QnrB19	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002734	QnrB19	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002734	QnrB19	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002715	QnrB2	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002715	QnrB2	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002715	QnrB2	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002715	QnrB2	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002715	QnrB2	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002715	QnrB2	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002715	QnrB2	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002735	QnrB20	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002735	QnrB20	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002735	QnrB20	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002735	QnrB20	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002735	QnrB20	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002735	QnrB20	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002735	QnrB20	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002736	QnrB21	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002736	QnrB21	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002736	QnrB21	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002736	QnrB21	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002736	QnrB21	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002736	QnrB21	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002736	QnrB21	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002737	QnrB22	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002737	QnrB22	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002737	QnrB22	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002737	QnrB22	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002737	QnrB22	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002737	QnrB22	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002737	QnrB22	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002738	QnrB23	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002738	QnrB23	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002738	QnrB23	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002738	QnrB23	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002738	QnrB23	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002738	QnrB23	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002738	QnrB23	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002739	QnrB24	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002739	QnrB24	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002739	QnrB24	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002739	QnrB24	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002739	QnrB24	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002739	QnrB24	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002739	QnrB24	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002740	QnrB25	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002740	QnrB25	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002740	QnrB25	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002740	QnrB25	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002740	QnrB25	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002740	QnrB25	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002740	QnrB25	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002741	QnrB26	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002741	QnrB26	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002741	QnrB26	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002741	QnrB26	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002741	QnrB26	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002741	QnrB26	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002741	QnrB26	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002742	QnrB27	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002742	QnrB27	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002742	QnrB27	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002742	QnrB27	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002742	QnrB27	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002742	QnrB27	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002742	QnrB27	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002743	QnrB28	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002743	QnrB28	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002743	QnrB28	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002743	QnrB28	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002743	QnrB28	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002743	QnrB28	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002743	QnrB28	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002744	QnrB29	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002744	QnrB29	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002744	QnrB29	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002744	QnrB29	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002744	QnrB29	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002744	QnrB29	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002744	QnrB29	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002716	QnrB3	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002716	QnrB3	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002716	QnrB3	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002716	QnrB3	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002716	QnrB3	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002716	QnrB3	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002716	QnrB3	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002745	QnrB30	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002745	QnrB30	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002745	QnrB30	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002745	QnrB30	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002745	QnrB30	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002745	QnrB30	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002745	QnrB30	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002746	QnrB31	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002746	QnrB31	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002746	QnrB31	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002746	QnrB31	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002746	QnrB31	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002746	QnrB31	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002746	QnrB31	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002747	QnrB32	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002747	QnrB32	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002747	QnrB32	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002747	QnrB32	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002747	QnrB32	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002747	QnrB32	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002747	QnrB32	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002748	QnrB33	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002748	QnrB33	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002748	QnrB33	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002748	QnrB33	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002748	QnrB33	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002748	QnrB33	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002748	QnrB33	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002749	QnrB34	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002749	QnrB34	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002749	QnrB34	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002749	QnrB34	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002749	QnrB34	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002749	QnrB34	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002749	QnrB34	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002750	QnrB35	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002750	QnrB35	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002750	QnrB35	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002750	QnrB35	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002750	QnrB35	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002750	QnrB35	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002750	QnrB35	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002751	QnrB36	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002751	QnrB36	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002751	QnrB36	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002751	QnrB36	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002751	QnrB36	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002751	QnrB36	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002751	QnrB36	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002752	QnrB37	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002752	QnrB37	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002752	QnrB37	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002752	QnrB37	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002752	QnrB37	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002752	QnrB37	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002752	QnrB37	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002753	QnrB38	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002753	QnrB38	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002753	QnrB38	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002753	QnrB38	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002753	QnrB38	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002753	QnrB38	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002753	QnrB38	sparfloxacin	ARO:3000666	aro_obo_inherited
+ARO:3002754	QnrB39	ciprofloxacin	ARO:0000036	aro_obo_inherited
+ARO:3002754	QnrB39	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002754	QnrB39	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002754	QnrB39	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002754	QnrB39	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002754	QnrB39	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002754	QnrB39	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002718	QnrB4	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002718	QnrB4	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002718	QnrB4	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002718	QnrB4	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002718	QnrB4	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002718	QnrB4	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002718	QnrB4	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002755	QnrB40	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002755	QnrB40	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002755	QnrB40	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002755	QnrB40	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002755	QnrB40	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002755	QnrB40	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002755	QnrB40	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002756	QnrB41	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002756	QnrB41	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002756	QnrB41	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002756	QnrB41	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002756	QnrB41	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002756	QnrB41	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002756	QnrB41	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002757	QnrB42	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002757	QnrB42	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002757	QnrB42	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002757	QnrB42	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002757	QnrB42	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002757	QnrB42	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002757	QnrB42	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002758	QnrB43	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002758	QnrB43	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002758	QnrB43	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002758	QnrB43	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002758	QnrB43	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002758	QnrB43	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002758	QnrB43	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002759	QnrB44	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002759	QnrB44	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002759	QnrB44	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002759	QnrB44	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002759	QnrB44	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002759	QnrB44	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002759	QnrB44	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002760	QnrB45	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002760	QnrB45	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002760	QnrB45	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002760	QnrB45	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002760	QnrB45	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002760	QnrB45	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002760	QnrB45	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002761	QnrB46	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002761	QnrB46	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002761	QnrB46	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002761	QnrB46	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002761	QnrB46	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002761	QnrB46	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002761	QnrB46	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002762	QnrB47	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002762	QnrB47	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002762	QnrB47	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002762	QnrB47	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002762	QnrB47	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002762	QnrB47	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002762	QnrB47	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002763	QnrB48	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002763	QnrB48	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002763	QnrB48	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002763	QnrB48	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002763	QnrB48	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002763	QnrB48	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002763	QnrB48	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002764	QnrB49	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002764	QnrB49	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002764	QnrB49	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002764	QnrB49	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002764	QnrB49	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002764	QnrB49	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002764	QnrB49	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002719	QnrB5	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002719	QnrB5	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002719	QnrB5	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002719	QnrB5	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002719	QnrB5	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002719	QnrB5	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002719	QnrB5	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002765	QnrB50	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002765	QnrB50	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002765	QnrB50	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002765	QnrB50	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002765	QnrB50	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002765	QnrB50	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002765	QnrB50	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002767	QnrB54	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002767	QnrB54	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002767	QnrB54	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002767	QnrB54	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002767	QnrB54	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002767	QnrB54	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002767	QnrB54	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002768	QnrB55	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002768	QnrB55	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002768	QnrB55	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002768	QnrB55	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002768	QnrB55	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002768	QnrB55	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002768	QnrB55	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002769	QnrB56	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002769	QnrB56	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002769	QnrB56	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002769	QnrB56	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002769	QnrB56	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002769	QnrB56	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002769	QnrB56	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002770	QnrB57	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002770	QnrB57	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002770	QnrB57	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002770	QnrB57	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002770	QnrB57	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002770	QnrB57	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002770	QnrB57	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002771	QnrB58	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002771	QnrB58	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002771	QnrB58	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002771	QnrB58	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002771	QnrB58	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002771	QnrB58	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002771	QnrB58	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002772	QnrB59	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002772	QnrB59	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002772	QnrB59	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002772	QnrB59	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002772	QnrB59	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002772	QnrB59	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002772	QnrB59	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002720	QnrB6	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002720	QnrB6	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002720	QnrB6	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002720	QnrB6	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002720	QnrB6	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002720	QnrB6	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002720	QnrB6	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002773	QnrB60	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002773	QnrB60	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002773	QnrB60	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002773	QnrB60	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002773	QnrB60	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002773	QnrB60	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002773	QnrB60	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002774	QnrB61	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002774	QnrB61	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002774	QnrB61	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002774	QnrB61	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002774	QnrB61	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002774	QnrB61	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002774	QnrB61	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002775	QnrB62	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002775	QnrB62	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002775	QnrB62	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002775	QnrB62	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002775	QnrB62	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002775	QnrB62	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002775	QnrB62	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002776	QnrB64	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002776	QnrB64	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002776	QnrB64	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002776	QnrB64	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002776	QnrB64	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002776	QnrB64	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002776	QnrB64	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002777	QnrB65	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002777	QnrB65	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002777	QnrB65	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002777	QnrB65	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002777	QnrB65	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002777	QnrB65	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002777	QnrB65	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002778	QnrB66	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002778	QnrB66	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002778	QnrB66	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002778	QnrB66	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002778	QnrB66	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002778	QnrB66	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002778	QnrB66	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002779	QnrB67	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002779	QnrB67	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002779	QnrB67	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002779	QnrB67	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002779	QnrB67	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002779	QnrB67	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002779	QnrB67	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002780	QnrB68	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002780	QnrB68	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002780	QnrB68	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002780	QnrB68	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002780	QnrB68	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002780	QnrB68	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002780	QnrB68	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002781	QnrB69	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002781	QnrB69	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002781	QnrB69	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002781	QnrB69	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002781	QnrB69	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002781	QnrB69	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002781	QnrB69	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002721	QnrB7	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002721	QnrB7	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002721	QnrB7	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002721	QnrB7	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002721	QnrB7	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002721	QnrB7	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002721	QnrB7	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002782	QnrB70	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002782	QnrB70	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002782	QnrB70	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002782	QnrB70	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002782	QnrB70	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002782	QnrB70	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002782	QnrB70	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002783	QnrB71	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002783	QnrB71	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002783	QnrB71	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002783	QnrB71	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002783	QnrB71	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002783	QnrB71	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002783	QnrB71	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002784	QnrB72	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002784	QnrB72	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002784	QnrB72	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002784	QnrB72	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002784	QnrB72	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002784	QnrB72	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002784	QnrB72	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002785	QnrB73	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002785	QnrB73	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002785	QnrB73	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002785	QnrB73	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002785	QnrB73	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002785	QnrB73	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002785	QnrB73	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002786	QnrB74	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002786	QnrB74	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002786	QnrB74	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002786	QnrB74	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002786	QnrB74	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002786	QnrB74	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002786	QnrB74	sparfloxacin	ARO:3000666	aro_obo_inherited
+ARO:3003187	QnrB75	ciprofloxacin	ARO:0000036	aro_obo_inherited
+ARO:3003187	QnrB75	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3003187	QnrB75	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3003187	QnrB75	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3003187	QnrB75	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3003187	QnrB75	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3003187	QnrB75	sparfloxacin	ARO:3000666	aro_obo_inherited
+ARO:3003188	QnrB76	ciprofloxacin	ARO:0000036	aro_obo_inherited
+ARO:3003188	QnrB76	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3003188	QnrB76	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3003188	QnrB76	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3003188	QnrB76	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3003188	QnrB76	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3003188	QnrB76	sparfloxacin	ARO:3000666	aro_obo_inherited
+ARO:3003189	QnrB77	ciprofloxacin	ARO:0000036	aro_obo_inherited
+ARO:3003189	QnrB77	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3003189	QnrB77	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3003189	QnrB77	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3003189	QnrB77	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3003189	QnrB77	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3003189	QnrB77	sparfloxacin	ARO:3000666	aro_obo_inherited
+ARO:3003190	QnrB78	ciprofloxacin	ARO:0000036	aro_obo_inherited
+ARO:3003190	QnrB78	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3003190	QnrB78	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3003190	QnrB78	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3003190	QnrB78	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3003190	QnrB78	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3003190	QnrB78	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002722	QnrB8	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002722	QnrB8	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002722	QnrB8	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002722	QnrB8	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002722	QnrB8	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002722	QnrB8	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002722	QnrB8	sparfloxacin	ARO:3000666	aro_obo_inherited
+ARO:3003192	QnrB80	ciprofloxacin	ARO:0000036	aro_obo_inherited
+ARO:3003192	QnrB80	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3003192	QnrB80	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3003192	QnrB80	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3003192	QnrB80	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3003192	QnrB80	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3003192	QnrB80	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002723	QnrB9	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002723	QnrB9	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002723	QnrB9	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002723	QnrB9	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002723	QnrB9	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002723	QnrB9	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002723	QnrB9	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002787	QnrC	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002787	QnrC	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002787	QnrC	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002787	QnrC	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002787	QnrC	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002787	QnrC	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002787	QnrC	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002788	QnrD1	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002788	QnrD1	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002788	QnrD1	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002788	QnrD1	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002788	QnrD1	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002788	QnrD1	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002788	QnrD1	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002789	QnrD2	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002789	QnrD2	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002789	QnrD2	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002789	QnrD2	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002789	QnrD2	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002789	QnrD2	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002789	QnrD2	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002790	QnrS1	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002790	QnrS1	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002790	QnrS1	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002790	QnrS1	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002790	QnrS1	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002790	QnrS1	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002790	QnrS1	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3004622	QnrS10	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3004622	QnrS10	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3004622	QnrS10	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3004622	QnrS10	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3004622	QnrS10	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3004622	QnrS10	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3004622	QnrS10	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3004624	QnrS11	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3004624	QnrS11	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3004624	QnrS11	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3004624	QnrS11	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3004624	QnrS11	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3004624	QnrS11	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3004624	QnrS11	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3004625	QnrS12	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3004625	QnrS12	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3004625	QnrS12	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3004625	QnrS12	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3004625	QnrS12	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3004625	QnrS12	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3004625	QnrS12	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3004627	QnrS15	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3004627	QnrS15	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3004627	QnrS15	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3004627	QnrS15	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3004627	QnrS15	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3004627	QnrS15	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3004627	QnrS15	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002791	QnrS2	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002791	QnrS2	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002791	QnrS2	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002791	QnrS2	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002791	QnrS2	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002791	QnrS2	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002791	QnrS2	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002792	QnrS3	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002792	QnrS3	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002792	QnrS3	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002792	QnrS3	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002792	QnrS3	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002792	QnrS3	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002792	QnrS3	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002793	QnrS4	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002793	QnrS4	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002793	QnrS4	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002793	QnrS4	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002793	QnrS4	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002793	QnrS4	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002793	QnrS4	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002794	QnrS5	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002794	QnrS5	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002794	QnrS5	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002794	QnrS5	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002794	QnrS5	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002794	QnrS5	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002794	QnrS5	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002795	QnrS6	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002795	QnrS6	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002795	QnrS6	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002795	QnrS6	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002795	QnrS6	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002795	QnrS6	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002795	QnrS6	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002796	QnrS7	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002796	QnrS7	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002796	QnrS7	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002796	QnrS7	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002796	QnrS7	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002796	QnrS7	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002796	QnrS7	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002797	QnrS8	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002797	QnrS8	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002797	QnrS8	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002797	QnrS8	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002797	QnrS8	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002797	QnrS8	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002797	QnrS8	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002798	QnrS9	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002798	QnrS9	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002798	QnrS9	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002798	QnrS9	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002798	QnrS9	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002798	QnrS9	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002798	QnrS9	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002799	QnrVC1	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002799	QnrVC1	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002799	QnrVC1	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002799	QnrVC1	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002799	QnrVC1	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002799	QnrVC1	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002799	QnrVC1	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3005007	QnrVC2	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3005007	QnrVC2	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3005007	QnrVC2	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3005007	QnrVC2	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3005007	QnrVC2	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3005007	QnrVC2	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3005007	QnrVC2	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002800	QnrVC3	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002800	QnrVC3	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002800	QnrVC3	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002800	QnrVC3	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002800	QnrVC3	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002800	QnrVC3	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002800	QnrVC3	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002801	QnrVC4	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002801	QnrVC4	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002801	QnrVC4	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002801	QnrVC4	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002801	QnrVC4	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002801	QnrVC4	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002801	QnrVC4	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002802	QnrVC5	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002802	QnrVC5	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002802	QnrVC5	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002802	QnrVC5	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002802	QnrVC5	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002802	QnrVC5	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002802	QnrVC5	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3002803	QnrVC6	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3002803	QnrVC6	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3002803	QnrVC6	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3002803	QnrVC6	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3002803	QnrVC6	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3002803	QnrVC6	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3002803	QnrVC6	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3003193	QnrVC7	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3003193	QnrVC7	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3003193	QnrVC7	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3003193	QnrVC7	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3003193	QnrVC7	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3003193	QnrVC7	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3003193	QnrVC7	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3000245	RbpA	rifabutin	ARO:3000530	aro_obo
-ARO:3000245	RbpA	rifampin	ARO:3000169	aro_obo
 ARO:3000245	RbpA	rifapentine	ARO:3000534	aro_obo
 ARO:3000245	RbpA	rifaximin	ARO:3000517	aro_obo
 ARO:3004291	Rhodobacter sphaeroides ampC beta-lactamase	benzylpenicillin	ARO:3000632	aro_obo
@@ -2716,7 +4714,6 @@ ARO:3004128	Serratia marcescens Omp1	cefoxitin	ARO:0000008	aro_obo
 ARO:3004128	Serratia marcescens Omp1	ceftriaxone	ARO:0000062	aro_obo
 ARO:3004128	Serratia marcescens Omp1	chloramphenicol	ARO:3000385	aro_obo
 ARO:3004128	Serratia marcescens Omp1	ciprofloxacin	ARO:0000036	aro_obo
-ARO:3004128	Serratia marcescens Omp1	moxalactam	ARO:3004017	aro_obo
 ARO:3004128	Serratia marcescens Omp1	tetracycline	ARO:0000051	aro_obo
 ARO:3007509	Shigella flexneri acrA	ciprofloxacin	ARO:0000036	aro_obo
 ARO:3003940	Shigella flexneri gyrA conferring resistance to fluoroquinolones	nalidixic acid	ARO:3000661	aro_obo
@@ -2799,7 +4796,6 @@ ARO:3003315	Staphylococcus aureus parE conferring resistance to fluoroquinolones
 ARO:3003323	Staphylococcus aureus pgsA mutations conferring resistance to daptomycin	daptomycin	ARO:0000068	aro_obo
 ARO:3003287	Staphylococcus aureus rpoB mutants conferring resistance to daptomycin	daptomycin	ARO:0000068	aro_obo
 ARO:3003285	Staphylococcus aureus rpoB mutants conferring resistance to rifampicin	rifabutin	ARO:3000530	aro_obo
-ARO:3003285	Staphylococcus aureus rpoB mutants conferring resistance to rifampicin	rifampin	ARO:3000169	aro_obo
 ARO:3003285	Staphylococcus aureus rpoB mutants conferring resistance to rifampicin	rifapentine	ARO:3000534	aro_obo
 ARO:3003285	Staphylococcus aureus rpoB mutants conferring resistance to rifampicin	rifaximin	ARO:3000517	aro_obo
 ARO:3003291	Staphylococcus aureus rpoC conferring resistance to daptomycin	daptomycin	ARO:0000068	aro_obo
@@ -2850,7 +4846,6 @@ ARO:3002891	Streptomyces rimosus otr(A)	oxytetracycline	ARO:3000668	aro_obo
 ARO:3003318	Streptomyces rishiriensis parY mutant conferring resistance to aminocoumarin	clorobiocin	ARO:3000132	aro_obo
 ARO:3003318	Streptomyces rishiriensis parY mutant conferring resistance to aminocoumarin	coumermycin a1	ARO:3000150	aro_obo
 ARO:3003318	Streptomyces rishiriensis parY mutant conferring resistance to aminocoumarin	novobiocin	ARO:3000111	aro_obo
-ARO:3007209	Streptomyces venezuelae rox	rifampin	ARO:3000169	aro_obo
 ARO:3007209	Streptomyces venezuelae rox	rifapentine	ARO:3000534	aro_obo
 ARO:3007209	Streptomyces venezuelae rox	rifaximin	ARO:3000517	aro_obo
 ARO:3000014	TEM beta-lactamase	ampicillin	ARO:3000637	aro_obo
@@ -2858,213 +4853,460 @@ ARO:3000873	TEM-1	amoxicillin	ARO:0000064	aro_obo
 ARO:3000873	TEM-1	ampicillin	ARO:3000637	aro_obo
 ARO:3000873	TEM-1	cefalotin	ARO:3000704	aro_obo
 ARO:3000873	TEM-1	cefazolin	ARO:0000058	aro_obo
+ARO:3000882	TEM-10	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000882	TEM-10	ceftazidime	ARO:0000060	aro_obo
+ARO:3001366	TEM-100	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000964	TEM-101	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000964	TEM-101	ceftazidime	ARO:0000060	aro_obo
+ARO:3000965	TEM-102	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000965	TEM-102	ceftazidime	ARO:0000060	aro_obo
 ARO:3000966	TEM-103	amoxicillin	ARO:0000064	aro_obo
 ARO:3000966	TEM-103	ampicillin	ARO:3000637	aro_obo
+ARO:3000967	TEM-104	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000967	TEM-104	ceftazidime	ARO:0000060	aro_obo
+ARO:3000968	TEM-105	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000968	TEM-105	ceftazidime	ARO:0000060	aro_obo
+ARO:3000969	TEM-106	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000969	TEM-106	ceftazidime	ARO:0000060	aro_obo
+ARO:3000970	TEM-107	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000970	TEM-107	ceftazidime	ARO:0000060	aro_obo
+ARO:3000971	TEM-108	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000971	TEM-108	ceftazidime	ARO:0000060	aro_obo
+ARO:3000972	TEM-109	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000972	TEM-109	ceftazidime	ARO:0000060	aro_obo
+ARO:3000883	TEM-11	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000883	TEM-11	ceftazidime	ARO:0000060	aro_obo
+ARO:3000973	TEM-110	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000973	TEM-110	ceftazidime	ARO:0000060	aro_obo
+ARO:3000974	TEM-111	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000974	TEM-111	ceftazidime	ARO:0000060	aro_obo
+ARO:3000975	TEM-112	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000975	TEM-112	ceftazidime	ARO:0000060	aro_obo
+ARO:3000976	TEM-113	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000976	TEM-113	ceftazidime	ARO:0000060	aro_obo
+ARO:3000977	TEM-114	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000977	TEM-114	ceftazidime	ARO:0000060	aro_obo
+ARO:3000978	TEM-115	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000978	TEM-115	ceftazidime	ARO:0000060	aro_obo
+ARO:3000979	TEM-116	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000979	TEM-116	ceftazidime	ARO:0000060	aro_obo
+ARO:3000980	TEM-117	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000980	TEM-117	ceftazidime	ARO:0000060	aro_obo
+ARO:3000981	TEM-118	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000981	TEM-118	ceftazidime	ARO:0000060	aro_obo
+ARO:3001367	TEM-119	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000884	TEM-12	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000884	TEM-12	ceftazidime	ARO:0000060	aro_obo
+ARO:3000982	TEM-120	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000982	TEM-120	ceftazidime	ARO:0000060	aro_obo
+ARO:3000983	TEM-121	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000983	TEM-121	ceftazidime	ARO:0000060	aro_obo
+ARO:3000984	TEM-122	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000984	TEM-122	ceftazidime	ARO:0000060	aro_obo
+ARO:3000985	TEM-123	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000985	TEM-123	ceftazidime	ARO:0000060	aro_obo
+ARO:3000986	TEM-124	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000986	TEM-124	ceftazidime	ARO:0000060	aro_obo
+ARO:3000987	TEM-125	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000987	TEM-125	ceftazidime	ARO:0000060	aro_obo
+ARO:3000988	TEM-126	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000988	TEM-126	ceftazidime	ARO:0000060	aro_obo
+ARO:3000989	TEM-127	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000989	TEM-127	ceftazidime	ARO:0000060	aro_obo
+ARO:3000990	TEM-128	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000990	TEM-128	ceftazidime	ARO:0000060	aro_obo
+ARO:3000993	TEM-129	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000993	TEM-129	ceftazidime	ARO:0000060	aro_obo
+ARO:3000885	TEM-13	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000994	TEM-130	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000994	TEM-130	ceftazidime	ARO:0000060	aro_obo
+ARO:3000995	TEM-131	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000995	TEM-131	ceftazidime	ARO:0000060	aro_obo
+ARO:3000996	TEM-132	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000996	TEM-132	ceftazidime	ARO:0000060	aro_obo
+ARO:3000997	TEM-133	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000997	TEM-133	ceftazidime	ARO:0000060	aro_obo
+ARO:3000998	TEM-134	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000998	TEM-134	ceftazidime	ARO:0000060	aro_obo
+ARO:3000999	TEM-135	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001000	TEM-136	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001000	TEM-136	ceftazidime	ARO:0000060	aro_obo
+ARO:3001001	TEM-137	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001001	TEM-137	ceftazidime	ARO:0000060	aro_obo
+ARO:3001002	TEM-138	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001002	TEM-138	ceftazidime	ARO:0000060	aro_obo
+ARO:3001003	TEM-139	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001003	TEM-139	ceftazidime	ARO:0000060	aro_obo
+ARO:3001368	TEM-140	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001004	TEM-141	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001004	TEM-141	ceftazidime	ARO:0000060	aro_obo
+ARO:3001005	TEM-142	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001005	TEM-142	ceftazidime	ARO:0000060	aro_obo
+ARO:3001006	TEM-143	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001006	TEM-143	ceftazidime	ARO:0000060	aro_obo
+ARO:3001007	TEM-144	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001007	TEM-144	ceftazidime	ARO:0000060	aro_obo
+ARO:3001012	TEM-145	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001012	TEM-145	ceftazidime	ARO:0000060	aro_obo
+ARO:3001013	TEM-146	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001013	TEM-146	ceftazidime	ARO:0000060	aro_obo
+ARO:3001014	TEM-147	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001014	TEM-147	ceftazidime	ARO:0000060	aro_obo
+ARO:3001015	TEM-148	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001015	TEM-148	ceftazidime	ARO:0000060	aro_obo
+ARO:3001016	TEM-149	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001016	TEM-149	ceftazidime	ARO:0000060	aro_obo
+ARO:3000886	TEM-15	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000886	TEM-15	ceftazidime	ARO:0000060	aro_obo
+ARO:3001017	TEM-150	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001017	TEM-150	ceftazidime	ARO:0000060	aro_obo
+ARO:3001018	TEM-151	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001018	TEM-151	ceftazidime	ARO:0000060	aro_obo
+ARO:3001019	TEM-152	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001019	TEM-152	ceftazidime	ARO:0000060	aro_obo
+ARO:3001369	TEM-153	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001369	TEM-153	ceftazidime	ARO:0000060	aro_obo
+ARO:3001020	TEM-154	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001020	TEM-154	ceftazidime	ARO:0000060	aro_obo
+ARO:3001021	TEM-155	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001021	TEM-155	ceftazidime	ARO:0000060	aro_obo
+ARO:3001022	TEM-156	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001022	TEM-156	ceftazidime	ARO:0000060	aro_obo
+ARO:3001023	TEM-157	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001023	TEM-157	ceftazidime	ARO:0000060	aro_obo
+ARO:3001024	TEM-158	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001024	TEM-158	ceftazidime	ARO:0000060	aro_obo
+ARO:3001025	TEM-159	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001025	TEM-159	ceftazidime	ARO:0000060	aro_obo
+ARO:3000887	TEM-16	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000887	TEM-16	ceftazidime	ARO:0000060	aro_obo
+ARO:3001026	TEM-160	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001026	TEM-160	ceftazidime	ARO:0000060	aro_obo
+ARO:3001027	TEM-161	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001028	TEM-162	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001028	TEM-162	ceftazidime	ARO:0000060	aro_obo
+ARO:3001029	TEM-163	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001029	TEM-163	ceftazidime	ARO:0000060	aro_obo
+ARO:3001030	TEM-164	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001030	TEM-164	ceftazidime	ARO:0000060	aro_obo
+ARO:3001031	TEM-165	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001032	TEM-166	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001032	TEM-166	ceftazidime	ARO:0000060	aro_obo
+ARO:3001033	TEM-167	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001033	TEM-167	ceftazidime	ARO:0000060	aro_obo
+ARO:3001034	TEM-168	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001034	TEM-168	ceftazidime	ARO:0000060	aro_obo
+ARO:3001035	TEM-169	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001035	TEM-169	ceftazidime	ARO:0000060	aro_obo
+ARO:3000888	TEM-17	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000888	TEM-17	ceftazidime	ARO:0000060	aro_obo
+ARO:3001036	TEM-170	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001037	TEM-171	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001037	TEM-171	ceftazidime	ARO:0000060	aro_obo
+ARO:3001038	TEM-172	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001039	TEM-173	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001040	TEM-174	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001370	TEM-175	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001041	TEM-176	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001041	TEM-176	ceftazidime	ARO:0000060	aro_obo
+ARO:3001042	TEM-177	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001042	TEM-177	ceftazidime	ARO:0000060	aro_obo
+ARO:3001043	TEM-178	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001043	TEM-178	ceftazidime	ARO:0000060	aro_obo
+ARO:3001371	TEM-179	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000889	TEM-18	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001372	TEM-180	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001044	TEM-181	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001044	TEM-181	ceftazidime	ARO:0000060	aro_obo
+ARO:3001373	TEM-182	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001373	TEM-182	ceftazidime	ARO:0000060	aro_obo
+ARO:3001045	TEM-183	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001045	TEM-183	ceftazidime	ARO:0000060	aro_obo
+ARO:3001375	TEM-184	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001375	TEM-184	ceftazidime	ARO:0000060	aro_obo
+ARO:3001374	TEM-185	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001374	TEM-185	ceftazidime	ARO:0000060	aro_obo
+ARO:3001046	TEM-186	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001046	TEM-186	ceftazidime	ARO:0000060	aro_obo
+ARO:3001047	TEM-187	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001047	TEM-187	ceftazidime	ARO:0000060	aro_obo
+ARO:3001048	TEM-188	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001048	TEM-188	ceftazidime	ARO:0000060	aro_obo
+ARO:3001049	TEM-189	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001049	TEM-189	ceftazidime	ARO:0000060	aro_obo
+ARO:3000890	TEM-19	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000890	TEM-19	ceftazidime	ARO:0000060	aro_obo
+ARO:3001050	TEM-190	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001050	TEM-190	ceftazidime	ARO:0000060	aro_obo
+ARO:3001051	TEM-191	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001051	TEM-191	ceftazidime	ARO:0000060	aro_obo
+ARO:3001052	TEM-192	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001052	TEM-192	ceftazidime	ARO:0000060	aro_obo
+ARO:3001053	TEM-193	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001053	TEM-193	ceftazidime	ARO:0000060	aro_obo
+ARO:3001054	TEM-194	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001054	TEM-194	ceftazidime	ARO:0000060	aro_obo
+ARO:3001055	TEM-195	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001055	TEM-195	ceftazidime	ARO:0000060	aro_obo
+ARO:3001376	TEM-196	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001376	TEM-196	ceftazidime	ARO:0000060	aro_obo
+ARO:3001056	TEM-197	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001056	TEM-197	ceftazidime	ARO:0000060	aro_obo
+ARO:3001057	TEM-198	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001057	TEM-198	ceftazidime	ARO:0000060	aro_obo
+ARO:3001058	TEM-199	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001058	TEM-199	ceftazidime	ARO:0000060	aro_obo
+ARO:3000874	TEM-2	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000874	TEM-2	ceftazidime	ARO:0000060	aro_obo
+ARO:3000891	TEM-20	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000891	TEM-20	ceftazidime	ARO:0000060	aro_obo
+ARO:3001377	TEM-200	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001378	TEM-201	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001378	TEM-201	ceftazidime	ARO:0000060	aro_obo
+ARO:3001379	TEM-202	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001380	TEM-203	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001381	TEM-204	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3001382	TEM-205	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001382	TEM-205	ceftazidime	ARO:0000060	aro_obo
+ARO:3001383	TEM-206	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001383	TEM-206	ceftazidime	ARO:0000060	aro_obo
+ARO:3001384	TEM-207	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001384	TEM-207	ceftazidime	ARO:0000060	aro_obo
+ARO:3001385	TEM-208	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001385	TEM-208	ceftazidime	ARO:0000060	aro_obo
+ARO:3001386	TEM-209	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001386	TEM-209	ceftazidime	ARO:0000060	aro_obo
+ARO:3000892	TEM-21	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000892	TEM-21	ceftazidime	ARO:0000060	aro_obo
+ARO:3001387	TEM-210	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001387	TEM-210	ceftazidime	ARO:0000060	aro_obo
+ARO:3001388	TEM-211	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001388	TEM-211	ceftazidime	ARO:0000060	aro_obo
+ARO:3001389	TEM-212	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001389	TEM-212	ceftazidime	ARO:0000060	aro_obo
+ARO:3001390	TEM-213	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001390	TEM-213	ceftazidime	ARO:0000060	aro_obo
+ARO:3001391	TEM-214	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001391	TEM-214	ceftazidime	ARO:0000060	aro_obo
+ARO:3001392	TEM-215	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001392	TEM-215	ceftazidime	ARO:0000060	aro_obo
+ARO:3001393	TEM-216	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001393	TEM-216	ceftazidime	ARO:0000060	aro_obo
+ARO:3001394	TEM-217	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3001394	TEM-217	ceftazidime	ARO:0000060	aro_obo
+ARO:3001395	TEM-218	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3003157	TEM-219	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3003157	TEM-219	ceftazidime	ARO:0000060	aro_obo
+ARO:3000893	TEM-22	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000893	TEM-22	ceftazidime	ARO:0000060	aro_obo
+ARO:3003158	TEM-220	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3003158	TEM-220	ceftazidime	ARO:0000060	aro_obo
+ARO:3003113	TEM-221	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3003114	TEM-222	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3003592	TEM-223	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3005255	TEM-224	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005255	TEM-224	ceftazidime	ARO:0000060	aro_obo
+ARO:3005256	TEM-225	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005256	TEM-225	ceftazidime	ARO:0000060	aro_obo
+ARO:3005257	TEM-226	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005257	TEM-226	ceftazidime	ARO:0000060	aro_obo
+ARO:3005258	TEM-227	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005258	TEM-227	ceftazidime	ARO:0000060	aro_obo
+ARO:3005259	TEM-228	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005259	TEM-228	ceftazidime	ARO:0000060	aro_obo
+ARO:3005260	TEM-229	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005260	TEM-229	ceftazidime	ARO:0000060	aro_obo
+ARO:3005261	TEM-230	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005261	TEM-230	ceftazidime	ARO:0000060	aro_obo
+ARO:3005262	TEM-231	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005262	TEM-231	ceftazidime	ARO:0000060	aro_obo
+ARO:3005263	TEM-232	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005263	TEM-232	ceftazidime	ARO:0000060	aro_obo
+ARO:3005264	TEM-233	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005264	TEM-233	ceftazidime	ARO:0000060	aro_obo
+ARO:3005265	TEM-234	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005265	TEM-234	ceftazidime	ARO:0000060	aro_obo
+ARO:3005266	TEM-235	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005266	TEM-235	ceftazidime	ARO:0000060	aro_obo
+ARO:3005267	TEM-236	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005267	TEM-236	ceftazidime	ARO:0000060	aro_obo
+ARO:3005268	TEM-237	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005268	TEM-237	ceftazidime	ARO:0000060	aro_obo
+ARO:3005269	TEM-238	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005269	TEM-238	ceftazidime	ARO:0000060	aro_obo
+ARO:3009066	TEM-239	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000894	TEM-24	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000894	TEM-24	ceftazidime	ARO:0000060	aro_obo
+ARO:3005270	TEM-240	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005270	TEM-240	ceftazidime	ARO:0000060	aro_obo
+ARO:3005271	TEM-241	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005271	TEM-241	ceftazidime	ARO:0000060	aro_obo
+ARO:3005272	TEM-242	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005272	TEM-242	ceftazidime	ARO:0000060	aro_obo
+ARO:3005273	TEM-243	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3005273	TEM-243	ceftazidime	ARO:0000060	aro_obo
+ARO:3007453	TEM-244	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3007453	TEM-244	ceftazidime	ARO:0000060	aro_obo
+ARO:3007454	TEM-245	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3007454	TEM-245	ceftazidime	ARO:0000060	aro_obo
+ARO:3007448	TEM-246	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3007448	TEM-246	ceftazidime	ARO:0000060	aro_obo
+ARO:3007451	TEM-247	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3007451	TEM-247	ceftazidime	ARO:0000060	aro_obo
+ARO:3009067	TEM-248	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3009068	TEM-249	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000895	TEM-25	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3009069	TEM-250	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3009070	TEM-251	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3009071	TEM-252	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3009072	TEM-253	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3009073	TEM-254	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3009074	TEM-255	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3009075	TEM-256	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3009076	TEM-257	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3009077	TEM-258	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000896	TEM-26	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000896	TEM-26	ceftazidime	ARO:0000060	aro_obo
+ARO:3000897	TEM-27	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000898	TEM-28	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000898	TEM-28	ceftazidime	ARO:0000060	aro_obo
+ARO:3000899	TEM-29	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000899	TEM-29	ceftazidime	ARO:0000060	aro_obo
+ARO:3000875	TEM-3	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000875	TEM-3	ceftazidime	ARO:0000060	aro_obo
 ARO:3000900	TEM-30	amoxicillin	ARO:0000064	aro_obo
 ARO:3000900	TEM-30	ampicillin	ARO:3000637	aro_obo
 ARO:3000900	TEM-30	cefalotin	ARO:3000704	aro_obo
+ARO:3000901	TEM-31	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000901	TEM-31	ceftazidime	ARO:0000060	aro_obo
+ARO:3000902	TEM-32	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000902	TEM-32	ceftazidime	ARO:0000060	aro_obo
+ARO:3000903	TEM-33	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000903	TEM-33	ceftazidime	ARO:0000060	aro_obo
+ARO:3000904	TEM-34	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000904	TEM-34	ceftazidime	ARO:0000060	aro_obo
+ARO:3000905	TEM-35	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000905	TEM-35	ceftazidime	ARO:0000060	aro_obo
+ARO:3000906	TEM-36	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000906	TEM-36	ceftazidime	ARO:0000060	aro_obo
+ARO:3000907	TEM-37	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000907	TEM-37	ceftazidime	ARO:0000060	aro_obo
+ARO:3000908	TEM-38	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000909	TEM-39	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000909	TEM-39	ceftazidime	ARO:0000060	aro_obo
+ARO:3000876	TEM-4	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000876	TEM-4	ceftazidime	ARO:0000060	aro_obo
+ARO:3000910	TEM-40	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000910	TEM-40	ceftazidime	ARO:0000060	aro_obo
+ARO:3000911	TEM-42	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000911	TEM-42	ceftazidime	ARO:0000060	aro_obo
+ARO:3000912	TEM-43	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000912	TEM-43	ceftazidime	ARO:0000060	aro_obo
+ARO:3000913	TEM-44	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000914	TEM-45	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000914	TEM-45	ceftazidime	ARO:0000060	aro_obo
+ARO:3000915	TEM-46	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000916	TEM-47	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000916	TEM-47	ceftazidime	ARO:0000060	aro_obo
+ARO:3000917	TEM-48	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000917	TEM-48	ceftazidime	ARO:0000060	aro_obo
+ARO:3000918	TEM-49	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000918	TEM-49	ceftazidime	ARO:0000060	aro_obo
+ARO:3000877	TEM-5	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000877	TEM-5	ceftazidime	ARO:0000060	aro_obo
+ARO:3000919	TEM-50	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000920	TEM-51	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000921	TEM-52	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000921	TEM-52	ceftazidime	ARO:0000060	aro_obo
+ARO:3000922	TEM-53	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000922	TEM-53	ceftazidime	ARO:0000060	aro_obo
+ARO:3000923	TEM-54	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000923	TEM-54	ceftazidime	ARO:0000060	aro_obo
+ARO:3000924	TEM-55	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000924	TEM-55	ceftazidime	ARO:0000060	aro_obo
+ARO:3000925	TEM-56	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000926	TEM-57	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000926	TEM-57	ceftazidime	ARO:0000060	aro_obo
+ARO:3000927	TEM-58	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000927	TEM-58	ceftazidime	ARO:0000060	aro_obo
+ARO:3000928	TEM-59	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000928	TEM-59	ceftazidime	ARO:0000060	aro_obo
+ARO:3000878	TEM-6	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000878	TEM-6	ceftazidime	ARO:0000060	aro_obo
+ARO:3000929	TEM-60	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000929	TEM-60	ceftazidime	ARO:0000060	aro_obo
+ARO:3000930	TEM-61	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000930	TEM-61	aztreonam	ARO:3000550	aro_obo
 ARO:3000930	TEM-61	cefotaxime	ARO:3000645	aro_obo
 ARO:3000930	TEM-61	ceftazidime	ARO:0000060	aro_obo
+ARO:3000931	TEM-63	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000931	TEM-63	ceftazidime	ARO:0000060	aro_obo
+ARO:3000932	TEM-65	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000933	TEM-66	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000934	TEM-67	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000934	TEM-67	ceftazidime	ARO:0000060	aro_obo
+ARO:3000935	TEM-68	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000935	TEM-68	ceftazidime	ARO:0000060	aro_obo
+ARO:3000879	TEM-7	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000879	TEM-7	ceftazidime	ARO:0000060	aro_obo
+ARO:3000936	TEM-70	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000936	TEM-70	ceftazidime	ARO:0000060	aro_obo
+ARO:3000937	TEM-71	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000937	TEM-71	ceftazidime	ARO:0000060	aro_obo
+ARO:3000938	TEM-72	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000938	TEM-72	ceftazidime	ARO:0000060	aro_obo
+ARO:3000939	TEM-73	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000939	TEM-73	ceftazidime	ARO:0000060	aro_obo
+ARO:3000940	TEM-74	ampicillin	ARO:3000637	aro_obo_inherited
+ARO:3000941	TEM-75	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000941	TEM-75	ceftazidime	ARO:0000060	aro_obo
+ARO:3000942	TEM-76	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000942	TEM-76	ceftazidime	ARO:0000060	aro_obo
+ARO:3000944	TEM-78	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000944	TEM-78	ceftazidime	ARO:0000060	aro_obo
+ARO:3000946	TEM-79	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000946	TEM-79	ceftazidime	ARO:0000060	aro_obo
+ARO:3000880	TEM-8	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000880	TEM-8	ceftazidime	ARO:0000060	aro_obo
+ARO:3000947	TEM-80	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000947	TEM-80	ceftazidime	ARO:0000060	aro_obo
+ARO:3000948	TEM-81	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000948	TEM-81	ceftazidime	ARO:0000060	aro_obo
+ARO:3000949	TEM-82	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000949	TEM-82	ceftazidime	ARO:0000060	aro_obo
+ARO:3000950	TEM-83	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000950	TEM-83	ceftazidime	ARO:0000060	aro_obo
+ARO:3000951	TEM-84	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000951	TEM-84	ceftazidime	ARO:0000060	aro_obo
+ARO:3000952	TEM-85	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000952	TEM-85	ceftazidime	ARO:0000060	aro_obo
+ARO:3000953	TEM-86	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000953	TEM-86	ceftazidime	ARO:0000060	aro_obo
+ARO:3000954	TEM-87	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000954	TEM-87	ceftazidime	ARO:0000060	aro_obo
+ARO:3000955	TEM-88	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000955	TEM-88	ceftazidime	ARO:0000060	aro_obo
+ARO:3000956	TEM-89	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000956	TEM-89	ceftazidime	ARO:0000060	aro_obo
+ARO:3000881	TEM-9	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000881	TEM-9	ceftazidime	ARO:0000060	aro_obo
+ARO:3000957	TEM-90	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000957	TEM-90	ceftazidime	ARO:0000060	aro_obo
+ARO:3000958	TEM-91	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000958	TEM-91	ceftazidime	ARO:0000060	aro_obo
+ARO:3000959	TEM-92	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000959	TEM-92	ceftazidime	ARO:0000060	aro_obo
+ARO:3000960	TEM-93	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000960	TEM-93	ceftazidime	ARO:0000060	aro_obo
+ARO:3000961	TEM-94	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000961	TEM-94	ceftazidime	ARO:0000060	aro_obo
+ARO:3000962	TEM-95	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000962	TEM-95	ceftazidime	ARO:0000060	aro_obo
+ARO:3000963	TEM-96	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3000963	TEM-96	ceftazidime	ARO:0000060	aro_obo
+ARO:3006139	TEM-98	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3006139	TEM-98	ceftazidime	ARO:0000060	aro_obo
+ARO:3006140	TEM-99	ampicillin	ARO:3000637	aro_obo_inherited
 ARO:3006140	TEM-99	ceftazidime	ARO:0000060	aro_obo
 ARO:3004105	TMB-1	ceftazidime	ARO:0000060	aro_obo
 ARO:3004106	TMB-2	ceftazidime	ARO:0000060	aro_obo
@@ -3131,12 +5373,14 @@ ARO:3005015	VMB-1	ceftriaxone	ARO:0000062	aro_obo
 ARO:3005015	VMB-1	imipenem	ARO:3000170	aro_obo
 ARO:3005015	VMB-1	meropenem	ARO:0000073	aro_obo
 ARO:3007843	VRA-F	vancomycin	ARO:0000028	aro_obo
+ARO:3003987	VatI	dalfopristin	ARO:3000674	aro_obo_inherited
+ARO:3003987	VatI	griseoviridin	ARO:3000673	aro_obo_inherited
+ARO:3003987	VatI	madumycin ii	ARO:3000672	aro_obo_inherited
 ARO:3003987	VatI	virginiamycin m1	ARO:3000669	aro_obo
 ARO:3004460	Vibrio anguillarum chloramphenicol acetyltransferase	chloramphenicol	ARO:3000385	aro_obo
 ARO:3004118	Vibrio cholerae OmpT	bpi	ARO:3004121	aro_obo
 ARO:3004117	Vibrio cholerae OmpU	bpi	ARO:3004121	aro_obo
 ARO:3004289	Vibrio cholerae varG	meropenem	ARO:0000073	aro_obo
-ARO:3007794	Vibrio vulnificus rpoB mutants conferring resistance to rifampin	rifampin	ARO:3000169	aro_obo
 ARO:3007435	WUS-1	ampicillin	ARO:3000637	aro_obo
 ARO:3007435	WUS-1	carbenicillin	ARO:0000043	aro_obo
 ARO:3007435	WUS-1	imipenem	ARO:3000170	aro_obo
@@ -3147,7 +5391,6 @@ ARO:3005035	YRC-1	cefoxitin	ARO:0000008	aro_obo
 ARO:3005035	YRC-1	ceftazidime	ARO:0000060	aro_obo
 ARO:3005035	YRC-1	cefuroxime	ARO:0000063	aro_obo
 ARO:3005040	YajC	linezolid	ARO:0000072	aro_obo
-ARO:3005040	YajC	rifampin	ARO:3000169	aro_obo
 ARO:3005040	YajC	vancomycin	ARO:0000028	aro_obo
 ARO:3003952	YojI	microcin j25	ARO:3003951	aro_obo
 ARO:3007770	aac(6')-Ib-cr10	amikacin	ARO:0000013	aro_obo
@@ -3216,7 +5459,6 @@ ARO:3007669	aadT	erythromycin	ARO:0000006	aro_obo
 ARO:3007669	aadT	tetracycline	ARO:0000051	aro_obo
 ARO:3003942	abcA	cefotaxime	ARO:3000645	aro_obo
 ARO:3003942	abcA	daptomycin	ARO:0000068	aro_obo
-ARO:3003942	abcA	methicillin	ARO:0000015	aro_obo
 ARO:3003942	abcA	moenomycin a1	ARO:3000697	aro_obo
 ARO:3000753	abeM	acriflavine	ARO:0000045	aro_obo
 ARO:3000753	abeM	ciprofloxacin	ARO:0000036	aro_obo
@@ -3252,13 +5494,27 @@ ARO:3000858	armA	netilmicin	ARO:0000038	aro_obo
 ARO:3000858	armA	sisomicin	ARO:0000035	aro_obo
 ARO:3000858	armA	tobramycin	ARO:0000052	aro_obo
 ARO:3002985	arnA	polymyxin b	ARO:3000454	aro_obo
-ARO:3002846	arr-1	rifampin	ARO:3000169	aro_obo
-ARO:3002847	arr-2	rifampin	ARO:3000169	aro_obo
-ARO:3002848	arr-3	rifampin	ARO:3000169	aro_obo
-ARO:3002849	arr-4	rifampin	ARO:3000169	aro_obo
-ARO:3002850	arr-5	rifampin	ARO:3000169	aro_obo
-ARO:3002852	arr-7	rifampin	ARO:3000169	aro_obo
-ARO:3002853	arr-8	rifampin	ARO:3000169	aro_obo
+ARO:3002846	arr-1	rifabutin	ARO:3000530	aro_obo_inherited
+ARO:3002846	arr-1	rifapentine	ARO:3000534	aro_obo_inherited
+ARO:3002846	arr-1	rifaximin	ARO:3000517	aro_obo_inherited
+ARO:3002847	arr-2	rifabutin	ARO:3000530	aro_obo_inherited
+ARO:3002847	arr-2	rifapentine	ARO:3000534	aro_obo_inherited
+ARO:3002847	arr-2	rifaximin	ARO:3000517	aro_obo_inherited
+ARO:3002848	arr-3	rifabutin	ARO:3000530	aro_obo_inherited
+ARO:3002848	arr-3	rifapentine	ARO:3000534	aro_obo_inherited
+ARO:3002848	arr-3	rifaximin	ARO:3000517	aro_obo_inherited
+ARO:3002849	arr-4	rifabutin	ARO:3000530	aro_obo_inherited
+ARO:3002849	arr-4	rifapentine	ARO:3000534	aro_obo_inherited
+ARO:3002849	arr-4	rifaximin	ARO:3000517	aro_obo_inherited
+ARO:3002850	arr-5	rifabutin	ARO:3000530	aro_obo_inherited
+ARO:3002850	arr-5	rifapentine	ARO:3000534	aro_obo_inherited
+ARO:3002850	arr-5	rifaximin	ARO:3000517	aro_obo_inherited
+ARO:3002852	arr-7	rifabutin	ARO:3000530	aro_obo_inherited
+ARO:3002852	arr-7	rifapentine	ARO:3000534	aro_obo_inherited
+ARO:3002852	arr-7	rifaximin	ARO:3000517	aro_obo_inherited
+ARO:3002853	arr-8	rifabutin	ARO:3000530	aro_obo_inherited
+ARO:3002853	arr-8	rifapentine	ARO:3000534	aro_obo_inherited
+ARO:3002853	arr-8	rifaximin	ARO:3000517	aro_obo_inherited
 ARO:3002986	bacA	bacitracin a	ARO:3000629	aro_obo
 ARO:3002986	bacA	bacitracin b	ARO:3000630	aro_obo
 ARO:3002986	bacA	bacitracin f	ARO:3000631	aro_obo
@@ -3488,7 +5744,6 @@ ARO:3007456	dfrL	trimethoprim	ARO:3000188	aro_obo
 ARO:3003761	eatAv	pleuromutilin	ARO:3001317	aro_obo
 ARO:3003954	efmA	erythromycin	ARO:0000006	aro_obo
 ARO:3003955	efpA	isoniazid	ARO:3000520	aro_obo
-ARO:3003955	efpA	rifampin	ARO:3000169	aro_obo
 ARO:3003551	emeA	acriflavine	ARO:0000045	aro_obo
 ARO:3000309	emrD	chloramphenicol	ARO:3000385	aro_obo
 ARO:3004669	emtA	evernimicin	ARO:3007167	aro_obo
@@ -3569,7 +5824,6 @@ ARO:3003965	hp1184	erythromycin	ARO:0000006	aro_obo
 ARO:3003965	hp1184	metronidazole	ARO:3000689	aro_obo
 ARO:3003965	hp1184	tetracycline	ARO:0000051	aro_obo
 ARO:3002884	iri	rifabutin	ARO:3000530	aro_obo
-ARO:3002884	iri	rifampin	ARO:3000169	aro_obo
 ARO:3002884	iri	rifapentine	ARO:3000534	aro_obo
 ARO:3002884	iri	rifaximin	ARO:3000517	aro_obo
 ARO:3004102	kamB	apramycin	ARO:0000037	aro_obo
@@ -3642,10 +5896,6 @@ ARO:3001214	mdtM	chloramphenicol	ARO:3000385	aro_obo
 ARO:3001214	mdtM	lincomycin	ARO:0000046	aro_obo
 ARO:3001214	mdtM	norfloxacin	ARO:3000662	aro_obo
 ARO:3001214	mdtM	puromycin	ARO:0000047	aro_obo
-ARO:3000617	mecA	methicillin	ARO:0000015	aro_obo
-ARO:3003440	mecB	methicillin	ARO:0000015	aro_obo
-ARO:3001209	mecC	methicillin	ARO:0000015	aro_obo
-ARO:3004185	mecD	methicillin	ARO:0000015	aro_obo
 ARO:3003107	mef(B)	azithromycin	ARO:3000158	aro_obo
 ARO:3003107	mef(B)	erythromycin	ARO:0000006	aro_obo
 ARO:3003745	mef(C)	oxytetracycline	ARO:3000668	aro_obo
@@ -3657,7 +5907,18 @@ ARO:3000616	mel	erythromycin	ARO:0000006	aro_obo
 ARO:3000616	mel	telithromycin	ARO:0000057	aro_obo
 ARO:3000026	mepA	tigecycline	ARO:0000030	aro_obo
 ARO:3003844	mfd	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3003844	mfd	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3003844	mfd	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3003844	mfd	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3003844	mfd	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3003844	mfd	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3003844	mfd	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3003035	mfpA	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3003035	mfpA	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3003035	mfpA	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3003035	mfpA	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3003035	mfpA	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3003035	mfpA	norfloxacin	ARO:3000662	aro_obo_inherited
 ARO:3003035	mfpA	sparfloxacin	ARO:3000666	aro_obo
 ARO:3003820	mgrB	colistin a	ARO:3000622	aro_obo
 ARO:3003820	mgrB	colistin b	ARO:3000624	aro_obo
@@ -3775,10 +6036,13 @@ ARO:3002894	otr(C)	tetracycline	ARO:0000051	aro_obo
 ARO:3004666	pexA	chloramphenicol	ARO:3000385	aro_obo
 ARO:3004666	pexA	florfenicol	ARO:3000461	aro_obo
 ARO:3003920	pgpB	polymyxin b	ARO:3000454	aro_obo
+ARO:3003920	pgpB	polymyxin b1	ARO:3000625	aro_obo_inherited
+ARO:3003920	pgpB	polymyxin b2	ARO:3000626	aro_obo_inherited
+ARO:3003920	pgpB	polymyxin b3	ARO:3000627	aro_obo_inherited
+ARO:3003920	pgpB	polymyxin b4	ARO:3000628	aro_obo_inherited
 ARO:3000822	pmrA	ciprofloxacin	ARO:0000036	aro_obo
 ARO:3000822	pmrA	norfloxacin	ARO:3000662	aro_obo
 ARO:3004114	porin OmpC	cefazolin	ARO:0000058	aro_obo
-ARO:3004114	porin OmpC	cephaloridine	ARO:3004129	aro_obo
 ARO:3004470	poxtA	chloramphenicol	ARO:3000385	aro_obo
 ARO:3004470	poxtA	doxycycline	ARO:0000069	aro_obo
 ARO:3004470	poxtA	florfenicol	ARO:3000461	aro_obo
@@ -3795,7 +6059,19 @@ ARO:3007659	putative nickel/cobalt transporter	sparfloxacin	ARO:3000666	aro_obo
 ARO:3007015	qacG	benzalkonium chloride	ARO:3003823	aro_obo
 ARO:3007014	qacJ	benzalkonium chloride	ARO:3003823	aro_obo
 ARO:3004636	qnrE1	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3004636	qnrE1	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3004636	qnrE1	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3004636	qnrE1	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3004636	qnrE1	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3004636	qnrE1	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3004636	qnrE1	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3004637	qnrE2	ciprofloxacin	ARO:0000036	aro_obo
+ARO:3004637	qnrE2	gatifloxacin	ARO:3000659	aro_obo_inherited
+ARO:3004637	qnrE2	levofloxacin	ARO:0000071	aro_obo_inherited
+ARO:3004637	qnrE2	moxifloxacin	ARO:0000074	aro_obo_inherited
+ARO:3004637	qnrE2	nalidixic acid	ARO:3000661	aro_obo_inherited
+ARO:3004637	qnrE2	norfloxacin	ARO:3000662	aro_obo_inherited
+ARO:3004637	qnrE2	sparfloxacin	ARO:3000666	aro_obo_inherited
 ARO:3000419	quinolone resistance protein (qnr)	ciprofloxacin	ARO:0000036	aro_obo
 ARO:3000419	quinolone resistance protein (qnr)	gatifloxacin	ARO:3000659	aro_obo
 ARO:3000419	quinolone resistance protein (qnr)	levofloxacin	ARO:0000071	aro_obo
@@ -3804,14 +6080,10 @@ ARO:3000419	quinolone resistance protein (qnr)	nalidixic acid	ARO:3000661	aro_ob
 ARO:3000419	quinolone resistance protein (qnr)	norfloxacin	ARO:3000662	aro_obo
 ARO:3000419	quinolone resistance protein (qnr)	sparfloxacin	ARO:3000666	aro_obo
 ARO:3002883	rgt1438	rifabutin	ARO:3000530	aro_obo
-ARO:3002883	rgt1438	rifampin	ARO:3000169	aro_obo
 ARO:3002883	rgt1438	rifapentine	ARO:3000534	aro_obo
 ARO:3002883	rgt1438	rifaximin	ARO:3000517	aro_obo
-ARO:3004998	rifampicin resistant rpoA	rifampin	ARO:3000169	aro_obo
 ARO:3004995	rifampicin resistant rpoC	rifabutin	ARO:3000530	aro_obo
-ARO:3004995	rifampicin resistant rpoC	rifampin	ARO:3000169	aro_obo
 ARO:3000390	rifampin ADP-ribosyltransferase (Arr)	rifabutin	ARO:3000530	aro_obo
-ARO:3000390	rifampin ADP-ribosyltransferase (Arr)	rifampin	ARO:3000169	aro_obo
 ARO:3000390	rifampin ADP-ribosyltransferase (Arr)	rifapentine	ARO:3000534	aro_obo
 ARO:3000390	rifampin ADP-ribosyltransferase (Arr)	rifaximin	ARO:3000517	aro_obo
 ARO:3000859	rmtA	amikacin	ARO:0000013	aro_obo
@@ -3873,15 +6145,12 @@ ARO:3003198	rmtH	arbekacin	ARO:3000654	aro_obo
 ARO:3003198	rmtH	gentamicin a	ARO:3004015	aro_obo
 ARO:3003198	rmtH	tobramycin	ARO:0000052	aro_obo
 ARO:3000444	rphA	rifabutin	ARO:3000530	aro_obo
-ARO:3000444	rphA	rifampin	ARO:3000169	aro_obo
 ARO:3000444	rphA	rifapentine	ARO:3000534	aro_obo
 ARO:3000444	rphA	rifaximin	ARO:3000517	aro_obo
 ARO:3003992	rphB	rifabutin	ARO:3000530	aro_obo
-ARO:3003992	rphB	rifampin	ARO:3000169	aro_obo
 ARO:3003992	rphB	rifapentine	ARO:3000534	aro_obo
 ARO:3003992	rphB	rifaximin	ARO:3000517	aro_obo
 ARO:3000501	rpoB2	rifabutin	ARO:3000530	aro_obo
-ARO:3000501	rpoB2	rifampin	ARO:3000169	aro_obo
 ARO:3000501	rpoB2	rifapentine	ARO:3000534	aro_obo
 ARO:3000501	rpoB2	rifaximin	ARO:3000517	aro_obo
 ARO:3003930	rpsJ	tetracycline	ARO:0000051	aro_obo
@@ -3920,7 +6189,6 @@ ARO:3000862	sgm	netilmicin	ARO:0000038	aro_obo
 ARO:3000862	sgm	sisomicin	ARO:0000035	aro_obo
 ARO:3000862	sgm	tobramycin	ARO:0000052	aro_obo
 ARO:3000261	sigma factor conferring resistance to rifampin	rifabutin	ARO:3000530	aro_obo
-ARO:3000261	sigma factor conferring resistance to rifampin	rifampin	ARO:3000169	aro_obo
 ARO:3000261	sigma factor conferring resistance to rifampin	rifapentine	ARO:3000534	aro_obo
 ARO:3000261	sigma factor conferring resistance to rifampin	rifaximin	ARO:3000517	aro_obo
 ARO:3002631	spd	spectinomycin	ARO:0000039	aro_obo
@@ -4129,12 +6397,33 @@ ARO:3004285	tunicamycin resistance protein	tunicamycin	ARO:0000009	aro_obo
 ARO:3004730	tva(A)	pleuromutilin	ARO:3001317	aro_obo
 ARO:3003577	ugd	polymyxin b	ARO:3000454	aro_obo
 ARO:3002914	vanJ	teicoplanin	ARO:0000029	aro_obo
+ARO:3002840	vatA	dalfopristin	ARO:3000674	aro_obo_inherited
+ARO:3002840	vatA	griseoviridin	ARO:3000673	aro_obo_inherited
+ARO:3002840	vatA	madumycin ii	ARO:3000672	aro_obo_inherited
 ARO:3002840	vatA	virginiamycin m1	ARO:3000669	aro_obo
+ARO:3002841	vatB	dalfopristin	ARO:3000674	aro_obo_inherited
+ARO:3002841	vatB	griseoviridin	ARO:3000673	aro_obo_inherited
+ARO:3002841	vatB	madumycin ii	ARO:3000672	aro_obo_inherited
 ARO:3002841	vatB	virginiamycin m1	ARO:3000669	aro_obo
+ARO:3002842	vatC	dalfopristin	ARO:3000674	aro_obo_inherited
+ARO:3002842	vatC	griseoviridin	ARO:3000673	aro_obo_inherited
+ARO:3002842	vatC	madumycin ii	ARO:3000672	aro_obo_inherited
 ARO:3002842	vatC	virginiamycin m1	ARO:3000669	aro_obo
+ARO:3002843	vatD	dalfopristin	ARO:3000674	aro_obo_inherited
+ARO:3002843	vatD	griseoviridin	ARO:3000673	aro_obo_inherited
+ARO:3002843	vatD	madumycin ii	ARO:3000672	aro_obo_inherited
 ARO:3002843	vatD	virginiamycin m1	ARO:3000669	aro_obo
+ARO:3002844	vatE	dalfopristin	ARO:3000674	aro_obo_inherited
+ARO:3002844	vatE	griseoviridin	ARO:3000673	aro_obo_inherited
+ARO:3002844	vatE	madumycin ii	ARO:3000672	aro_obo_inherited
 ARO:3002844	vatE	virginiamycin m1	ARO:3000669	aro_obo
+ARO:3003744	vatF	dalfopristin	ARO:3000674	aro_obo_inherited
+ARO:3003744	vatF	griseoviridin	ARO:3000673	aro_obo_inherited
+ARO:3003744	vatF	madumycin ii	ARO:3000672	aro_obo_inherited
 ARO:3003744	vatF	virginiamycin m1	ARO:3000669	aro_obo
+ARO:3002845	vatH	dalfopristin	ARO:3000674	aro_obo_inherited
+ARO:3002845	vatH	griseoviridin	ARO:3000673	aro_obo_inherited
+ARO:3002845	vatH	madumycin ii	ARO:3000672	aro_obo_inherited
 ARO:3002845	vatH	virginiamycin m1	ARO:3000669	aro_obo
 ARO:3004715	vga(E) Staphylococcus cohnii	clindamycin	ARO:0000066	aro_obo
 ARO:3004715	vga(E) Staphylococcus cohnii	lincomycin	ARO:0000046	aro_obo

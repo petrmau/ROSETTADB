@@ -261,6 +261,46 @@ def load_canonical_drugs(path: Path) -> dict[str, str]:
 
 
 # ---------------------------------------------------------------------------
+# Inherited drug relationship collector
+# ---------------------------------------------------------------------------
+
+def _collect_ancestor_drug_targets(
+    aro_id: str,
+    terms: dict,
+    visited: set,
+    depth: int = 0,
+) -> list[str]:
+    """
+    Walk the is_a ancestry of aro_id and return all
+    confers_resistance_to_antibiotic target ARO IDs found on ancestor terms.
+    Does NOT include aro_id's own relationships (caller handles those).
+    """
+    if depth > 12 or aro_id in visited:
+        return []
+    visited.add(aro_id)
+
+    term = terms.get(aro_id)
+    if term is None or term.get("obsolete"):
+        return []
+
+    inherited: list[str] = []
+    for parent_id in term.get("is_a", []):
+        parent = terms.get(parent_id)
+        if parent is None or parent.get("obsolete"):
+            continue
+        # collect parent's own direct drug relationships
+        inherited.extend(
+            parent.get("relationships", {}).get("confers_resistance_to_antibiotic", [])
+        )
+        # recurse into grandparents
+        inherited.extend(
+            _collect_ancestor_drug_targets(parent_id, terms, visited, depth + 1)
+        )
+
+    return inherited
+
+
+# ---------------------------------------------------------------------------
 # Extract gene → drug (confers_resistance_to_antibiotic)
 # ---------------------------------------------------------------------------
 
@@ -269,9 +309,12 @@ def extract_gene_drug_links(
     canonical_drugs: dict[str, str],
 ) -> list[dict]:
     """
-    For each term with confers_resistance_to_antibiotic relationships, resolve
-    the target name against canonical_drugs and emit one row per
-    (gene ARO accession, canonical_drug) pair.
+    For each term, resolve confers_resistance_to_antibiotic relationships
+    (direct on the term AND inherited via is_a ancestry) against
+    canonical_drugs and emit one row per (gene ARO accession, canonical_drug).
+
+    Inherited relationships are marked source='aro_obo_inherited' so they
+    can be distinguished from explicitly curated direct links.
 
     Only targets whose lowercase name appears in canonical_drugs are emitted —
     unknown experimental compounds are skipped.
@@ -286,13 +329,17 @@ def extract_gene_drug_links(
         if not name:
             continue
 
-        targets = term.get("relationships", {}).get(
+        # direct relationships on this term
+        direct = term.get("relationships", {}).get(
             "confers_resistance_to_antibiotic", []
         )
-        if not targets:
-            continue
+        # inherited relationships from is_a ancestors
+        inherited = _collect_ancestor_drug_targets(aro_id, terms, set())
 
-        for drug_aro in targets:
+        for drug_aro, source_label in (
+            [(d, "aro_obo") for d in direct]
+            + [(d, "aro_obo_inherited") for d in inherited]
+        ):
             drug_term = terms.get(drug_aro)
             if not drug_term:
                 continue
@@ -307,11 +354,11 @@ def extract_gene_drug_links(
             seen.add(key)
 
             rows.append({
-                "aro_accession": aro_id,
-                "gene_name":     name,
-                "canonical_drug": canonical_drug,
+                "aro_accession":      aro_id,
+                "gene_name":          name,
+                "canonical_drug":     canonical_drug,
                 "drug_aro_accession": drug_aro,
-                "source":        "aro_obo",
+                "source":             source_label,
             })
 
     return sorted(rows, key=lambda x: (x["gene_name"], x["canonical_drug"]))
