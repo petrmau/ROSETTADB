@@ -7,7 +7,8 @@ Two-pass offline enrichment of drug_canonical.tsv:
 Pass 1 — ATC code fill (name lookup)
   For drugs that have no atc_code, look up the canonical_name
   (case-insensitive) in the local WHO ATC/ATCvet code tables
-  (atc_codes_all.tsv and, if present, atcvet_codes_all.tsv).
+  (atc_codes_all.tsv and, if present, atcvet_codes_all.tsv), then
+  as a fallback in the AMR-R antimicrobials.txt synonyms column.
   J-category codes are preferred over other categories when a name
   appears in multiple trees (same priority as enrich_amr_r.py /
   enrich.py).  Only fills; never overwrites an existing atc_code.
@@ -139,6 +140,51 @@ def build_name_atc_map(*tsv_paths: Path) -> dict[str, str]:
 
 
 # ---------------------------------------------------------------------------
+# Pass 1b — build name/synonym → ATC code lookup from antimicrobials.txt
+# ---------------------------------------------------------------------------
+
+def build_amr_r_atc_map(amr_tsv: Path) -> dict[str, str]:
+    """
+    Build a lowercase-name → best ATC code mapping from antimicrobials.txt,
+    indexing both the primary 'name' column and all comma-separated synonyms.
+
+    Used as a fallback when atc_codes_all.tsv has no match — covers
+    veterinary/research drugs that appear in the AMR-R dataset but not in
+    the human WHO ATC index.
+    """
+    name_codes: dict[str, list[str]] = {}
+
+    if not amr_tsv.exists():
+        return {}
+
+    with open(amr_tsv, newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f, delimiter="\t"):
+            atc_raw = (row.get("atc") or "").strip()
+            codes = [c.strip() for c in atc_raw.split(",")
+                     if c.strip() and c.strip().upper() != "NA"]
+            if not codes:
+                continue
+
+            names: list[str] = []
+            primary = (row.get("name") or "").strip().lower()
+            if primary:
+                names.append(primary)
+            for syn in (row.get("synonyms") or "").strip().split(","):
+                s = syn.strip().lower()
+                if s and s != "na":
+                    names.append(s)
+
+            for name in names:
+                name_codes.setdefault(name, []).extend(codes)
+
+    return {
+        name: sorted(set(codes), key=_atc_rank)[0]
+        for name, codes in name_codes.items()
+        if codes
+    }
+
+
+# ---------------------------------------------------------------------------
 # Pass 2 — build ATC prefix → group label lookup from AMR-R reference
 # ---------------------------------------------------------------------------
 
@@ -223,6 +269,10 @@ def main() -> None:
     name_atc_map = build_name_atc_map(*atc_sources)
     print(f"  {len(name_atc_map)} unique drug names indexed")
 
+    print(f"Building AMR-R synonym→ATC map from {AMR_TSV.name} …")
+    amr_r_atc_map = build_amr_r_atc_map(AMR_TSV)
+    print(f"  {len(amr_r_atc_map)} entries (names + synonyms)")
+
     # ------------------------------------------------------------------
     # Pass 2 setup — prefix → group label lookup
     # ------------------------------------------------------------------
@@ -258,7 +308,7 @@ def main() -> None:
         if row.get("atc_code", "").strip():
             continue  # already has a code
         name = row["canonical_name"].strip().lower()
-        code = name_atc_map.get(name)
+        code = name_atc_map.get(name) or amr_r_atc_map.get(name)
         if code:
             if args.dry_run:
                 print(f"  [dry] {row['canonical_name']}: atc_code ← {code!r}")
